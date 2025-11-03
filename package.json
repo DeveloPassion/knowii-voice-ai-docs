@@ -54,6 +54,9 @@
             "config": ".cz-config.cjs"
         }
     },
+    "overrides": {
+        "@conventional-changelog/git-client": "^2.5.1"
+    },
     "dependencies": {
         "@docusaurus/core": "^3.9.2",
         "@docusaurus/faster": "^3.9.2",
