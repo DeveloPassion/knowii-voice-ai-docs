@@ -169,11 +169,11 @@ const config = {
                             },
                             {
                                 label: 'Privacy Policy',
-                                href: 'https://voice-ai.knowii.net/privacy-policy'
+                                href: 'https://voice-ai.knowii.net/#/privacy-policy'
                             },
                             {
                                 label: 'Terms of Service',
-                                href: 'https://voice-ai.knowii.net/terms-of-us'
+                                href: 'https://voice-ai.knowii.net/#/terms-of-use'
                             }
                         ]
                     }
