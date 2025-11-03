@@ -1,0 +1,125 @@
+{
+    "name": "knowii-voice-ai-docs",
+    "description": "Documentation website for Knowii Voice AI",
+    "author": "DeveloPassion",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeveloPassion/knowii-voice-ai-docs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DeveloPassion/knowii-voice-ai-docs/issues"
+    },
+    "homepage": "https://docs.voice-ai.knowii.net",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start --port 4000",
+        "dev": "npm run start",
+        "build": "docusaurus build",
+        "swizzle": "docusaurus swizzle",
+        "deploy": "docusaurus deploy",
+        "clear": "docusaurus clear",
+        "serve": "docusaurus serve --port 4000",
+        "write-translations": "docusaurus write-translations",
+        "write-heading-ids": "docusaurus write-heading-ids",
+        "gen-api-docs": "docusaurus gen-api-docs",
+        "clean-api-docs": "docusaurus clean-api-docs",
+        "gen-api-docs:version": "docusaurus gen-api-docs:version",
+        "clean-api-docs:version": "docusaurus clean-api-docs:version",
+        "prepare": "husky",
+        "lint": "prettier --check . && eslint . --report-unused-disable-directives --max-warnings 0",
+        "format": "prettier --write .",
+        "tsc": "tsc --noEmit",
+        "tsc:watch": "tsc --noEmit --watch --preserveWatchOutput",
+        "tscw": "npm run tsc:watch",
+        "commit": "cz",
+        "cm": "npm run commit",
+        "commit:lint": "commitlint --from HEAD~1 --to HEAD --verbose",
+        "release": "release-it",
+        "release:final": "npm run release",
+        "release:alpha": "release-it --preRelease=alpha",
+        "release:beta": "release-it --preRelease=beta",
+        "release:rc": "release-it --preRelease=rc",
+        "eslint": "eslint . --report-unused-disable-directives --max-warnings 0"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        },
+        "cz-customizable": {
+            "config": ".cz-config.cjs"
+        }
+    },
+    "dependencies": {
+        "@docusaurus/core": "^3.9.2",
+        "@docusaurus/faster": "^3.9.2",
+        "@docusaurus/plugin-ideal-image": "^3.9.2",
+        "@docusaurus/preset-classic": "^3.9.2",
+        "@docusaurus/remark-plugin-npm2yarn": "^3.9.2",
+        "@easyops-cn/docusaurus-search-local": "^0.52.1",
+        "@mdx-js/react": "^3.1.1",
+        "@radix-ui/react-avatar": "^1.1.10",
+        "@radix-ui/react-slot": "^1.2.3",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "docusaurus-plugin-openapi-docs": "^4.5.1",
+        "docusaurus-theme-openapi-docs": "^4.5.1",
+        "lucide-react": "^0.552.0",
+        "prism-react-renderer": "^2.4.1",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^20.1.0",
+        "@commitlint/config-conventional": "^20.0.0",
+        "@docusaurus/module-type-aliases": "^3.9.2",
+        "@docusaurus/types": "^3.9.2",
+        "@eslint/js": "^9.39.0",
+        "@release-it/conventional-changelog": "^10.0.1",
+        "@tailwindcss/postcss": "^4.1.16",
+        "@types/node": "^24.9.2",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "auto-changelog": "^2.5.0",
+        "commitizen": "^4.3.1",
+        "cz-customizable": "^7.5.1",
+        "eslint": "^9.39.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-react": "^7.37.5",
+        "globals": "^16.5.0",
+        "husky": "^9.1.7",
+        "jiti": "^2.6.1",
+        "lint-staged": "^16.2.6",
+        "postcss": "^8.5.6",
+        "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.7.1",
+        "release-it": "^19.0.5",
+        "tailwind-merge": "^3.3.1",
+        "tailwindcss": "^4.1.16",
+        "tailwindcss-animate": "^1.0.7",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.3"
+    },
+    "engines": {
+        "node": ">=20.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 3 chrome version",
+            "last 3 firefox version",
+            "last 5 safari version"
+        ]
+    },
+    "optionalDependencies": {
+        "postman-code-generators": "^1.14.1"
+    }
+}
