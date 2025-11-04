@@ -29,7 +29,7 @@ Learn more about what makes Knowii Voice AI different on the [main website](http
 4. **Press and hold** `Ctrl+Space` to record your voice (wait for the sound notification to finish before speaking)
 5. **Release** to transcribe and automatically paste the text
 
-That's it! You're ready to go.
+That's it! You're ready to go. For more details, check out the [Basic Usage](./user-guide/basic-usage) guide.
 
 ## Key Features
 
