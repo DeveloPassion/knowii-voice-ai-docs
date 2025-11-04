@@ -173,7 +173,7 @@ const config = {
                                 href: 'https://voice-ai.knowii.net/#/privacy-policy'
                             },
                             {
-                                label: 'Terms of Service',
+                                label: 'Terms of Use',
                                 href: 'https://voice-ai.knowii.net/#/terms-of-use'
                             }
                         ]
