@@ -55,7 +55,7 @@ Now let's record and transcribe your first text!
 
 Let's view your transcription history:
 
-1. Open the settings (right click on the tray icon and select "Settings")
+1. Open the settings (right click on the tray icon and select "Settings...")
 
 ![Open settings from tray icon](/img/screenshots/2025-11-04-open-settings-from-tray.png)
 
@@ -71,19 +71,18 @@ Let's view your transcription history:
 
 Personalize Knowii Voice AI to your preferences:
 
-### Audio Settings
+1. **Right-click** the system tray icon and select "Settings..." to show the main window
+2. Go to the **General** tab to customize the recording shortcut, to enable/disable the Push To Talk mode (it is enabled by default)
+3. Go to the **Transcription** tab to download/activate additional models, configure the language, etc
+4. Go to the **Advanced** tab to configure advanced settings to customize the application, the overlay position, etc
 
-1. Go to **Settings > Audio**
-2. **Select** your preferred microphone (if you have multiple)
-3. **Adjust** audio feedback sounds and volume
-4. **Test** with a recording
+**Tips**:
 
-### Shortcuts
+- You can click on the model dropdown in the bottom left corner to activate another model or unload the currently active model (freeing up memory)
 
-1. Go to **Settings > Shortcuts**
-2. **Click** on the current shortcut
-3. **Press** your preferred key combination
-4. **Save** changes
+![Model Switcher](/img/screenshots/2025-11-04-model-switcher.png)
+
+- You can press **Ctrl+Shift+D** to show/hide the debug menu
 
 ## Step 5: Try Advanced Features
 
@@ -91,9 +90,11 @@ Personalize Knowii Voice AI to your preferences:
 
 Automatically correct or replace words:
 
-1. Go to **Settings > Transcription > Word Replacement**
+1. Go to **Settings > Transcription > Custom Words**
 2. **Add** custom replacements (e.g., "umm" → "" to remove filler words)
 3. **Save** and test with a recording
+
+**Note**: This is an early feature.
 
 ### Language Selection
 
@@ -112,6 +113,7 @@ Congratulations! You now know the basics of Knowii Voice AI.
 
 ### Tips for Best Results
 
+- **Wait** until the start recording sound has finished playing
 - **Speak clearly** at a normal pace
 - **Minimize background noise** when recording
 - **Use punctuation** (pause naturally between sentences)
