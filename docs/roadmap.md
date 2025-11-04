@@ -6,25 +6,6 @@ sidebar_position: 100
 
 This page outlines the current and planned features for Knowii Voice AI.
 
-## Current Version
-
-### Completed Features ✅
-
-- **Voice-to-Text Transcription**: Core transcription functionality with push-to-talk
-- **Local Processing**: 100% privacy-preserving, offline transcription
-- **GPU Acceleration**: Vulkan support for faster transcription
-- **Multi-Model Support**: Whisper and Parakeet AI models
-- **Model Management**: Download, switch, and auto-unload models
-- **Transcription History**: View, search, star, and manage past transcriptions
-- **Audio Playback**: Play back recorded audio from history
-- **Customizable Shortcuts**: Configurable keyboard shortcuts
-- **Audio Feedback**: Customizable recording sounds
-- **Basic Word Replacement**: Post-processing text corrections
-- **Multi-Language Support**: Transcribe in multiple languages
-- **System Tray Operation**: Runs quietly in background
-- **Windows Support**: Full Windows 10/11 compatibility
-- **Responsive UI**: Fully responsive interface
-
 ## Short-Term Goals
 
 ### In Progress 🔨

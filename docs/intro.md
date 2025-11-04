@@ -50,12 +50,14 @@ Lives in your system tray (near the clock). No window cluttering your screen. Al
 ### Smart Audio Processing
 
 - Automatically uses your default microphone
-- Crystal-clear transcription results with GPU acceleration
+- Crystal-clear transcription results with GPU acceleration for faster transcription (Vulkan support)
 - Customize recording feedback sounds: choose separate sounds for start and end, or use your own (WAV/MP3 files)
+- Basic Word Replacement: Post-processing text corrections
+- Multi-Language Support: Transcribe in multiple languages
 
 ### Multiple AI Models
 
-- Easily download and manage transcription models
+- Easily download and manage multiple transcription models
 - Switch between models or deactivate to free memory
 - Your selected model loads automatically when the app starts
 
@@ -80,10 +82,12 @@ Lives in your system tray (near the clock). No window cluttering your screen. Al
 
 ### Smart Design
 
-- Automatically adapts to your screen size
-- Works perfectly on any display from laptop to ultrawide
 - Clean, modern interface
 - Designed to stay out of your way
+- Automatically adapts to your screen size
+- Works perfectly on any display from laptop to ultrawide
+- Customizable recording sounds
+- Customizable shortcuts
 
 ## What's Next?
 

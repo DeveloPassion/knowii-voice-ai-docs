@@ -82,6 +82,7 @@
         "@docusaurus/module-type-aliases": "^3.9.2",
         "@docusaurus/types": "^3.9.2",
         "@eslint/js": "^9.39.0",
+        "@release-it/bumper": "7.0.5",
         "@release-it/conventional-changelog": "^10.0.1",
         "@tailwindcss/postcss": "^4.1.16",
         "@types/node": "^24.9.2",

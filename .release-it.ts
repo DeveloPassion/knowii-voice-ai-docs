@@ -1,16 +1,6 @@
-const fs = require('fs')
-const path = require('path')
+import type { Config } from 'release-it'
 
-/**
- * Update version in VERSION file
- */
-function updateVersionFile(version) {
-    const versionFilePath = path.join(__dirname, 'VERSION')
-    fs.writeFileSync(versionFilePath, `${version}\n`, 'utf8')
-    console.log(`✓ Updated VERSION to ${version}`)
-}
-
-const releaseItConfig = {
+export default {
     'ci': false,
     'disable-metrics': true,
     'git': {
@@ -39,6 +29,14 @@ const releaseItConfig = {
         publish: false // Not publishing to npm
     },
     'plugins': {
+        '@release-it/bumper': {
+            out: [
+                {
+                    file: 'VERSION',
+                    type: 'text/plain'
+                }
+            ]
+        },
         '@release-it/conventional-changelog': {
             infile: 'CHANGELOG.md',
             preset: {
@@ -61,18 +59,12 @@ const releaseItConfig = {
     },
     'hooks': {
         'after:bump': [
-            // Update all version files after package.json is bumped
-            "node -e \"const cfg = require('./.release-it.js'); const pkg = require('./package.json'); cfg.updateVersionFile(pkg.version);\"",
             // Generate/update changelog
             'npx auto-changelog -p',
-            // Stage all version files
-            'git add VERSION CHANGELOG.md'
+            // Stage changelog (bumper plugin handles version files)
+            'git add CHANGELOG.md'
         ],
         'after:release':
             'echo "\\n✓ Successfully released ${name} v${version}\\n\\nView release: ${repo.protocol}://${repo.host}/${repo.repository}/releases/tag/v${version}"'
     }
-}
-
-// Export both the config and the helper functions
-module.exports = releaseItConfig
-module.exports.updateVersionFile = updateVersionFile
+} satisfies Config
