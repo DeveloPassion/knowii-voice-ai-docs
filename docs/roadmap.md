@@ -12,7 +12,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 - **Voice-to-Text Transcription**: Core transcription functionality with push-to-talk
 - **Local Processing**: 100% privacy-preserving, offline transcription
-- **GPU Acceleration**: CUDA support for faster transcription
+- **GPU Acceleration**: Vulkan support for faster transcription
 - **Multi-Model Support**: Whisper and Parakeet AI models
 - **Model Management**: Download, switch, and auto-unload models
 - **Transcription History**: View, search, star, and manage past transcriptions
@@ -34,6 +34,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ### Next Releases
 
+- **CUDA Support**: GPU acceleration for NVIDIA GPUs using CUDA for even faster transcription
 - **Additional Language Models**: More language-specific models for local and remote transcription and post-processing
 - **Smart AI-enabled Post-Processing**: Apply custom transformations to transcriptions: remove filler words, fix commonly misrecognized words, use AI. Configure AI-enabled pipelines, detect applications/context and go from raw transcriptions to specialized outputs
 - **Real-time Transcription**: See words appear in real-time as you speak, not after you finish

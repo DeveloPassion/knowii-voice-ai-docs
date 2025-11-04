@@ -14,7 +14,7 @@ slug: /
 - **You Actually Own It**: Pay once, own it forever. Every update, every new feature included. No subscription. No usage caps. No "premium tier."
 - **Works Everywhere**: Transcribe into every single application - emails, documents, chat, notes, browsers, IDEs. If you can type there, you can speak there.
 - **Simple to Use**: Press and hold a shortcut key to record, release to transcribe and paste. That's it!
-- **Fast & Accurate**: Powered by state-of-the-art AI models (Whisper, Parakeet) with GPU acceleration support.
+- **Fast & Accurate**: Powered by state-of-the-art AI models (Whisper, Parakeet) with Vulkan GPU acceleration support.
 - **Multiple AI Models**: Choose between small and fast models or larger and more accurate ones. Switch anytime based on your needs.
 - **Searchable History**: Every transcription is saved and searchable. Your external memory. Find anything you said weeks ago in seconds.
 - **Multi-Language Support**: Many languages supported. Speak in one language and get transcriptions in another.

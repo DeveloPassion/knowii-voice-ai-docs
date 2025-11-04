@@ -10,7 +10,7 @@ sidebar_position: 1
 
 - 4GB RAM minimum (8GB or more recommended)
 - 500MB free disk space (this is enough to install the recommended AI model)
-- Optional: NVIDIA GPU with CUDA support for faster transcription
+- Optional: GPU with Vulkan support for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
 
 ### Windows
 
@@ -54,25 +54,9 @@ No account or registration is required!
 
 ## GPU Acceleration (Optional)
 
-If you have an NVIDIA GPU, Knowii Voice AI can use CUDA for significantly faster transcription.
+Knowii Voice AI supports **Vulkan** out of the box for GPU-accelerated transcription. Vulkan works with most modern GPUs (NVIDIA, AMD, Intel) and is automatically detected and enabled if available.
 
-### Windows
-
-CUDA support is automatically detected and enabled if you have NVIDIA drivers installed.
-
-### Linux
-
-Install NVIDIA drivers and CUDA toolkit:
-
-```bash
-# Ubuntu/Debian
-sudo apt-get install nvidia-driver-535 nvidia-cuda-toolkit
-
-# Fedora
-sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
-```
-
-Restart your system after installation.
+**CUDA support** for NVIDIA GPUs is planned for a future release. See the [Roadmap](../roadmap) for more details.
 
 ## Troubleshooting
 

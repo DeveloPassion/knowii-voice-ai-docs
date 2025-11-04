@@ -34,7 +34,7 @@ Download the latest version from our [website](https://voice-ai.knowii.net#downl
 
 - 4GB RAM minimum (8GB recommended)
 - 500MB free disk space
-- Optional: NVIDIA GPU with CUDA support for faster transcription
+- Optional: GPU with Vulkan support for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
 
 ### Why do I need to download AI models?
 
@@ -124,12 +124,12 @@ Transcription speed depends on:
 To improve speed:
 
 - Use a **smaller model**
-- Enable **GPU acceleration** if you have an NVIDIA GPU
+- Enable **GPU acceleration** if you have a Vulkan-compatible GPU (most modern GPUs)
 - Keep recordings **short** (under 30 seconds for best experience)
 
 ### Does it use my GPU?
 
-Yes! If you have an NVIDIA GPU with CUDA support, Knowii Voice AI automatically uses it for significantly faster transcription.
+Yes! If you have a Vulkan-compatible GPU (most modern NVIDIA, AMD, and Intel GPUs), Knowii Voice AI automatically detects and uses it for significantly faster transcription. CUDA support for NVIDIA GPUs is planned for a future release.
 
 ### Why does it use so much memory?
 
