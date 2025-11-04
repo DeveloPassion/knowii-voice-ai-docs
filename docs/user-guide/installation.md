@@ -23,7 +23,7 @@ sidebar_position: 1
 
 ## Download
 
-Download the latest version of Knowii Voice AI from our [website](https://voice-ai.knowii.net#download).
+Download the latest version of Knowii Voice AI from your [Gumroad Library](https://gumroad.com/library) or from the [Knowii Community](https://www.knowii.net) website, depending on where you bought it from.
 
 Choose the installer for your platform:
 
