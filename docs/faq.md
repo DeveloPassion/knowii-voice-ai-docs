@@ -50,7 +50,7 @@ The AI models are the "brains" that convert your voice to text. They're download
 
 ### How do I transcribe my voice?
 
-1. Press and hold `Ctrl+Shift+G` (default shortcut)
+1. Press and hold `Ctrl+Space` (default shortcut)
 2. Speak clearly
 3. Release the shortcut
 4. Text appears automatically at your cursor position

@@ -10,7 +10,7 @@ Learn the fundamentals of using Knowii Voice AI for voice-to-text transcription.
 
 The simplest way to use Knowii Voice AI:
 
-1. **Press and hold** `Ctrl+Shift+G` (default shortcut)
+1. **Press and hold** `Ctrl+Space` (default shortcut)
 2. **Speak** clearly into your microphone
 3. **Release** the shortcut when done speaking
 4. The text is **automatically transcribed and pasted** at your cursor position
@@ -38,9 +38,9 @@ The icon changes based on the application state:
 
 ### Default Shortcuts
 
-| Shortcut       | Action                                                    |
-| -------------- | --------------------------------------------------------- |
-| `Ctrl+Shift+G` | Press and hold to record, release to transcribe and paste |
+| Shortcut     | Action                                                    |
+| ------------ | --------------------------------------------------------- |
+| `Ctrl+Space` | Press and hold to record, release to transcribe and paste |
 
 ### Customizing Shortcuts
 

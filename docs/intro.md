@@ -21,7 +21,7 @@ slug: /
 1. **Download** Knowii Voice AI from Gumroad or from the [Knowii Community](https://www.knowii.net) website, depending on where you bought it from
 2. **Install** and launch the application
 3. **Download** your first AI transcription model (guided by the setup wizard)
-4. **Press and hold** `Ctrl+Shift+G` to record your voice
+4. **Press and hold** `Ctrl+Space` to record your voice
 5. **Release** to transcribe and automatically paste the text
 
 That's it! You're ready to go.

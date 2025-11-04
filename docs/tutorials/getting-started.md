@@ -39,7 +39,7 @@ Now let's record and transcribe your first text!
 
 1. **Open** any text application (e.g., Notepad, Word, email, browser)
 2. **Click** in a text field to place your cursor
-3. **Press and hold** `Ctrl+Shift+G` (default shortcut)
+3. **Press and hold** `Ctrl+Space` (default shortcut)
 4. **Speak** clearly: "This is my first transcription with Knowii Voice AI"
 5. **Release** the shortcut key when done speaking
 6. **Watch** as your text appears automatically!
