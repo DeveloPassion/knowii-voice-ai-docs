@@ -64,6 +64,16 @@ Knowii Voice AI supports **Vulkan** out of the box for GPU-accelerated transcrip
 
 Right-click the installer, select "Properties", and check "Unblock" before running.
 
+### Windows: Installing to Program Files
+
+If you want to install Knowii Voice AI in the Program Files folder, you must run the installer as administrator:
+
+1. Right-click the installer file
+2. Select "Run as administrator"
+3. Follow the installation wizard
+
+Alternatively, you can install to your user directory (recommended), which doesn't require administrator privileges.
+
 ### Application doesn't start
 
 1. Check system requirements
