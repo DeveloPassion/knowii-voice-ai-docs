@@ -28,7 +28,7 @@ Knowii Voice AI is currently free during the early access period. Future pricing
 
 ### How do I download Knowii Voice AI?
 
-Download the latest version from our [website](https://voice-ai.knowii.net#download).
+Download the latest version from the [website](https://voice-ai.knowii.net#download).
 
 ### What are the system requirements?
 
@@ -206,6 +206,9 @@ There is a basic one but it's not documented yet and its features are limited. I
 
 ## Still Need Help?
 
-- Check the [User Guide](./user-guide/installation)
-- Read the [Getting Started Tutorial](./tutorials/getting-started)
-- Report issues on [GitHub](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues) or via the [Knowii Community](https://www.knowii.net)
+Can't find the answer you're looking for? Visit the [Support](./support) page for all available help options including:
+
+- Email support at support@knowii.net
+- Knowii Community forums
+- GitHub issues and discussions
+- Additional resources and documentation

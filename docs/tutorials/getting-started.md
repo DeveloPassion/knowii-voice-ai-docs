@@ -121,7 +121,4 @@ Congratulations! You now know the basics of Knowii Voice AI.
 
 ### Need Help?
 
-If you encounter any issues:
-
-1. Check the [FAQ](../faq)
-2. Report issues on [GitHub](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues)
+If you encounter any issues, check out the [Support](../support) page for all available help options including email support, community forums, and GitHub issues.

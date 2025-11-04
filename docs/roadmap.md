@@ -70,7 +70,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ## How to Request Features
 
-Have an idea for Knowii Voice AI? We'd love to hear it!
+Have an idea for Knowii Voice AI? I'd love to hear it!
 
 1. **Check** the roadmap above to see if it's already planned
 2. **Search** existing feature requests on [GitHub](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues)

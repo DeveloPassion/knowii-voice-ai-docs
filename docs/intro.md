@@ -58,4 +58,4 @@ View all past transcriptions, star favorites, search history, and even play back
 
 ## Need Help?
 
-Check out our [FAQ](./faq) or visit the [Getting Started Tutorial](./tutorials/getting-started) for step-by-step guidance.
+Check out the [FAQ](./faq) or visit the [Getting Started Tutorial](./tutorials/getting-started) for step-by-step guidance.
