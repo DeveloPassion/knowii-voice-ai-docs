@@ -24,6 +24,7 @@ const sidebars = {
             items: [
                 'user-guide/installation',
                 'user-guide/basic-usage',
+                'user-guide/advanced-settings',
                 'user-guide/application-data'
             ]
         }

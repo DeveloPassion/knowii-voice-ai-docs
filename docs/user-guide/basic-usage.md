@@ -148,7 +148,19 @@ The AI model automatically adds basic punctuation. For better results:
 
 Knowii Voice AI supports multiple languages. Configure your language in **Settings > Transcription > Language**.
 
+### Custom Words
+
+Help improve transcription accuracy by adding words that are often misheard:
+
+1. Go to **Settings > Transcription**
+2. Find the **Custom Words** section
+3. Add words that the AI frequently mishears or doesn't recognize
+4. These words will be prioritized during transcription
+
+**Examples**: Technical terms, product names, proper nouns, or domain-specific vocabulary.
+
 ## Next Steps
 
+- See the [Advanced Settings](./advanced-settings) guide for more configuration options
 - See the [Tutorials](../tutorials/getting-started) for step-by-step walkthroughs
 - Check the [FAQ](../faq) for common questions
