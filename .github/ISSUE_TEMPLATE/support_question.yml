@@ -1,0 +1,82 @@
+name: Support Question
+description: Ask a question or get help with Knowii Voice AI
+title: '[Support]: '
+labels: ['question', 'needs-triage']
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for reaching out! Before creating a support question, please check:
+              - [FAQ](https://docs.voice-ai.knowii.net/faq)
+              - [User Guide](https://docs.voice-ai.knowii.net/user-guide/installation)
+              - [Getting Started Tutorial](https://docs.voice-ai.knowii.net/tutorials/getting-started)
+
+              For more personalized support, you can also email me directly at [support@knowii.net](mailto:support@knowii.net).
+
+    - type: checkboxes
+      id: search
+      attributes:
+          label: Search for existing answers
+          description: Please search the FAQ and existing issues to see if your question has already been answered.
+          options:
+              - label: I have checked the FAQ and searched existing issues
+                required: true
+
+    - type: textarea
+      id: question
+      attributes:
+          label: Your Question
+          description: What would you like help with?
+          placeholder: I'm trying to... but I'm having trouble with...
+      validations:
+          required: true
+
+    - type: textarea
+      id: tried
+      attributes:
+          label: What Have You Tried?
+          description: Let me know what you've already tried so I can provide better help.
+          placeholder: I've tried... but...
+      validations:
+          required: false
+
+    - type: dropdown
+      id: os
+      attributes:
+          label: Operating System
+          description: Which operating system are you using?
+          options:
+              - Windows 10
+              - Windows 11
+              - Linux (please specify in Additional Context)
+              - macOS (please specify in Additional Context)
+              - Other (please specify in Additional Context)
+      validations:
+          required: false
+
+    - type: input
+      id: version
+      attributes:
+          label: Knowii Voice AI Version
+          description: What version of Knowii Voice AI are you using? (Check in Settings > General)
+          placeholder: e.g., 0.1.0
+      validations:
+          required: false
+
+    - type: textarea
+      id: screenshots
+      attributes:
+          label: Screenshots
+          description: If applicable, add screenshots to help explain your question. You can drag and drop images here.
+          placeholder: Drag and drop screenshots here...
+      validations:
+          required: false
+
+    - type: textarea
+      id: context
+      attributes:
+          label: Additional Context
+          description: Add any other context about your question here.
+          placeholder: Any other relevant information...
+      validations:
+          required: false

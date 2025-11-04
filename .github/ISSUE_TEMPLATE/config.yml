@@ -1,0 +1,20 @@
+blank_issues_enabled: false
+contact_links:
+    - name: 📚 Documentation
+      url: https://docs.voice-ai.knowii.net
+      about: Read the full documentation, guides, and tutorials
+    - name: ❓ FAQ
+      url: https://docs.voice-ai.knowii.net/faq
+      about: Check frequently asked questions and common issues
+    - name: 🗺️ Roadmap
+      url: https://docs.voice-ai.knowii.net/roadmap
+      about: See what features are planned for future releases
+    - name: 💬 Knowii Community
+      url: https://www.knowii.net
+      about: Join the Knowii Community to discuss with other users
+    - name: 📧 Email Support
+      url: mailto:support@knowii.net
+      about: Email me directly for personalized support
+    - name: 🌐 Website
+      url: https://voice-ai.knowii.net
+      about: Visit the Knowii Voice AI website

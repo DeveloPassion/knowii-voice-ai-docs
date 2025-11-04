@@ -1,0 +1,118 @@
+name: Bug Report
+description: Report a bug or issue with Knowii Voice AI
+title: '[Bug]: '
+labels: ['bug', 'needs-triage']
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for taking the time to report this bug! Please fill out the information below to help me fix the issue.
+
+    - type: checkboxes
+      id: search
+      attributes:
+          label: Search for existing issues
+          description: Please search to see if an issue already exists for the bug you encountered.
+          options:
+              - label: I have searched the existing issues
+                required: true
+
+    - type: textarea
+      id: description
+      attributes:
+          label: Bug Description
+          description: A clear and concise description of what the bug is.
+          placeholder: Tell me what happened...
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: Steps to Reproduce
+          description: Steps to reproduce the behavior.
+          placeholder: |
+              1. Go to '...'
+              2. Click on '...'
+              3. Perform action '...'
+              4. See error
+      validations:
+          required: true
+
+    - type: textarea
+      id: expected
+      attributes:
+          label: Expected Behavior
+          description: What did you expect to happen?
+          placeholder: I expected...
+      validations:
+          required: true
+
+    - type: textarea
+      id: actual
+      attributes:
+          label: Actual Behavior
+          description: What actually happened?
+          placeholder: Instead, what happened was...
+      validations:
+          required: true
+
+    - type: dropdown
+      id: os
+      attributes:
+          label: Operating System
+          description: Which operating system are you using?
+          options:
+              - Windows 10
+              - Windows 11
+              - Linux (please specify in Additional Context)
+              - macOS (please specify in Additional Context)
+              - Other (please specify in Additional Context)
+      validations:
+          required: true
+
+    - type: input
+      id: version
+      attributes:
+          label: Knowii Voice AI Version
+          description: What version of Knowii Voice AI are you using? (Check in Settings > General)
+          placeholder: e.g., 0.1.0
+      validations:
+          required: true
+
+    - type: input
+      id: model
+      attributes:
+          label: AI Model
+          description: Which AI model were you using when the bug occurred?
+          placeholder: e.g., whisper-small, parakeet-base
+      validations:
+          required: false
+
+    - type: textarea
+      id: logs
+      attributes:
+          label: Error Messages or Logs
+          description: If applicable, add any error messages or log output.
+          placeholder: Paste error messages or logs here...
+          render: shell
+      validations:
+          required: false
+
+    - type: textarea
+      id: screenshots
+      attributes:
+          label: Screenshots
+          description: If applicable, add screenshots to help explain the problem. You can drag and drop images here.
+          placeholder: Drag and drop screenshots here...
+      validations:
+          required: false
+
+    - type: textarea
+      id: context
+      attributes:
+          label: Additional Context
+          description: Add any other context about the problem here.
+          placeholder: Any other relevant information...
+      validations:
+          required: false
