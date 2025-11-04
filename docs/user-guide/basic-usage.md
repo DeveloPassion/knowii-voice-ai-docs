@@ -17,11 +17,17 @@ The simplest way to use Knowii Voice AI:
 
 That's it! Works in any application - emails, documents, chat, browsers, IDEs, and more.
 
-## System Tray Icon
+## Main Window & System Tray
 
-Knowii Voice AI runs quietly in your system tray (near the clock):
+When you launch Knowii Voice AI, the main window appears by default (showing settings and features). The app also places an icon in your system tray (near the clock).
 
-- **Left-click** the icon to open the settings window
+**Important**: You can close the main window at any time - the app continues running in the background and remains fully functional.
+
+### System Tray Icon
+
+The system tray icon provides quick access to the app:
+
+- **Left-click** the icon to open/reopen the main window
 - **Right-click** the icon for quick access to:
     - Settings
     - Check for updates

@@ -16,11 +16,13 @@ If you haven't installed Knowii Voice AI yet, see the [Installation Guide](../us
 
 ## Step 1: Launch Knowii Voice AI
 
-After installation, Knowii Voice AI runs in your system tray:
+After installation, Knowii Voice AI starts with the main window visible (default behavior):
 
-1. **Look** for the Knowii Voice AI icon in your system tray (near the clock)
-2. The icon indicates the app is running
-3. **Left-click** the icon to open the settings window (if needed)
+1. The **main window** appears, showing the app's settings and features
+2. A **system tray icon** also appears near the clock (taskbar notification area)
+3. You can **close the main window** at any time - the app continues running in the background
+4. **Left-click** the system tray icon to reopen the main window whenever needed
+5. **Right-click** the system tray icon for quick access to common actions
 
 ## Step 2: Download Your First Model
 
@@ -40,9 +42,10 @@ Now let's record and transcribe your first text!
 1. **Open** any text application (e.g., Notepad, Word, email, browser)
 2. **Click** in a text field to place your cursor
 3. **Press and hold** `Ctrl+Space` (default shortcut)
-4. **Speak** clearly: "This is my first transcription with Knowii Voice AI"
-5. **Release** the shortcut key when done speaking
-6. **Watch** as your text appears automatically!
+4. **Wait** for the sound notification to finish
+5. **Speak** clearly: "This is my first transcription with Knowii Voice AI"
+6. **Release** the shortcut key when done speaking
+7. **Watch** as your text appears automatically!
 
 ## Step 4: Explore History
 
