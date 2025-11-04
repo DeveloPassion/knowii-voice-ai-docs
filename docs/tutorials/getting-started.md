@@ -108,16 +108,8 @@ Congratulations! You now know the basics of Knowii Voice AI.
 
 ### Continue Learning
 
-- Read the [Basic Usage](../user-guide/basic-usage) guide for more details
+- Read the [Basic Usage](../user-guide/basic-usage) guide for more details and tips for best results
 - Check the [FAQ](../faq) for common questions
-
-### Tips for Best Results
-
-- **Wait** until the start recording sound has finished playing
-- **Speak clearly** at a normal pace
-- **Minimize background noise** when recording
-- **Use punctuation** (pause naturally between sentences)
-- **Try different models** to find the best balance of speed and accuracy
 
 ### Need Help?
 

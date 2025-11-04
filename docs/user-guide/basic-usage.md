@@ -23,22 +23,23 @@ When you launch Knowii Voice AI, the main window appears by default (showing set
 
 **Important**: You can close the main window at any time - the app continues running in the background and remains fully functional.
 
-### System Tray Icon
-
-The system tray icon provides quick access to the app:
-
-- **Left-click** the icon to open/reopen the main window
-- **Right-click** the icon for quick access to:
-    - Settings
-    - Check for updates
-    - Cancel current operation
-    - Quit application
-
-The icon changes based on the application state:
+The main window's icon changes based on the application state:
 
 - **Idle**: Normal icon
 - **Recording**: Recording icon
 - **Transcribing**: Processing icon
+
+### System Tray Icon
+
+The system tray icon provides quick access to the app:
+
+- **Right-click** the icon for quick access to:
+    - The main window (Settings)
+    - Check for updates
+    - Cancel current operation
+    - Quit application
+
+The system tray icon also changes based on the application state.
 
 ## Keyboard Shortcuts
 
@@ -50,13 +51,11 @@ The icon changes based on the application state:
 
 ### Customizing Shortcuts
 
-1. **Click** the system tray icon to open settings
-2. Go to the **Shortcuts** tab
-3. **Click** on a shortcut to change it
+1. **Right-click** the system tray icon to open settings
+2. Go to the **General** tab
+3. **Click** on the shortcut to change it
 4. **Press** your desired key combination
 5. **Save** the changes
-
-All shortcuts can be customized to your preference.
 
 ## Transcription History
 
@@ -75,8 +74,8 @@ View all your past transcriptions:
 - **Edit** any transcription directly
 - **Double-click** to copy to clipboard
 - **Play back** audio recordings
-- **Delete** audio files while keeping text (saves space)
-- **Clear all** history when needed
+- **Delete** audio files while keeping text (saves space) or delete complete entries
+- **Clear all** history when needed (keeping the starred entries)
 
 ## Audio Settings
 
@@ -85,9 +84,8 @@ View all your past transcriptions:
 By default, Knowii Voice AI uses your system's default microphone. To change it:
 
 1. Open **Settings**
-2. Go to the **Audio** tab
-3. Select your preferred **microphone** from the dropdown
-4. Test with a recording
+2. Go to the **General** tab
+3. Select your preferred **recording device** from the dropdown
 
 ### Audio Feedback
 
@@ -95,27 +93,29 @@ Knowii Voice AI plays sounds when you start and stop recording:
 
 - **Customize** start and stop sounds
 - **Choose** from built-in themes
-- **Use your own** WAV or MP3 files
+- **Use your own** WAV or MP3 files (see [Application Data](./application-data) for details on where to place custom sound files)
 - **Adjust** volume (0.0 - 1.0)
 
-Configure in **Settings > Audio > Feedback Sounds**.
+Configure in **Settings > General**.
 
 ## AI Models
 
 ### Managing Models
 
 1. Open **Settings**
-2. Go to the **Models** tab
+2. Go to the **Transcription** tab
 3. **Download** new models
 4. **Switch** between models
 5. **Deactivate** a model to free memory
+
+**Tip**: You can also quickly switch to another downloaded model using the quick switcher in the bottom left
 
 ### Model Options
 
 Different models offer different trade-offs:
 
 - **Small models**: Faster, use less memory, slightly less accurate
-- **Large models**: Slower, use more memory, more accurate
+- **Large models**: Slower, use more memory, more accurate (but require more a powerful computer)
 - **Specialized models**: Optimized for specific use cases or languages
 
 ### Model Memory Management
@@ -123,10 +123,10 @@ Different models offer different trade-offs:
 Models can be configured to:
 
 - **Load automatically** on app start
-- **Auto-unload** after a period of inactivity (configurable)
+- **Auto-unload** after a period of inactivity
 - **Never unload** for instant transcription (uses more memory)
 
-Configure in **Settings > Models > Memory Management**.
+Configure in **Settings > Advanced > Performance**.
 
 ## Tips for Best Results
 

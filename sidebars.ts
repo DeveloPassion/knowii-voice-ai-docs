@@ -21,7 +21,11 @@ const sidebars = {
         {
             type: 'category',
             label: 'User Guide',
-            items: ['user-guide/installation', 'user-guide/basic-usage']
+            items: [
+                'user-guide/installation',
+                'user-guide/basic-usage',
+                'user-guide/application-data'
+            ]
         }
     ],
 
