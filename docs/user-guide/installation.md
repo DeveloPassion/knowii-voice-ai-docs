@@ -6,12 +6,15 @@ sidebar_position: 1
 
 ## System Requirements
 
-### Windows
+### Required Hardware
 
-- Windows 10 or Windows 11
 - 4GB RAM minimum (8GB or more recommended)
 - 500MB free disk space (this is enough to install the recommended AI model)
 - Optional: NVIDIA GPU with CUDA support for faster transcription
+
+### Windows
+
+- Windows 10 or Windows 11
 
 ### Linux
 
