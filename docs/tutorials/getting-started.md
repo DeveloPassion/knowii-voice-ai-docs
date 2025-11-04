@@ -19,13 +19,21 @@ If you haven't installed Knowii Voice AI yet, see the [Installation Guide](../us
 After installation, Knowii Voice AI starts with the main window visible (default behavior):
 
 1. On **first launch**, the app displays the **first-time setup wizard**
-2. The wizard will guide you through downloading your first AI model - this is **required** before you can use the app
-3. When choosing a model, select the one with the **"Recommended"** tag
-4. Once setup is complete, the **main window** shows the app's settings and features
+
+![First-time setup wizard](/img/screenshots/2025-11-03-onboarding.png)
+
+1. The wizard will guide you through downloading your first AI model - this is **required** before you can use the app
+2. When choosing a model, select the one with the **"Recommended"** tag
+3. Once the model has finished downloading, it will automatically be activated for you
+4. Customize the Quick Settings if you want/need, then click on "Let's Start"
 5. A **system tray icon** also appears near the clock (taskbar notification area)
 6. **Right-click** the system tray icon for quick access to common actions
 
-**Tip**: You can close the main window at any time - the app continues running in the background and remains fully functional.
+Here's what the main interface looks like:
+
+![Main interface](/img/screenshots/2025-11-03-settings-general.png)
+
+**Tip**: You can close the main window at any time; the app continues running in the background and remains fully functional.
 
 ## Step 2: Your First Recording
 
@@ -34,16 +42,23 @@ Now let's record and transcribe your first text!
 1. **Open** any text application (e.g., Notepad, Word, email, browser)
 2. **Click** in a text field to place your cursor
 3. **Press and hold** `Ctrl+Space` (default shortcut)
-4. **Wait** for the sound notification to finish
-5. **Speak** clearly: "This is my first transcription with Knowii Voice AI"
-6. **Release** the shortcut key when done speaking
-7. **Watch** as your text appears automatically!
+4. The recording overlay will appear on screen and you will hear a sound indicating that recording has started
+
+![Recording overlay](/img/screenshots/2025-11-04-recording-overlay.png)
+
+5. **Wait** for the sound notification to finish
+6. **Speak** clearly: "This is my first transcription with AI"
+7. **Release** the shortcut key when done speaking
+8. **Watch** as your text appears automatically!
 
 ## Step 3: Explore History
 
 Let's view your transcription history:
 
 1. Open the settings (right click on the tray icon and select "Settings")
+
+![Open settings from tray icon](/img/screenshots/2025-11-04-open-settings-from-tray.png)
+
 2. Go to the **History** tab
 3. You'll see your first transcription listed
 4. **Try** double-clicking it to copy to clipboard
