@@ -34,12 +34,19 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ### Next Releases
 
-- **Additional Language Models**: More language-specific models
-- **Voice Commands**: Control the app with voice
-- **Real-time Transcription**: See text as you speak (streaming mode)
-- **Speech Commands**: Control your computer with voice
-- **Advanced Analytics**: Transcription statistics and insights
-- **API**: Programmatic access for developers
+- **Additional Language Models**: More language-specific models for local and remote transcription and post-processing
+- **Smart AI-enabled Post-Processing**: Apply custom transformations to transcriptions: remove filler words, fix commonly misrecognized words, use AI. Configure AI-enabled pipelines, detect applications/context and go from raw transcriptions to specialized outputs
+- **Real-time Transcription**: See words appear in real-time as you speak, not after you finish
+- **Voice Trigger Words/Phrases**: Keyboard-less mode where a trigger word or phrase initiates recording and transcription
+- **Voice Commands & Action System**: Use your voice to trigger concrete actions
+- **Cross-Device Command & Control**: Use the app on one device to command other devices
+- **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions
+- **File Transcription**: Drag and drop audio files (meeting recordings, interviews, podcasts) to transcribe them
+- **Deeper Internationalization**: Deeper support for translations. Different keyboard shortcuts that transcribe in different languages
+- **Auto Update System**: Receive new versions automatically
+- **Portable Version**: Uncompress. Run. Transcribe. Everything stored in one folder
+- **CLI and API**: Integrate Knowii Voice AI with other applications and systems
+- **Usage Statistics**: Get statistics about your usage
 
 ## Long-Term Vision
 

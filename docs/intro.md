@@ -6,7 +6,7 @@ slug: /
 
 # Knowii Voice AI
 
-**Knowii Voice AI** is a privacy-first voice-to-text transcription application that runs entirely on your computer. Your voice never leaves your device.
+**Knowii Voice AI** is a privacy-first voice-to-text transcription application that runs entirely on your computer. Your voice never leaves your device by default.
 
 ## Why Knowii Voice AI?
 
