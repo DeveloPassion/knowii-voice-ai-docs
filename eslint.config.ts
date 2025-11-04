@@ -36,9 +36,9 @@ const config: Linter.Config[] = [
             'react/no-unescaped-entities': 'off' // Allow apostrophes and quotes in JSX
         }
     },
-    // Allow CommonJS require in .cjs and .release-it.ts files
+    // Allow CommonJS require in .cjs and .release-it.js files
     {
-        files: ['**/*.cjs', '.release-it.ts'],
+        files: ['**/*.cjs', '.release-it.js'],
         rules: {
             '@typescript-eslint/no-require-imports': 'off'
         }

@@ -125,20 +125,9 @@ This project uses:
 
 Available scopes: `all`, `a11y`, `code`, `deps`, `docs`, `i18n`, `qa`, `release`, `sec`, `ui`, `ux`, `build`, `deploy`, `api`, `guide`, `tutorial`, `roadmap`, `faq`, `config`, `search`, `nav`, `sidebar`, `footer`, `theme`
 
-### Versioning and Releases
+### Releases
 
-```bash
-npm run release        # Create a new release
-npm run release:alpha  # Create an alpha release
-npm run release:beta   # Create a beta release
-npm run release:rc     # Create a release candidate
-```
-
-Uses:
-
-- **Release-it** for automated versioning and changelog generation
-- **Conventional Changelog** for changelog generation from commits
-- Version is stored in `VERSION` file and `package.json`
+None
 
 ## Project Structure
 
@@ -274,10 +263,9 @@ When working on this documentation website:
 3. **Keep documentation in sync** with the main Knowii Voice AI project features
 4. **Use Prettier** for all formatting (runs automatically on commit)
 5. **Follow commit conventions** using commitizen
-6. **Update VERSION** file when releasing
-7. **Run type check** before committing: `npm run tsc`
-8. **Test the build** before committing: `npm run build`
-9. **Check the local site**: `npm start` to preview changes
+6. **Run type check** before committing: `npm run tsc`
+7. **Test the build** before committing: `npm run build`
+8. **Check the local site**: `npm start` to preview changes
 
 ### Common Tasks
 

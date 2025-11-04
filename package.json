@@ -1,5 +1,7 @@
 {
     "name": "knowii-voice-ai-docs",
+    "private": true,
+    "version": "0.0.1",
     "description": "Documentation website for Knowii Voice AI",
     "author": "DeveloPassion",
     "repository": {
@@ -10,8 +12,6 @@
         "url": "https://github.com/DeveloPassion/knowii-voice-ai-docs/issues"
     },
     "homepage": "https://docs.voice-ai.knowii.net",
-    "version": "0.0.1",
-    "private": true,
     "scripts": {
         "docusaurus": "docusaurus",
         "start": "docusaurus start --port 4000",
@@ -36,11 +36,6 @@
         "commit": "cz",
         "cm": "npm run commit",
         "commit:lint": "commitlint --from HEAD~1 --to HEAD --verbose",
-        "release": "release-it",
-        "release:final": "npm run release",
-        "release:alpha": "release-it --preRelease=alpha",
-        "release:beta": "release-it --preRelease=beta",
-        "release:rc": "release-it --preRelease=rc",
         "eslint": "eslint . --report-unused-disable-directives --max-warnings 0"
     },
     "lint-staged": {
@@ -54,8 +49,9 @@
             "config": ".cz-config.cjs"
         }
     },
-    "overrides": {
-        "@conventional-changelog/git-client": "^2.5.1"
+    "engines": {
+        "node": ">=20.0",
+        "npm": ">=10.1.0"
     },
     "dependencies": {
         "@docusaurus/core": "^3.9.2",
@@ -77,20 +73,17 @@
         "react-dom": "^19.2.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^20.1.0",
-        "@commitlint/config-conventional": "^20.0.0",
+        "@commitlint/cli": "20.1.0",
+        "@commitlint/config-conventional": "20.0.0",
         "@docusaurus/module-type-aliases": "^3.9.2",
         "@docusaurus/types": "^3.9.2",
         "@eslint/js": "^9.39.0",
-        "@release-it/bumper": "7.0.5",
-        "@release-it/conventional-changelog": "^10.0.1",
         "@tailwindcss/postcss": "^4.1.16",
         "@types/node": "^24.9.2",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.2",
-        "auto-changelog": "^2.5.0",
-        "commitizen": "^4.3.1",
-        "cz-customizable": "^7.5.1",
+        "commitizen": "4.3.1",
+        "cz-customizable": "7.5.1",
         "eslint": "^9.39.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-react": "^7.37.5",
@@ -101,15 +94,14 @@
         "postcss": "^8.5.6",
         "prettier": "^3.6.2",
         "prettier-plugin-tailwindcss": "^0.7.1",
-        "release-it": "^19.0.5",
         "tailwind-merge": "^3.3.1",
         "tailwindcss": "^4.1.16",
         "tailwindcss-animate": "^1.0.7",
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.46.3"
     },
-    "engines": {
-        "node": ">=20.0"
+    "optionalDependencies": {
+        "postman-code-generators": "^1.14.1"
     },
     "browserslist": {
         "production": [
@@ -122,8 +114,5 @@
             "last 3 firefox version",
             "last 5 safari version"
         ]
-    },
-    "optionalDependencies": {
-        "postman-code-generators": "^1.14.1"
     }
 }

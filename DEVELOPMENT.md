@@ -47,7 +47,6 @@ knowii-voice-ai-docs/
 ├── sidebars.ts                  # Sidebar navigation structure
 ├── tsconfig.json                # TypeScript configuration
 ├── .editorconfig                # Editor configuration
-├── .release-it.ts               # Release automation config
 ├── commitlint.config.ts         # Commit message linting
 ├── .cz-config.ts                # Commitizen configuration
 ├── package.json
@@ -210,88 +209,7 @@ npm run commit:lint
 
 ## Versioning & Releases
 
-This project uses [Semantic Versioning](https://semver.org/) and follows [Conventional Commits](https://www.conventionalcommits.org/).
-
-### Release Process
-
-The release process is automated using [release-it](https://github.com/release-it/release-it) with:
-- [@release-it/bumper](https://github.com/release-it/bumper) - Automatic version synchronization
-- [@release-it/conventional-changelog](https://github.com/release-it/conventional-changelog) - Changelog generation
-
-### Version Files
-
-Versions are maintained in multiple files and are **automatically synchronized** by the `@release-it/bumper` plugin during releases:
-
-- `package.json` - **Source of truth** (release-it bumps this first)
-- `VERSION` - Plain text version file (auto-updated by bumper)
-
-All files stay in sync automatically - you only need to run the release command.
-
-### Release Commands
-
-**Local Release (Recommended):**
-
-```bash
-npm run release                    # Full release with GitHub release
-npm run release -- --no-github     # Skip GitHub release creation
-```
-
-**Pre-release Versions:**
-
-```bash
-npm run release:alpha   # Alpha release (e.g., 1.0.0-alpha.0)
-npm run release:beta    # Beta release (e.g., 1.0.0-beta.0)
-npm run release:rc      # Release candidate (e.g., 1.0.0-rc.0)
-```
-
-### Running Releases Locally vs CI/CD
-
-You can run releases **locally**:
-
-**Local Release:**
-- Interactive prompts for version selection
-- Requires `GITHUB_TOKEN` environment variable (for GitHub releases)
-- Use `--no-github` flag to skip GitHub release and only push git tag
-- Git tag push automatically triggers CI/CD deployment workflow
-
-### What Happens During a Release
-
-1. **Version Bump**: Increments version in `package.json` based on conventional commits
-2. **Bumper Plugin**: Automatically updates `VERSION` file with new version
-3. **Generate Changelog**: Updates `CHANGELOG.md` using conventional commit messages
-4. **Git Commit**: Creates a release commit with message `chore(release): release v{version}`
-5. **Git Tag**: Creates an annotated tag `v{version}`
-6. **Push**: Pushes commit and tag to origin
-7. **GitHub Release** (if enabled): Creates a GitHub release with generated changelog
-8. **CI/CD Trigger**: GitHub Actions automatically deploys to GitHub Pages
-
-### Dry Run (Test Without Releasing)
-
-To preview what a release would do without actually releasing:
-
-```bash
-npx release-it --dry-run
-```
-
-### Requirements Before Releasing
-
-- Clean working directory (no uncommitted changes)
-- On `main` branch
-- TypeScript compilation successful (`npm run tsc`)
-- **For GitHub releases**: `GITHUB_TOKEN` environment variable set
-  - Create token at: https://github.com/settings/tokens
-  - Needs `repo` scope
-  - Or use `--no-github` flag to skip GitHub release
-
-### Changelog
-
-The changelog is automatically generated from conventional commit messages and includes:
-
-- Features
-- Bug Fixes
-- Documentation updates
-- Build System changes
-- CI/CD changes
+None
 
 ## Styling & Theming
 

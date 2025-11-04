@@ -1,0 +1,7 @@
+# Ignore artifacts:
+build
+node_modules
+CHANGELOG.md
+.claude/
+package.json
+package-lock.json
