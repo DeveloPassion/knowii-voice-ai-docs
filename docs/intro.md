@@ -10,11 +10,16 @@ slug: /
 
 ## Why Knowii Voice AI?
 
-- **Privacy First**: All processing happens locally. No cloud required. Your data stays on your device.
+- **Privacy First**: All processing happens locally by default. No cloud required. Your data stays on your device. No internet needed after the initial AI model download.
+- **You Actually Own It**: Pay once, own it forever. Every update, every new feature included. No subscription. No usage caps. No "premium tier."
+- **Works Everywhere**: Transcribe into every single application - emails, documents, chat, notes, browsers, IDEs. If you can type there, you can speak there.
 - **Simple to Use**: Press and hold a shortcut key to record, release to transcribe and paste. That's it!
-- **Fast & Accurate**: Powered by state-of-the-art AI models with GPU acceleration support.
-- **Works Everywhere**: Transcribe into any application - emails, documents, chat, notes, browsers, IDEs.
-- **Completely Offline**: No internet connection needed. No tracking. No telemetry.
+- **Fast & Accurate**: Powered by state-of-the-art AI models (Whisper, Parakeet) with GPU acceleration support.
+- **Multiple AI Models**: Choose between small and fast models or larger and more accurate ones. Switch anytime based on your needs.
+- **Searchable History**: Every transcription is saved and searchable. Your external memory. Find anything you said weeks ago in seconds.
+- **Multi-Language Support**: Many languages supported. Speak in one language and get transcriptions in another.
+
+Learn more about what makes Knowii Voice AI different on the [main website](https://voice-ai.knowii.net).
 
 ## Quick Start
 
