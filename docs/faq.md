@@ -28,13 +28,11 @@ Knowii Voice AI is currently free during the early access period. Future pricing
 
 ### How do I download Knowii Voice AI?
 
-Download the latest version from the [website](https://voice-ai.knowii.net#download).
+See the [Installation Guide](./user-guide/installation) for detailed download and installation instructions.
 
 ### What are the system requirements?
 
-- 4GB RAM minimum (8GB recommended)
-- 500MB free disk space
-- Optional: GPU with Vulkan support for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
+See the [Installation Guide](./user-guide/installation#required-hardware) for complete system requirements and hardware recommendations.
 
 ### Why do I need to download AI models?
 
@@ -50,14 +48,11 @@ The AI models are the "brains" that convert your voice to text. They're download
 
 ### How do I transcribe my voice?
 
-1. Press and hold `Ctrl+Space` (default shortcut)
-2. Speak clearly
-3. Release the shortcut
-4. Text appears automatically at your cursor position
+See the [Getting Started Tutorial](./tutorials/getting-started) for a complete step-by-step walkthrough of your first recording.
 
 ### Can I change the keyboard shortcut?
 
-Yes! Go to **Settings > Shortcuts** and click on the shortcut to change it to your preferred key combination.
+Yes! Go to **Settings > General** and click on the shortcut to change it to your preferred key combination.
 
 ### Does it work in all applications?
 
@@ -76,7 +71,7 @@ Typical accuracy is 90-95% for clear audio with good microphones.
 
 ### Can I transcribe in languages other than English?
 
-Yes! Knowii Voice AI supports multiple languages. Configure your language in **Settings > Transcription > Language**.
+Yes! Knowii Voice AI supports multiple languages. The default **Auto** setting automatically detects the language you're speaking and is recommended for most users. Only change the language in **Settings > Transcription > Language** if you're experiencing issues with automatic detection.
 
 ### What if the transcription has errors?
 
@@ -95,6 +90,8 @@ All data (transcriptions, audio recordings, settings) is stored locally on your 
 - **Windows**: `%APPDATA%/knowii-voice-ai/`
 - **Linux**: `~/.config/knowii-voice-ai/` or `$XDG_CONFIG_HOME/knowii-voice-ai/`
 
+See the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
+
 ### Can I delete my history?
 
 Yes! In the History tab, you can:
@@ -105,7 +102,7 @@ Yes! In the History tab, you can:
 
 ### Does Knowii Voice AI collect telemetry?
 
-No. Knowii Voice AI does not collect any telemetry, analytics, or usage data.
+No. Knowii Voice AI does not collect any telemetry, analytics, or usage data. See the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
 
 ### Is my audio recorded?
 
@@ -160,12 +157,12 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 1. **Check** that your microphone is connected and working
 2. **Verify** microphone permissions in system settings
 3. **Test** the microphone in another application
-4. **Select** the correct microphone in **Settings > Audio**
+4. **Select** the correct microphone in **Settings > General**
 
 ### Shortcut doesn't work
 
 1. **Check** that the shortcut isn't already used by another application
-2. Try a **different shortcut** in **Settings > Shortcuts**
+2. Try a **different shortcut** in **Settings > General**
 3. **Restart** the application after changing shortcuts
 
 ### Transcription is completely wrong
@@ -179,8 +176,10 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 
 1. **Check** your internet connection (required for downloads only)
 2. **Check** available disk space
-3. Try **downloading again** (downloads can be resumed)
-4. Try a **different model**
+3. **Close and restart** the application, then retry the download
+4. Try **downloading again** (downloads can be resumed)
+5. Try a **different model**
+6. If the issue persists, **Hugging Face** (where most models are downloaded from) may be experiencing downtime - check their [status page](https://status.huggingface.co/) or try again later
 
 ## Advanced
 
