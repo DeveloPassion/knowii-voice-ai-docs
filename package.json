@@ -103,6 +103,9 @@
     "optionalDependencies": {
         "postman-code-generators": "^1.14.1"
     },
+    "overrides": {
+        "tmp": "^0.2.4"
+    },
     "browserslist": {
         "production": [
             ">0.5%",
