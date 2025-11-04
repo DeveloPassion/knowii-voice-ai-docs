@@ -37,19 +37,53 @@ That's it! You're ready to go. For more details, check out the [Basic Usage](./u
 
 ### Voice-to-Text Made Simple
 
-Press and hold a keyboard shortcut to record your voice. Release to automatically transcribe and paste at your cursor position. Works in any application.
+Press and hold a keyboard shortcut to record your voice. Release to automatically transcribe and paste at your cursor position. Works in any application - emails, documents, chat, notes, browsers, IDEs, and more.
 
 ### Privacy Preserving
 
-Everything happens on your computer. No internet required. Your voice and transcriptions never leave your device by default.
+Everything happens on your computer by default. No internet required after initial model download. Your voice never leaves your device. All history stored locally. Zero tracking, zero telemetry.
 
-### Smart & Fast
+### Runs Quietly in Background
 
-GPU acceleration, automatic microphone detection, and high-quality transcription powered by cutting-edge AI models.
+Lives in your system tray (near the clock). No window cluttering your screen. Always ready when you need it. Right-click the tray icon to access settings and features.
 
-### History & Management
+### Smart Audio Processing
 
-View all past transcriptions, star favorites, search history, and even play back audio recordings.
+- Automatically uses your default microphone
+- Crystal-clear transcription results with GPU acceleration
+- Customize recording feedback sounds: choose separate sounds for start and end, or use your own (WAV/MP3 files)
+
+### Multiple AI Models
+
+- Easily download and manage transcription models
+- Switch between models or deactivate to free memory
+- Your selected model loads automatically when the app starts
+
+### Comprehensive History & Review
+
+- View all past transcriptions organized by date with collapsible groups
+- Edit any past transcription directly in the history
+- Star important transcriptions to keep them forever
+- Search history by text or filter to show only starred items
+- Double-click any transcription to copy it to clipboard
+- Play back audio recordings with built-in player
+- Delete audio files while keeping transcription text to save space
+- Clear all history when needed
+- All data stored locally on your device
+
+### Easy Getting Started
+
+- Simple onboarding wizard guides you through setup
+- Download your first AI model in just a few clicks
+- Configure your preferences and you're ready to go
+- No account or registration required
+
+### Smart Design
+
+- Automatically adapts to your screen size
+- Works perfectly on any display from laptop to ultrawide
+- Clean, modern interface
+- Designed to stay out of your way
 
 ## What's Next?
 
