@@ -60,6 +60,9 @@ Let's view your transcription history:
 ![Open settings from tray icon](/img/screenshots/2025-11-04-open-settings-from-tray.png)
 
 2. Go to the **History** tab
+
+![History screen](/img/screenshots/2025-11-03-history.png)
+
 3. You'll see your first transcription listed
 4. **Try** double-clicking it to copy to clipboard
 5. **Try** starring it by clicking the star icon
