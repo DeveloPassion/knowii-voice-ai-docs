@@ -25,6 +25,7 @@ const sidebars = {
                 'user-guide/installation',
                 'user-guide/basic-usage',
                 'user-guide/advanced-settings',
+                'user-guide/debug-settings',
                 'user-guide/application-data'
             ]
         }

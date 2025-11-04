@@ -82,7 +82,7 @@ Personalize Knowii Voice AI to your preferences:
 
 ![Model Switcher](/img/screenshots/2025-11-04-model-switcher.png)
 
-- You can press **Ctrl+Shift+D** to show/hide the debug menu
+- You can press **Ctrl+Shift+D** (or **Cmd+Shift+D** on macOS) to show/hide the Debug tab (see [Debug Settings](../user-guide/debug-settings) for advanced troubleshooting options)
 
 ## Step 5: Try Advanced Features
 
