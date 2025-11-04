@@ -15,7 +15,7 @@ sidebar_position: 1
 
 ### Linux
 
-- Not currently supported. Linux support is planned for a future release.
+- Coming soon
 
 ### macOS
 
