@@ -39,8 +39,9 @@ const config = {
     },
 
     // Enable Docusaurs Faster: https://github.com/facebook/docusaurus/issues/10556
+    // Note: experimental_faster can cause hot reload issues, disabled for now
     future: {
-        experimental_faster: true,
+        experimental_faster: false,
         v4: true
     },
 
