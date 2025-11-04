@@ -10,7 +10,7 @@ This tutorial will walk you through using Knowii Voice AI for the first time.
 
 - Knowii Voice AI installed on your computer
 - A working microphone
-- Completed the initial setup wizard
+- Completed the first-time setup wizard
 
 If you haven't installed Knowii Voice AI yet, see the [Installation Guide](../user-guide/installation).
 
@@ -18,24 +18,16 @@ If you haven't installed Knowii Voice AI yet, see the [Installation Guide](../us
 
 After installation, Knowii Voice AI starts with the main window visible (default behavior):
 
-1. The **main window** appears, showing the app's settings and features
-2. A **system tray icon** also appears near the clock (taskbar notification area)
-3. You can **close the main window** at any time - the app continues running in the background
-4. **Left-click** the system tray icon to reopen the main window whenever needed
-5. **Right-click** the system tray icon for quick access to common actions
+1. On **first launch**, the app displays the **first-time setup wizard**
+2. The wizard will guide you through downloading your first AI model - this is **required** before you can use the app
+3. When choosing a model, select the one with the **"Recommended"** tag
+4. Once setup is complete, the **main window** shows the app's settings and features
+5. A **system tray icon** also appears near the clock (taskbar notification area)
+6. **Right-click** the system tray icon for quick access to common actions
 
-## Step 2: Download Your First Model
+**Tip**: You can close the main window at any time - the app continues running in the background and remains fully functional.
 
-If you haven't already downloaded a model during setup:
-
-1. **Open** the Knowii Voice AI settings window
-2. Go to the **Models** tab
-3. **Click** "Download Model"
-4. Choose a model (recommended: start with a **small model** for faster downloads)
-5. **Wait** for the download to complete
-6. The model will automatically load when ready
-
-## Step 3: Your First Recording
+## Step 2: Your First Recording
 
 Now let's record and transcribe your first text!
 
@@ -47,17 +39,17 @@ Now let's record and transcribe your first text!
 6. **Release** the shortcut key when done speaking
 7. **Watch** as your text appears automatically!
 
-## Step 4: Explore History
+## Step 3: Explore History
 
 Let's view your transcription history:
 
-1. **Click** the system tray icon
+1. Open the settings (right click on the tray icon and select "Settings")
 2. Go to the **History** tab
 3. You'll see your first transcription listed
 4. **Try** double-clicking it to copy to clipboard
 5. **Try** starring it by clicking the star icon
 
-## Step 5: Customize Settings
+## Step 4: Customize Settings
 
 Personalize Knowii Voice AI to your preferences:
 
@@ -75,7 +67,7 @@ Personalize Knowii Voice AI to your preferences:
 3. **Press** your preferred key combination
 4. **Save** changes
 
-## Step 6: Try Advanced Features
+## Step 5: Try Advanced Features
 
 ### Word Replacement
 

@@ -25,7 +25,7 @@ Learn more about what makes Knowii Voice AI different on the [main website](http
 
 1. **Download** Knowii Voice AI from your [Gumroad Library](https://gumroad.com/library) or from the [Knowii Community](https://www.knowii.net) website, depending on where you bought it from
 2. **Install** and launch the application
-3. **Download** your first AI transcription model (you'll be guided through this on first launch)
+3. **Download** your first AI transcription model (the first-time setup wizard will guide you through this)
 4. **Press and hold** `Ctrl+Space` to record your voice (wait for the sound notification to finish before speaking)
 5. **Release** to transcribe and automatically paste the text
 

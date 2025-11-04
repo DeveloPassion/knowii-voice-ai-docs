@@ -45,8 +45,8 @@ Choose the installer for your platform:
 
 On first launch, Knowii Voice AI will:
 
-1. **Show** the onboarding wizard
-2. **Guide you** through downloading your first AI transcription model
+1. **Show** the first-time setup wizard
+2. **Guide you** through downloading your first AI transcription model (required)
 3. **Configure** basic settings
 4. **Start** running in your system tray
 
