@@ -16,7 +16,6 @@ This page outlines the current and planned features for Knowii Voice AI.
 ### Next Releases
 
 - **Linux Support**: Native Linux version with Wayland/Hyprland compatibility (#76)
-- **macOS Support**: Native macOS version (#180)
 - **Home screen** (#52)
 - **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 - **Prevent sleep while recording** (#109)
@@ -46,6 +45,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Allow selecting a different folder for the history** (#115, #116, #117, #118)
 - **Easily add and use custom sound files** (#153)
 - **Log file for better troubleshooting** (#9)
+- **macOS Support**: Native macOS version (#180)
 
 ## Long-Term Vision
 

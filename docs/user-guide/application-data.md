@@ -20,10 +20,6 @@ Replace `<username>` with your Windows username.
 
 **Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai`, and press Enter.
 
-### Linux & macOS
-
-Linux and macOS support is coming soon. Data locations will be documented when these platforms are available.
-
 ## What's Stored
 
 The application data folder contains:

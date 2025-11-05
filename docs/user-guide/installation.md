@@ -18,11 +18,11 @@ sidebar_position: 1
 
 ### Linux
 
-- Coming soon
+- Not supported yet
 
 ### macOS
 
-- Coming soon
+- Not supported yet
 
 ## Download
 

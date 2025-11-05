@@ -21,8 +21,8 @@ Knowii Voice AI is currently free during the early access period. Future pricing
 ### What operating systems are supported?
 
 - **Windows**: 10 and 11 (fully supported)
-- **Linux**: Coming Soon
-- **macOS**: Coming Soon
+- **Linux**: Not supported yet
+- **macOS**: Not supported yet
 
 ## Installation & Setup
 

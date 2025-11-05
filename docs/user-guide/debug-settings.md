@@ -14,7 +14,7 @@ Debug settings provide low-level configuration options for troubleshooting issue
 
 The Debug tab is hidden by default. To show or hide it:
 
-1. **Press** `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (macOS)
+1. **Press** `Ctrl+Shift+D`
 2. The **Debug** tab will appear in the settings sidebar (between Advanced and About)
 3. **Press the shortcut again** to hide the Debug tab
 
