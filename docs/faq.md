@@ -157,7 +157,7 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 1. **Check** that your microphone is connected and working
 2. **Verify** microphone permissions in system settings
 3. **Test** the microphone in another application
-4. **Select** the correct microphone in **Settings > General**
+4. **Select** the correct microphone in **Settings > Audio**
 
 ### Shortcut doesn't work
 

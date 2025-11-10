@@ -57,7 +57,7 @@ The application data folder contains:
 - **sounds/**: Folder for custom start/stop recording sounds
 - Place your custom WAV or MP3 files in this folder
 - The app will find them automatically and make them available in the settings
-- You can then select them from **Settings > General** (Audio Feedback section)
+- You can then select them from **Settings > Audio**
 
 ## Managing Application Data
 

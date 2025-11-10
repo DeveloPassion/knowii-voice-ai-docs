@@ -84,7 +84,7 @@ View all your past transcriptions:
 By default, Knowii Voice AI uses your system's default microphone. To change it:
 
 1. Open **Settings**
-2. Go to the **General** tab
+2. Go to the **Audio** tab
 3. Select your preferred **recording device** from the dropdown
 
 ### Audio Feedback
@@ -96,7 +96,7 @@ Knowii Voice AI plays sounds when you start and stop recording:
 - **Use your own** WAV or MP3 files (see [Application Data](./application-data) for details on where to place custom sound files)
 - **Adjust** volume (0.0 - 1.0)
 
-Configure in **Settings > General**.
+Configure in **Settings > Audio**.
 
 ## AI Models
 
@@ -147,6 +147,12 @@ The AI model automatically adds basic punctuation. For better results:
 ### Language
 
 Knowii Voice AI supports multiple languages. Configure your language in **Settings > Transcription > Language**.
+
+**Important**:
+
+- The available language options depend on the active AI model's capabilities
+- Some models support only specific languages
+- When no model is active, only "Auto Detect" is available
 
 ### Custom Words
 
