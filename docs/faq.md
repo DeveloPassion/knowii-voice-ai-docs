@@ -42,7 +42,41 @@ The AI models are the "brains" that convert your voice to text. They're download
 
 - **Small models**: Faster, use less memory, slightly less accurate - good for most use cases
 - **Large models**: Slower, use more memory, more accurate - best for high-accuracy needs
+- **English-only models**: Optimized for English-only transcription, typically faster than multi-language equivalents
 - Start with a small model and upgrade if needed
+
+### What models are available?
+
+Knowii Voice AI supports multiple AI transcription models:
+
+#### Parakeet Models
+
+- **Parakeet V3** (Recommended): NVIDIA's state-of-the-art model. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
+
+#### Whisper Models (Multi-Language)
+
+These models support 99 languages:
+
+- **Tiny**: Very fast, basic accuracy. 78 MB, ~0.5GB RAM
+- **Small**: Fast and quite accurate. 488 MB, ~2GB RAM
+- **Medium**: Accurate but slower. 1520 MB, ~5GB RAM
+- **Large V3 Turbo**: Accurate but slow. 1620 MB, ~6GB RAM
+- **Large V3**: Highest accuracy but slowest. 3100 MB, ~10GB RAM
+
+#### Whisper Models (English-Only)
+
+Optimized specifically for English transcription:
+
+- **Tiny (English only)**: Very fast, English-only. 78 MB, ~0.5GB RAM
+- **Base (English only)**: Fast, English-only. 148 MB, ~1GB RAM
+- **Small (English only)**: Fast and accurate, English-only. 488 MB, ~2GB RAM
+- **Medium (English only)**: Accurate, English-only. 1520 MB, ~5GB RAM
+
+**Notes**:
+
+- Larger models require more powerful hardware
+- English-only models are optimized for English and cannot transcribe other languages
+- You can download and switch between models at any time
 
 ## Usage
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 ---
 
 # Debug Settings
@@ -30,12 +30,18 @@ You can toggle debug mode on/off at any time using the keyboard shortcut. The se
 
 Controls how transcribed text is inserted into applications:
 
-- **Clipboard (Ctrl+V)** (default): Simulates Ctrl/Cmd+V keystrokes to paste
+- **Clipboard (Ctrl+V)** (default on Windows/macOS): Simulates Ctrl/Cmd+V keystrokes to paste
     - Most compatible with applications
     - Works in virtually all text fields
     - Temporarily modifies clipboard (see [Advanced Settings](./advanced-settings#clipboard-handling) for clipboard behavior options)
 
-- **Direct**: Inputs keystrokes directly into text field
+- **Clipboard (Shift+Insert)** (Windows/Linux only): Simulates Shift+Insert keystrokes to paste
+    - More universal for terminal applications
+    - Works better in some Linux/X11 applications
+    - Alternative to Ctrl+V for applications that don't respond well to it
+    - Temporarily modifies clipboard (see [Advanced Settings](./advanced-settings#clipboard-handling) for clipboard behavior options)
+
+- **Direct** (default on Linux): Inputs keystrokes directly into text field
     - Bypasses clipboard completely
     - May not work in all applications
     - Useful for troubleshooting clipboard-related issues
@@ -49,6 +55,7 @@ The "Direct" paste method may not work correctly in all applications. Only use t
 - If transcriptions aren't being pasted correctly
 - If clipboard conflicts occur with other applications
 - For troubleshooting pasting issues in specific applications
+- If using terminal applications on Linux/Windows (try Shift+Insert method)
 
 ### Word Correction Threshold
 
@@ -128,9 +135,11 @@ When Always-On Microphone is enabled:
 
 If transcriptions aren't being pasted correctly:
 
-1. Try switching **Paste Method** from "Clipboard" to "Direct" (or vice versa)
+1. Try switching **Paste Method** between the available options:
+    - On Windows/Linux: Try "Clipboard (Shift+Insert)" if Ctrl+V doesn't work
+    - Try "Direct" mode if clipboard methods don't work
 2. Test in the problematic application
-3. If Direct mode works, report the application name to me at support@knowii.net
+3. If one method works better than others, report the details to me at support@knowii.net
 
 ### Custom Words Not Working
 

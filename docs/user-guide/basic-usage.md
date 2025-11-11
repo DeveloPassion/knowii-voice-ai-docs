@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Basic Usage
@@ -114,9 +114,13 @@ Configure in **Settings > Audio**.
 
 Different models offer different trade-offs:
 
+- **Parakeet models**: Fast and accurate with automatic language detection (25 European languages)
+- **Whisper models (multi-language)**: Support 99 languages, available in various sizes from Tiny to Large V3
+- **Whisper models (English-only)**: Optimized specifically for English transcription, cannot transcribe other languages
 - **Small models**: Faster, use less memory, slightly less accurate
-- **Large models**: Slower, use more memory, more accurate (but require more a powerful computer)
-- **Specialized models**: Optimized for specific use cases or languages
+- **Large models**: Slower, use more memory, more accurate (but require a more powerful computer)
+
+For a complete list of available models with sizes and specifications, see the [FAQ](../faq#what-models-are-available)
 
 ### Model Memory Management
 
