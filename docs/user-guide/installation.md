@@ -64,6 +64,22 @@ Knowii Voice AI supports **Vulkan** out of the box for GPU-accelerated transcrip
 
 Right-click the installer, select "Properties", and check "Unblock" before running.
 
+### Windows: "Windows protected your PC" warning
+
+When launching the installer, Windows SmartScreen may display a warning: "Windows protected your PC". This is normal for new applications that don't yet have a large number of downloads.
+
+To proceed with installation:
+
+1. Click on **"More info"**
+
+![Windows SmartScreen - More info](/img/screenshots/install/2025-11-11-install-01.png)
+
+2. Click on **"Run anyway"**
+
+![Windows SmartScreen - Run anyway](/img/screenshots/install/2025-11-11-install-02.png)
+
+The installer will then launch normally. This warning appears because the application doesn't have an expensive code signing certificate yet, not because it's unsafe.
+
 ### Windows: Installing to Program Files
 
 If you want to install Knowii Voice AI in the Program Files folder, you must run the installer as administrator:
