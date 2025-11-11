@@ -10,14 +10,13 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ### In Progress 🔨
 
-- **Auto Update System**: Receive new versions automatically (#65, #35)
 - **Signed binaries** (#62)
+- **Linux Support**: Native Linux version with Wayland/Hyprland compatibility (#76)
+- **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 
 ### Next Releases
 
-- **Linux Support**: Native Linux version with Wayland/Hyprland compatibility (#76)
 - **Home screen** (#52)
-- **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 - **Prevent sleep while recording** (#109)
 - **Smart AI-enabled Post-Processing**: Apply custom transformations to transcriptions: remove filler words, fix commonly misrecognized words, use AI. Configure AI-enabled pipelines, detect applications/context and go from raw transcriptions to specialized outputs (#24, #18, #19, #20, #49, #124)
 - **Hybrid Push-to-Talk** (#139)
