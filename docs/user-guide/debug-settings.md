@@ -24,38 +24,9 @@ You can toggle debug mode on/off at any time using the keyboard shortcut. The se
 
 ## Debug Options
 
-### Paste Method
-
-**Location**: Settings > Debug > Paste Method
-
-Controls how transcribed text is inserted into applications:
-
-- **Clipboard (Ctrl+V)** (default on Windows/macOS): Simulates Ctrl/Cmd+V keystrokes to paste
-    - Most compatible with applications
-    - Works in virtually all text fields
-    - Temporarily modifies clipboard (see [Advanced Settings](./advanced-settings#clipboard-handling) for clipboard behavior options)
-
-- **Clipboard (Shift+Insert)** (Windows/Linux only): Simulates Shift+Insert keystrokes to paste
-    - More universal for terminal applications
-    - Works better in some Linux/X11 applications
-    - Alternative to Ctrl+V for applications that don't respond well to it
-    - Temporarily modifies clipboard (see [Advanced Settings](./advanced-settings#clipboard-handling) for clipboard behavior options)
-
-- **Direct** (default on Linux): Inputs keystrokes directly into text field
-    - Bypasses clipboard completely
-    - May not work in all applications
-    - Useful for troubleshooting clipboard-related issues
-
-:::warning
-The "Direct" paste method may not work correctly in all applications. Only use this option if you're experiencing issues with the default clipboard method or if I've recommended it for troubleshooting.
+:::info[Looking for Paste Settings?]
+Paste Method and Clipboard Handling settings have been moved to **[Advanced Settings](./advanced-settings#paste-options)** for easier access. The Debug tab now focuses exclusively on debugging and troubleshooting options.
 :::
-
-**When to change:**
-
-- If transcriptions aren't being pasted correctly
-- If clipboard conflicts occur with other applications
-- For troubleshooting pasting issues in specific applications
-- If using terminal applications on Linux/Windows (try Shift+Insert method)
 
 ### Word Correction Threshold
 
@@ -133,7 +104,7 @@ When Always-On Microphone is enabled:
 
 ### Pasting Issues
 
-If transcriptions aren't being pasted correctly:
+If transcriptions aren't being pasted correctly, adjust the paste settings in **[Advanced Settings > Paste](./advanced-settings#paste-options)**:
 
 1. Try switching **Paste Method** between the available options:
     - On Windows/Linux: Try "Clipboard (Shift+Insert)" if Ctrl+V doesn't work

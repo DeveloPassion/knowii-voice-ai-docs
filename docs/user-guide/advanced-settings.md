@@ -48,7 +48,7 @@ The overlay shows:
 
 ### Translate to English
 
-**Location**: Settings > Advanced
+**Location**: Settings > Advanced > Transcription
 
 - Automatically translate speech from other languages to English
 - Only available with Whisper models (not supported by Parakeet)
@@ -57,9 +57,40 @@ The overlay shows:
 
 **Note**: Translation requires more processing time than standard transcription.
 
+## Paste Options
+
+### Paste Method
+
+**Location**: Settings > Advanced > Paste
+
+Controls how transcribed text is inserted into applications:
+
+- **Clipboard (Ctrl+V)** (default on Windows/macOS): Simulates Ctrl/Cmd+V keystrokes to paste
+    - Most compatible with applications
+    - Works in virtually all text fields
+    - Temporarily modifies clipboard (see Clipboard Handling below for behavior options)
+
+- **Clipboard (Shift+Insert)** (Windows/Linux only): Simulates Shift+Insert keystrokes to paste
+    - More universal for terminal applications
+    - Works better in some Linux/X11 applications
+    - Alternative to Ctrl+V for applications that don't respond well to it
+    - Temporarily modifies clipboard (see Clipboard Handling below for behavior options)
+
+- **Direct** (default on Linux): Inputs keystrokes directly into text field
+    - Bypasses clipboard completely
+    - May not work in all applications
+    - Useful for troubleshooting clipboard-related issues
+
+**When to change:**
+
+- If transcriptions aren't being pasted correctly
+- If clipboard conflicts occur with other applications
+- For troubleshooting pasting issues in specific applications
+- If using terminal applications on Linux/Windows (try Shift+Insert method)
+
 ### Clipboard Handling
 
-**Location**: Settings > Advanced
+**Location**: Settings > Advanced > Paste
 
 Control what happens to your clipboard after transcription:
 
