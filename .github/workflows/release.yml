@@ -7,6 +7,9 @@ on:
                 description: 'Tag name (e.g., 1.0.0, 2024-01-15, release-candidate-1)'
                 required: true
                 type: string
+    push:
+        tags:
+            - '**'
 
 permissions:
     contents: write
@@ -22,21 +25,31 @@ jobs:
                   fetch-depth: 0
 
             - name: Configure Git
+              if: github.event_name == 'workflow_dispatch'
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
 
             - name: Create and push tag
+              if: github.event_name == 'workflow_dispatch'
               run: |
                   git tag "${{ inputs.tag }}"
                   git push origin "${{ inputs.tag }}"
 
+            - name: Determine tag name
+              id: tag
+              run: |
+                  if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+                      echo "name=${{ inputs.tag }}" >> $GITHUB_OUTPUT
+                  else
+                      echo "name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+                  fi
+
             - name: Create GitHub Release
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              uses: softprops/action-gh-release@v2
               with:
-                  tag_name: ${{ inputs.tag }}
-                  release_name: Release ${{ inputs.tag }}
+                  tag_name: ${{ steps.tag.outputs.name }}
+                  name: Release ${{ steps.tag.outputs.name }}
                   draft: false
                   prerelease: false
+                  generate_release_notes: true
