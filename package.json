@@ -36,7 +36,8 @@
         "commit": "cz",
         "cm": "npm run commit",
         "commit:lint": "commitlint --from HEAD~1 --to HEAD --verbose",
-        "eslint": "eslint . --report-unused-disable-directives --max-warnings 0"
+        "eslint": "eslint . --report-unused-disable-directives --max-warnings 0",
+        "release": "read -p 'Enter tag name: ' TAG && git tag \"$TAG\" && git push origin \"$TAG\" && echo \"Tag $TAG created and pushed. Deployment will start automatically.\""
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
