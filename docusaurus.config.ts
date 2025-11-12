@@ -29,7 +29,7 @@ const config = {
             tagName: 'script',
             attributes: {
                 'defer': 'defer',
-                'data-domain': 'voice-ai.knowii.net',
+                'data-domain': 'docs.voice-ai.knowii.net',
                 'data-api':
                     'https://blue-bar-dsebastien-19fd.developassion.workers.dev/api/v1/event',
                 'src': 'https://blue-bar-dsebastien-19fd.developassion.workers.dev/content/script.js'
