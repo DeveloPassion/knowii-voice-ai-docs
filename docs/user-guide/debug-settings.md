@@ -33,9 +33,8 @@ You can toggle debug mode on/off at any time using the keyboard shortcut. The se
 
 ## Debug Options
 
-:::info[Looking for Paste Settings?]
-Paste Method and Clipboard Handling settings have been moved to **[Advanced Settings](./advanced-settings#paste-options)** for easier access. The Debug tab now focuses exclusively on debugging and troubleshooting options.
-:::
+:::info[Looking for Other Settings?]
+The Debug tab focuses exclusively on low-level debugging and troubleshooting options.
 
 ### Word Correction Threshold
 
@@ -110,16 +109,6 @@ When Always-On Microphone is enabled:
 - For normal daily use (default behavior is sufficient)
 
 ## Troubleshooting with Debug Settings
-
-### Pasting Issues
-
-If transcriptions aren't being pasted correctly, adjust the paste settings in **[Advanced Settings > Paste](./advanced-settings#paste-options)**:
-
-1. Try switching **Paste Method** between the available options:
-    - On Windows/Linux: Try "Clipboard (Shift+Insert)" if Ctrl+V doesn't work
-    - Try "Direct" mode if clipboard methods don't work
-2. Test in the problematic application
-3. If one method works better than others, report the details to me at support@knowii.net
 
 ### Custom Words Not Working
 
