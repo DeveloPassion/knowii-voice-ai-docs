@@ -175,6 +175,10 @@ const config = {
                             {
                                 label: 'FAQ',
                                 to: '/faq'
+                            },
+                            {
+                                label: 'Support',
+                                to: '/support'
                             }
                         ]
                     },

@@ -92,7 +92,27 @@ To help me assist you more quickly, please provide:
 3. **Screenshots or logs** (if applicable):
     - Error messages
     - Settings screenshots
-    - Log files (if relevant)
+    - Log files (see below for how to find them)
+
+### How to Find Log Files
+
+Log files contain detailed information about what the application is doing and can be crucial for diagnosing issues.
+
+**Windows:**
+
+Log files are stored in:
+
+```
+C:\Users\<username>\AppData\Roaming\knowii-voice-ai
+```
+
+Replace `<username>` with your Windows username.
+
+**Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai`, and press Enter.
+
+Look for files with `.log` extension. When reporting an issue, please include the most recent log files.
+
+**Note**: See the [Application Data](./user-guide/application-data) page for more details about where Knowii Voice AI stores all its data.
 
 ## Additional Resources
 

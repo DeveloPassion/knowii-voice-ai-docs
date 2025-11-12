@@ -92,9 +92,20 @@ body:
     - type: textarea
       id: logs
       attributes:
-          label: Error Messages or Logs
-          description: If applicable, add any error messages or log output.
-          placeholder: Paste error messages or logs here...
+          label: Log Files
+          description: |
+              **Please attach your log files to help diagnose the issue.**
+
+              **Where to find log files:**
+              - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\` (Press Win+R, type `%APPDATA%\knowii-voice-ai`)
+              - Look for files with `.log` extension
+
+              You can either:
+              1. Paste the relevant log contents below, OR
+              2. Attach the log files directly to this issue (drag and drop files in the description after creating the issue)
+
+              See the [Support page](https://docs.voice-ai.knowii.net/support#how-to-find-log-files) for more details.
+          placeholder: Paste log contents here or attach log files after creating the issue...
           render: shell
       validations:
           required: false

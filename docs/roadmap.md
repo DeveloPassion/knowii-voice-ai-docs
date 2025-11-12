@@ -53,7 +53,6 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Allow selecting a different folder for models** (#40)
 - **Allow selecting a different folder for the history** (#115, #116, #117, #118)
 - **Easily add and use custom sound files** (#153)
-- **Log file for better troubleshooting** (#9)
 - **macOS Support**: Native macOS version (#180)
 
 ## Long-Term Vision
