@@ -169,16 +169,8 @@ const config = {
                                 to: '/tutorials/getting-started'
                             },
                             {
-                                label: 'Release Notes',
-                                to: '/release-notes'
-                            },
-                            {
                                 label: 'FAQ',
                                 to: '/faq'
-                            },
-                            {
-                                label: 'Support',
-                                to: '/support'
                             }
                         ]
                     },
@@ -192,6 +184,14 @@ const config = {
                             {
                                 label: 'Roadmap',
                                 to: '/roadmap'
+                            },
+                            {
+                                label: 'Release Notes',
+                                to: '/release-notes'
+                            },
+                            {
+                                label: 'Support',
+                                to: '/support'
                             }
                         ]
                     },
