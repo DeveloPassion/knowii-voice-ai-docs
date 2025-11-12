@@ -70,6 +70,13 @@ The application data folder contains:
 - The app will find them automatically and make them available in the settings
 - You can then select them from **Settings > Audio**
 
+### Log Files
+
+- **logs/**: Folder containing application log files for troubleshooting and diagnostics
+- Log files are automatically generated to track application behavior and errors
+- Useful when reporting issues or debugging problems
+- See the [Support page](../support#how-to-find-log-files) for information on using log files when reporting issues
+
 ## Managing Application Data
 
 ### Backing Up Your Data

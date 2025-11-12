@@ -28,18 +28,17 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 **Enhanced Troubleshooting**
 
 - Log files are now automatically generated for better troubleshooting and diagnostics
-- Log files are stored in your application data folder (`%APPDATA%\knowii-voice-ai` on Windows)
+- Log files are stored in a `logs` folder within your application data folder (`%APPDATA%\knowii-voice-ai\logs` on Windows)
 - See the [Support page](/support#how-to-find-log-files) for instructions on locating log files when reporting issues
 
 ### Bug Fixes
 
 **Update System Reliability**
 
-- Fixed critical issues with the automatic update system that could prevent the app from checking for or downloading updates correctly
-- Added extensive logging to help diagnose any update-related issues
+- Fixed critical issues with the automatic update system that cause the application to start on startup
 - Improved error handling throughout the update process
 
-**Note**: If you experienced issues with updates in previous versions, this release resolves those problems. The update system should now work reliably across all platforms.
+**Note**: You have to download this version manually. Moving forward though, the update system should work reliably.
 
 ---
 

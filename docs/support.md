@@ -103,14 +103,14 @@ Log files contain detailed information about what the application is doing and c
 Log files are stored in:
 
 ```
-C:\Users\<username>\AppData\Roaming\knowii-voice-ai
+C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\
 ```
 
 Replace `<username>` with your Windows username.
 
-**Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai`, and press Enter.
+**Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai\logs`, and press Enter.
 
-Look for files with `.log` extension. When reporting an issue, please include the most recent log files.
+Look for files with `.log` extension in the `logs` folder. When reporting an issue, please include the most recent log files.
 
 **Note**: See the [Application Data](./user-guide/application-data) page for more details about where Knowii Voice AI stores all its data.
 
