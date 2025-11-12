@@ -243,6 +243,16 @@ Not currently. API access is being considered for future releases. See the [Road
 
 There is a basic one but it's not documented yet and its features are limited. Improvements are planned for future releases. See the [Roadmap](./roadmap).
 
+### What is the relationship to Handy.computer?
+
+Knowii Voice AI is a fork of [Handy](https://github.com/cjpais/Handy). Handy is licensed under the MIT license, which explicitly allows anyone to use, modify, and redistribute the code. That's exactly what I've done here.
+
+Just because it's a fork doesn't mean it's the same thing. I've recreated the entire frontend, implemented different features, and taken different paths forward. The projects share common origins but have distinct goals and functionality. You can see what's been implemented in the [Release Notes](./release-notes) and what's planned in the [Roadmap](./roadmap).
+
+The decision to keep Knowii Voice AI closed-source comes down to sustainability and the resources needed for ongoing development and support. I intend to contribute improvements back to the original Handy project over time.
+
+This is how open source is supposed to work - permissive licenses enable people to build on existing work and take it in new directions.
+
 ## Still Need Help?
 
 Can't find the answer you're looking for? Visit the [Support](./support) page for all available help options including:
