@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: General Settings - Knowii Voice AI
+title: General Settings
 description: Configure core Knowii Voice AI settings including keyboard shortcuts, Push-to-Talk mode, and recording controls for voice-to-text transcription.
 keywords:
     - general settings

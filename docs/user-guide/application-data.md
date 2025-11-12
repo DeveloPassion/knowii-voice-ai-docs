@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Application Data - Knowii Voice AI
+title: Application Data
 description: Learn where Knowii Voice AI stores your data including transcription history, audio recordings, AI models, and settings. Understand local data storage locations.
 keywords:
     - application data

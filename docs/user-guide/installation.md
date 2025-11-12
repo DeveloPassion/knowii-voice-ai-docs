@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Installation Guide - Knowii Voice AI
+title: Installation Guide
 description: Learn how to install Knowii Voice AI on Windows. Complete setup instructions, system requirements, and troubleshooting for your local voice transcription app.
 keywords:
     - installation
