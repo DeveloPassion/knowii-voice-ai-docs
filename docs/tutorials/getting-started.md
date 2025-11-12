@@ -1,5 +1,15 @@
 ---
 sidebar_position: 1
+title: Getting Started Tutorial - Knowii Voice AI
+description: Step-by-step guide to using Knowii Voice AI for the first time. Learn how to make your first recording, explore history, and customize settings.
+keywords:
+    - getting started
+    - tutorial
+    - first recording
+    - quick start
+    - beginner guide
+    - how to use
+    - setup guide
 ---
 
 # Getting Started Tutorial

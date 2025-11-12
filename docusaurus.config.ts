@@ -23,6 +23,27 @@ const config = {
     organizationName: 'DeveloPassion', // Usually your GitHub org/user name.
     projectName: 'knowii-voice-ai-docs', // Usually your repo name.
 
+    // Custom head tags for analytics and third-party scripts
+    headTags: [
+        {
+            tagName: 'script',
+            attributes: {
+                'defer': 'defer',
+                'data-domain': 'voice-ai.knowii.net',
+                'data-api':
+                    'https://blue-bar-dsebastien-19fd.developassion.workers.dev/api/v1/event',
+                'src': 'https://blue-bar-dsebastien-19fd.developassion.workers.dev/content/script.js'
+            }
+        },
+        {
+            tagName: 'script',
+            attributes: {
+                defer: 'defer',
+                src: 'https://gumroad.com/js/gumroad.js'
+            }
+        }
+    ],
+
     onBrokenLinks: 'throw',
     markdown: {
         hooks: {

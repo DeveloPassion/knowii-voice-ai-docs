@@ -1,5 +1,16 @@
 ---
 sidebar_position: 101
+title: Support - Knowii Voice AI
+description: Get help with Knowii Voice AI. Find support resources, contact information, community forums, and learn how to report issues or request features.
+keywords:
+    - support
+    - help
+    - contact
+    - customer support
+    - community
+    - report issue
+    - bug report
+    - feature request
 ---
 
 # Support

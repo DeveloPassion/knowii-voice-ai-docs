@@ -1,5 +1,15 @@
 ---
 sidebar_position: 99
+title: Release Notes - Knowii Voice AI
+description: Latest features, improvements, and bug fixes in Knowii Voice AI. See what's new in each version and learn how to update to the latest release.
+keywords:
+    - release notes
+    - changelog
+    - what's new
+    - updates
+    - version history
+    - new features
+    - improvements
 ---
 
 # Release Notes

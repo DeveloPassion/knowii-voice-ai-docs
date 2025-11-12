@@ -1,5 +1,16 @@
 ---
 sidebar_position: 3
+title: Transcription Settings - Knowii Voice AI
+description: Choose AI models, configure languages, and customize transcription accuracy with Whisper and Parakeet models. Download and manage multiple transcription models.
+keywords:
+    - transcription settings
+    - AI models
+    - Whisper models
+    - Parakeet models
+    - language settings
+    - custom words
+    - model download
+    - accuracy
 ---
 
 # Transcription Settings

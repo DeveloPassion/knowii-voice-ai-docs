@@ -1,5 +1,15 @@
 ---
 sidebar_position: 9
+title: Updating Guide - Knowii Voice AI
+description: Learn how to update Knowii Voice AI to the latest version. Instructions for automatic updates through the app and manual installation methods.
+keywords:
+    - update
+    - upgrade
+    - install update
+    - new version
+    - latest version
+    - automatic update
+    - manual update
 ---
 
 # Updating Knowii Voice AI

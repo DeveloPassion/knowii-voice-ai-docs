@@ -1,5 +1,14 @@
 ---
 sidebar_position: 7
+title: Debug Settings - Knowii Voice AI
+description: Advanced debugging and troubleshooting options for Knowii Voice AI. Learn how to access debug mode and configure low-level settings for problem resolution.
+keywords:
+    - debug settings
+    - troubleshooting
+    - advanced debugging
+    - development mode
+    - diagnostic tools
+    - problem solving
 ---
 
 # Debug Settings

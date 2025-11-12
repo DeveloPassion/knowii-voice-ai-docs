@@ -1,5 +1,15 @@
 ---
 sidebar_position: 6
+title: Advanced Settings - Knowii Voice AI
+description: Fine-tune Knowii Voice AI with advanced configuration options including application behavior, performance settings, history management, and overlay customization.
+keywords:
+    - advanced settings
+    - configuration
+    - performance
+    - customization
+    - overlay
+    - startup options
+    - history settings
 ---
 
 # Advanced Settings

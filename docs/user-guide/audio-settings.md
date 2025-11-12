@@ -1,5 +1,15 @@
 ---
 sidebar_position: 5
+title: Audio Settings - Knowii Voice AI
+description: Configure audio devices, feedback sounds, and volume levels in Knowii Voice AI. Customize recording device selection and audio feedback preferences.
+keywords:
+    - audio settings
+    - microphone settings
+    - sound settings
+    - audio feedback
+    - recording device
+    - volume control
+    - custom sounds
 ---
 
 # Audio Settings

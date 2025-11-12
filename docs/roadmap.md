@@ -1,5 +1,15 @@
 ---
 sidebar_position: 100
+title: Product Roadmap - Knowii Voice AI
+description: Explore upcoming features and improvements for Knowii Voice AI. See what's in development, planned features, and long-term vision for privacy-first voice transcription.
+keywords:
+    - roadmap
+    - upcoming features
+    - planned features
+    - development
+    - future releases
+    - feature requests
+    - product vision
 ---
 
 # Product Roadmap

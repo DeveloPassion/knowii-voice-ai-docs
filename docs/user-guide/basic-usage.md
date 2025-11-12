@@ -1,5 +1,16 @@
 ---
 sidebar_position: 1
+title: Basic Usage - Knowii Voice AI
+description: Learn the fundamentals of using Knowii Voice AI including recording, keyboard shortcuts, history, audio settings, AI models, and tips for best transcription results.
+keywords:
+    - basic usage
+    - how to use
+    - recording
+    - keyboard shortcuts
+    - transcription
+    - AI models
+    - microphone settings
+    - best practices
 ---
 
 # Basic Usage

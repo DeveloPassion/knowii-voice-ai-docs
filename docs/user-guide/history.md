@@ -1,5 +1,15 @@
 ---
 sidebar_position: 4
+title: History Management - Knowii Voice AI
+description: View, search, edit, and manage your transcription history. Learn how to star important transcriptions, play back audio, and organize your voice recordings.
+keywords:
+    - history
+    - transcription history
+    - search history
+    - starred transcriptions
+    - audio playback
+    - manage history
+    - edit transcriptions
 ---
 
 # History

@@ -1,5 +1,16 @@
 ---
 sidebar_position: 99
+title: FAQ - Knowii Voice AI
+description: Find answers to common questions about Knowii Voice AI. Learn about installation, usage, privacy, performance, troubleshooting, and more.
+keywords:
+    - FAQ
+    - frequently asked questions
+    - help
+    - troubleshooting
+    - common issues
+    - support
+    - answers
+    - questions
 ---
 
 # Frequently Asked Questions

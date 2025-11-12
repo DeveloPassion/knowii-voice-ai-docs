@@ -2,6 +2,20 @@
 sidebar_position: 1
 sidebar_label: Home
 slug: /
+title: Knowii Voice AI - Privacy-First Voice-to-Text Transcription
+description: Privacy-first voice-to-text transcription that runs entirely on your computer. Fast, accurate, and offline speech recognition powered by local AI models.
+keywords:
+    - voice to text
+    - speech to text
+    - transcription
+    - privacy
+    - local AI
+    - offline transcription
+    - Whisper
+    - Parakeet
+    - voice recognition
+    - dictation
+    - speech recognition
 ---
 
 # Knowii Voice AI
