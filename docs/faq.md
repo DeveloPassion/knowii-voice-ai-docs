@@ -34,6 +34,12 @@ See the [Installation Guide](./user-guide/installation) for detailed download an
 
 See the [Installation Guide](./user-guide/installation#required-hardware) for complete system requirements and hardware recommendations.
 
+### How do I update Knowii Voice AI?
+
+Knowii Voice AI includes automatic updates. The app will notify you when new versions are available. You can also check manually by going to Settings → About → Check for Updates.
+
+For detailed instructions on both automatic and manual updates, see the [Updating Guide](./user-guide/updating).
+
 ### Why do I need to download AI models?
 
 The AI models are the "brains" that convert your voice to text. They're downloaded separately to keep the initial installer size small and to give you choice over which models to use.

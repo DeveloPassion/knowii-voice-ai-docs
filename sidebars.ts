@@ -23,6 +23,7 @@ const sidebars = {
             label: 'User Guide',
             items: [
                 'user-guide/installation',
+                'user-guide/updating',
                 'user-guide/basic-usage',
                 'user-guide/general-settings',
                 'user-guide/transcription-settings',

@@ -101,6 +101,11 @@ const config = {
                         position: 'left'
                     },
                     {
+                        to: '/release-notes',
+                        label: 'Release Notes',
+                        position: 'left'
+                    },
+                    {
                         to: '/faq',
                         label: 'FAQ',
                         position: 'left'
@@ -141,6 +146,10 @@ const config = {
                             {
                                 label: 'Tutorials',
                                 to: '/tutorials/getting-started'
+                            },
+                            {
+                                label: 'Release Notes',
+                                to: '/release-notes'
                             },
                             {
                                 label: 'FAQ',

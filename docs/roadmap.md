@@ -17,6 +17,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 ### Next Releases
 
 - **Home screen** (#52)
+- **Auto-submit mode** (#53)
 - **Prevent sleep while recording** (#109)
 - **Smart AI-enabled Post-Processing**: Apply custom transformations to transcriptions: remove filler words, fix commonly misrecognized words, use AI. Configure AI-enabled pipelines, detect applications/context and go from raw transcriptions to specialized outputs (#24, #18, #19, #20, #49, #124)
 - **Hybrid Push-to-Talk** (#139)
@@ -24,14 +25,13 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Shortcut to paste last transcription** (#141)
 - **Voice Trigger Words/Phrases**: Keyboard-less mode where a trigger word or phrase initiates recording and transcription (#132)
 - **Portable Version**: Uncompress. Run. Transcribe. Everything stored in one folder (#147)
-- **Auto-submit mode** (#53)
 - **History UI/UX Improvements** (#155, #168, #170, #119, #98)
 - **Better trim silences** (#110)
 - **More overlay settings** (#34, #64)
 - **Minimize to tray setting** (#36)
 - **Cancel recording hotkey** (#39)
 - **Better word replacements** (#57, #172)
-- **Additional Transcription Models**: Support for additional transcription models (local and remote) (#90, #144, #173, #181, #37, #11, #21, #5)
+- **Additional Transcription Models**: Support more transcription models (local and remote) (#90, #144, #173, #181, #37, #11, #21, #5)
 - **Transcription improvements** (#146, #123, #125, #126, #129)
 - **Improve audio recordings quality** (#166, #142, #99)
 - **Deeper Internationalization**: Deeper support for translations. Different keyboard shortcuts that transcribe in different languages (#136, #138, #122, #33)
@@ -82,6 +82,8 @@ Have an idea for Knowii Voice AI? I'd love to hear it!
 ## Release Cycle
 
 Knowii Voice AI releases will regularly be published, bringing new features your way.
+
+Check the [Release Notes](/release-notes) to see what's new in each version.
 
 ## Stay Updated
 

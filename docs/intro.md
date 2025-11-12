@@ -93,6 +93,7 @@ Lives in your system tray (near the clock). No window cluttering your screen. Al
 
 - **[Installation Guide](./user-guide/installation)**: Detailed installation instructions for your platform
 - **[Getting Started Tutorial](./tutorials/getting-started)**: Learn the basics step by step
+- **[Release Notes](./release-notes)**: See what's new in the latest version
 - **[FAQ](./faq)**: Common questions and answers
 - **[Roadmap](./roadmap)**: See what's coming next
 

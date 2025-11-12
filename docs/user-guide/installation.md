@@ -96,6 +96,10 @@ Alternatively, you can install to your user directory (recommended), which doesn
 2. Verify the application has permission to run
 3. Check system logs for error messages
 
+## Updating
+
+To update Knowii Voice AI to a newer version, see the [Updating Guide](./updating) for instructions on both automatic and manual updates.
+
 ## Next Steps
 
 Once installed, proceed to the [Getting Started Tutorial](../tutorials/getting-started) to learn how to use Knowii Voice AI.
