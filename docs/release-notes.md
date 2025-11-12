@@ -16,6 +16,27 @@ keywords:
 
 Stay up to date with the latest features, improvements, and fixes in Knowii Voice AI.
 
+## Version 0.5.0 (November 12, 2025)
+
+### Improvements
+
+**Unified Update Experience**
+
+- Update checks are now consistent across the entire app - whether you check from the status bar footer, the Settings → About page, or the system tray menu, you'll get the same reliable experience
+- All update entry points now show the same information and work the same way
+
+### Bug Fixes
+
+**Update System Reliability**
+
+- Fixed critical issues with the automatic update system that could prevent the app from checking for or downloading updates correctly
+- Added extensive logging to help diagnose any update-related issues
+- Improved error handling throughout the update process
+
+**Note**: If you experienced issues with updates in previous versions, this release resolves those problems. The update system should now work reliably across all platforms.
+
+---
+
 ## Version 0.4.0 (November 11, 2025)
 
 ### New Features
