@@ -113,4 +113,4 @@ Lives in your system tray (near the clock). No window cluttering your screen. Al
 
 ## Need Help?
 
-Check out the [FAQ](./faq) or visit the [Getting Started Tutorial](./tutorials/getting-started) for step-by-step guidance.
+Check out the [FAQ](./faq), the [Support](./support), or visit the [Getting Started Tutorial](./tutorials/getting-started) for step-by-step guidance.

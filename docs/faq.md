@@ -13,7 +13,7 @@ keywords:
     - questions
 ---
 
-# Frequently Asked Questions
+# Frequently Asked Questions (FAQ)
 
 ## General
 

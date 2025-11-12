@@ -157,7 +157,7 @@ const config = {
                         title: 'Documentation',
                         items: [
                             {
-                                label: 'Getting Started',
+                                label: 'Home',
                                 to: '/'
                             },
                             {
