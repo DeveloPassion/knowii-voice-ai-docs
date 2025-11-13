@@ -71,6 +71,7 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ## Future Considerations 🔮
 
+- **Screenshots + AI analysis**: Take screenshots with a shortcut, and get help from AI (#217)
 - **Meeting Assistant Mode**: Record and transcribe meetings with summaries
 - **Translation**: Real-time translation between languages
 - **Voice Synthesis**: Text-to-speech with your voice
