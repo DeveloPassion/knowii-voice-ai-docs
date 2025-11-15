@@ -73,6 +73,10 @@ The application data folder contains:
 ### Log Files
 
 - **logs/**: Folder containing application log files for troubleshooting and diagnostics
+- Log files include:
+    - `knowii-voice-ai.log`: Main application log
+    - `knowii-voice-ai-bootstrap.log`: Early startup log
+    - `knowii-voice-ai-crash.log`: Crash and panic information
 - Log files are automatically generated to track application behavior and errors
 - Useful when reporting issues or debugging problems
 - See the [Support page](../support#how-to-find-log-files) for information on using log files when reporting issues
