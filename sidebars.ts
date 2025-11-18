@@ -31,6 +31,7 @@ const sidebars = {
                 'user-guide/audio-settings',
                 'user-guide/advanced-settings',
                 'user-guide/debug-settings',
+                'user-guide/cli',
                 'user-guide/application-data'
             ]
         }
