@@ -64,6 +64,31 @@ body:
           required: false
 
     - type: textarea
+      id: logs
+      attributes:
+          label: Log Files (Optional)
+          description: |
+              **If your question is about an issue or unexpected behavior, logs can help diagnose the problem.**
+
+              **For detailed logs, run the app with debug logging:**
+              1. Close Knowii Voice AI if it's running
+              2. Open a terminal/command prompt
+              3. Run: `knowii-voice-ai --log-level debug`
+              4. Try to reproduce the issue or behavior you're asking about
+              5. Collect the log files from the locations below
+
+              **Where to find log files:**
+              - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\` (Press Win+R, type `%APPDATA%\knowii-voice-ai\logs`)
+              - macOS: `~/Library/Application Support/knowii-voice-ai/logs/`
+              - Linux: `~/.local/share/knowii-voice-ai/logs/`
+
+              See the [CLI documentation](https://docs.voice-ai.knowii.net/docs/user-guide/cli) for more details about log levels.
+          placeholder: Paste relevant log contents here if applicable...
+          render: shell
+      validations:
+          required: false
+
+    - type: textarea
       id: screenshots
       attributes:
           label: Screenshots

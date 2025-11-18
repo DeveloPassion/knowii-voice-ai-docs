@@ -96,24 +96,15 @@ body:
           description: |
               **Please attach your log files to help diagnose the issue.**
 
-              **For the most helpful logs, run the app with debug logging enabled:**
-              1. Close Knowii Voice AI if it's running
-              2. Open a terminal/command prompt
-              3. Run: `knowii-voice-ai --log-level debug`
-              4. Reproduce the issue
-              5. Collect the log files from the locations below
-
               **Where to find log files:**
-              - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\` (Press Win+R, type `%APPDATA%\knowii-voice-ai\logs`)
-              - macOS: `~/Library/Application Support/knowii-voice-ai/logs/`
-              - Linux: `~/.local/share/knowii-voice-ai/logs/`
-              - Look for: `knowii-voice-ai.log`, `knowii-voice-ai-bootstrap.log`, and `knowii-voice-ai-crash.log` (if app crashed)
+              - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\` (Press Win+R, type `%APPDATA%\knowii-voice-ai`)
+              - Look for files with `.log` extension
 
               You can either:
               1. Paste the relevant log contents below, OR
               2. Attach the log files directly to this issue (drag and drop files in the description after creating the issue)
 
-              See the [CLI documentation](https://docs.voice-ai.knowii.net/docs/user-guide/cli) and [Support page](https://docs.voice-ai.knowii.net/support#how-to-find-log-files) for more details.
+              See the [Support page](https://docs.voice-ai.knowii.net/support#how-to-find-log-files) for more details.
           placeholder: Paste log contents here or attach log files after creating the issue...
           render: shell
       validations:
