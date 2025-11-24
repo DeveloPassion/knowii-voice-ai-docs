@@ -38,21 +38,44 @@ Control how Knowii Voice AI starts and runs:
 
 ## Display Options
 
-### Overlay Position
+### Overlay Enabled
 
-**Location**: Settings > Advanced
+**Location**: Settings > Advanced > Display
 
-The recording overlay provides visual feedback during recording and transcription. You can control where it appears:
+Enable or disable the visual overlay that provides feedback during recording and transcription:
 
-- **Bottom** (default): Shows recording/transcription status at the bottom of your screen
-- **Top**: Shows status at the top of your screen
-- **None**: Disables the visual overlay completely (useful for recordings/presentations)
+- **Enabled** (default): Shows the overlay during recording and transcription
+- **Disabled**: Hides the overlay completely
+    - Useful during screen recordings, presentations, or screen sharing
+    - No visual indication will appear during transcription
 
-The overlay shows:
+The overlay displays:
 
 - Recording indicator when you're actively recording
 - Transcription progress when processing
 - Cancel option to abort the current operation
+
+### Overlay Position
+
+**Location**: Settings > Advanced > Display
+
+_Only available when Overlay Enabled is turned on_
+
+Choose where the recording overlay appears on your screen:
+
+**Center Positions**:
+
+- **Bottom Center** (default): Status shown at the bottom center of your screen
+- **Top Center**: Status shown at the top center of your screen
+
+**Corner Positions**:
+
+- **Top Left**: Status shown in the top-left corner
+- **Top Right**: Status shown in the top-right corner
+- **Bottom Left**: Status shown in the bottom-left corner
+- **Bottom Right**: Status shown in the bottom-right corner
+
+The overlay automatically respects screen margins and system UI elements (taskbars, menu bars, panels) to ensure it's always visible and doesn't overlap with other interface elements.
 
 ## Transcription Options
 
@@ -192,7 +215,8 @@ When a model is unloaded, the next transcription will have a delay while the mod
 - Monitor disk space if saving audio files
 - Use "Limit History" to prevent excessive disk usage
 - Combine "Start Hidden" and "Launch on Startup" for seamless background operation
-- Disable the overlay during screen recordings or presentations
+- Disable the overlay during screen recordings, presentations, or screen sharing
+- Use corner positions for the overlay if center positions interfere with your work
 
 ## Related Documentation
 

@@ -35,6 +35,15 @@ Knowii Voice AI supports multiple transcription models with different characteri
     - Automatic language detection
     - 785 MB download
     - Excellent balance of speed and accuracy
+    - Latest version with improved performance
+
+- **Parakeet V2**: NVIDIA's efficient speech recognition model
+    - Fast with good accuracy
+    - Supports 25 European languages
+    - Automatic language detection
+    - 697 MB download
+    - Previous generation, still highly capable
+    - Use if V3 has compatibility issues
 
 #### Whisper Models (Multi-Language)
 
@@ -59,7 +68,8 @@ Optimized specifically for English transcription:
 
 **For most users:**
 
-- Start with **Parakeet V3** if you speak European languages
+- Start with **Parakeet V3** if you speak European languages (recommended)
+- Use **Parakeet V2** as an alternative if V3 has issues
 - Use **Small** Whisper model for other languages
 - Upgrade to larger models if accuracy is insufficient
 
@@ -210,7 +220,7 @@ Click the X button on any word tag to remove it from your custom vocabulary.
 
 **Recommended settings:**
 
-- Model: Parakeet V3
+- Model: Parakeet V3 (or V2)
 - Language: Auto Detect (automatically set)
 - Custom Words: Add names and technical terms in your languages
 
