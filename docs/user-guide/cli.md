@@ -249,7 +249,7 @@ Always start with `--log-level debug` when investigating issues. It provides eno
 :::
 
 :::caution[Log File Size]
-Trace logging creates very large log files. Use it only when needed and clean up old logs regularly from the [application data directory](./application-data#logs).
+Trace logging creates very large log files. Use it only when needed and clean up old logs regularly from the [application data directory](./application-data#log-files).
 :::
 
 :::info[Default Behavior]
