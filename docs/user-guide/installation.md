@@ -19,9 +19,15 @@ keywords:
 
 ### Required Hardware
 
-- 4GB RAM minimum (8GB or more recommended)
-- 500MB free disk space (this is enough to install the recommended AI model)
-- Optional: GPU with Vulkan support for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
+- **RAM**: 1GB minimum with Moonshine models, 4GB+ recommended for Whisper/Parakeet models
+- **Disk Space**: 100MB to 10GB depending on chosen AI model(s)
+    - Moonshine models: 100-250 MB (ideal for low-end hardware)
+    - Whisper/Parakeet models: 500 MB to 10 GB
+- **GPU** (optional): Vulkan-compatible GPU for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
+
+:::tip Low-End Hardware?
+If you have limited RAM or an older computer, try the **Moonshine models**. They use under 1GB of memory and provide fast transcriptions with minimal resource usage. Perfect for laptops and older systems.
+:::
 
 ### Windows
 
