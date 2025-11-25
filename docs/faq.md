@@ -91,17 +91,17 @@ Optimized specifically for English transcription:
 
 #### Moonshine Models
 
-Lightweight models designed for computers with limited resources (low memory or CPU). Slower and less accurate than Parakeet or Whisper, but ideal for low-end machines:
+Lightweight models designed for computers with limited resources (low memory or CPU). Slower and less accurate than Parakeet or Whisper, but ideal for low-end machines. All Moonshine models use under 1GB RAM:
 
-- **Moonshine Base (English)**: Better accuracy among Moonshine models. ~239 MB
-- **Moonshine Tiny (English)**: Smallest English model. ~107 MB
-- **Moonshine Tiny (Arabic/Chinese/Japanese/Korean/Ukrainian/Vietnamese)**: Single-language variants. ~143 MB each
+- **Moonshine Base (English)**: Better accuracy among Moonshine models. ~239 MB, under 1GB RAM
+- **Moonshine Tiny (English)**: Smallest English model. ~107 MB, under 1GB RAM
+- **Moonshine Tiny (Arabic/Chinese/Japanese/Korean/Ukrainian/Vietnamese)**: Single-language variants. ~143 MB each, under 1GB RAM
 
 **Notes**:
 
 - Larger models require more powerful hardware
 - English-only models are optimized for English and cannot transcribe other languages
-- Moonshine models are best for computers with very limited RAM
+- Moonshine models are best for computers with very limited RAM (1GB minimum)
 - You can download and switch between models at any time
 
 ## Usage
