@@ -89,10 +89,19 @@ Optimized specifically for English transcription:
 - **Small (English only)**: Fast and accurate, English-only. 488 MB, ~2GB RAM
 - **Medium (English only)**: Accurate, English-only. 1520 MB, ~5GB RAM
 
+#### Moonshine Models
+
+Lightweight models designed for computers with limited resources (low memory or CPU). Slower and less accurate than Parakeet or Whisper, but ideal for low-end machines:
+
+- **Moonshine Base (English)**: Better accuracy among Moonshine models. ~239 MB
+- **Moonshine Tiny (English)**: Smallest English model. ~107 MB
+- **Moonshine Tiny (Arabic/Chinese/Japanese/Korean/Ukrainian/Vietnamese)**: Single-language variants. ~143 MB each
+
 **Notes**:
 
 - Larger models require more powerful hardware
 - English-only models are optimized for English and cannot transcribe other languages
+- Moonshine models are best for computers with very limited RAM
 - You can download and switch between models at any time
 
 ## Usage

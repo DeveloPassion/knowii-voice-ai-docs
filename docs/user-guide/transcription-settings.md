@@ -1,16 +1,19 @@
 ---
 sidebar_position: 3
 title: Transcription Settings
-description: Choose AI models, configure languages, and customize transcription accuracy with Whisper and Parakeet models. Download and manage multiple transcription models.
+description: Choose AI models, configure languages, and customize transcription accuracy with Whisper, Parakeet, and Moonshine models. Download and manage multiple transcription models.
 keywords:
     - transcription settings
     - AI models
     - Whisper models
     - Parakeet models
+    - Moonshine models
     - language settings
     - custom words
     - model download
     - accuracy
+    - low memory
+    - lightweight models
 ---
 
 # Transcription Settings
@@ -25,7 +28,7 @@ Choose which AI model to use for speech recognition:
 
 ### Available Models
 
-Knowii Voice AI supports multiple transcription models with different characteristics:
+Knowii Voice AI supports multiple transcription models with different characteristics. Choose based on your language needs, hardware capabilities, and accuracy requirements:
 
 #### Parakeet Models
 
@@ -64,6 +67,38 @@ Optimized specifically for English transcription:
 - **Small (English only)**: Fast and accurate (488 MB, ~2GB RAM)
 - **Medium (English only)**: Accurate (1520 MB, ~5GB RAM)
 
+#### Moonshine Models
+
+Lightweight models designed for computers with limited resources (low memory or CPU). Learn more about Moonshine: [Introduction blog post](https://petewarden.com/2024/10/21/introducing-moonshine-the-new-state-of-the-art-for-speech-to-text/) | [GitHub](https://github.com/usefulsensors/moonshine) | [Hugging Face](https://huggingface.co/UsefulSensors/moonshine)
+
+- **Moonshine Base (English)**: Better accuracy, ~239 MB total
+- **Moonshine Tiny (English)**: Fastest, smallest footprint, ~107 MB total
+- **Moonshine Tiny (Arabic)**: Arabic transcription, ~143 MB total
+- **Moonshine Tiny (Chinese)**: Chinese transcription, ~143 MB total
+- **Moonshine Tiny (Japanese)**: Japanese transcription, ~143 MB total
+- **Moonshine Tiny (Korean)**: Korean transcription, ~143 MB total
+- **Moonshine Tiny (Ukrainian)**: Ukrainian transcription, ~143 MB total
+- **Moonshine Tiny (Vietnamese)**: Vietnamese transcription, ~143 MB total
+
+**Moonshine characteristics:**
+
+- 5-15x faster than Whisper Tiny/Base/Small/Medium models
+- Ideal for low-end machines with limited RAM or CPU
+- Much smaller memory footprint than other models
+- Less accurate than Parakeet or Whisper (trade-off for speed and size)
+- Each model variant supports only one language
+- Good option when other models won't run on your hardware
+
+**Supported languages:**
+
+- English (Base and Tiny variants)
+- Arabic (Tiny variant)
+- Chinese (Tiny variant)
+- Japanese (Tiny variant)
+- Korean (Tiny variant)
+- Ukrainian (Tiny variant)
+- Vietnamese (Tiny variant)
+
 ### How to Choose a Model
 
 **For most users:**
@@ -85,8 +120,10 @@ Optimized specifically for English transcription:
 
 **Hardware considerations:**
 
-- Limited RAM: Choose Tiny or Small models
-- Powerful system: Large models provide best accuracy
+- Very limited RAM (under 2GB free): Use Moonshine Tiny models
+- Limited RAM (2-4GB free): Use Moonshine Base or Whisper Tiny/Small models
+- Moderate RAM (4-8GB): Use Parakeet or Whisper Small/Medium models
+- Powerful system (8GB+): Large models provide best accuracy
 - SSDs recommended for faster model loading
 
 ### Downloading Models
@@ -247,6 +284,22 @@ Click the X button on any word tag to remove it from your custom vocabulary.
 - Model: Large V3 or Large V3 Turbo (best accuracy)
 - Language: Specify language for consistency
 - Custom Words: Brand names, product names, catchphrases
+
+### Low-End Hardware / Limited Resources
+
+**Recommended settings:**
+
+- Model: Moonshine Tiny (your language) for minimal resource usage
+- Model: Moonshine Base (your language) for slightly better accuracy
+- Language: Selected automatically based on model variant
+- Custom Words: Keep to a minimum
+
+**Why Moonshine for limited hardware:**
+
+- Runs on computers where Parakeet or Whisper models struggle
+- Much lower memory requirements than other models
+- Acceptable accuracy for basic transcription needs
+- Trade-off: Slower processing and lower accuracy than larger models
 
 ## Available Models Section
 
