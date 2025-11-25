@@ -69,7 +69,7 @@ Optimized specifically for English transcription:
 
 #### Moonshine Models
 
-Lightweight models designed for computers with limited resources (low memory or CPU). Learn more about Moonshine: [Introduction blog post](https://petewarden.com/2024/10/21/introducing-moonshine-the-new-state-of-the-art-for-speech-to-text/) | [GitHub](https://github.com/usefulsensors/moonshine) | [Hugging Face](https://huggingface.co/UsefulSensors/moonshine)
+Lightweight models designed for computers with limited resources (low memory or CPU). Learn more about Moonshine: [Research paper](https://arxiv.org/abs/2509.02523) | [Introduction blog post](https://petewarden.com/2024/10/21/introducing-moonshine-the-new-state-of-the-art-for-speech-to-text/) | [GitHub](https://github.com/usefulsensors/moonshine) | [Hugging Face](https://huggingface.co/UsefulSensors/moonshine)
 
 - **Moonshine Base (English)**: Better accuracy, ~239 MB total
 - **Moonshine Tiny (English)**: Fastest, smallest footprint, ~107 MB total
