@@ -22,6 +22,7 @@ Need help with Knowii Voice AI? I'm here to assist you!
 Before contacting support, please check these resources:
 
 - **[FAQ](./faq)**: Common questions and answers
+- **[Release Notes](./release-notes)**: What's new in the latest version and known issues
 - **[User Guide](./user-guide/installation)**: Detailed documentation and guides
 - **[Getting Started Tutorial](./tutorials/getting-started)**: Step-by-step walkthrough
 - **[Roadmap](./roadmap)**: Upcoming features and planned improvements
