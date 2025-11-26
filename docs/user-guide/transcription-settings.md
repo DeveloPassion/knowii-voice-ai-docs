@@ -1,12 +1,13 @@
 ---
 sidebar_position: 3
 title: Transcription Settings
-description: Choose AI models, configure languages, and customize transcription accuracy with Whisper, Parakeet, and Moonshine models. Download and manage multiple transcription models.
+description: Choose AI models, configure languages, and customize transcription accuracy with Whisper, Parakeet, Omnilingual, and Moonshine models. Download and manage multiple transcription models.
 keywords:
     - transcription settings
     - AI models
     - Whisper models
     - Parakeet models
+    - Omnilingual models
     - Moonshine models
     - language settings
     - custom words
@@ -14,6 +15,7 @@ keywords:
     - accuracy
     - low memory
     - lightweight models
+    - multilingual
 ---
 
 # Transcription Settings
@@ -66,6 +68,23 @@ Optimized specifically for English transcription:
 - **Base (English only)**: Fast (148 MB, ~1GB RAM)
 - **Small (English only)**: Fast and accurate (488 MB, ~2GB RAM)
 - **Medium (English only)**: Accurate (1520 MB, ~5GB RAM)
+
+#### Omnilingual Models
+
+Speak any of 1,600+ languages and the model figures out what you're saying automatically. Learn more about Omnilingual: [Blog post](https://ai.meta.com/blog/omnilingual-asr-advancing-automatic-speech-recognition/) | [Research paper](https://ai.meta.com/research/publications/omnilingual-asr-open-source-multilingual-speech-recognition-for-1600-languages/) | [GitHub](https://github.com/facebookresearch/omnilingual-asr) | [Demo video](https://www.youtube.com/watch?v=ab-GIqDQn7k)
+
+- **Omnilingual 300M**: Smaller and faster, ~350 MB download
+- **Omnilingual 1B**: Larger and more accurate, ~985 MB download
+
+**Why choose Omnilingual:**
+
+- Supports over 1,600 languages - more than any other model
+- Automatically detects what language you're speaking
+- Great for multilingual users who switch between languages
+- Perfect for less common languages not supported by other models
+- No need to manually select your language
+
+**Note**: Still experimental - accuracy may vary depending on language and audio quality.
 
 #### Moonshine Models
 
@@ -175,6 +194,12 @@ When using multi-language Whisper models, you can specify the language:
 - Language selector is disabled
 - Supports 25 European languages
 
+**Omnilingual models:**
+
+- Automatically detect language from 1,600+ languages
+- Language selector is disabled
+- No manual language selection needed
+
 **Multi-language Whisper models:**
 
 - Auto Detect by default
@@ -184,6 +209,12 @@ When using multi-language Whisper models, you can specify the language:
 ### Supported Languages
 
 The available languages depend on your selected model:
+
+**Omnilingual Models (1,600+ languages):**
+
+- Supports virtually every language in the world
+- Includes rare and less common languages not available in other models
+- Automatic language detection - no manual selection needed
 
 **Parakeet V3 (25 European languages):**
 

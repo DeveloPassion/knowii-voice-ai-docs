@@ -70,6 +70,15 @@ Knowii Voice AI supports multiple AI transcription models:
 
 - **Parakeet V3** (Recommended): NVIDIA's state-of-the-art model. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
 
+#### Omnilingual Models
+
+Support for 1,600+ languages with automatic language detection:
+
+- **Omnilingual 300M**: Smaller and faster. ~350 MB download
+- **Omnilingual 1B**: Larger and more accurate. ~985 MB download
+
+Great for multilingual users or less common languages. Still experimental - accuracy may vary.
+
 #### Whisper Models (Multi-Language)
 
 These models support 99 languages:
@@ -102,6 +111,7 @@ Lightweight models designed for computers with limited resources (low memory or 
 - Larger models require more powerful hardware
 - English-only models are optimized for English and cannot transcribe other languages
 - Moonshine models are best for computers with very limited RAM (1GB minimum)
+- Omnilingual models support the most languages but are still experimental
 - You can download and switch between models at any time
 
 ## Usage
@@ -131,7 +141,14 @@ Typical accuracy is 90-95% for clear audio with good microphones.
 
 ### Can I transcribe in languages other than English?
 
-Yes! Knowii Voice AI supports multiple languages. The default **Auto** setting automatically detects the language you're speaking and is recommended for most users. Only change the language in **Settings > Transcription > Language** if you're experiencing issues with automatic detection.
+Yes! Knowii Voice AI supports multiple languages:
+
+- **Omnilingual models**: 1,600+ languages with automatic detection
+- **Whisper models**: 99 languages
+- **Parakeet models**: 25 European languages
+- **Moonshine models**: English, Arabic, Chinese, Japanese, Korean, Ukrainian, Vietnamese
+
+The default **Auto** setting automatically detects the language you're speaking and is recommended for most users. Only change the language in **Settings > Transcription > Language** if you're experiencing issues with automatic detection.
 
 ### What if the transcription has errors?
 
