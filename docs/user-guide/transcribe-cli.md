@@ -17,7 +17,18 @@ keywords:
 
 Knowii Voice AI includes a standalone `transcribe` CLI binary for transcribing audio files directly from the terminal. It works independently of the GUI application and is ideal for scripting, batch processing, CI/CD pipelines, and headless servers.
 
-The CLI is included in every [Knowii Voice AI release](https://github.com/DeveloPassion/knowii-voice-ai/releases) alongside the desktop application.
+## Installation
+
+1. **Download** the CLI binary for your platform from the [GitHub releases page](https://github.com/DeveloPassion/knowii-voice-ai/releases). Binaries are named `transcribe-<version>-<target>` (e.g., `transcribe-0.5.0-x86_64-unknown-linux-gnu`).
+2. **Make it executable** (Linux/macOS):
+   ```bash
+   chmod +x transcribe-*
+   ```
+3. **Optionally move it to your PATH**:
+   ```bash
+   sudo mv transcribe-* /usr/local/bin/transcribe
+   ```
+4. **Install ffmpeg** — required for audio preprocessing and format conversion. Install via your system package manager (`apt install ffmpeg`, `brew install ffmpeg`, `choco install ffmpeg`, etc.).
 
 ## Commands
 
