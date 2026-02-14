@@ -187,6 +187,66 @@ Models are organized hierarchically: `models/<family>/<variant>/<filename>`.
 
 Models downloaded via the CLI are shared with the GUI application and vice versa.
 
+### `transcribe record` — Record Audio (Desktop Only) {#record}
+
+:::note
+The `record` and `devices` commands are only available in **desktop builds** (compiled with the `desktop` feature flag). Headless/server builds do not include audio recording capabilities.
+:::
+
+```bash
+transcribe record [OPTIONS]
+```
+
+Records audio from a microphone and saves it as a WAV file.
+
+**Options:**
+
+| Option                      | Description                                                  | Default                                  |
+| --------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
+| `-o, --output <FILE>`       | Output WAV filename                                          | `recording.wav`                          |
+| `-d, --device <INDEX>`      | Input device index (use `transcribe devices` to list)        | System default                           |
+| `--duration <SECONDS>`      | Recording duration in seconds (omit for manual Ctrl+C stop)  | None (manual stop)                       |
+| `--mode <MODE>`             | Recording mode: `always-on` or `on-demand`                   | `always-on`                              |
+| `--vad-model <PATH>`        | Path to Silero VAD ONNX model                                | Auto-detected from app data or `./resources/models/` |
+| `--vad-threshold <FLOAT>`   | VAD probability threshold (0.0–1.0)                          | `0.5`                                    |
+| `--interactive`             | Launch interactive recording session                         | Off                                      |
+
+**Examples:**
+
+```bash
+# Record until Ctrl+C, save to recording.wav
+transcribe record
+
+# Record for 10 seconds to a specific file
+transcribe record -o meeting.wav --duration 10
+
+# Record from a specific device
+transcribe record --device 2 -o output.wav
+
+# Launch interactive mode (start/stop multiple recordings)
+transcribe record --interactive
+```
+
+**Interactive mode** provides a REPL with commands: `start [device]`, `stop`, `mode [always|demand]`, `devices`, `status`, `help`, `quit`. Each stopped recording is saved as `recording_1.wav`, `recording_2.wav`, etc.
+
+### `transcribe devices` — List Audio Devices (Desktop Only) {#devices}
+
+```bash
+transcribe devices [input|output]
+```
+
+Lists available audio input or output devices.
+
+**Examples:**
+
+```bash
+# List input devices (default)
+transcribe devices
+
+# List output devices
+transcribe devices output
+```
+
 ## Examples
 
 ```bash
