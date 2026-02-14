@@ -28,7 +28,7 @@ Knowii Voice AI includes a standalone `transcribe` CLI binary for transcribing a
    ```bash
    sudo mv transcribe-* /usr/local/bin/transcribe
    ```
-4. **Install ffmpeg** — required for audio preprocessing and format conversion. Install via your system package manager (`apt install ffmpeg`, `brew install ffmpeg`, `choco install ffmpeg`, etc.).
+The CLI binary is fully self-contained — no external dependencies like ffmpeg are required. Audio decoding, resampling, and preprocessing are all handled natively.
 
 ## Commands
 
@@ -164,17 +164,14 @@ The CLI supports 21 models across 4 engine families:
 
 ## Audio Preprocessing
 
-By default, the CLI preprocesses audio before transcription using **ffmpeg**:
+By default, the CLI preprocesses audio before transcription using a built-in native pipeline (no external tools required):
 
-1. **Silence trimming** — Removes leading silence that can confuse speech recognition
-2. **Volume normalization** — Normalizes audio levels for consistent recognition quality
-3. **Format conversion** — Converts to 16 kHz mono 16-bit PCM WAV (required by engines)
+1. **Format decoding** — Decodes any supported format (OGG/Opus, MP3, FLAC, WAV, AAC, Vorbis, etc.) natively
+2. **Resampling** — Converts to 16 kHz mono (required by transcription engines)
+3. **Silence trimming** — Removes leading silence that can confuse speech recognition
+4. **Volume normalization** — Peak-normalizes audio levels for consistent recognition quality
 
-This significantly improves transcription accuracy for real-world recordings. Use `--no-preprocess` to disable this if your audio is already clean.
-
-:::tip[ffmpeg Required]
-The CLI requires **ffmpeg** to be installed for audio preprocessing and format conversion. Install it via your system package manager (`apt install ffmpeg`, `brew install ffmpeg`, etc.).
-:::
+This significantly improves transcription accuracy for real-world recordings. Use `--no-preprocess` to skip silence trimming and volume normalization (decoding and resampling always occur).
 
 ## Model Storage
 
