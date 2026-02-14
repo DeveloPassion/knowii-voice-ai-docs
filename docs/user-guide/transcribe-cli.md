@@ -17,24 +17,7 @@ keywords:
 
 Knowii Voice AI includes a standalone `transcribe` CLI binary for transcribing audio files directly from the terminal. It works independently of the GUI application and is ideal for scripting, batch processing, CI/CD pipelines, and headless servers.
 
-## Building from Source
-
-The CLI is built from the same repository as the main application:
-
-```bash
-# Clone the repository
-git clone https://github.com/DeveloPassion/knowii-voice-ai.git
-cd knowii-voice-ai/src-tauri
-
-# Build the transcribe binary (release mode, no GUI dependencies)
-cargo build --release --bin transcribe --no-default-features
-```
-
-The compiled binary will be at `target/release/transcribe`.
-
-:::info[No GUI Dependencies]
-The `--no-default-features` flag disables Vulkan and whisper-rs-sys dependencies, making the build lighter. The CLI currently supports the **Parakeet** engine for transcription.
-:::
+The CLI is included in every [Knowii Voice AI release](https://github.com/DeveloPassion/knowii-voice-ai/releases) alongside the desktop application.
 
 ## Commands
 
