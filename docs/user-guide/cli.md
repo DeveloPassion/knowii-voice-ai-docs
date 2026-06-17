@@ -18,13 +18,15 @@ keywords:
 
 # Command-Line Interface (CLI)
 
-Knowii Voice AI includes a command-line interface (CLI). Beyond configuring advanced startup options for troubleshooting, it can:
+Knowii Voice AI ships **two** command-line tools:
 
-- **Transcribe local audio/video files** to subtitles or text, fully offline, without opening the app — see [Transcribe files](#transcribe-files).
-- **Manage transcription models** (list, download, remove) from the terminal — see [Manage models](#manage-models).
+- The **`knowii-voice-ai`** executable itself — the desktop app, which accepts a few startup flags (mainly `--log-level`) useful for troubleshooting and debugging.
+- A standalone **`transcribe`** binary that runs fully headless to:
+    - **Transcribe local audio/video files** to subtitles or text, offline — see [Transcribe files](#transcribe-files).
+    - **Manage transcription models** (list, download, remove) from the terminal — see [Manage models](#manage-models).
 
 :::info[Works alongside the running app]
-The `transcribe` and `models` subcommands run **headless**: they do their work and exit, and never launch or interfere with a running Knowii Voice AI window. It is safe to use them while the desktop app is open. Models downloaded via the CLI appear in the app, and vice-versa.
+The `transcribe` binary never launches or interferes with a running Knowii Voice AI window — it does its work and exits. It is safe to use while the desktop app is open. Models downloaded with `transcribe models download` appear in the app, and vice-versa.
 :::
 
 ## Accessing the CLI
@@ -94,19 +96,14 @@ knowii-voice-ai --help
 ```
 AI-powered voice transcription application
 
-Usage: knowii-voice-ai [OPTIONS] [COMMAND]
-
-Commands:
-  transcribe  Transcribe local audio/video file(s) to subtitles/text, then exit
-  models      List, download, or remove transcription models
-  help        Print this message or the help of the given subcommand(s)
+Usage: knowii-voice-ai [OPTIONS]
 
 Options:
       --log-level <LEVEL>  Set the log level (trace, debug, info, warn, error, off) [default: info]
   -h, --help               Print help
 ```
 
-Each subcommand has its own help, e.g. `knowii-voice-ai transcribe --help` or `knowii-voice-ai models --help`.
+File transcription and model management live in the separate **`transcribe`** binary (documented below), not in the desktop executable.
 
 ### Configure Log Level
 
@@ -145,59 +142,91 @@ knowii-voice-ai --log-level error
 knowii-voice-ai
 ```
 
+## The `transcribe` binary
+
+`transcribe` is a self-contained CLI that decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more — no `ffmpeg` required) and runs the same transcription engines as the desktop app.
+
+It has these subcommands:
+
+```
+transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]   # transcribe to subtitles/text
+transcribe models list|download|remove                        # manage models
+transcribe completions <shell>                                # shell completions
+transcribe --help                                             # full help
+```
+
+:::info[Building it]
+`transcribe` is built from the project's `src-tauri` directory. The full build (which includes the Whisper engine) is `cargo build --release --bin transcribe`. A smaller, Tauri-free server build that omits Whisper is `cargo build --release --bin transcribe --no-default-features`. Building requires the Rust toolchain and the libopus development headers (`libopus-dev` on Debian/Ubuntu, `opus` via Homebrew on macOS).
+:::
+
+### Engines
+
+`transcribe` supports multiple engines via `--engine`:
+
+| Engine        | Notes                                                              |
+| ------------- | ------------------------------------------------------------------ |
+| `whisper`     | Timestamped segments — best for subtitles. **Desktop build only.** |
+| `parakeet`    | Fast ONNX engine; supports `--int8` quantized inference.           |
+| `moonshine`   | Ultra-fast ONNX engine; English + several other languages.         |
+| `omnilingual` | Massive language coverage (1,600+); supports `--int8`.             |
+
+When `--model` is a known model **id** (e.g. `whisper-large-v3`), the engine is detected automatically. When it is a raw path, pass `--engine` (defaults to `whisper` in the desktop build).
+
 ## Transcribe Files
 
-The `transcribe` subcommand turns local media files into subtitles or text, entirely offline, using the same transcription engine as the app. It decodes the audio in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, flac, and more), so you do **not** need `ffmpeg` or any other tool installed.
-
-**Syntax:**
-
 ```bash
-knowii-voice-ai transcribe <FILE>... --model <NAME_OR_PATH> [OPTIONS]
+transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 ```
 
 **Options:**
 
-| Option                    | Description                                                                          | Default            |
-| ------------------------- | ------------------------------------------------------------------------------------ | ------------------ |
-| `<FILE>...`               | One or more audio/video files to transcribe                                          | _(required)_       |
-| `-m`, `--model`           | A model name/id (e.g. `large-v3`, `whisper-medium`) or a path to a `ggml-*.bin` file | _(required)_       |
-| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect                                  | `auto`             |
-| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, or `json`                                        | `srt`              |
-| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                            | next to each input |
-| `--translate`             | Translate the transcription to English (multilingual models only)                    | off                |
-| `--initial-prompt <TEXT>` | Bias vocabulary/style with a short prompt                                            | _(none)_           |
-| `--models-dir <DIR>`      | Where to look up models by name                                                      | app data directory |
+| Option                    | Description                                                              | Default            |
+| ------------------------- | ------------------------------------------------------------------------ | ------------------ |
+| `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.    | _(required)_       |
+| `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory | _(required)_       |
+| `--engine`                | Engine for raw paths: `whisper`, `parakeet`, `moonshine`, `omnilingual`  | auto / `whisper`   |
+| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (whisper)            | `auto`             |
+| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, or `json`                            | `srt`              |
+| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                | next to each input |
+| `--translate`             | Translate to English (whisper multilingual models only)                  | off                |
+| `--initial-prompt <TEXT>` | Bias vocabulary/style (whisper only)                                     | _(none)_           |
+| `--int8`                  | Use Int8 quantized inference where supported (parakeet/omnilingual)      | off                |
+| `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)              | off                |
+| `--models-dir <DIR>`      | Where to look up models by id                                            | app data directory |
 
-When `--model` is a **name**, it is resolved against your downloaded models (the same ones the app uses). Download one first with [`models download`](#manage-models), or pass an explicit path to a `ggml-*.bin` file.
+When `--model` is an **id**, it is resolved against your downloaded models (the same ones the app uses). Download one first with [`transcribe models download`](#manage-models), or pass an explicit path.
 
 **Examples:**
 
 ```bash
 # Subtitle a video — writes "talk.srt" next to it
-knowii-voice-ai transcribe talk.mp4 --model large-v3
+transcribe file talk.mp4 --model whisper-large-v3
 
 # Several files at once, into a folder, as WebVTT
-knowii-voice-ai transcribe *.mp4 --model medium --format vtt --output ./subs/
+transcribe file *.mp4 --model whisper-medium --format vtt --output ./subs/
 
 # Force English and print plain text to the terminal
-knowii-voice-ai transcribe interview.m4a --model large-v3 --language en --format txt --output -
+transcribe file interview.m4a --model whisper-large-v3 --language en --format txt --output -
 
-# Use a model file directly, without the app's model directory
-knowii-voice-ai transcribe clip.mkv --model /path/to/ggml-large-v3.bin
+# Pipe audio in from stdin
+cat note.ogg | transcribe file - --model whisper-medium --format txt
+
+# Fast ONNX engine with quantization, from a model directory
+transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
 :::tip[Quoting paths]
-File names often contain spaces. Always quote them: `knowii-voice-ai transcribe "My Recording.mp4" --model large-v3`.
+File names often contain spaces. Always quote them: `transcribe file "My Recording.mp4" --model whisper-large-v3`.
 :::
 
 ## Manage Models
 
-The `models` subcommands let you list, download, and remove transcription models from the terminal. They use the same catalog and on-disk location as the app, so changes are shared in both directions.
+`transcribe models` lists, downloads, and removes transcription models from the terminal, using the same catalog and on-disk location as the app, so changes are shared in both directions.
 
 ### List models
 
 ```bash
-knowii-voice-ai models list
+transcribe models list
 ```
 
 Add `--downloaded` to show only installed models, or `--json` for machine-readable output. Use `--models-dir <DIR>` to inspect a non-default location.
@@ -206,10 +235,10 @@ Add `--downloaded` to show only installed models, or `--json` for machine-readab
 
 ```
 Models directory: /home/you/.local/share/knowii-voice-ai/models
-ID                       ENGINE         SIZE  DL   NAME
-parakeet-tdt-0.6b-v3     Parakeet       785M    -  Parakeet V3
-whisper-tiny             Whisper         74M    -  Whisper - Tiny
-whisper-large-v3         Whisper       3094M    ✓  Whisper - Large V3
+ID                         ENGINE        SIZE  DL   NAME
+parakeet-tdt-0.6b-v3       Parakeet      785M    -  Parakeet V3
+whisper-tiny               Whisper        74M    -  Whisper - Tiny
+whisper-large-v3           Whisper      2952M    ✓  Whisper - Large V3
 ...
 ```
 
@@ -218,7 +247,7 @@ The `DL` column shows `✓` for models that are downloaded.
 ### Download a model
 
 ```bash
-knowii-voice-ai models download whisper-large-v3
+transcribe models download whisper-large-v3
 ```
 
 The download streams to disk with a progress indicator and is written atomically, so it is safe to run while the app is open. If the model is already present, the command is a no-op.
@@ -226,14 +255,24 @@ The download streams to disk with a progress indicator and is written atomically
 ### Remove a model
 
 ```bash
-knowii-voice-ai models remove whisper-large-v3
+transcribe models remove whisper-large-v3
 ```
 
 This deletes the model's files from the models directory.
 
 :::info[Model ids]
-Use the `ID` column from `models list`. Whisper ids also accept a short form — `large-v3` resolves to `whisper-large-v3`.
+Use the `ID` column from `transcribe models list`. Whisper ids also accept a short form — `large-v3` resolves to `whisper-large-v3`.
 :::
+
+## Shell completions
+
+Generate completions for your shell:
+
+```bash
+transcribe completions bash
+transcribe completions zsh > ~/.zsh/completions/_transcribe
+transcribe completions fish > ~/.config/fish/completions/transcribe.fish
+```
 
 ## Common Use Cases
 
