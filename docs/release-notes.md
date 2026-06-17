@@ -16,6 +16,72 @@ keywords:
 
 Stay up to date with the latest features, improvements, and fixes in Knowii Voice AI.
 
+## Version 0.6.1 (June 17, 2026)
+
+### Improvements
+
+**Reliable Windows Builds**
+
+- Updated the Windows packaging so installers continue to build correctly with the latest build tools
+- Ensures every release ships a complete set of Windows, macOS, and Linux downloads together
+
+This is a maintenance release on top of 0.6.0 - there are no changes to features or how you use the app.
+
+---
+
+## Version 0.6.0 (June 17, 2026)
+
+This is a major release: Knowii Voice AI is now available on **macOS and Linux** in addition to Windows, with a host of new transcription models and quality-of-life improvements.
+
+### New Features
+
+**Now Available on macOS and Linux**
+
+- **macOS**: Native builds for both Apple Silicon (M1 and newer) and Intel Macs, **signed and notarized by Apple** for a smooth, trusted install
+- **Linux**: Native packages in multiple formats - `.deb`, `AppImage`, and `.rpm` - with Wayland/Hyprland compatibility
+- Windows remains fully supported - the same private, on-device experience now on every major platform
+
+**More Transcription Models**
+
+- **Omnilingual**: Automatic language detection across 1,600+ languages, including rare and underrepresented ones
+- **Moonshine**: Ultra-fast transcription, ideal for lower-end machines and quick notes
+- **Parakeet v2**: Updated NVIDIA Canary models with improved accuracy and timestamps
+
+**Command-Line Interface**
+
+- A standalone `transcribe` command lets you transcribe audio files and manage models from the terminal - no window required
+- Handy for scripts, automation, and power users
+
+**Quick Folder Access**
+
+- New **Open Folder** buttons to jump straight to your **app data folder** (Settings → About), your **custom sounds folder** (Settings → Audio), and your **history folder** (History)
+- Folders are created automatically if they don't exist yet
+
+**Recording Overlay Options**
+
+- Turn the on-screen recording overlay on or off
+- Choose from more overlay positions to fit your workflow
+
+**Faster Model Downloads**
+
+- Models now download in parallel and from mirror locations, so getting set up is quicker and more reliable
+
+### Improvements
+
+- **Snappier History**: The History screen now loads in pages and lazy-loads audio, so it stays fast even with lots of transcriptions
+- **Tidier Data Storage**: Your data, logs, and settings are now grouped together in a single application data location, making backups and troubleshooting easier
+- **Sound Previews**: Changing your start/stop sounds now plays a quick preview so you can hear your choice immediately
+- **Windows**: Double-click the tray icon to open the main window
+
+### Bug Fixes
+
+- Fixed push-to-talk on Linux (Hyprland)
+- Fixed a Windows crash when a microphone rejected the 16 kHz recording setting
+- Improved file download handling and notifications
+- Fixed a double-logging issue
+
+---
+
 ## Version 0.5.0 (November 12, 2025)
 
 ### Improvements

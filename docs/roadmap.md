@@ -18,10 +18,14 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ## Short-Term Goals
 
+### Recently Delivered ✅
+
+- **macOS Support**: Native, signed and notarized builds for Apple Silicon and Intel (shipped in 0.6.0)
+- **Linux Support**: Native `.deb`, `AppImage`, and `.rpm` packages with Wayland/Hyprland compatibility (shipped in 0.6.0)
+- **Signed binaries** (shipped in 0.6.0)
+
 ### In Progress 🔨
 
-- **Signed binaries** (#62)
-- **Linux Support**: Native Linux version with Wayland/Hyprland compatibility (#76)
 - **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 
 ### Next Releases
@@ -35,25 +39,23 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Shortcut to paste last transcription** (#141)
 - **Voice Trigger Words/Phrases**: Keyboard-less mode where a trigger word or phrase initiates recording and transcription (#132)
 - **Portable Version**: Uncompress. Run. Transcribe. Everything stored in one folder (#147)
-- **History UI/UX Improvements** (#155, #168, #170, #119, #98)
+- **History UI/UX Improvements** (#155, #170, #119, #98)
 - **Better trim silences** (#110)
-- **More overlay settings** (#34, #64)
 - **Minimize to tray setting** (#36)
 - **Cancel recording hotkey** (#39)
 - **Better word replacements** (#57, #172)
-- **Additional Transcription Models**: Support more transcription models (local and remote) (#90, #144, #173, #181, #37, #11, #21, #5)
+- **Additional Transcription Models**: Support more transcription models (local and remote) (#90, #144, #173, #181, #11, #21, #5)
 - **Transcription improvements** (#146, #123, #125, #126, #129)
 - **Improve audio recordings quality** (#166, #142, #99)
 - **Deeper Internationalization**: Deeper support for translations. Different keyboard shortcuts that transcribe in different languages (#136, #138, #122, #33)
 - **CUDA Support**: GPU acceleration for NVIDIA GPUs using CUDA for even faster transcription (#174)
 - **In-App feedback and error reporting** (#105, #106)
-- **CLI and API**: Integrate Knowii Voice AI with other applications and systems (#47, #135, #31, #131, #143)
+- **API**: Integrate Knowii Voice AI with other applications and systems programmatically (#135, #31, #143). A command-line interface (the `transcribe` CLI) already shipped in 0.6.0 (#47, #131)
 - **File Transcription**: Drag and drop audio files (meeting recordings, interviews, podcasts) to transcribe them (#133)
 - **Usage Statistics**: Get statistics about your usage
 - **Allow selecting a different folder for models** (#40)
 - **Allow selecting a different folder for the history** (#115, #116, #117, #118)
 - **Easily add and use custom sound files** (#153)
-- **macOS Support**: Native macOS version (#180)
 
 ## Long-Term Vision
 
@@ -65,7 +67,6 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Cloud Sync** (Optional): Optionally sync history across devices (opt-in) (#23)
 - **Themes**: Custom color themes and UI customization (#22)
 - **Mobile Companion App**: Android/iOS app for on-the-go transcription (#6)
-- **Parallel model downloads** (#3)
 - **Reprocess past recordings** (#130)
 - **Custom Hotkeys**: Additional customizable shortcuts (#39)
 
