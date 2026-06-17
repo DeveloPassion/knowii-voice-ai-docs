@@ -17,6 +17,15 @@ keywords:
 
 Knowii Voice AI stores all its data locally on your computer. This page explains where the data is stored and what you'll find there.
 
+## Opening the Data Folder
+
+The easiest way to reach this folder - on any operating system - is from inside the app:
+
+1. Open **Settings > About**.
+2. Next to **App Data Folder**, click **Open Folder**.
+
+Your data folder opens directly in your file manager, no need to remember any paths.
+
 ## Data Location
 
 ### Windows
@@ -67,7 +76,8 @@ The application data folder contains:
 
 - **sounds/**: Folder for custom start/stop recording sounds
 - Place your custom WAV or MP3 files in this folder
-- The app will find them automatically and make them available in the settings
+- The quickest way to open it is the **Open Folder** button next to **Custom Sounds** in **Settings > Audio** (it creates the folder for you if needed)
+- The app will find your files automatically and make them available in the settings
 - You can then select them from **Settings > Audio**
 
 ### Log Files

@@ -122,6 +122,21 @@ Choose which sound plays when transcription completes:
 
 **Reset Button**: Click the reset icon to restore the default end sound.
 
+### Custom Sounds
+
+**Location**: Settings > Audio > Feedback
+
+Prefer your own start and stop sounds? You can add them in just a few clicks:
+
+1. Click the **Open Folder** button next to **Custom Sounds**. This opens your custom sounds folder in your file manager, creating it automatically if it doesn't exist yet.
+2. Copy your own `.wav` or `.mp3` files into that folder.
+3. Back in Knowii Voice AI, open the **Start Recording Sound** or **End Processing Sound** dropdown - your custom sounds appear in the list, ready to select.
+
+**Tips**:
+
+- Keep custom sounds short (a fraction of a second) so they don't overlap with your recording.
+- Your custom sounds stay on your computer - nothing is uploaded anywhere.
+
 ## Common Scenarios
 
 ### Quiet Office Environment
