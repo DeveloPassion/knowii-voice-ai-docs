@@ -99,19 +99,33 @@ To help me assist you more quickly, please provide:
 
 Log files contain detailed information about what the application is doing and can be crucial for diagnosing issues.
 
-**Windows:**
+Log files live in a `logs` folder inside the application data folder:
 
-Log files are stored in:
+**Windows:**
 
 ```
 C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\
 ```
 
-Replace `<username>` with your Windows username.
+Replace `<username>` with your Windows username. **Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai\logs`, and press Enter.
 
-**Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai\logs`, and press Enter.
+**macOS:**
 
-Look for files with `.log` extension in the `logs` folder. When reporting an issue, please include the most recent log files.
+```
+~/Library/Application Support/knowii-voice-ai/logs/
+```
+
+**Quick Access**: In Finder, choose **Go → Go to Folder…** and paste the path above.
+
+**Linux:**
+
+```
+~/.local/share/knowii-voice-ai/logs/
+```
+
+**Tip**: On any platform you can open the application data folder directly from **Settings → About → App Data Folder → Open Folder**, then go into the `logs` subfolder.
+
+Look for files with the `.log` extension in the `logs` folder. When reporting an issue, please include the most recent log files.
 
 **Note**: See the [Application Data](./user-guide/application-data) page for more details about where Knowii Voice AI stores all its data.
 

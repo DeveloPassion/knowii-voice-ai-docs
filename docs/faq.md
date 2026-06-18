@@ -32,8 +32,8 @@ Knowii Voice AI is currently free during the early access period. Future pricing
 ### What operating systems are supported?
 
 - **Windows**: 10 and 11 (fully supported)
-- **Linux**: Not supported yet
-- **macOS**: Not supported yet
+- **macOS**: 10.13 (High Sierra) or later, on both Apple Silicon and Intel Macs (signed and notarized by Apple)
+- **Linux**: modern 64-bit distributions via `.deb`, `.rpm`, or `.AppImage`, with Wayland (including Hyprland) and X11 support
 
 ## Installation & Setup
 
@@ -164,10 +164,11 @@ You can:
 
 All data (transcriptions, audio recordings, settings) is stored locally on your computer:
 
-- **Windows**: `%APPDATA%/knowii-voice-ai/`
-- **Linux**: `~/.config/knowii-voice-ai/` or `$XDG_CONFIG_HOME/knowii-voice-ai/`
+- **Windows**: `%APPDATA%\knowii-voice-ai`
+- **macOS**: `~/Library/Application Support/knowii-voice-ai`
+- **Linux**: `~/.local/share/knowii-voice-ai` (or `$XDG_DATA_HOME/knowii-voice-ai` if set)
 
-See the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
+You can open this folder at any time from **Settings → About → App Data Folder → Open Folder**. See the [Application Data](./user-guide/application-data) page for what's inside, and the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
 
 ### Can I delete my history?
 

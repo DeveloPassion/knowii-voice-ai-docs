@@ -28,9 +28,9 @@ Your data folder opens directly in your file manager, no need to remember any pa
 
 ## Data Location
 
-### Windows
+The easiest way to get there on any platform is the **Open Folder** button described above. The exact location is:
 
-On Windows, application data is stored in:
+### Windows
 
 ```
 C:\Users\<username>\AppData\Roaming\knowii-voice-ai
@@ -39,6 +39,22 @@ C:\Users\<username>\AppData\Roaming\knowii-voice-ai
 Replace `<username>` with your Windows username.
 
 **Quick Access**: Press `Win + R`, type `%APPDATA%\knowii-voice-ai`, and press Enter.
+
+### macOS
+
+```
+~/Library/Application Support/knowii-voice-ai
+```
+
+**Quick Access**: In Finder, choose **Go → Go to Folder…** and paste the path above.
+
+### Linux
+
+```
+~/.local/share/knowii-voice-ai
+```
+
+(If you've set `XDG_DATA_HOME`, the folder lives under `$XDG_DATA_HOME/knowii-voice-ai` instead.)
 
 ## What's Stored
 

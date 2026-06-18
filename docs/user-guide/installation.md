@@ -1,12 +1,14 @@
 ---
 sidebar_position: 1
 title: Installation Guide
-description: Learn how to install Knowii Voice AI on Windows. Complete setup instructions, system requirements, and troubleshooting for your local voice transcription app.
+description: Learn how to install Knowii Voice AI on Windows, macOS, and Linux. Complete setup instructions, system requirements, and troubleshooting for your local voice transcription app.
 keywords:
     - installation
     - setup
     - download
     - Windows
+    - macOS
+    - Linux
     - system requirements
     - GPU acceleration
     - Vulkan
@@ -33,21 +35,25 @@ If you have limited RAM or an older computer, try the **Moonshine models**. They
 
 - Windows 10 or Windows 11
 
-### Linux
-
-- Not supported yet
-
 ### macOS
 
-- Not supported yet
+- macOS 10.13 (High Sierra) or later
+- Both Apple Silicon (M1 and newer) and Intel Macs are supported
+
+### Linux
+
+- A modern 64-bit distribution (Ubuntu 22.04+, Fedora, and similar)
+- Both Wayland (including Hyprland) and X11 are supported
 
 ## Download
 
 Download the latest version of Knowii Voice AI from your [Gumroad Library](https://gumroad.com/library) or from the [Knowii Community](https://www.knowii.net) website, depending on where you bought it from.
 
-Choose the installer for your platform:
+Choose the download for your platform:
 
 - **Windows**: `.exe` or `.msi` installer
+- **macOS**: `.dmg` - pick the one for your Mac (`aarch64` for Apple Silicon, `x64` for Intel)
+- **Linux**: `.deb` (Debian/Ubuntu), `.rpm` (Fedora/RHEL), or `.AppImage` (portable, runs on most distributions)
 
 ## Installation Steps
 
@@ -57,6 +63,39 @@ Choose the installer for your platform:
 2. **Run** the installer
 3. Follow the installation wizard
 4. **Launch** Knowii Voice AI from the Start Menu or desktop shortcut
+
+### macOS
+
+1. **Download** the `.dmg` for your Mac (`aarch64` for Apple Silicon, `x64` for Intel)
+2. **Open** the `.dmg` and drag **Knowii Voice AI** into your **Applications** folder
+3. **Launch** it from Applications or Spotlight
+
+Knowii Voice AI is **signed and notarized by Apple**, so it opens without security warnings.
+
+### Linux
+
+Choose the package that matches your distribution:
+
+- **Debian/Ubuntu** (`.deb`):
+
+    ```bash
+    sudo apt install ./Knowii.Voice.AI_<version>_amd64.deb
+    ```
+
+- **Fedora/RHEL** (`.rpm`):
+
+    ```bash
+    sudo dnf install ./Knowii.Voice.AI-<version>-1.x86_64.rpm
+    ```
+
+- **Any distribution** (`.AppImage`) - no installation needed, just make it executable and run it:
+
+    ```bash
+    chmod +x Knowii.Voice.AI_<version>_amd64.AppImage
+    ./Knowii.Voice.AI_<version>_amd64.AppImage
+    ```
+
+After installing, launch Knowii Voice AI from your application menu (or run the AppImage directly).
 
 ## First Launch
 
@@ -106,6 +145,19 @@ If you want to install Knowii Voice AI in the Program Files folder, you must run
 3. Follow the installation wizard
 
 Alternatively, you can install to your user directory (recommended), which doesn't require administrator privileges.
+
+### macOS: "Knowii Voice AI can't be opened"
+
+Because the app is notarized by Apple, this normally won't happen. If you do see a Gatekeeper prompt (for example after downloading through certain browsers), right-click (or Control-click) the app in Applications and choose **Open**, then confirm. You only need to do this once.
+
+### Linux: AppImage won't run
+
+- Make sure the file is executable: `chmod +x Knowii.Voice.AI_<version>_amd64.AppImage`
+- If you get a FUSE error, install FUSE 2: `sudo apt install libfuse2` (Debian/Ubuntu) or the equivalent for your distribution
+
+### Linux: missing dependencies for the .deb/.rpm
+
+If the package manager reports missing dependencies, install them and retry. Knowii Voice AI relies on WebKitGTK, which most desktop distributions provide (`libwebkit2gtk-4.1-0` on Debian/Ubuntu).
 
 ### Application doesn't start
 

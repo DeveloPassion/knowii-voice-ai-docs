@@ -117,7 +117,7 @@ If update signature verification fails:
 
 While not officially supported, if you need to use an older version:
 
-1. **Backup your data** (found in `%APPDATA%/knowii-voice-ai/` on Windows)
+1. **Backup your data** - your application data folder (`%APPDATA%\knowii-voice-ai` on Windows, `~/Library/Application Support/knowii-voice-ai` on macOS, `~/.local/share/knowii-voice-ai` on Linux; see the [Application Data](./application-data) page)
 2. **Uninstall** the current version
 3. **Install** the older version manually
 4. **Restore your data** if needed
