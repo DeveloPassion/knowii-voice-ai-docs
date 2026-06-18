@@ -22,14 +22,11 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 - **macOS Support**: Native, signed and notarized builds for Apple Silicon and Intel (shipped in 0.6.0)
 - **Linux Support**: Native `.deb`, `AppImage`, and `.rpm` packages with Wayland/Hyprland compatibility (shipped in 0.6.0)
-- **Signed binaries** (shipped in 0.6.0)
-
-### In Progress 🔨
-
-- **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 
 ### Next Releases
 
+- **Code-signed Windows & Linux binaries** (#62): macOS builds are already signed and notarized; Windows and Linux builds are not signed yet
+- **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 - **Home screen** (#52)
 - **Auto-submit mode** (#53)
 - **Prevent sleep while recording** (#109)
