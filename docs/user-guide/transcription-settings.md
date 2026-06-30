@@ -176,7 +176,7 @@ When using multi-language Whisper models, you can specify the language:
 - Improves accuracy if you always speak the same language
 - Reduces processing time slightly
 - Available languages depend on the selected model
-- Searchable dropdown with 99+ languages
+- Searchable dropdown with 99+ languages - just start typing the language name (for example, type "eng" to jump to English)
 
 **Reset Button**: Click the reset icon to return to Auto Detect.
 

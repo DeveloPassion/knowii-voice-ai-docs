@@ -40,6 +40,10 @@ Select which microphone or audio input device to use for voice recording:
 - Test different microphones to find which works best for your environment
 - Close to your mouth typically produces clearer recordings
 
+:::note
+If no working microphone is available when you start recording, Knowii Voice AI shows a warning so you know to connect or select one. See [Troubleshooting](#couldnt-start-recording-warning) below.
+:::
+
 ### Output Device
 
 **Location**: Settings > Audio > Devices
@@ -179,6 +183,15 @@ Prefer your own start and stop sounds? You can add them in just a few clicks:
 3. Try disconnecting and reconnecting the microphone
 4. Restart Knowii Voice AI
 5. Check microphone permissions in system settings
+
+### "Couldn't start recording" Warning
+
+If you press your shortcut and see a warning that recording couldn't start, Knowii Voice AI wasn't able to use a microphone. To fix it:
+
+1. Open **Settings > Audio > Devices** and select a **Recording Device**
+2. Make sure the microphone is connected and working in other apps
+3. If you just plugged in a microphone, restart Knowii Voice AI so it appears in the list
+4. Check that your system allows Knowii Voice AI to access the microphone
 
 ### Wrong Device Selected
 
