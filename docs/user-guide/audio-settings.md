@@ -8,6 +8,7 @@ keywords:
     - sound settings
     - audio feedback
     - recording device
+    - microphone test
     - volume control
     - custom sounds
 ---
@@ -42,6 +43,23 @@ Select which microphone or audio input device to use for voice recording:
 
 :::note
 If no working microphone is available when you start recording, Knowii Voice AI shows a warning so you know to connect or select one. See [Troubleshooting](#couldnt-start-recording-warning) below.
+:::
+
+### Test Your Microphone
+
+**Location**: Settings > Audio > Devices
+
+Not sure if your microphone is working? Use the built-in test to check before you start recording:
+
+1. Select your microphone in the **Recording Device** dropdown
+2. Click the **Test microphone** button
+3. Speak normally - the level bar moves as it picks up sound, and you'll see a **"Sound detected"** confirmation
+4. Click **Stop test** when you're done
+
+If the bar stays flat while you talk, the selected microphone isn't capturing audio - try a different device, check it's plugged in, and make sure your system lets Knowii Voice AI use it.
+
+:::tip
+The test only listens for the level - it doesn't record or transcribe anything, and nothing is saved.
 :::
 
 ### Output Device
