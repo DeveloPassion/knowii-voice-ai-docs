@@ -109,9 +109,9 @@ Controls how transcribed text is inserted into applications:
     - Alternative to Ctrl+V for applications that don't respond well to it
     - Temporarily modifies clipboard (see Clipboard Handling below for behavior options)
 
-- **Direct** (default on Linux): Inputs keystrokes directly into text field
+- **Direct** (default on Linux): Types the text straight into the focused field
     - Bypasses clipboard completely
-    - May not work in all applications
+    - On Linux, uses your desktop's typing tool (`wtype`/`kwtype`/`xdotool`) for reliable results — see **Typing Tool** below
     - Useful for troubleshooting clipboard-related issues
 
 **When to change:**
@@ -120,6 +120,22 @@ Controls how transcribed text is inserted into applications:
 - If clipboard conflicts occur with other applications
 - For troubleshooting pasting issues in specific applications
 - If using terminal applications on Linux/Windows (try Shift+Insert method)
+
+### Typing Tool (Linux only)
+
+**Location**: Settings > Advanced > Paste
+
+Chooses which system tool Knowii Voice AI uses to type transcriptions and send paste shortcuts on Linux. This matters because typing text reliably differs between Wayland and X11.
+
+- **Auto** (default): Automatically picks the best tool available on your system — `wtype` (or `kwtype` on KDE) on Wayland, `xdotool` on X11.
+- **wtype / kwtype / dotool / ydotool / xdotool**: Force a specific tool.
+
+The dropdown **only lists the tools actually installed** on your computer. If your list shows just "Auto", install one of the tools (see the [Installation guide](./installation#linux-reliable-text-output-recommended)) — otherwise the app falls back to a built-in method that can be unreliable on Wayland (text may fail to appear).
+
+**When to change:**
+
+- If dictated text doesn't appear in your apps on Linux
+- If you have multiple tools installed and want to force a particular one
 
 ### Clipboard Handling
 

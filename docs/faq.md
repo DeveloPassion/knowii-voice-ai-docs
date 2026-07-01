@@ -242,6 +242,11 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 1. **Check** that the shortcut isn't already used by another application
 2. Try a **different shortcut** in **Settings > General**
 3. **Restart** the application after changing shortcuts
+4. **On Linux**: the shortcut needs keyboard access. Add yourself to the `input` group with `sudo usermod -aG input $USER`, then **log out and back in**. See the [Installation guide](./user-guide/installation#linux-enable-the-global-shortcut-keyboard-access).
+
+### Dictated text doesn't appear (Linux)
+
+If your shortcut records and transcribes but the text isn't typed into your app, install a typing tool: **`wtype`** on Wayland (**`kwtype`** on KDE) or **`xdotool`** on X11. Then, if needed, pick it under **Settings > Advanced > Paste > Typing Tool**. See the [Installation guide](./user-guide/installation#linux-reliable-text-output-recommended).
 
 ### Transcription is completely wrong
 

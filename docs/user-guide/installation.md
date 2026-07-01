@@ -97,6 +97,33 @@ Choose the package that matches your distribution:
 
 After installing, launch Knowii Voice AI from your application menu (or run the AppImage directly).
 
+### Linux: enable the global shortcut (keyboard access)
+
+On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop** — GNOME, KDE, Hyprland, and X11 — but it needs read access to your input devices, which most distributions don't grant by default. This is a **one-time setup**:
+
+1. Add yourself to the `input` group:
+
+    ```bash
+    sudo usermod -aG input $USER
+    ```
+
+2. **Log out and back in** (or reboot) for the change to take effect.
+
+Without this step the app still runs, but pressing your shortcut won't do anything.
+
+:::note Your privacy is protected
+This access simply lets the app watch for your shortcut key **locally on your machine**. It only reacts to the shortcut you configured, never records or stores your keystrokes, and never sends anything over the network. As always, everything stays on your computer.
+:::
+
+### Linux: reliable text output (recommended)
+
+To type transcriptions into your other apps, Knowii Voice AI uses your desktop's standard input tools. For the most reliable results — especially on Wayland — install one of these (most distributions have them in their package manager):
+
+- **Wayland** (GNOME, Hyprland, …): install **`wtype`**. On **KDE Plasma**, install **`kwtype`** instead.
+- **X11**: install **`xdotool`**.
+
+The app auto-detects and uses whichever is available. You can also choose a specific tool with the **Typing Tool** setting (Settings → Advanced → Paste). If none are installed, it falls back to a built-in method that can be unreliable on Wayland.
+
 ## First Launch
 
 On first launch, Knowii Voice AI will:
