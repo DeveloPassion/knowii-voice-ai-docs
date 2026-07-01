@@ -99,17 +99,21 @@ After installing, launch Knowii Voice AI from your application menu (or run the 
 
 ### Linux: enable the global shortcut (keyboard access)
 
-On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop** — GNOME, KDE, Hyprland, and X11 — but it needs read access to your input devices, which most distributions don't grant by default. This is a **one-time setup**:
+On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop** — GNOME, KDE, Hyprland, and X11 — but it needs read access to your input devices.
 
-1. Add yourself to the `input` group:
+- **`.deb` / `.rpm`**: nothing to do. The package configures this automatically during installation, and it takes effect immediately — **no logout or reboot required**. Just install and run.
+- **AppImage**: a portable file can't configure your system, so do this **one-time** step manually:
+    1. Add yourself to the `input` group:
 
-    ```bash
-    sudo usermod -aG input $USER
-    ```
+        ```bash
+        sudo usermod -aG input $USER
+        ```
 
-2. **Log out and back in** (or reboot) for the change to take effect.
+    2. **Log out and back in** (or reboot) for the change to take effect.
 
-Without this step the app still runs, but pressing your shortcut won't do anything.
+    (Or simply install the `.deb`/`.rpm` instead, which needs no setup.)
+
+Without keyboard access the app still runs, but pressing your shortcut won't do anything.
 
 :::note Your privacy is protected
 This access simply lets the app watch for your shortcut key **locally on your machine**. It only reacts to the shortcut you configured, never records or stores your keystrokes, and never sends anything over the network. As always, everything stays on your computer.
@@ -185,6 +189,13 @@ Because the app is notarized by Apple, this normally won't happen. If you do see
 ### Linux: missing dependencies for the .deb/.rpm
 
 If the package manager reports missing dependencies, install them and retry. Knowii Voice AI relies on WebKitGTK, which most desktop distributions provide (`libwebkit2gtk-4.1-0` on Debian/Ubuntu).
+
+### Linux: my shortcut does nothing
+
+The app needs read access to your keyboard to detect its global shortcut. If pressing the shortcut does nothing:
+
+- **`.deb`/`.rpm`**: this is set up automatically — try fully quitting and reopening the app once after installing.
+- **AppImage**: complete the one-time [keyboard access](#linux-enable-the-global-shortcut-keyboard-access) step, or install the `.deb`/`.rpm` instead.
 
 ### Application doesn't start
 
