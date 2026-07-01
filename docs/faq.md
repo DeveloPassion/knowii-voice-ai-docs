@@ -246,7 +246,16 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 
 ### Dictated text doesn't appear (Linux)
 
-If your shortcut records and transcribes but the text isn't typed into your app, install a typing tool: **`wtype`** on Wayland (**`kwtype`** on KDE) or **`xdotool`** on X11. Then, if needed, pick it under **Settings > Advanced > Paste > Typing Tool**. See the [Installation guide](./user-guide/installation#linux-reliable-text-output-recommended).
+If your shortcut records and transcribes but the text isn't typed into your app, install the **typing tool for your desktop** (package names are the same across distributions — use `dnf`/`apt`/`pacman`/`zypper`):
+
+| Desktop                       | Tool                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------ |
+| **GNOME** (Wayland)           | `ydotool` (also run the `ydotoold` daemon; `wtype` does **not** work on GNOME) |
+| **KDE Plasma** (Wayland)      | `kwtype`                                                                       |
+| **Hyprland / Sway** (wlroots) | `wtype`                                                                        |
+| **X11** (any desktop)         | `xdotool`                                                                      |
+
+Then restart the app (or pick the tool under **Settings → Advanced → Paste → Typing Tool**). Knowii Voice AI shows a warning with the exact command when a compatible typing tool is missing. More detail — including the GNOME `xdotool` alternative — in the [Installation guide](./user-guide/installation#linux-reliable-text-output-recommended).
 
 ### Transcription is completely wrong
 

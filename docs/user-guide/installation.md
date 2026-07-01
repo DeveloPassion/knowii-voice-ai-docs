@@ -121,12 +121,22 @@ This access simply lets the app watch for your shortcut key **locally on your ma
 
 ### Linux: reliable text output (recommended)
 
-To type transcriptions into your other apps, Knowii Voice AI uses your desktop's standard input tools. For the most reliable results — especially on Wayland — install one of these (most distributions have them in their package manager):
+To type transcriptions into your other apps, Knowii Voice AI uses your desktop's standard input tools. The right tool depends on **your desktop** — the package name is the same on every distribution, so install it with your package manager (`dnf` on Fedora/RHEL, `apt` on Debian/Ubuntu, `pacman` on Arch, `zypper` on openSUSE):
 
-- **Wayland** (GNOME, Hyprland, …): install **`wtype`**. On **KDE Plasma**, install **`kwtype`** instead.
-- **X11**: install **`xdotool`**.
+| Desktop                       | Install   | Notes                                                                                                                |
+| ----------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| **GNOME** (Wayland)           | `ydotool` | Also needs its daemon running — start `ydotoold` and ensure access to `/dev/uinput`. `wtype` does not work on GNOME. |
+| **KDE Plasma** (Wayland)      | `kwtype`  |                                                                                                                      |
+| **Hyprland / Sway** (wlroots) | `wtype`   |                                                                                                                      |
+| **X11** (any desktop)         | `xdotool` |                                                                                                                      |
 
-The app auto-detects and uses whichever is available. You can also choose a specific tool with the **Typing Tool** setting (Settings → Advanced → Paste). If none are installed, it falls back to a built-in method that can be unreliable on Wayland.
+Example (Fedora / GNOME): `sudo dnf install ydotool`, then start the `ydotoold` daemon.
+
+:::note GNOME users
+On GNOME you can alternatively install `xdotool`, which types reliably but makes GNOME show an "Allow Remote Interaction" (Remote Desktop) prompt. `ydotool` avoids that prompt but needs the extra daemon/permission setup above. Seamless GNOME output is being improved.
+:::
+
+The app auto-detects installed, compatible tools (it won't offer tools that can't work on your desktop). You can also choose a specific one under **Settings → Advanced → Paste → Typing Tool**. If none is installed, Knowii Voice AI shows a warning (and a banner in General and Advanced settings) with the exact command for your system.
 
 ## First Launch
 
