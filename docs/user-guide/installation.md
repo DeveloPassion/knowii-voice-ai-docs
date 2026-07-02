@@ -196,12 +196,12 @@ Knowii Voice AI supports **Vulkan** out of the box for GPU-accelerated transcrip
 **CUDA support** for NVIDIA GPUs is planned for a future release. See the [Roadmap](../roadmap) for more details.
 
 :::note Linux: install a Vulkan driver for GPU acceleration
-GPU acceleration on Linux needs a **Vulkan driver** for your GPU. Most desktop installs already have one, but if GPU acceleration isn't kicking in (especially with **Whisper** models — Moonshine and Parakeet run on the CPU), install it:
+GPU acceleration on Linux needs a **Vulkan driver** (an ICD) for your GPU. The `.deb`/`.rpm` already pull in `mesa-vulkan-drivers` for you as a recommended dependency, so most installs are ready to go. You only need to install a driver by hand if you used the **AppImage**, skipped recommended dependencies, or run an **NVIDIA** GPU:
 
 - **Fedora / RHEL**: `sudo dnf install mesa-vulkan-drivers` (Intel/AMD). NVIDIA users get Vulkan from the NVIDIA driver package.
 - **Debian / Ubuntu**: `sudo apt install mesa-vulkan-drivers` (Intel/AMD), or your GPU vendor's driver.
 
-Without a Vulkan driver the app still works — it simply transcribes on the CPU.
+The driver only matters for **Whisper** models — Moonshine and Parakeet always run on the CPU. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
 :::
 
 ## Troubleshooting
@@ -251,10 +251,11 @@ Installing with your package manager (`sudo dnf install ./*.rpm`, `sudo apt inst
 
 - **WebKitGTK** (`libwebkit2gtk-4.1`) and **GTK 3** — present on any desktop.
 - **`libappindicator-gtk3`** (for the system-tray icon) — **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
-- **Vulkan loader** (`libvulkan`) — usually already present (via Mesa); needed for GPU-accelerated transcription (see [GPU Acceleration](#gpu-acceleration-optional)).
+- **Vulkan loader** (`libvulkan`, from `vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) — the app links against it and **won't start without it**, so the `.deb`/`.rpm` declare it as a required dependency and always pull it in.
+- **Mesa Vulkan drivers** (`mesa-vulkan-drivers`) — a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper** models (see [GPU Acceleration](#gpu-acceleration-optional)); Moonshine/Parakeet run on the CPU and don't need it.
 - Audio (PipeWire / ALSA) — present on desktops.
 
-If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), install `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
+If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), the required dependencies aren't resolved for you — install the Vulkan loader (`vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) and `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
 
 ### Linux: no tray icon on GNOME
 
