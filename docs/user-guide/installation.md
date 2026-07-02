@@ -44,6 +44,9 @@ If you have limited RAM or an older computer, try the **Moonshine models**. They
 
 - A modern 64-bit distribution (Ubuntu 22.04+, Fedora, and similar)
 - Both Wayland (including Hyprland) and X11 are supported
+- The `.deb`/`.rpm` pull in everything needed automatically (including the tray library). Two extras depend on your setup:
+    - **GNOME users:** install the AppIndicator extension so the tray icon shows — see [no tray icon on GNOME](#linux-no-tray-icon-on-gnome).
+    - **GPU acceleration:** needs a Vulkan driver — see [GPU Acceleration](#gpu-acceleration-optional). (Optional; the app runs on the CPU otherwise.)
 
 ## Download
 
@@ -192,6 +195,15 @@ Knowii Voice AI supports **Vulkan** out of the box for GPU-accelerated transcrip
 
 **CUDA support** for NVIDIA GPUs is planned for a future release. See the [Roadmap](../roadmap) for more details.
 
+:::note Linux: install a Vulkan driver for GPU acceleration
+GPU acceleration on Linux needs a **Vulkan driver** for your GPU. Most desktop installs already have one, but if GPU acceleration isn't kicking in (especially with **Whisper** models — Moonshine and Parakeet run on the CPU), install it:
+
+- **Fedora / RHEL**: `sudo dnf install mesa-vulkan-drivers` (Intel/AMD). NVIDIA users get Vulkan from the NVIDIA driver package.
+- **Debian / Ubuntu**: `sudo apt install mesa-vulkan-drivers` (Intel/AMD), or your GPU vendor's driver.
+
+Without a Vulkan driver the app still works — it simply transcribes on the CPU.
+:::
+
 ## Troubleshooting
 
 ### Windows: Installer is blocked
@@ -235,7 +247,25 @@ Because the app is notarized by Apple, this normally won't happen. If you do see
 
 ### Linux: missing dependencies for the .deb/.rpm
 
-If the package manager reports missing dependencies, install them and retry. Knowii Voice AI relies on WebKitGTK, which most desktop distributions provide (`libwebkit2gtk-4.1-0` on Debian/Ubuntu).
+Installing with your package manager (`sudo dnf install ./*.rpm`, `sudo apt install ./*.deb`) pulls in everything automatically. The app relies on:
+
+- **WebKitGTK** (`libwebkit2gtk-4.1`) and **GTK 3** — present on any desktop.
+- **`libappindicator-gtk3`** (for the system-tray icon) — **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
+- **Vulkan loader** (`libvulkan`) — usually already present (via Mesa); needed for GPU-accelerated transcription (see [GPU Acceleration](#gpu-acceleration-optional)).
+- Audio (PipeWire / ALSA) — present on desktops.
+
+If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), install `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
+
+### Linux: no tray icon on GNOME
+
+Knowii Voice AI lives in your system tray (for Settings, Quit, and the **Start hidden** option). **Vanilla GNOME does not show tray icons** without an extension:
+
+1. Install the **AppIndicator and KStatusNotifierItem Support** GNOME extension (from [extensions.gnome.org](https://extensions.gnome.org/extension/615/appindicator-support/), or `sudo dnf install gnome-shell-extension-appindicator` on Fedora, then enable it in the **Extensions** app).
+2. Log out and back in (or restart GNOME Shell).
+
+:::caution
+Until the tray icon is available, avoid the **Start hidden** / **hide on close** options on GNOME — with no tray icon there's no way to bring the window back. KDE, Hyprland, and X11 desktops generally show the tray icon without extra setup.
+:::
 
 ### Linux: my shortcut does nothing
 
