@@ -259,6 +259,44 @@ If your shortcut records and transcribes but the text isn't typed into your app,
 
 Then restart the app (or pick the tool under **Settings → Advanced → Paste → Typing Tool**). Knowii Voice AI shows a warning with the exact command when a compatible typing tool is missing. More detail in the [Installation guide](./user-guide/installation#linux-reliable-text-output).
 
+### System tray icon missing on GNOME
+
+If you're using the GNOME desktop, you may notice that Knowii Voice AI has no icon in the system tray (usually near your clock). **This is not a bug in the app.**
+
+Unlike KDE and most other Linux desktops, GNOME does not show tray icons on its own - it removed that built-in feature years ago. To get tray icons back, GNOME users add a small, widely-used add-on called an _extension_. Once it's installed, the Knowii Voice AI tray icon appears just like it does everywhere else, and the in-app warnings about the missing tray go away.
+
+You only need to do this once.
+
+#### Option 1: Use the Extensions app (easiest)
+
+1. Open the **Extensions** app (on some systems it's called **Extension Manager**) from your applications list.
+    - Don't have it? Install it first. It's usually called **gnome-shell-extension-manager** in your software store or package manager. On **Ubuntu**, the needed support is often already there and just needs turning on.
+2. In the app, search for **"AppIndicator and KStatusNotifierItem Support"**.
+3. Turn the switch next to it **on**.
+4. **Close and restart Knowii Voice AI** so it can detect the tray. The tray icon should now appear.
+
+#### Option 2: Enable it from the GNOME Extensions website
+
+1. Open [this extension page](https://extensions.gnome.org/extension/615/appindicator-support/) in your web browser.
+2. Flip the toggle at the top of the page to **on**.
+    - The website needs a small browser helper to work. If the toggle doesn't respond, install the **GNOME browser integration** add-on for your browser. On **Fedora**, you may also need the **gnome-browser-connector** package. If this feels fiddly, use Option 1 above instead - it's simpler.
+3. **Close and restart Knowii Voice AI**. The tray icon should now appear.
+
+:::tip
+Whichever option you choose, the last step is the important one: after enabling the extension, **close and reopen Knowii Voice AI** so it picks up the newly available tray.
+:::
+
+:::info
+The app works perfectly fine even without the tray icon - you just lose the quick tray menu. Because there's no tray to bring the window back from, Knowii Voice AI automatically protects you so you never lose access to the window:
+
+- **Closing the window minimizes it** instead of hiding it. You can bring it back any time from the **Activities** overview or with **Alt+Tab**.
+- The **Start Hidden** option is ignored, so the window always opens when you launch the app.
+  :::
+
+:::note
+This only affects GNOME when the extension isn't installed. KDE and other desktops with a working system tray are not affected, and the tray icon appears normally there - no action needed.
+:::
+
 ### Transcription is completely wrong
 
 1. **Check** the selected language in settings
