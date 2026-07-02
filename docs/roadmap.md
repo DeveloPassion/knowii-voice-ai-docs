@@ -20,11 +20,15 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ### Recently Delivered ✅
 
+- **Rock-solid Linux Support**: Rewritten global shortcuts and native, layout-correct text output on Wayland, reliable operation on GNOME and KDE, automatic keyboard permission setup in `.deb`/`.rpm` packages, and graceful handling of desktops without a system tray (shipped in 0.7.0) (#158, #313, #316, #317)
+- **Microphone Test**: Test your microphone directly from the Audio settings (shipped in 0.7.0) (#304)
+- **Clearer Error Feedback**: The app now warns you when a recording fails to start or when global shortcuts fail to initialize (shipped in 0.7.0) (#303)
 - **macOS Support**: Native, signed and notarized builds for Apple Silicon and Intel (shipped in 0.6.0)
 - **Linux Support**: Native `.deb`, `AppImage`, and `.rpm` packages with Wayland/Hyprland compatibility (shipped in 0.6.0)
 
 ### Next Releases
 
+- **Obsidian Integration**: First-class support for sending transcriptions straight into your Obsidian vault (#310)
 - **Code-signed Windows & Linux binaries** (#62): macOS builds are already signed and notarized; Windows and Linux builds are not signed yet
 - **Mute/Pause Media While Recording**: Disable noise while recording to get the best possible transcriptions (#108)
 - **Home screen** (#52)

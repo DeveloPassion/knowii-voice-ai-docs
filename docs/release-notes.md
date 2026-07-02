@@ -16,6 +16,48 @@ keywords:
 
 Stay up to date with the latest features, improvements, and fixes in Knowii Voice AI.
 
+## Version 0.7.0 (July 2, 2026)
+
+This release makes Knowii Voice AI rock-solid on Linux, and brings quality-of-life improvements to all platforms.
+
+### New Features
+
+**Microphone Test**
+
+- Test your microphone directly from Settings → Audio to verify it's picked up correctly before you start recording
+
+**Reworked Global Shortcuts and Text Output on Linux**
+
+- Global shortcuts now work reliably across Linux desktops (GNOME, KDE, Hyprland, and more) thanks to a new low-level shortcut engine
+- Transcribed text is now typed using your actual keyboard layout on Wayland
+- Shortcut keys are suppressed while recording, so they no longer leak into the active application
+- The `.deb` and `.rpm` packages automatically set up the required keyboard permissions; AppImage users get clear in-app guidance to do the same
+- The app now warns you when no compatible typing tool is installed
+
+**Clearer Error Feedback**
+
+- A clear warning is shown when a recording fails to start
+- A clear warning is shown when global shortcuts fail to initialize
+
+**Faster Dropdown Navigation**
+
+- Searchable dropdowns (like the language and model pickers) now support type-ahead: just start typing to jump to the right entry
+
+### Improvements
+
+- **GNOME without a system tray**: The app now degrades gracefully and explains what to do when no system-tray host is available
+- **Quieter offline behavior**: Checking for updates while offline no longer floods the logs with errors
+
+### Bug Fixes
+
+- Restored the main window titlebar on GNOME and KDE
+- Fixed a launch crash on GNOME (Wayland)
+- Fixed the recording overlay configuration on recent Hyprland versions
+- Linux packages now declare the required Vulkan runtime dependencies, so GPU acceleration works out of the box
+- Fixed shortcuts occasionally double-triggering after the app resumed them
+
+---
+
 ## Version 0.6.1 (June 17, 2026)
 
 ### Improvements
