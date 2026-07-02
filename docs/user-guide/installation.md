@@ -97,6 +97,21 @@ Choose the package that matches your distribution:
 
 After installing, launch Knowii Voice AI from your application menu (or run the AppImage directly).
 
+### Linux: which package should I choose?
+
+**Prefer the native package for your distribution (`.deb` or `.rpm`) whenever one exists.** It configures everything automatically — including keyboard access and reliable text output on GNOME/Wayland — with no manual steps. Use the AppImage only when there's no native package for your distribution.
+
+| Your situation                                     | Best choice         | Why                                                                                         |
+| -------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
+| Debian, Ubuntu, Linux Mint, Pop!\_OS               | **`.deb`**          | Sets up keyboard access and text output automatically — nothing to configure                |
+| Fedora, RHEL, CentOS, openSUSE                     | **`.rpm`**          | Same automatic setup as the `.deb`                                                          |
+| Arch, NixOS, or any distro without a `.deb`/`.rpm` | **AppImage**        | Portable and runs anywhere — but needs a one-time manual setup on GNOME/Wayland (see below) |
+| You're on **GNOME (Wayland)** and want zero setup  | **`.deb` / `.rpm`** | These install and manage everything needed to type your transcriptions, with no prompts     |
+
+:::tip GNOME/Wayland users
+If you can install the `.deb` or `.rpm`, do — they make text output work seamlessly on GNOME with no permission prompts. The portable AppImage can't configure your system, so on GNOME it needs the one-time setup described under [reliable text output](#linux-reliable-text-output).
+:::
+
 ### Linux: enable the global shortcut (keyboard access)
 
 On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop** — GNOME, KDE, Hyprland, and X11 — but it needs read access to your input devices.
@@ -119,22 +134,44 @@ Without keyboard access the app still runs, but pressing your shortcut won't do 
 This access simply lets the app watch for your shortcut key **locally on your machine**. It only reacts to the shortcut you configured, never records or stores your keystrokes, and never sends anything over the network. As always, everything stays on your computer.
 :::
 
-### Linux: reliable text output (recommended)
+### Linux: reliable text output
 
-To type transcriptions into your other apps, Knowii Voice AI uses your desktop's standard input tools. The right tool depends on **your desktop** — the package name is the same on every distribution, so install it with your package manager (`dnf` on Fedora/RHEL, `apt` on Debian/Ubuntu, `pacman` on Arch, `zypper` on openSUSE):
+To type transcriptions into your other apps, Knowii Voice AI uses the right method for your desktop automatically.
 
-| Desktop                       | Install   | Notes                                                                                                                |
-| ----------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| **GNOME** (Wayland)           | `ydotool` | Also needs its daemon running — start `ydotoold` and ensure access to `/dev/uinput`. `wtype` does not work on GNOME. |
-| **KDE Plasma** (Wayland)      | `kwtype`  |                                                                                                                      |
-| **Hyprland / Sway** (wlroots) | `wtype`   |                                                                                                                      |
-| **X11** (any desktop)         | `xdotool` |                                                                                                                      |
+#### On GNOME (Wayland) — built in
 
-Example (Fedora / GNOME): `sudo dnf install ydotool`, then start the `ydotoold` daemon.
+On GNOME, Knowii Voice AI types your transcriptions itself, directly and reliably:
 
-:::note GNOME users
-On GNOME you can alternatively install `xdotool`, which types reliably but makes GNOME show an "Allow Remote Interaction" (Remote Desktop) prompt. `ydotool` avoids that prompt but needs the extra daemon/permission setup above. Seamless GNOME output is being improved.
+- It types out your text **matching your keyboard layout** — AZERTY, QWERTZ, Dvorak, and others all work correctly.
+- It works everywhere, **including terminals**.
+- There is **no "Allow Remote Interaction" (Remote Desktop) prompt** to click.
+- Nothing extra to install — **no `ydotool`, no background daemon**.
+
+The only thing it needs is permission to use your system's virtual keyboard (`/dev/uinput`):
+
+- **`.deb` / `.rpm`**: **automatic — nothing to do.** The package grants this access for you during installation. Just install and run.
+- **AppImage**: a portable file can't configure your system, so run this **one-time** command to grant the access, then **log out and back in once**:
+
+    ```bash
+    echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' \
+      | sudo tee /etc/udev/rules.d/72-knowii-voice-ai-uinput.rules
+    sudo udevadm control --reload-rules
+    sudo udevadm trigger --subsystem-match=misc --action=change
+    ```
+
+:::tip The easiest option on GNOME
+Installing the **`.deb` or `.rpm`** grants everything automatically — no commands to run. Choose it over the AppImage if your distribution supports it.
 :::
+
+#### On KDE, Hyprland/Sway, and X11 — install your desktop's tool
+
+On these desktops, Knowii Voice AI uses your desktop's standard input tool. Install the one for **your desktop** with your package manager (`dnf`, `apt`, `pacman`, `zypper` — the package name is the same everywhere):
+
+| Desktop                       | Install   | One-time setup              |
+| ----------------------------- | --------- | --------------------------- |
+| **X11** (any desktop)         | `xdotool` | None — works out of the box |
+| **KDE Plasma** (Wayland)      | `kwtype`  | None                        |
+| **Hyprland / Sway** (wlroots) | `wtype`   | None                        |
 
 The app auto-detects installed, compatible tools (it won't offer tools that can't work on your desktop). You can also choose a specific one under **Settings → Advanced → Paste → Typing Tool**. If none is installed, Knowii Voice AI shows a warning (and a banner in General and Advanced settings) with the exact command for your system.
 

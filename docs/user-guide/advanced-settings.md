@@ -130,7 +130,7 @@ Chooses which system tool Knowii Voice AI uses to type transcriptions and send p
 - **Auto** (default): Automatically picks the best tool available on your system — `wtype` (or `kwtype` on KDE) on Wayland, `xdotool` on X11.
 - **wtype / kwtype / dotool / ydotool / xdotool**: Force a specific tool.
 
-The dropdown **only lists the tools actually installed** on your computer. If your list shows just "Auto", install one of the tools (see the [Installation guide](./installation#linux-reliable-text-output-recommended)) — otherwise the app falls back to a built-in method that can be unreliable on Wayland (text may fail to appear).
+The dropdown **only lists the tools actually installed** on your computer. If your list shows just "Auto", install one of the tools (see the [Installation guide](./installation#linux-reliable-text-output)) — otherwise the app falls back to a built-in method that can be unreliable on Wayland (text may fail to appear).
 
 **When to change:**
 
