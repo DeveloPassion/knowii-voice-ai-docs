@@ -259,6 +259,56 @@ If your shortcut records and transcribes but the text isn't typed into your app,
 
 Then restart the app (or pick the tool under **Settings → Advanced → Paste → Typing Tool**). Knowii Voice AI shows a warning with the exact command when a compatible typing tool is missing. More detail in the [Installation guide](./user-guide/installation#linux-reliable-text-output).
 
+### AppImage: global shortcuts or typing don't work
+
+On Linux, the **AppImage** is a single portable file that runs without an installer. Because nothing gets installed, the AppImage can't set up the small system permission rules that Knowii Voice AI needs to (1) detect your global keyboard shortcut and (2) type your transcriptions without a permission pop-up every time. So on the AppImage, your shortcut or the typing may not work until those rules are in place.
+
+The regular **.deb** and **.rpm** packages install these rules for you automatically, which is why they "just work".
+
+#### Easiest fix: install the .deb or .rpm package
+
+Instead of the AppImage, download and install the package for your system:
+
+- **.deb** for Debian, Ubuntu, Linux Mint, and Pop!\_OS
+- **.rpm** for Fedora, RHEL, and openSUSE
+
+These set everything up automatically, so global shortcuts and typing work right after you log in. Get them from the [Installation guide](./user-guide/installation) or the [GitHub Releases](https://github.com/DeveloPassion/knowii-voice-ai-website) downloads page.
+
+#### Manual fix: if you must use the AppImage
+
+If you need to stay on the AppImage, you can add the same rules yourself. Open a terminal and paste the following block. It creates the two rules, makes sure the required system module is loaded, and applies everything to your current session:
+
+```bash
+# 1) Keyboard access for global shortcuts
+sudo tee /etc/udev/rules.d/72-knowii-voice-ai-input.rules >/dev/null <<'EOF'
+KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", TAG+="uaccess"
+EOF
+
+# 2) uinput access for prompt-free typing
+sudo tee /etc/udev/rules.d/72-knowii-voice-ai-uinput.rules >/dev/null <<'EOF'
+KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
+EOF
+
+# 3) Make sure the uinput module is loaded now and on every boot
+echo uinput | sudo tee /etc/modules-load.d/knowii-voice-ai-uinput.conf >/dev/null
+sudo modprobe uinput
+
+# 4) Apply the rules to your current session
+sudo udevadm control --reload-rules
+sudo udevadm trigger --subsystem-match=input --action=change
+sudo udevadm trigger --subsystem-match=misc --action=change
+```
+
+Then **log out and back in** (or reboot) and restart Knowii Voice AI.
+
+:::note
+This only affects the **AppImage on Linux**. The **.deb** and **.rpm** packages, as well as **Windows** and **macOS**, need none of this - everything is handled for you.
+:::
+
+:::tip
+Once your shortcut works, the in-app warning about it disappears on its own.
+:::
+
 ### System tray icon missing on GNOME
 
 If you're using the GNOME desktop, you may notice that Knowii Voice AI has no icon in the system tray (usually near your clock). **This is not a bug in the app.**
