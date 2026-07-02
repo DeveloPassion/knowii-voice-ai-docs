@@ -20,9 +20,10 @@ knowii-voice-ai-docs/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml           # GitHub Pages deployment
-├── .husky/                      # Git hooks
-│   ├── commit-msg              # Commitlint hook
-│   └── pre-commit              # Lint-staged hook
+├── .gitconfig                   # Config-based git hooks (Git 2.54+)
+├── scripts/
+│   └── git-hooks/
+│       └── format-staged.sh    # Pre-commit Prettier hook
 ├── docs/                        # Documentation markdown files
 │   ├── intro.md
 │   ├── user-guide/
@@ -72,8 +73,8 @@ cd knowii-voice-ai-docs
 # Install dependencies
 npm install
 
-# Prepare git hooks
-npm run prepare
+# Activate git hooks (Git 2.54+ config-based hooks)
+npm run setup
 ```
 
 ### Development Server
@@ -467,11 +468,12 @@ onBrokenLinks: 'throw', // or 'warn', 'ignore'
 npx tsc --noEmit
 ```
 
-### Husky Hooks Not Running
+### Git Hooks Not Running
+
+Hooks are defined in `.gitconfig` at the repo root (Git 2.54+ config-based hooks) and must be activated once per clone:
 
 ```bash
-# Reinstall hooks
-npm run prepare
+npm run setup
 ```
 
 ### Formatting Issues

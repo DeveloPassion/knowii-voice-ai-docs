@@ -27,7 +27,7 @@
         "clean-api-docs": "docusaurus clean-api-docs",
         "gen-api-docs:version": "docusaurus gen-api-docs:version",
         "clean-api-docs:version": "docusaurus clean-api-docs:version",
-        "prepare": "husky",
+        "setup": "git config --local --replace-all include.path ../.gitconfig",
         "lint": "prettier --check . && eslint . --report-unused-disable-directives --max-warnings 0",
         "format": "prettier --write .",
         "tsc": "tsc --noEmit",
@@ -38,9 +38,6 @@
         "commit:lint": "commitlint --from HEAD~1 --to HEAD --verbose",
         "eslint": "eslint . --report-unused-disable-directives --max-warnings 0",
         "release": "read -p 'Enter tag name: ' TAG && git tag \"$TAG\" && git push origin \"$TAG\" && echo \"Tag $TAG created and pushed. Deployment will start automatically.\""
-    },
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
     },
     "config": {
         "commitizen": {
@@ -89,9 +86,7 @@
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-react": "7.37.5",
         "globals": "16.5.0",
-        "husky": "9.1.7",
         "jiti": "2.6.1",
-        "lint-staged": "16.2.7",
         "postcss": "8.5.6",
         "prettier": "3.6.2",
         "prettier-plugin-tailwindcss": "0.7.1",

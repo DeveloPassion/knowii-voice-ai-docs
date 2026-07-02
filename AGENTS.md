@@ -118,8 +118,7 @@ This project uses:
 
 - **Commitizen** for structured commits: `npm run commit`
 - **Commitlint** to validate commit messages
-- **Husky** for git hooks
-- **Lint-staged** for pre-commit formatting
+- **Git config-based hooks** (Git 2.54+) defined in `.gitconfig` at the repo root: a pre-commit hook formats staged files with Prettier (`scripts/git-hooks/format-staged.sh`) and a commit-msg hook runs commitlint. Activate once per clone with `npm run setup`
 
 **Commit format**: `type(scope): description`
 
