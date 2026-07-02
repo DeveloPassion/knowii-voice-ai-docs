@@ -159,6 +159,10 @@ Prefer your own start and stop sounds? You can add them in just a few clicks:
 - Keep custom sounds short (a fraction of a second) so they don't overlap with your recording.
 - Your custom sounds stay on your computer - nothing is uploaded anywhere.
 
+:::tip
+For a step-by-step walkthrough, see the [Customizing Sounds Tutorial](../tutorials/customizing-sounds).
+:::
+
 ## Common Scenarios
 
 ### Quiet Office Environment
@@ -235,6 +239,7 @@ If you press your shortcut and see a warning that recording couldn't start, Know
 
 ## Related Documentation
 
+- [Customizing Sounds Tutorial](../tutorials/customizing-sounds) - Step-by-step guide to personalizing feedback sounds
 - [Basic Usage](./basic-usage) - Learn the fundamentals
 - [Advanced Settings](./advanced-settings) - Additional configuration options
 - [FAQ](../faq) - Common questions
