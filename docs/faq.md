@@ -139,13 +139,23 @@ Accuracy depends on:
 
 Typical accuracy is 90-95% for clear audio with good microphones.
 
+### Why do numbers appear as words instead of digits?
+
+Saying "1122" can come out as "one one two two" depending on which AI model you use — the model itself decides how to write numbers. To get digits:
+
+- **Use Parakeet V2** for English dictation — it writes numbers, dates, and amounts as digits much more consistently than Parakeet V3
+- **Speak numbers fluently** in a steady rhythm — long pauses between digits make the model spell them out as words
+- **Group numbers naturally** when possible (say "eleven twenty-two" rather than "one one two two")
+
+See [Numbers and Dates](./user-guide/basic-usage#numbers-and-dates) for more tips.
+
 ### Can I transcribe in languages other than English?
 
 Yes! Knowii Voice AI supports multiple languages:
 
 - **Omnilingual models**: 1,600+ languages with automatic detection
 - **Whisper models**: 99 languages
-- **Parakeet models**: 25 European languages
+- **Parakeet V3**: 25 European languages (Parakeet V2 is English only)
 - **Moonshine models**: English, Arabic, Chinese, Japanese, Korean, Ukrainian, Vietnamese
 
 The default **Auto** setting automatically detects the language you're speaking and is recommended for most users. Only change the language in **Settings > Transcription > Language** if you're experiencing issues with automatic detection.

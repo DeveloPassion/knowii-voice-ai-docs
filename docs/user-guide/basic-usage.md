@@ -159,6 +159,14 @@ The AI model automatically adds basic punctuation. For better results:
 - **Pause naturally** between sentences
 - **Speak punctuation** explicitly if needed (e.g., "comma", "period")
 
+### Numbers and Dates
+
+Whether numbers come out as digits ("1122") or words ("one one two two") is decided by the AI model, and some models handle it better than others:
+
+- **Use Parakeet V2** if you dictate in English and often say account numbers, phone numbers, prices, or dates — it writes them as digits far more consistently than Parakeet V3
+- **Speak numbers fluently**, in a steady rhythm without long pauses between digits — isolated, slowly spoken digits are more likely to be spelled out as words
+- **Group numbers naturally** where you can (say "eleven twenty-two" rather than "one one two two")
+
 ### Language
 
 Knowii Voice AI supports multiple languages. Configure your language in **Settings > Transcription > Language**.

@@ -146,6 +146,7 @@ Control what happens to your clipboard after transcription:
 - **Don't Modify Clipboard** (default): Preserves your current clipboard contents
     - Transcription is pasted but your clipboard remains unchanged
     - Useful if you have something important copied that you don't want to lose
+    - **Note**: this works for text. If your clipboard holds an image or files, it can't be put back after a clipboard-based paste — the transcription stays on the clipboard instead
 
 - **Copy to Clipboard**: Leaves transcription in clipboard after pasting
     - Allows you to paste the same transcription multiple times

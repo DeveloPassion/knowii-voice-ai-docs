@@ -41,14 +41,14 @@ Knowii Voice AI supports multiple transcription models with different characteri
     - 785 MB download
     - Excellent balance of speed and accuracy
     - Latest version with improved performance
+    - May write numbers as words ("one one two two" instead of "1122") — if you often dictate numbers in English, use Parakeet V2 instead
 
 - **Parakeet V2**: NVIDIA's efficient speech recognition model
     - Fast with good accuracy
-    - Supports 25 European languages
-    - Automatic language detection
+    - English only
     - 697 MB download
-    - Previous generation, still highly capable
-    - Use if V3 has compatibility issues
+    - Writes numbers, dates, and amounts as digits more consistently than V3 ("1122", "March 25, 2026")
+    - The best choice for dictating account numbers, phone numbers, prices, or dates in English
 
 #### Whisper Models (Multi-Language)
 
@@ -123,7 +123,7 @@ Lightweight models designed for computers with limited resources (low memory or 
 **For most users:**
 
 - Start with **Parakeet V3** if you speak European languages (recommended)
-- Use **Parakeet V2** as an alternative if V3 has issues
+- Use **Parakeet V2** if you dictate in English and want numbers written as digits (account numbers, prices, dates)
 - Use **Small** Whisper model for other languages
 - Upgrade to larger models if accuracy is insufficient
 

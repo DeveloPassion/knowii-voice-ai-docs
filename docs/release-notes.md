@@ -16,6 +16,22 @@ keywords:
 
 Stay up to date with the latest features, improvements, and fixes in Knowii Voice AI.
 
+## Upcoming Release
+
+### Bug Fixes
+
+**No More Repeated Digits or Words (Parakeet)**
+
+- Fixed a bug where spoken digit sequences (account numbers, phone numbers) could come out with repeated characters or words, e.g. "11768211" becoming "1176821111111". Slowly spoken numbers were the most affected. Transcriptions with Parakeet models are now accurate regardless of the paste method used.
+
+**More Reliable Clipboard Protection**
+
+- If your clipboard held an image or files, a clipboard-based paste used to wipe it clean. The transcription now stays on the clipboard as text instead. Copied text is still restored as before.
+
+**No More Accidental Double Recordings**
+
+- Pressing your recording shortcut while a previous transcription is still being processed is now safely ignored, instead of silently starting a new recording that could split your dictation in two.
+
 ## Version 0.7.0 (July 2, 2026)
 
 This release makes Knowii Voice AI rock-solid on Linux, and brings quality-of-life improvements to all platforms.
