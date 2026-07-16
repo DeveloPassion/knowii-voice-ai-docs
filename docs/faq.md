@@ -143,6 +143,7 @@ Typical accuracy is 90-95% for clear audio with good microphones.
 
 Saying "1122" can come out as "one one two two" depending on which AI model you use — the model itself decides how to write numbers. To get digits:
 
+- **Enable "Write digit sequences as numbers"** in **Settings > Transcription** — it automatically converts runs of 3+ spoken digits into numbers, without ever touching normal sentences
 - **Use Parakeet V2** for English dictation — it writes numbers, dates, and amounts as digits much more consistently than Parakeet V3
 - **Speak numbers fluently** in a steady rhythm — long pauses between digits make the model spell them out as words
 - **Group numbers naturally** when possible (say "eleven twenty-two" rather than "one one two two")

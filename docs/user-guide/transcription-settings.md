@@ -34,6 +34,10 @@ Knowii Voice AI supports multiple transcription models with different characteri
 
 #### Parakeet Models
 
+:::tip Numbers coming out as words?
+If digit sequences appear as words ("one one two two" instead of "1122"), enable **Write digit sequences as numbers** in Settings > Transcription, or use Parakeet V2 for English dictation.
+:::
+
 - **Parakeet V3** (Recommended): NVIDIA's state-of-the-art model
     - Fast and accurate
     - Supports 25 European languages
@@ -273,6 +277,23 @@ Click the X button on any word tag to remove it from your custom vocabulary.
 - Add words after noticing repeated transcription errors
 - Don't add too many words (20-30 is typically sufficient)
 - Remove words you no longer use frequently
+
+## Write Digit Sequences as Numbers
+
+**Location**: Settings > Transcription
+
+Some AI models write spoken digits as words: saying "1122" can come out as "one one two two" (Parakeet V3 does this regularly in English). Enable **Write digit sequences as numbers** to automatically convert those runs into digits after transcription:
+
+- "one one two two" becomes "1122"
+- "One, one, seven, six, eight, two, one, one" becomes "11768211"
+
+**Safe by design:**
+
+- Only runs of **3 or more digits in a row** are converted, so normal sentences like "I have one thing" or "give me two minutes" are never changed
+- Numbers are never merged across sentence boundaries
+- Off by default — enable it if you often dictate account numbers, phone numbers, or codes
+
+**Tip**: For English dictation, Parakeet V2 also writes numbers as digits natively — see [Model Selection](#model-selection).
 
 ## Common Scenarios
 

@@ -18,6 +18,12 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 ## Upcoming Release
 
+### New Features
+
+**Write Digit Sequences as Numbers**
+
+- New option in Settings → Transcription: automatically convert runs of spoken digits ("one one two two") into numbers ("1122"). Only applies to 3 or more digits in a row, so normal sentences are never changed. Great for dictating account numbers, phone numbers, and codes.
+
 ### Bug Fixes
 
 **No More Repeated Digits or Words (Parakeet)**
