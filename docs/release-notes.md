@@ -32,6 +32,12 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 - Pressing your recording shortcut while a previous transcription is still being processed is now safely ignored, instead of silently starting a new recording that could split your dictation in two.
 
+**Mouse and Trackpad No Longer Affected While the App Runs (Linux)**
+
+- Fixed an issue where wireless mice (and similar devices that combine a keyboard and pointer, like Logitech receivers) could stop moving while Knowii Voice AI was running
+- Fixed trackpad swipe gestures (e.g. switching workspaces) breaking after a transcription was pasted on Hyprland and Sway
+- Fixed a rare case where the trackpad could stay unresponsive if the app started while a key was held down
+
 ## Version 0.7.0 (July 2, 2026)
 
 This release makes Knowii Voice AI rock-solid on Linux, and brings quality-of-life improvements to all platforms.
