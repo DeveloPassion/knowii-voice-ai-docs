@@ -263,6 +263,8 @@ This almost always means your operating system is blocking apps from using the m
 
 For the full step-by-step guide (including confirming your microphone in your system's sound settings), see [Microphone Not Detected](./user-guide/audio-settings#microphone-not-detected).
 
+**Good to know**: When the microphone is blocked or missing, Knowii Voice AI now shows a notification with guidance on how to fix it, so you're not left guessing.
+
 ### Shortcut doesn't work
 
 1. **Check** that the shortcut isn't already used by another application
@@ -380,6 +382,18 @@ This only affects GNOME when the extension isn't installed. KDE and other deskto
 3. **Test** with clear audio and minimal background noise
 4. **Verify** your microphone is working properly
 
+### The app seemed to get stuck while transcribing
+
+Knowii Voice AI now protects itself against getting permanently stuck. If a transcription ever takes far too long, the app automatically recovers and returns to a ready state, and shows you a clear message instead of freezing. If you see this happen repeatedly, try a smaller model or check the [Application Logs](./user-guide/advanced-settings#application-logs) for details.
+
+### My microphone was unplugged (or switched) mid-recording
+
+If your microphone disconnects while you're recording - for example, unplugging a USB mic or switching a Bluetooth headset - the app now recovers on its own instead of failing silently. Just reconnect or select a working microphone in **Settings > Audio** and record again.
+
+### I get an error message when pasting, loading a model, or using the microphone
+
+Knowii Voice AI now shows a clear notification when something goes wrong, instead of failing quietly. The message tells you what happened (for example, that text couldn't be pasted, a model failed to load, or the microphone couldn't be accessed) so you know exactly what to fix. If you need more detail, open the [Application Logs](./user-guide/advanced-settings#application-logs) under **Settings > Advanced**.
+
 ### Models won't download
 
 1. **Check** your internet connection (required for downloads only)
@@ -429,3 +443,5 @@ Can't find the answer you're looking for? Visit the [Support](./support) page fo
 - Knowii Community forums
 - GitHub issues and discussions
 - Additional resources and documentation
+
+**Tip**: When reporting a problem, you can copy your recent logs straight from **Settings → Advanced → Application Logs** and paste them into your message - see [Copy Logs From Inside the App](./support#copy-logs-from-inside-the-app-easiest).

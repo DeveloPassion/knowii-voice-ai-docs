@@ -96,12 +96,18 @@ body:
           description: |
               **Please attach your log files to help diagnose the issue.**
 
+              **Easiest way (in-app log viewer):**
+              1. Open Knowii Voice AI
+              2. Go to Settings > Advanced > Application Logs
+              3. Click **Refresh**, then **Copy**
+              4. Paste the logs below
+
               **For the most helpful logs, run the app with debug logging enabled:**
               1. Close Knowii Voice AI if it's running
               2. Open a terminal/command prompt
               3. Run: `knowii-voice-ai --log-level debug`
               4. Reproduce the issue
-              5. Collect the log files from the locations below
+              5. Collect the log files from the locations below (or use the in-app log viewer above)
 
               **Where to find log files:**
               - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\` (Press Win+R, type `%APPDATA%\knowii-voice-ai\logs`)

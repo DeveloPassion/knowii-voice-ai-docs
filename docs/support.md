@@ -95,7 +95,20 @@ To help me assist you more quickly, please provide:
     - Settings screenshots
     - Log files (see below for how to find them)
 
+### Copy Logs From Inside the App (Easiest)
+
+The quickest way to share logs is right from the app, without hunting for files on your disk:
+
+1. Open **Settings → Advanced**.
+2. Scroll down to the **Application Logs** section.
+3. Click **Refresh** to load the most recent activity, then **Copy** to put the logs on your clipboard.
+4. Paste them into your email or GitHub issue.
+
+This shows the latest log lines, which is usually all that's needed to diagnose a problem.
+
 ### How to Find Log Files
+
+If you'd rather attach the full log files (or need older logs), they live on disk too.
 
 Log files contain detailed information about what the application is doing and can be crucial for diagnosing issues.
 

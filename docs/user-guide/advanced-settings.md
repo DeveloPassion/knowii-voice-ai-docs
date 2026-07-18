@@ -226,6 +226,21 @@ Control when the AI model is automatically unloaded from memory to free up syste
 
 When a model is unloaded, the next transcription will have a delay while the model reloads.
 
+:::info
+The AI model now stays ready throughout a recording. Even if you've chosen to unload the model quickly, it won't be unloaded in the middle of a recording, so your transcription is never interrupted while you're speaking.
+:::
+
+## Application Logs
+
+**Location**: Settings > Advanced > Application Logs
+
+View the most recent application activity directly inside the app - no need to find log files on your computer:
+
+- **Refresh**: Loads the latest log lines
+- **Copy**: Copies the logs to your clipboard so you can paste them into an email or a bug report
+
+This is the fastest way to gather information when [reporting a problem](../support#copy-logs-from-inside-the-app-easiest). The logs never contain the words you dictated - they only describe what the app is doing.
+
 ## Tips
 
 - Start with default settings and adjust based on your needs

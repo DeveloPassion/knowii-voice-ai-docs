@@ -24,6 +24,20 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 - New option in Settings → Transcription: automatically convert runs of spoken digits ("one one two two") into numbers ("1122"). Only applies to 3 or more digits in a row, so normal sentences are never changed. Great for dictating account numbers, phone numbers, and codes.
 
+**View and Copy Logs From Inside the App**
+
+- New **Application Logs** section under Settings → Advanced. See the most recent activity and copy it to your clipboard with one click, so reporting a problem no longer means hunting for log files on your disk. The logs never contain the words you dictated.
+
+### Reliability & Stability
+
+This release makes Knowii Voice AI dramatically more robust. It handles unexpected situations gracefully instead of crashing or freezing.
+
+- **Never gets permanently stuck**: If a transcription ever takes far too long, the app now recovers on its own and returns to a ready state, with a clear message, instead of freezing.
+- **Recovers if your microphone drops out**: Unplugging a USB mic or switching a Bluetooth headset mid-recording no longer breaks things - just reconnect or pick another microphone and carry on.
+- **Clearer error messages**: You now get a clear notification when text can't be pasted, a model fails to load, a transcription fails, or the microphone can't be accessed - so you always know what happened.
+- **Keeps running through hiccups**: The app degrades gracefully in edge cases (including when the system tray isn't available) rather than shutting down, and settings are automatically salvaged if the settings file ever gets corrupted.
+- **Broader hardware support**: Fixed a startup crash on some older processors.
+
 ### Bug Fixes
 
 **No More Repeated Digits or Words (Parakeet)**

@@ -254,6 +254,10 @@ If you press your shortcut and see a warning that recording couldn't start, Know
 3. If you just plugged in a microphone, restart Knowii Voice AI so it appears in the list
 4. Check that your system allows Knowii Voice AI to access the microphone - on Windows this is a common cause; see [Microphone Not Detected](#microphone-not-detected) above for the exact steps
 
+### Microphone Disconnected While Recording
+
+If your microphone drops out mid-recording - for example, you unplug a USB mic or switch a Bluetooth headset - Knowii Voice AI now recovers on its own instead of getting stuck. When the microphone becomes available again, you'll even see a **"Microphone reconnected"** confirmation. Just reconnect (or pick a working microphone in **Settings > Audio**) and record again.
+
 ### Wrong Device Selected
 
 1. Use the Recording Device dropdown to select the correct microphone
