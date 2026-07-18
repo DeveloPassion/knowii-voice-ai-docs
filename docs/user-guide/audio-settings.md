@@ -9,6 +9,9 @@ keywords:
     - audio feedback
     - recording device
     - microphone test
+    - microphone not detected
+    - microphone permissions
+    - windows microphone privacy
     - volume control
     - custom sounds
 ---
@@ -200,11 +203,47 @@ For a step-by-step walkthrough, see the [Customizing Sounds Tutorial](../tutoria
 
 ### Microphone Not Detected
 
-1. Ensure microphone is properly connected
-2. Check system audio settings recognize the device
-3. Try disconnecting and reconnecting the microphone
-4. Restart Knowii Voice AI
-5. Check microphone permissions in system settings
+If your microphone doesn't appear in the **Recording Device** dropdown, or the **Test microphone** button doesn't seem to do anything, the cause is usually that your operating system is blocking apps from using the microphone. Start with the steps for your system.
+
+#### Windows
+
+Windows has a privacy setting that can stop desktop apps from using the microphone. This is the most common reason a microphone isn't detected on Windows.
+
+1. Press the **Windows key**, type **Microphone privacy settings**, and open it.
+2. Turn on **Microphone access**.
+3. Turn on **Let apps access your microphone**.
+4. Scroll down and turn on **Let desktop apps access your microphone** - this is the setting that matters most for Knowii Voice AI.
+5. Fully close and reopen Knowii Voice AI, then open **Settings > Audio > Devices** again.
+
+If it's still not detected, confirm Windows itself sees the microphone:
+
+1. Press the **Windows key**, type **Sound settings**, and open it.
+2. Under **Input**, make sure your microphone is listed and selected, then use **Test your microphone** to confirm the bar moves when you speak.
+3. If it isn't listed, make sure it's plugged in and enabled (right-click the input area and choose **Show disabled devices**).
+
+#### macOS
+
+macOS requires your permission before an app can use the microphone.
+
+1. Open **System Settings > Privacy & Security > Microphone**.
+2. Make sure **Knowii Voice AI** is turned on in the list.
+3. Reopen Knowii Voice AI after changing the setting.
+
+#### Linux
+
+1. Confirm your microphone works in your desktop's sound settings (PipeWire or PulseAudio).
+2. Make sure your user account has permission to access audio devices.
+
+#### On any system
+
+1. Ensure the microphone is properly connected - for USB microphones, try a different port.
+2. Close other apps that might be holding the microphone (video calls, meeting apps, recording software), then reopen Knowii Voice AI.
+3. Disconnect and reconnect the microphone.
+4. Restart Knowii Voice AI - microphones connected while the app is running appear after a restart.
+
+:::note
+Knowii Voice AI can only use a microphone that your operating system allows it to access. If none of the above helps, check that the same microphone works in another app to rule out a hardware issue.
+:::
 
 ### "Couldn't start recording" Warning
 
@@ -213,7 +252,7 @@ If you press your shortcut and see a warning that recording couldn't start, Know
 1. Open **Settings > Audio > Devices** and select a **Recording Device**
 2. Make sure the microphone is connected and working in other apps
 3. If you just plugged in a microphone, restart Knowii Voice AI so it appears in the list
-4. Check that your system allows Knowii Voice AI to access the microphone
+4. Check that your system allows Knowii Voice AI to access the microphone - on Windows this is a common cause; see [Microphone Not Detected](#microphone-not-detected) above for the exact steps
 
 ### Wrong Device Selected
 

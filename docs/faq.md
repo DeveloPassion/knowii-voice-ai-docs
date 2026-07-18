@@ -248,6 +248,21 @@ Yes! Knowii Voice AI works well on laptops. Consider using:
 3. **Test** the microphone in another application
 4. **Select** the correct microphone in **Settings > Audio**
 
+### The app can't detect my microphone (or the Test microphone button does nothing)
+
+This almost always means your operating system is blocking apps from using the microphone.
+
+**On Windows** (the most common case), turn on microphone access for desktop apps:
+
+1. Press the **Windows key**, type **Microphone privacy settings**, and open it.
+2. Turn on **Microphone access** and **Let apps access your microphone**.
+3. Scroll down and turn on **Let desktop apps access your microphone** - this is the key setting for Knowii Voice AI.
+4. Fully close and reopen Knowii Voice AI.
+
+**On macOS**, allow the microphone in **System Settings > Privacy & Security > Microphone** and make sure **Knowii Voice AI** is turned on.
+
+For the full step-by-step guide (including confirming your microphone in your system's sound settings), see [Microphone Not Detected](./user-guide/audio-settings#microphone-not-detected).
+
 ### Shortcut doesn't work
 
 1. **Check** that the shortcut isn't already used by another application
