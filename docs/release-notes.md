@@ -20,6 +20,13 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 ### New Features
 
+**Cleaner, More Accurate Transcriptions**
+
+- **Word Replacements**: For terms that are always transcribed the same wrong way, add an exact find-and-replace rule (Settings → Transcription). It matches whole words, ignores capitalization, and fixes those stubborn terms every time.
+- **Phonetic Replacements**: Dictating in one language but using names or acronyms from another? Fix terms that come out in the wrong alphabet - for example, map the transcribed sound "эн восемь эн" to "N8N".
+- **Remove Filler Words** (optional): Automatically clean up hesitations like "uh", "um", and "hmm", and shorten stutters such as "doc doc doc" to "doc". Off by default; the words removed adapt to your transcription language, and you can supply your own list.
+- **Whisper Prompt** (optional): Give Whisper models a short hint about punctuation, capitalization, or vocabulary - for example, "Add proper punctuation and capitalization."
+
 **Write Digit Sequences as Numbers**
 
 - New option in Settings → Transcription: automatically convert runs of spoken digits ("one one two two") into numbers ("1122"). Only applies to 3 or more digits in a row, so normal sentences are never changed. Great for dictating account numbers, phone numbers, and codes.
@@ -27,6 +34,23 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 **View and Copy Logs From Inside the App**
 
 - New **Application Logs** section under Settings → Advanced. See the most recent activity and copy it to your clipboard with one click, so reporting a problem no longer means hunting for log files on your disk. The logs never contain the words you dictated.
+
+### Improvements
+
+**Better Audio Quality**
+
+- Knowii Voice AI now records at your microphone's natural quality and prepares the audio for transcription itself, giving the AI model cleaner audio to work with.
+- **More microphones just work**, including USB and Bluetooth mics that only support a single recording quality.
+- **Nothing gets cut off**: the very end of what you say is always captured, even when you stop recording quickly.
+- Each recording starts fresh, so audio from a previous recording can never bleed into the next one.
+
+**Ignores Silent Recordings**
+
+- If you tap your shortcut by accident or record without speaking, the app now produces no text instead of letting the AI model invent phrases out of silence. Just record again and speak normally.
+
+**Smoother Recording Overlay (Linux)**
+
+- The live audio level display is now updated at a steady, efficient rate, keeping the recording overlay smooth while using noticeably less memory during long sessions.
 
 ### Reliability & Stability
 

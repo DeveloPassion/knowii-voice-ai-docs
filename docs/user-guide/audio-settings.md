@@ -44,6 +44,14 @@ Select which microphone or audio input device to use for voice recording:
 - Test different microphones to find which works best for your environment
 - Close to your mouth typically produces clearer recordings
 
+:::tip Works with more microphones - and captures cleaner audio
+Knowii Voice AI now records at your microphone's natural quality and prepares the audio for transcription itself, instead of asking the device to do it. This means:
+
+- **More microphones just work**, including USB and Bluetooth mics that only support a single recording quality
+- **Cleaner recordings** that give the AI model better audio to work with
+- **Nothing gets cut off** - the very end of what you say is always captured, even when you stop recording quickly
+  :::
+
 :::note
 If no working microphone is available when you start recording, Knowii Voice AI shows a warning so you know to connect or select one. See [Troubleshooting](#couldnt-start-recording-warning) below.
 :::

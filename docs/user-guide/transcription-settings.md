@@ -11,6 +11,10 @@ keywords:
     - Moonshine models
     - language settings
     - custom words
+    - word replacements
+    - phonetic replacements
+    - filler words
+    - whisper prompt
     - model download
     - accuracy
     - low memory
@@ -259,6 +263,10 @@ Add specialized vocabulary to improve transcription accuracy:
 
 Click the X button on any word tag to remove it from your custom vocabulary.
 
+:::tip Custom Words vs. Word Replacements
+Custom Words are a _hint_ to the AI model - they help it lean toward the right spelling, but they don't guarantee it. If a term is **always** transcribed the same wrong way, use [Word Replacements](#word-replacements) instead for an exact, guaranteed fix.
+:::
+
 ### Best Practices
 
 **Good examples of custom words:**
@@ -277,6 +285,96 @@ Click the X button on any word tag to remove it from your custom vocabulary.
 - Add words after noticing repeated transcription errors
 - Don't add too many words (20-30 is typically sufficient)
 - Remove words you no longer use frequently
+
+## Word Replacements
+
+**Location**: Settings > Transcription
+
+Sometimes a word, name, or acronym is **always** transcribed the same wrong way. Word Replacements let you fix it with an exact, guaranteed find-and-replace that runs on every transcription.
+
+### How It Works
+
+- Enter the text that keeps appearing (**Replace this**) and what it should become (**With this**)
+- The correction is applied automatically after each transcription
+- Matches whole words only and ignores capitalization, so "kubernetes", "Kubernetes", and "KUBERNETES" are all caught
+- Runs after Custom Words, so it has the final say on those stubborn terms
+
+### Adding a Replacement
+
+1. Type the misheard text in the **Replace this** field
+2. Type the correct text in the **With this** field
+3. Press Enter or click **Add**
+4. The rule appears in the list below and is active immediately
+
+You can leave the **With this** field empty to simply delete an unwanted word from your transcriptions.
+
+### Word Replacements vs. Custom Words
+
+- **Custom Words** are a gentle nudge - they help the AI model _prefer_ a spelling, but don't guarantee it
+- **Word Replacements** are an exact rule - if you know a term always comes out wrong, this fixes it every time
+
+**Good examples:**
+
+- A brand name the model always misspells the same way
+- An acronym consistently written as separate letters
+- A common autocorrect-style slip you want reversed
+
+## Phonetic Replacements
+
+**Location**: Settings > Transcription
+
+If you dictate in one language but use names or acronyms from another, the AI model sometimes writes them out phonetically in the wrong script. For example, dictating in Russian, the tool "N8N" might come out as the Cyrillic "эн восемь эн". Phonetic Replacements fix exactly these cross-language cases.
+
+### How It Works
+
+- Enter the sound as it gets transcribed (**Transcribed sound**) and the correct spelling (**Correct spelling**)
+- The correction is applied early - before Custom Words - so it reaches names and acronyms that normal correction can't
+- Ideal for terms that appear in a different alphabet than the rest of your text
+
+### When to Use It
+
+- Technical terms, product names, or acronyms written in the wrong script
+- Terms that mix letters and numbers (like "N8N") and get spelled out phonetically
+- Anything Custom Words and Word Replacements can't catch because it comes out in another alphabet
+
+**Tip**: For same-language corrections, use [Word Replacements](#word-replacements) instead. Reach for Phonetic Replacements when the misheard text appears in a different script.
+
+## Whisper Prompt
+
+**Location**: Settings > Transcription
+
+When using **Whisper** models, you can give the AI a short hint about how you'd like your text formatted. This is a great way to nudge Whisper toward proper punctuation, capitalization, or specific vocabulary.
+
+### How It Works
+
+- Type a short instruction or sample text in the **Whisper Prompt** box
+- For example: _"Add proper punctuation and capitalization."_
+- The hint gently steers how Whisper writes your transcription
+- Your Custom Words are automatically combined with this prompt
+
+**Note**: This setting only affects **Whisper** models. Other models (Parakeet, Omnilingual, Moonshine) ignore it. It is optional and empty by default.
+
+## Remove Filler Words
+
+**Location**: Settings > Transcription
+
+Turn on **Remove filler words** to automatically clean up hesitations and stutters from your transcriptions, so your dictated text reads more like polished writing.
+
+### What It Cleans Up
+
+- Removes hesitation sounds like "uh", "um", and "hmm"
+- Shortens accidental stutters, so "doc doc doc" becomes "doc"
+- Which filler words are removed depends on your transcription language
+
+### Custom Filler Words
+
+When the feature is on, you can optionally add your own filler words to remove:
+
+- Type a word and press Enter or click **Add**
+- As soon as you add any custom words, they **replace** the built-in list for your language
+- Leave the list empty to keep the built-in defaults
+
+**Off by default**: This option is turned off so you always get verbatim transcriptions unless you choose otherwise. Turn it on if you prefer cleaner, more readable text.
 
 ## Write Digit Sequences as Numbers
 
@@ -423,6 +521,8 @@ This section shows all AI models that can be downloaded:
 3. Add phonetic variations if needed
 4. Try the word in isolation to test recognition
 5. Use larger model for better custom word recognition
+6. If a term is **always** wrong in the same way, use [Word Replacements](#word-replacements) for a guaranteed exact fix
+7. If the term comes out in a different alphabet (a different script), use [Phonetic Replacements](#phonetic-replacements)
 
 ## Tips
 

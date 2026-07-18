@@ -166,8 +166,17 @@ The default **Auto** setting automatically detects the language you're speaking 
 You can:
 
 - **Edit** transcriptions directly in the History tab
-- **Configure** word replacements in Settings to auto-correct common errors
+- **Add Custom Words** in **Settings > Transcription** to help the model with specialized vocabulary
+- **Set up Word Replacements** for terms that always come out the same wrong way (an exact, guaranteed fix)
+- **Set up Phonetic Replacements** when a name or acronym comes out in the wrong alphabet
+- **Turn on "Remove filler words"** to automatically clean up "uh", "um", and stutters
 - **Try** a more accurate (larger) model
+
+See [Transcription Settings](./user-guide/transcription-settings) for details on each of these options.
+
+### Why did my recording produce no text?
+
+If you tap your shortcut by accident or record without speaking, Knowii Voice AI produces no text on purpose. Very short or silent recordings are ignored rather than transcribed, which prevents the AI model from inventing phrases (like "thanks for watching") out of silence. Just record again and speak normally.
 
 ## Privacy & Data
 
