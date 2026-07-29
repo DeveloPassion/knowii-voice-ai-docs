@@ -152,6 +152,34 @@ Control what happens to your clipboard after transcription:
     - Allows you to paste the same transcription multiple times
     - Useful for repeated pasting or when you want to keep the text in clipboard
 
+## Input Devices (Linux only)
+
+**Location**: Settings > Advanced
+
+### Disable Shortcut Suppression
+
+**Default**: Off
+
+On Linux, Knowii Voice AI listens to your keyboard directly so your shortcut works in every app. While listening, it takes temporary exclusive control of the devices it recognises as keyboards, so your shortcut keys don't also land in whatever you're typing in.
+
+On rare hardware — usually gaming mice and fancy keyboards, which present themselves as a keyboard _and_ a mouse through the same connection — this can affect the wrong device.
+
+Turn this **on** if, while the app is running:
+
+- the mouse pointer stops moving but clicks still work,
+- a key, media button, or scroll wheel stops responding, or
+- trackpad gestures stop working.
+
+With it on, your shortcut still works and your devices are left completely alone. The trade-off is that the shortcut's keys also reach the app you're typing in, so you may see a stray character or hear a beep when you trigger it.
+
+:::note
+This setting takes effect the next time you start the app.
+:::
+
+:::tip
+Most people never need this. Devices that report pointer movement are already left alone automatically — see [My mouse or keyboard behaves strangely while the app is running](../faq#my-mouse-or-keyboard-behaves-strangely-while-the-app-is-running-linux) in the FAQ.
+:::
+
 ## History Management
 
 **Location**: Settings > Advanced

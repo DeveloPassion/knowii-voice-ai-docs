@@ -262,10 +262,12 @@ If the package manager reports a missing dependency, install it and retry. If yo
 Knowii Voice AI lives in your system tray (for Settings, Quit, and the **Start hidden** option). **Vanilla GNOME does not show tray icons** without an extension:
 
 1. Install the **AppIndicator and KStatusNotifierItem Support** GNOME extension (from [extensions.gnome.org](https://extensions.gnome.org/extension/615/appindicator-support/), or `sudo dnf install gnome-shell-extension-appindicator` on Fedora, then enable it in the **Extensions** app).
-2. Log out and back in (or restart GNOME Shell).
+2. Log out and back in (or restart GNOME Shell). The tray icon appears on its own - no need to restart Knowii Voice AI.
 
-:::caution
-Until the tray icon is available, avoid the **Start hidden** / **hide on close** options on GNOME — with no tray icon there's no way to bring the window back. KDE, Hyprland, and X11 desktops generally show the tray icon without extra setup.
+Already installed it and the icon still doesn't appear? GNOME can disable **all** extensions at once, and a GNOME upgrade can switch off ones it considers incompatible. See [System tray icon missing on GNOME](../faq#system-tray-icon-missing-on-gnome) in the FAQ for the checks to run.
+
+:::info
+You can't lose the window on GNOME. When there's no tray icon, Knowii Voice AI automatically **minimizes on close** instead of hiding, **ignores Start hidden**, and shows a **Quit** button in the bottom-right corner - so the window is always reachable from the **Activities** overview or **Alt+Tab**, and you can always exit. The app also keeps watching for the tray, so once you enable the extension the icon appears on its own without restarting. KDE, Hyprland, and X11 desktops generally show the tray icon without extra setup.
 :::
 
 ### Linux: my shortcut does nothing

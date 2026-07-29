@@ -72,6 +72,37 @@ body:
           required: true
 
     - type: input
+      id: desktop
+      attributes:
+          label: 'Linux: desktop and session'
+          description: Which desktop environment and session type? Leave blank on Windows/macOS.
+          placeholder: e.g., GNOME 48 on Wayland, KDE Plasma 6 on X11, Hyprland
+      validations:
+          required: false
+
+    - type: dropdown
+      id: package
+      attributes:
+          label: 'Linux: package used'
+          description: How did you install the app? Leave blank on Windows/macOS.
+          options:
+              - .rpm (Fedora, RHEL, openSUSE)
+              - .deb (Debian, Ubuntu, Mint, Pop!_OS)
+              - AppImage
+              - Built from source
+      validations:
+          required: false
+
+    - type: input
+      id: input_devices
+      attributes:
+          label: 'Linux: keyboard and mouse'
+          description: Only needed for shortcut, typing, or input problems. Make and model helps a lot - gaming mice and programmable keyboards behave differently.
+          placeholder: e.g., Logitech G305 wireless mouse, NuPhy Air75 keyboard
+      validations:
+          required: false
+
+    - type: input
       id: version
       attributes:
           label: Knowii Voice AI Version

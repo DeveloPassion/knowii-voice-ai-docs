@@ -296,6 +296,35 @@ If your shortcut records and transcribes but the text isn't typed into your app,
 
 Then restart the app (or pick the tool under **Settings → Advanced → Paste → Typing Tool**). Knowii Voice AI shows a warning with the exact command when a compatible typing tool is missing. More detail in the [Installation guide](./user-guide/installation#linux-reliable-text-output).
 
+### My mouse or keyboard behaves strangely while the app is running (Linux)
+
+On Linux, Knowii Voice AI listens to your keyboard directly so your shortcut works in every app, on every desktop. While it's listening it takes temporary exclusive control of the devices it recognises as keyboards, so your shortcut doesn't leak into whatever you're typing in.
+
+On rare hardware this can affect the wrong device. Symptoms look like:
+
+- The **mouse pointer stops moving**, but clicks still work.
+- A key, media button, or scroll wheel stops responding.
+- Trackpad gestures stop working.
+
+This is most likely with **gaming mice and fancy keyboards**, which often present themselves as a keyboard _and_ a mouse through the same connection.
+
+**To get your device working again right now**, quit Knowii Voice AI completely - control is handed back the moment the app exits. Quit it from the tray icon, or from a terminal:
+
+```bash
+pkill knowii-voice-ai
+```
+
+You do **not** need to restart your computer.
+
+**To avoid it happening again**, first [update to the latest version](./user-guide/updating) - devices that also report pointer movement are now left alone automatically. If you're already up to date and still hit this, please [report it](./support) and include:
+
+- the make and model of the mouse or keyboard affected, and
+- the `knowii-voice-ai.log` file (**Settings → Advanced → Logs**), which records exactly which devices the app took control of.
+
+:::info
+This only applies to Linux. On Windows and macOS the app uses the system's own shortcut support and never takes control of your devices.
+:::
+
 ### AppImage: global shortcuts or typing don't work
 
 On Linux, the **AppImage** is a single portable file that runs without an installer. Because nothing gets installed, the AppImage can't set up the small system permission rules that Knowii Voice AI needs to (1) detect your global keyboard shortcut and (2) type your transcriptions without a permission pop-up every time. So on the AppImage, your shortcut or the typing may not work until those rules are in place.
@@ -360,17 +389,37 @@ You only need to do this once.
     - Don't have it? Install it first. It's usually called **gnome-shell-extension-manager** in your software store or package manager. On **Ubuntu**, the needed support is often already there and just needs turning on.
 2. In the app, search for **"AppIndicator and KStatusNotifierItem Support"**.
 3. Turn the switch next to it **on**.
-4. **Close and restart Knowii Voice AI** so it can detect the tray. The tray icon should now appear.
+4. The tray icon appears within a few seconds - no restart needed.
 
 #### Option 2: Enable it from the GNOME Extensions website
 
 1. Open [this extension page](https://extensions.gnome.org/extension/615/appindicator-support/) in your web browser.
 2. Flip the toggle at the top of the page to **on**.
     - The website needs a small browser helper to work. If the toggle doesn't respond, install the **GNOME browser integration** add-on for your browser. On **Fedora**, you may also need the **gnome-browser-connector** package. If this feels fiddly, use Option 1 above instead - it's simpler.
-3. **Close and restart Knowii Voice AI**. The tray icon should now appear.
+3. The tray icon appears within a few seconds - no restart needed.
+
+#### Already installed it and the icon still doesn't appear?
+
+If the extension is installed **and** switched on but Knowii Voice AI still says there's no system tray, GNOME is almost certainly blocking it in one of these ways:
+
+1. **All extensions are switched off at once.** GNOME has a single master switch that disables every extension, no matter how each one is set. It's silent, and it survives restarts. To check, open a terminal and run:
+
+    ```bash
+    gsettings get org.gnome.shell disable-user-extensions
+    ```
+
+    If it prints `true`, turn extensions back on with:
+
+    ```bash
+    gsettings set org.gnome.shell disable-user-extensions false
+    ```
+
+2. **A GNOME upgrade disabled it.** When GNOME updates to a new major version, it switches off extensions that haven't been marked compatible yet. Open the **Extensions** app and look for an update, or re-enable it there.
+
+Once extensions are running again, the tray icon appears on its own.
 
 :::tip
-Whichever option you choose, the last step is the important one: after enabling the extension, **close and reopen Knowii Voice AI** so it picks up the newly available tray.
+Knowii Voice AI watches for the tray in the background, so whichever option you choose, the icon appears on its own once the extension is running - you don't need to restart the app. The in-app warning disappears at the same time.
 :::
 
 :::info
@@ -378,10 +427,11 @@ The app works perfectly fine even without the tray icon - you just lose the quic
 
 - **Closing the window minimizes it** instead of hiding it. You can bring it back any time from the **Activities** overview or with **Alt+Tab**.
 - The **Start Hidden** option is ignored, so the window always opens when you launch the app.
+- A **Quit** button appears in the bottom-right corner of the window, since there's no tray menu to quit from.
   :::
 
 :::note
-This only affects GNOME when the extension isn't installed. KDE and other desktops with a working system tray are not affected, and the tray icon appears normally there - no action needed.
+This only affects GNOME when the extension isn't installed **or isn't running**. KDE and other desktops with a working system tray are not affected, and the tray icon appears normally there - no action needed.
 :::
 
 ### Transcription is completely wrong
