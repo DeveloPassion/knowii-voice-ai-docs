@@ -14,13 +14,18 @@ keywords:
     - debugging
     - troubleshooting
     - terminal
+    - waybar
+    - hyprland
+    - keybind
+    - start hidden
+    - no tray
 ---
 
 # Command-Line Interface (CLI)
 
 Knowii Voice AI ships **two** command-line tools:
 
-- The **`knowii-voice-ai`** executable itself — the desktop app, which accepts a few startup flags (mainly `--log-level`) useful for troubleshooting and debugging.
+- The **`knowii-voice-ai`** executable itself — the desktop app. Its flags let you control a running app from a script, a panel button or a desktop keybinding, and change how the app starts up.
 - A standalone **`transcribe`** binary that runs fully headless to:
     - **Transcribe local audio/video files** to subtitles or text, offline — see [Transcribe files](#transcribe-files).
     - **Manage transcription models** (list, download, remove) from the terminal — see [Manage models](#manage-models).
@@ -99,11 +104,87 @@ AI-powered voice transcription application
 Usage: knowii-voice-ai [OPTIONS]
 
 Options:
-      --log-level <LEVEL>  Set the log level (trace, debug, info, warn, error, off) [default: info]
-  -h, --help               Print help
+      --log-level <LEVEL>     Set the log level (trace, debug, info, warn, error, off) [default: info]
+      --toggle-transcription  Start or stop a transcription in the running instance
+      --cancel                Abort the running instance's current recording or transcription
+      --start-hidden          Start with the main window hidden (tray only)
+      --no-tray               Start without creating a system tray icon
+  -h, --help                  Print help
 ```
 
 File transcription and model management live in the separate **`transcribe`** binary (documented below), not in the desktop executable.
+
+### Control a running app
+
+Knowii Voice AI only ever runs once. When you launch it again while it is already open, the new command hands its instructions to the app that is already running and exits immediately — which is what makes these two flags work:
+
+| Flag                     | What it does                                                                                                                        |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `--toggle-transcription` | Starts recording. Run it again to stop recording, transcribe, and paste — just like the shortcut.                                   |
+| `--cancel`               | Throws away whatever is in progress — the recording or the transcription — and returns to idle. Does nothing if nothing is running. |
+
+This gives you a second way to trigger Knowii Voice AI, alongside your keyboard shortcut. It is handy for:
+
+- A **panel or status-bar button** (Waybar, Polybar, a dock, a stream deck)
+- A **desktop keybinding** set in your window manager instead of in the app
+- A **script** that dictates as part of a longer sequence
+
+```bash
+# Start recording (or stop it and transcribe, if already recording)
+knowii-voice-ai --toggle-transcription
+
+# Discard the current recording or transcription
+knowii-voice-ai --cancel
+```
+
+**Example — Hyprland keybindings** (`~/.config/hypr/hyprland.conf`):
+
+```ini
+bind = SUPER, D, exec, knowii-voice-ai --toggle-transcription
+bind = SUPER SHIFT, D, exec, knowii-voice-ai --cancel
+```
+
+**Example — a Waybar button** (`~/.config/waybar/config`):
+
+```json
+"custom/dictate": {
+    "format": "🎙",
+    "tooltip": "Dictate with Knowii Voice AI",
+    "on-click": "knowii-voice-ai --toggle-transcription",
+    "on-click-right": "knowii-voice-ai --cancel"
+}
+```
+
+:::note[These commands never steal your window]
+Running the app with `--toggle-transcription` or `--cancel` will not pop the Knowii Voice AI window in front of what you are doing — otherwise every press of your panel button would interrupt you. Launching it with no flags at all still brings the window forward, as before.
+:::
+
+:::tip[Press once to start, once to stop]
+`--toggle-transcription` always works as a toggle, even if you have **Push-to-talk** enabled in the settings. A command has no key to hold down, so there is nothing to release — press once to start, press again to stop. Your keyboard shortcut keeps behaving exactly as you configured it.
+:::
+
+If Knowii Voice AI is **not** running yet, these flags simply start the app normally, without recording. Recording during startup would only capture the few seconds the app needs to load its transcription model, so your first words would be lost — start the app, then trigger it again.
+
+### Change how the app starts
+
+These flags apply to the launch itself. They have no effect if the app is already running (you will see a note about it in the logs).
+
+| Flag             | What it does                                                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `--start-hidden` | Starts with the main window hidden, straight to the system tray. Same as the **Start hidden** setting, but only for this launch. |
+| `--no-tray`      | Starts without a system tray icon, for desktops where you would rather not have one.                                             |
+
+```bash
+# Start quietly in the tray, e.g. from a session autostart script
+knowii-voice-ai --start-hidden
+
+# Start with no tray icon at all
+knowii-voice-ai --no-tray
+```
+
+:::info[With `--no-tray`, closing the window minimizes it]
+Without a tray icon there would be no way to bring the window back, so closing it minimizes the window instead of hiding it — you can always find it again in your task switcher. For the same reason, combining `--no-tray` with a hidden start is not possible: the window is shown, so the app never becomes unreachable.
+:::
 
 ### Configure Log Level
 

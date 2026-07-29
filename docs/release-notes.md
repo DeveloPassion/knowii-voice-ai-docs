@@ -35,6 +35,11 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 - New **Application Logs** section under Settings → Advanced. See the most recent activity and copy it to your clipboard with one click, so reporting a problem no longer means hunting for log files on your disk. The logs never contain the words you dictated.
 
+**Start and Stop Dictation From a Command**
+
+- `knowii-voice-ai --toggle-transcription` starts recording in the running app (run it again to stop and transcribe), and `knowii-voice-ai --cancel` throws away whatever is in progress. Wire them to a panel button, a window manager keybinding, or a script - see [Control a running app](./user-guide/cli#control-a-running-app) for Hyprland and Waybar examples. These commands never pull the window in front of what you are doing.
+- Two new startup options: `--start-hidden` starts straight to the system tray for this launch, and `--no-tray` starts without a tray icon at all.
+
 ### Improvements
 
 **Better Audio Quality**

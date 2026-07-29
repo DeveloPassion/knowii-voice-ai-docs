@@ -71,6 +71,17 @@ Pressing `Escape` throws the recording away - nothing is transcribed, pasted, or
 4. **Press** your desired key combination
 5. **Save** the changes
 
+### Other ways to start and stop
+
+Besides the keyboard shortcuts, you can trigger Knowii Voice AI from a panel button, a window-manager keybinding, or a script:
+
+```bash
+knowii-voice-ai --toggle-transcription   # start recording, or stop and transcribe
+knowii-voice-ai --cancel                 # discard what's in progress
+```
+
+See [Control a running app](./cli#control-a-running-app) for ready-made Hyprland and Waybar examples.
+
 ## Transcription History
 
 View all your past transcriptions:
