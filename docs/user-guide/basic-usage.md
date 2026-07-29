@@ -59,6 +59,9 @@ The system tray icon also changes based on the application state.
 | Shortcut     | Action                                                    |
 | ------------ | --------------------------------------------------------- |
 | `Ctrl+Space` | Press and hold to record, release to transcribe and paste |
+| `Escape`     | Cancel and discard the current recording or transcription |
+
+Pressing `Escape` throws the recording away - nothing is transcribed, pasted, or saved. It keeps working normally in your other apps, and does nothing when there's no recording in progress. See [Cancel Shortcut](./general-settings#cancel-shortcut).
 
 ### Customizing Shortcuts
 

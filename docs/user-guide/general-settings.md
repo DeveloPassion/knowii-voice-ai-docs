@@ -53,6 +53,36 @@ Set a custom keyboard shortcut to start and stop voice recording:
 - `Command+Shift+Space` - macOS-friendly alternative
 - `Ctrl+Shift+V` - Alternative using V for Voice
 
+### Cancel Shortcut
+
+**Location**: Settings > General
+
+**Default**: `Escape`
+
+Stops the current recording or transcription and throws it away. Nothing is transcribed, nothing is pasted, and nothing is saved to your history.
+
+Use it when you misspeak, get interrupted, or start recording by accident.
+
+It works at any point in the process:
+
+- **While recording** - the recording is discarded.
+- **While transcribing** - the transcription is abandoned.
+
+You can change it like any other shortcut. Pressing it when nothing is running does nothing at all.
+
+**It works in both modes:**
+
+- **Toggle mode**: press Cancel any time while recording.
+- **Push To Talk mode**: press Cancel while still holding your recording shortcut, then let go. Releasing the key afterwards won't transcribe - the recording is already gone.
+
+:::note
+Unlike your recording shortcut, the Cancel key is **not** taken over by Knowii Voice AI. Escape keeps working normally everywhere else - closing menus and dialogs, leaving text editors, and so on. That's why the default is safe to leave as it is.
+:::
+
+:::tip
+You can also cancel from the system tray menu, or with the Cancel button on the recording overlay.
+:::
+
 ### Push To Talk
 
 **Location**: Settings > General
