@@ -57,6 +57,10 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 - The live audio level display is now updated at a steady, efficient rate, keeping the recording overlay smooth while using noticeably less memory during long sessions.
 
+**Recording Starts Faster**
+
+- Pressing your shortcut now opens the microphone noticeably sooner, so less of your first word can slip by before recording actually begins. The app gets ready while it starts up, instead of doing the work at the moment you press the key.
+
 ### Reliability & Stability
 
 This release makes Knowii Voice AI dramatically more robust. It handles unexpected situations gracefully instead of crashing or freezing.
