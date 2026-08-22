@@ -82,6 +82,10 @@ knowii-voice-ai --cancel                 # discard what's in progress
 
 See [Control a running app](./cli#control-a-running-app) for ready-made Hyprland and Waybar examples.
 
+## Transcribing Files
+
+Dictation is the main flow, but existing recordings work too: drop audio or video files onto the window, or pick **Transcribe File...** from the tray menu, and the transcriptions land in your history. See [File Transcription](./file-transcription) for the details, and the [`transcribe` CLI](./cli) for batch work from the terminal.
+
 ## Transcription History
 
 View all your past transcriptions:

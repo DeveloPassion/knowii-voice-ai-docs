@@ -54,7 +54,7 @@ Download the latest version of Knowii Voice AI from your [Gumroad Library](https
 
 Choose the download for your platform:
 
-- **Windows**: `.exe` or `.msi` installer
+- **Windows**: `.exe` installer (setup.exe)
 - **macOS**: `.dmg`. Pick the one for your Mac (`aarch64` for Apple Silicon, `x64` for Intel)
 - **Linux**: `.deb` (Debian/Ubuntu), `.rpm` (Fedora/RHEL), or `.AppImage` (portable, runs on most distributions)
 
@@ -62,7 +62,7 @@ Choose the download for your platform:
 
 ### Windows
 
-1. **Download** the installer (`.exe` or `.msi`)
+1. **Download** the installer (`.exe`)
 2. **Run** the installer
 3. Follow the installation wizard
 4. **Launch** Knowii Voice AI from the Start Menu or desktop shortcut

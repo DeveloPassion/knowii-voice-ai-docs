@@ -50,6 +50,10 @@ That's it! You're ready to go. For more details, check out the [Basic Usage](./u
 
 ## Key Features
 
+### Transcribes Your Files Too
+
+Drop audio or video files onto the window (meeting recordings, interviews, podcasts) and they land in your [history](./user-guide/history) as text. Batch several at once from the tray, or use the bundled [`transcribe` CLI](./user-guide/cli) for subtitles and whole folders from the terminal. See [File Transcription](./user-guide/file-transcription).
+
 ### Runs Quietly in Background
 
 Lives in your system tray (near the clock). No window cluttering your screen. Always ready when you need it. Right-click the tray icon to access settings and features. It scales from a 13" laptop to an ultrawide, and stays out of your way on both.

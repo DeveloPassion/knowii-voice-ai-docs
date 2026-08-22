@@ -478,7 +478,7 @@ Yes, but please note:
 
 ### Is there an API?
 
-Not currently. API access is being considered for future releases. See the [Roadmap](./roadmap).
+Not a programmatic API yet; that stays on the [Roadmap](./roadmap). But most automation needs are already covered today: the [`transcribe` CLI](./user-guide/cli) scripts file transcription (subtitles, text, JSON, whole folders), and the `knowii-voice-ai` executable can start, stop, and cancel dictation from a script, a panel button, or a keybinding ([Controlling the desktop app](./user-guide/cli#controlling-the-desktop-app)).
 
 ### Is there a CLI?
 
