@@ -92,7 +92,7 @@ Have an idea for Knowii Voice AI? I'd love to hear it!
 
 ## Release Cycle
 
-Knowii Voice AI releases will regularly be published, bringing new features your way.
+I ship releases regularly.
 
 Check the [Release Notes](/release-notes) to see what's new in each version.
 

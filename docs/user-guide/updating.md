@@ -14,8 +14,7 @@ keywords:
 
 # Updating Knowii Voice AI
 
-Knowii Voice AI includes a built-in update system that makes keeping your installation current easy and secure.
-This guide explains how to update Knowii Voice AI to the latest version.
+Knowii Voice AI updates itself. Here's how that works, and how to do it by hand if you'd rather.
 
 ## Check for Updates
 
@@ -47,7 +46,7 @@ If you prefer to update manually or face an issue with the built-in update featu
 
 All updates downloaded through the built-in updater are:
 
-- **Cryptographically signed**: Each update is verified using digital signatures to ensure it hasn't been tampered with
+- **Cryptographically signed**: every update is signature-verified before it installs, so a tampered file is rejected
 - **Authenticated**: Only official updates from DeveloPassion can be installed
 - **Secure**: Downloaded over HTTPS from trusted servers
 
@@ -117,7 +116,7 @@ If update signature verification fails:
 
 While not officially supported, if you need to use an older version:
 
-1. **Backup your data** - your application data folder (`%APPDATA%\knowii-voice-ai` on Windows, `~/Library/Application Support/knowii-voice-ai` on macOS, `~/.local/share/knowii-voice-ai` on Linux; see the [Application Data](./application-data) page)
+1. **Backup your data**: your application data folder (`%APPDATA%\knowii-voice-ai` on Windows, `~/Library/Application Support/knowii-voice-ai` on macOS, `~/.local/share/knowii-voice-ai` on Linux; see the [Application Data](./application-data) page)
 2. **Uninstall** the current version
 3. **Install** the older version manually
 4. **Restore your data** if needed

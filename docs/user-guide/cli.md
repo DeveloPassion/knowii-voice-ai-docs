@@ -29,7 +29,7 @@ Knowii Voice AI gives you two command-line tools, and they do very different job
 - **`transcribe`** is the real CLI. It runs fully headless, turns audio and video files into subtitles or text, and manages your transcription models. No window, no clicking, no waiting.
 - **`knowii-voice-ai`** is the desktop app itself. Its flags let you drive a running app from a script or a keybinding, and change how it starts up.
 
-Most people came here for the first one, so that is where we start.
+The first one is what most readers want, so it goes first.
 
 :::tip[New to the CLI?]
 The [Transcribe CLI Tutorial](../tutorials/transcribe-cli) walks you through your first file, start to finish, in about ten minutes. This page is the reference you come back to afterwards.
@@ -37,9 +37,7 @@ The [Transcribe CLI Tutorial](../tutorials/transcribe-cli) walks you through you
 
 ## The `transcribe` CLI
 
-The desktop app is built for dictation: you speak, it types. But plenty of audio never passes through your microphone. Meeting recordings. Interviews. Podcasts. A three-year-old video whose content lives nowhere but in the video itself.
-
-`transcribe` is for all of that. Point it at files, get text back.
+`transcribe` turns the audio that never passes through your microphone (meeting recordings, interviews, podcasts, old videos) into subtitles or text. Point it at files, get text back.
 
 It decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more), so there is no `ffmpeg` to install. It runs the same transcription engines as the desktop app, on your machine, offline. And because it is a normal command-line program, it composes with everything else you already use: shell loops, cron jobs, Makefiles, scripts.
 
@@ -315,11 +313,11 @@ Where the log files live, and which ones to send, is covered in [Application Dat
 
 ## Related Documentation
 
-- [Transcribe CLI Tutorial](../tutorials/transcribe-cli) - your first file, step by step
-- [Transcription Settings](./transcription-settings) - models and engines in the app
-- [Debug Settings](./debug-settings) - in-app debugging options
-- [Application Data](./application-data) - where models, history, and logs are stored
-- [Support](../support) - get help with issues
+- [Transcribe CLI Tutorial](../tutorials/transcribe-cli): your first file, step by step
+- [Transcription Settings](./transcription-settings): models and engines in the app
+- [Debug Settings](./debug-settings): in-app debugging options
+- [Application Data](./application-data): where models, history, and logs are stored
+- [Support](../support): get help with issues
 
 ## Need Help?
 

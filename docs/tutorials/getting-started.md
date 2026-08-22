@@ -32,7 +32,7 @@ After installation, Knowii Voice AI starts with the main window visible (default
 
 ![First-time setup wizard](/img/screenshots/2025-11-03-onboarding.png)
 
-1. The wizard will guide you through downloading your first AI model - this is **required** before you can use the app
+1. The wizard walks you through downloading your first AI model. You need one before the app can do anything
 2. When choosing a model, select the one with the **"Recommended"** tag
 3. Once the model has finished downloading, it will automatically be activated for you
 4. Customize the Quick Settings if you want/need, then click on "Let's Start"
@@ -114,7 +114,7 @@ Automatically correct or replace words:
 
 ## Next Steps
 
-Congratulations! You now know the basics of Knowii Voice AI.
+That's the whole loop: hold, speak, release. Everything else is preference.
 
 ### Continue Learning
 

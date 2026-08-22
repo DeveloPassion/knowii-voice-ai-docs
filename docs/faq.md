@@ -57,8 +57,8 @@ The AI models are the "brains" that convert your voice to text. They're download
 
 ### Which model should I choose?
 
-- **Small models**: Faster, use less memory, slightly less accurate - good for most use cases
-- **Large models**: Slower, use more memory, more accurate - best for high-accuracy needs
+- **Small models**: Faster, use less memory, slightly less accurate. Good for most use cases
+- **Large models**: Slower, use more memory, more accurate. Best when you need every word right
 - **English-only models**: Optimized for English-only transcription, typically faster than multi-language equivalents
 - Start with a small model and upgrade if needed
 
@@ -68,7 +68,7 @@ Knowii Voice AI supports multiple AI transcription models:
 
 #### Parakeet Models
 
-- **Parakeet V3** (Recommended): NVIDIA's state-of-the-art model. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
+- **Parakeet V3** (Recommended): NVIDIA's newest model. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
 
 #### Omnilingual Models
 
@@ -77,7 +77,7 @@ Support for 1,600+ languages with automatic language detection:
 - **Omnilingual 300M**: Smaller and faster. ~350 MB download
 - **Omnilingual 1B**: Larger and more accurate. ~985 MB download
 
-Great for multilingual users or less common languages. Still experimental - accuracy may vary.
+Great for multilingual users or less common languages. Still experimental, so accuracy may vary.
 
 #### Whisper Models (Multi-Language)
 
@@ -126,7 +126,7 @@ Yes! Go to **Settings > General** and click on the shortcut to change it to your
 
 ### Does it work in all applications?
 
-Yes! Knowii Voice AI pastes transcribed text into any application that accepts text input - browsers, email clients, word processors, IDEs, chat applications, and more.
+Yes! Knowii Voice AI pastes transcribed text into any application that accepts text input: browsers, email clients, word processors, IDEs, chat applications, and more.
 
 ### How accurate is the transcription?
 
@@ -141,11 +141,11 @@ Typical accuracy is 90-95% for clear audio with good microphones.
 
 ### Why do numbers appear as words instead of digits?
 
-Saying "1122" can come out as "one one two two" depending on which AI model you use — the model itself decides how to write numbers. To get digits:
+Saying "1122" can come out as "one one two two" depending on which AI model you use. The model itself decides how to write numbers. To get digits:
 
-- **Enable "Write digit sequences as numbers"** in **Settings > Transcription** — it automatically converts runs of 3+ spoken digits into numbers, without ever touching normal sentences
-- **Use Parakeet V2** for English dictation — it writes numbers, dates, and amounts as digits much more consistently than Parakeet V3
-- **Speak numbers fluently** in a steady rhythm — long pauses between digits make the model spell them out as words
+- **Enable "Write digit sequences as numbers"** in **Settings > Transcription**. It converts runs of 3+ spoken digits into numbers, and never touches normal sentences
+- **Use Parakeet V2** for English dictation. It writes numbers, dates, and amounts as digits much more consistently than Parakeet V3
+- **Speak numbers fluently** in a steady rhythm. Long pauses between digits make the model spell them out as words
 - **Group numbers naturally** when possible (say "eleven twenty-two" rather than "one one two two")
 
 See [Numbers and Dates](./user-guide/basic-usage#numbers-and-dates) for more tips.
@@ -265,7 +265,7 @@ This almost always means your operating system is blocking apps from using the m
 
 1. Press the **Windows key**, type **Microphone privacy settings**, and open it.
 2. Turn on **Microphone access** and **Let apps access your microphone**.
-3. Scroll down and turn on **Let desktop apps access your microphone** - this is the key setting for Knowii Voice AI.
+3. Scroll down and turn on **Let desktop apps access your microphone**. This is the key setting for Knowii Voice AI.
 4. Fully close and reopen Knowii Voice AI.
 
 **On macOS**, allow the microphone in **System Settings > Privacy & Security > Microphone** and make sure **Knowii Voice AI** is turned on.
@@ -285,8 +285,8 @@ For the full step-by-step guide (including confirming your microphone in your sy
 
 If your shortcut records and transcribes but the text isn't typed into your app, it depends on your desktop:
 
-- **GNOME (Wayland)**: text output is built in — **no `ydotool` or extra tool to install**. If you're on the `.deb` or `.rpm`, it works automatically. If you're on the AppImage, run the one-time `/dev/uinput` command and log out/in once (see the Installation guide link below).
-- **KDE, Hyprland/Sway, X11**: install the **typing tool for your desktop** (package names are the same across distributions — use `dnf`/`apt`/`pacman`/`zypper`):
+- **GNOME (Wayland)**: text output is built in. **No `ydotool` or extra tool to install.** If you're on the `.deb` or `.rpm`, it works automatically. If you're on the AppImage, run the one-time `/dev/uinput` command and log out/in once (see the Installation guide link below).
+- **KDE, Hyprland/Sway, X11**: install the **typing tool for your desktop** (package names are the same across distributions, so use `dnf`/`apt`/`pacman`/`zypper`):
 
 | Desktop                       | Tool      |
 | ----------------------------- | --------- |
@@ -308,7 +308,7 @@ On rare hardware this can affect the wrong device. Symptoms look like:
 
 This is most likely with **gaming mice and fancy keyboards**, which often present themselves as a keyboard _and_ a mouse through the same connection.
 
-**To get your device working again right now**, quit Knowii Voice AI completely - control is handed back the moment the app exits. Quit it from the tray icon, or from a terminal:
+**To get your device working again right now**, quit Knowii Voice AI completely. Control is handed back the moment the app exits. Quit it from the tray icon, or from a terminal:
 
 ```bash
 pkill knowii-voice-ai
@@ -316,7 +316,7 @@ pkill knowii-voice-ai
 
 You do **not** need to restart your computer.
 
-**To avoid it happening again**, first [update to the latest version](./user-guide/updating) - devices that also report pointer movement are now left alone automatically. If you're already up to date and still hit this, please [report it](./support) and include:
+**To avoid it happening again**, first [update to the latest version](./user-guide/updating). Devices that also report pointer movement are left alone automatically. If you're already up to date and still hit this, please [report it](./support) and include:
 
 - the make and model of the mouse or keyboard affected, and
 - the `knowii-voice-ai.log` file (**Settings → Advanced → Logs**), which records exactly which devices the app took control of.
@@ -368,7 +368,7 @@ sudo udevadm trigger --subsystem-match=misc --action=change
 Then **log out and back in** (or reboot) and restart Knowii Voice AI.
 
 :::note
-This only affects the **AppImage on Linux**. The **.deb** and **.rpm** packages, as well as **Windows** and **macOS**, need none of this - everything is handled for you.
+This only affects the **AppImage on Linux**. The **.deb** and **.rpm** packages, as well as **Windows** and **macOS**, need none of this. Everything is handled for you.
 :::
 
 :::tip
@@ -379,7 +379,7 @@ Once your shortcut works, the in-app warning about it disappears on its own.
 
 If you're using the GNOME desktop, you may notice that Knowii Voice AI has no icon in the system tray (usually near your clock). **This is not a bug in the app.**
 
-Unlike KDE and most other Linux desktops, GNOME does not show tray icons on its own - it removed that built-in feature years ago. To get tray icons back, GNOME users add a small, widely-used add-on called an _extension_. Once it's installed, the Knowii Voice AI tray icon appears just like it does everywhere else, and the in-app warnings about the missing tray go away.
+Unlike KDE and most other Linux desktops, GNOME does not show tray icons on its own; it removed that built-in feature years ago. To get tray icons back, GNOME users add a small, widely-used add-on called an _extension_. Once it's installed, the Knowii Voice AI tray icon appears just like it does everywhere else, and the in-app warnings about the missing tray go away.
 
 You only need to do this once.
 
@@ -389,14 +389,14 @@ You only need to do this once.
     - Don't have it? Install it first. It's usually called **gnome-shell-extension-manager** in your software store or package manager. On **Ubuntu**, the needed support is often already there and just needs turning on.
 2. In the app, search for **"AppIndicator and KStatusNotifierItem Support"**.
 3. Turn the switch next to it **on**.
-4. The tray icon appears within a few seconds - no restart needed.
+4. The tray icon appears within a few seconds. No restart needed.
 
 #### Option 2: Enable it from the GNOME Extensions website
 
 1. Open [this extension page](https://extensions.gnome.org/extension/615/appindicator-support/) in your web browser.
 2. Flip the toggle at the top of the page to **on**.
-    - The website needs a small browser helper to work. If the toggle doesn't respond, install the **GNOME browser integration** add-on for your browser. On **Fedora**, you may also need the **gnome-browser-connector** package. If this feels fiddly, use Option 1 above instead - it's simpler.
-3. The tray icon appears within a few seconds - no restart needed.
+    - The website needs a small browser helper to work. If the toggle doesn't respond, install the **GNOME browser integration** add-on for your browser. On **Fedora**, you may also need the **gnome-browser-connector** package. If this feels fiddly, use Option 1 above instead; it's simpler.
+3. The tray icon appears within a few seconds. No restart needed.
 
 #### Already installed it and the icon still doesn't appear?
 
@@ -419,11 +419,11 @@ If the extension is installed **and** switched on but Knowii Voice AI still says
 Once extensions are running again, the tray icon appears on its own.
 
 :::tip
-Knowii Voice AI watches for the tray in the background, so whichever option you choose, the icon appears on its own once the extension is running - you don't need to restart the app. The in-app warning disappears at the same time.
+Knowii Voice AI watches for the tray in the background, so whichever option you choose, the icon appears on its own once the extension is running, so you don't need to restart the app. The in-app warning disappears at the same time.
 :::
 
 :::info
-The app works perfectly fine even without the tray icon - you just lose the quick tray menu. Because there's no tray to bring the window back from, Knowii Voice AI automatically protects you so you never lose access to the window:
+The app works fine without the tray icon; you just lose the quick tray menu. Because there's no tray to bring the window back from, Knowii Voice AI automatically protects you so you never lose access to the window:
 
 - **Closing the window minimizes it** instead of hiding it. You can bring it back any time from the **Activities** overview or with **Alt+Tab**.
 - The **Start Hidden** option is ignored, so the window always opens when you launch the app.
@@ -431,7 +431,7 @@ The app works perfectly fine even without the tray icon - you just lose the quic
   :::
 
 :::note
-This only affects GNOME when the extension isn't installed **or isn't running**. KDE and other desktops with a working system tray are not affected, and the tray icon appears normally there - no action needed.
+This only affects GNOME when the extension isn't installed **or isn't running**. KDE and other desktops with a working system tray are not affected, and the tray icon appears normally there. No action needed.
 :::
 
 ### Transcription is completely wrong
@@ -443,15 +443,15 @@ This only affects GNOME when the extension isn't installed **or isn't running**.
 
 ### The app seemed to get stuck while transcribing
 
-Knowii Voice AI now protects itself against getting permanently stuck. If a transcription ever takes far too long, the app automatically recovers and returns to a ready state, and shows you a clear message instead of freezing. If you see this happen repeatedly, try a smaller model or check the [Application Logs](./user-guide/advanced-settings#application-logs) for details.
+If a transcription takes far too long, the app recovers on its own and returns to a ready state with a clear message. It will not freeze. If you see this repeatedly, try a smaller model or check the [Application Logs](./user-guide/advanced-settings#application-logs) for details.
 
 ### My microphone was unplugged (or switched) mid-recording
 
-If your microphone disconnects while you're recording - for example, unplugging a USB mic or switching a Bluetooth headset - the app now recovers on its own instead of failing silently. Just reconnect or select a working microphone in **Settings > Audio** and record again.
+Unplugging a USB mic or switching a Bluetooth headset mid-recording no longer breaks anything. The app recovers on its own instead of failing silently. Just reconnect or select a working microphone in **Settings > Audio**, then record again.
 
 ### I get an error message when pasting, loading a model, or using the microphone
 
-Knowii Voice AI now shows a clear notification when something goes wrong, instead of failing quietly. The message tells you what happened (for example, that text couldn't be pasted, a model failed to load, or the microphone couldn't be accessed) so you know exactly what to fix. If you need more detail, open the [Application Logs](./user-guide/advanced-settings#application-logs) under **Settings > Advanced**.
+Every one of those failures raises a notification that says what happened: text couldn't be pasted, a model failed to load, or the microphone couldn't be accessed. Nothing fails quietly. For more detail, open the [Application Logs](./user-guide/advanced-settings#application-logs) under **Settings > Advanced**.
 
 ### Models won't download
 
@@ -460,7 +460,7 @@ Knowii Voice AI now shows a clear notification when something goes wrong, instea
 3. **Close and restart** the application, then retry the download
 4. Try **downloading again** (downloads can be resumed)
 5. Try a **different model**
-6. If the issue persists, **Hugging Face** (where most models are downloaded from) may be experiencing downtime - check their [status page](https://status.huggingface.co/) or try again later
+6. If the issue persists, **Hugging Face** (where most models are downloaded from) may be experiencing downtime. Check their [status page](https://status.huggingface.co/) or try again later
 
 ## Advanced
 
@@ -521,7 +521,7 @@ Just because it's a fork doesn't mean it's the same thing. I've recreated the en
 
 The decision to keep Knowii Voice AI closed-source comes down to sustainability and the resources needed for ongoing development and support. I intend to contribute improvements back to the original Handy project over time.
 
-This is how open source is supposed to work - permissive licenses enable people to build on existing work and take it in new directions.
+This is how open source is supposed to work. Permissive licenses let people build on existing work and take it in new directions.
 
 ## Still Need Help?
 
@@ -532,4 +532,4 @@ Can't find the answer you're looking for? Visit the [Support](./support) page fo
 - GitHub issues and discussions
 - Additional resources and documentation
 
-**Tip**: When reporting a problem, you can copy your recent logs straight from **Settings → Advanced → Application Logs** and paste them into your message - see [Copy Logs From Inside the App](./support#copy-logs-from-inside-the-app-easiest).
+**Tip**: When reporting a problem, you can copy your recent logs straight from **Settings → Advanced → Application Logs** and paste them into your message. See [Copy Logs From Inside the App](./support#copy-logs-from-inside-the-app-easiest).

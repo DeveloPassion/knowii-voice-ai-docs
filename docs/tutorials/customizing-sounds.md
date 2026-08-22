@@ -15,7 +15,7 @@ keywords:
 
 # Customizing Sounds Tutorial
 
-Knowii Voice AI plays a short sound when recording starts and another when your transcription is ready. These audio cues let you keep working without watching the screen - and you can fully personalize them.
+Knowii Voice AI plays a short sound when recording starts and another when your transcription is ready. These audio cues let you keep working without watching the screen. And you can fully personalize them.
 
 In this tutorial, you will:
 
@@ -39,7 +39,7 @@ In this tutorial, you will:
 The **Audio Feedback** toggle controls whether any sounds play at all:
 
 1. Check that **Audio Feedback** is enabled
-2. If it's disabled, turn it on - the other sound settings become available
+2. If it's disabled, turn it on. The other sound settings become available
 
 :::note
 When Audio Feedback is disabled, Knowii Voice AI operates silently and all the sound settings below are inactive.
@@ -51,11 +51,11 @@ Knowii Voice AI ships with a collection of built-in sounds you can choose from:
 
 1. Open the **Start Recording Sound** dropdown
 2. Select any sound from the list
-3. Nudge the **Volume** slider - it plays a preview so you can hear your selection
+3. Nudge the **Volume** slider. It plays a preview so you can hear your selection
 4. Repeat for the **End Processing Sound** dropdown
 
 :::tip
-Pick two clearly different sounds for start and end - that way you always know whether the app just started recording or finished transcribing, without looking at the screen.
+Pick two clearly different sounds for start and end. That way you always know whether the app just started recording or finished transcribing, without looking at the screen.
 :::
 
 ## Step 4: Adjust the Volume
@@ -76,7 +76,7 @@ Want to use your own sounds instead of the built-in ones? It only takes a minute
 
 1. In the **Feedback** section, click the **Open Folder** button next to **Custom Sounds**. Your custom sounds folder opens in your file manager (it's created automatically if it doesn't exist yet).
 2. Copy your own `.wav` or `.mp3` files into that folder.
-3. Back in Knowii Voice AI, open the **Start Recording Sound** or **End Processing Sound** dropdown - your sounds now appear at the top of the list, marked with **(Custom)**.
+3. Back in Knowii Voice AI, open the **Start Recording Sound** or **End Processing Sound** dropdown. Your sounds now appear at the top of the list, marked with **(Custom)**.
 4. Select your custom sound, then nudge the **Volume** slider to preview it.
 
 :::tip Name your files nicely
@@ -110,13 +110,13 @@ Your custom sound files stay in the custom sounds folder, so you can switch back
 
 - **Keep custom sounds short** (a fraction of a second) so they don't overlap with your recording
 - **Use distinct start and end sounds** so you can tell them apart by ear
-- **Your sounds stay private** - custom sounds live on your computer and are never uploaded anywhere
+- **Your sounds stay private**: custom sounds live on your computer and are never uploaded anywhere
 
 ## Troubleshooting
 
 ### My custom sound doesn't appear in the dropdown
 
-1. Check that the file ends in `.wav` or `.mp3` - other formats are not supported
+1. Check that the file ends in `.wav` or `.mp3`. Other formats are not supported
 2. Make sure you copied the file into the folder opened by the **Open Folder** button (not a subfolder)
 3. Close and reopen the Settings window to refresh the list
 
@@ -129,9 +129,9 @@ Your custom sound files stay in the custom sounds folder, so you can switch back
 
 ## Related Documentation
 
-- [Audio Settings](../user-guide/audio-settings) - Full reference for all audio options
-- [Application Data](../user-guide/application-data) - Where your files are stored
-- [Getting Started Tutorial](./getting-started) - Learn the basics
+- [Audio Settings](../user-guide/audio-settings): full reference for all audio options
+- [Application Data](../user-guide/application-data): where your files are stored
+- [Getting Started Tutorial](./getting-started): learn the basics
 
 ## Need Help?
 

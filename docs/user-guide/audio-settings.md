@@ -18,11 +18,11 @@ keywords:
 
 # Audio Settings
 
-This page covers the audio configuration options available in Knowii Voice AI. These settings allow you to control audio devices, feedback sounds, and volume levels to create a personalized recording experience.
+Two things live here: which microphone records you, and what the app sounds like when it starts and stops. Plus what to check when the microphone goes quiet.
 
 ## Devices
 
-Configure your audio input and output devices for optimal recording quality.
+Pick the microphone you record with, and the device your feedback sounds play through.
 
 ### Recording Device
 
@@ -44,12 +44,12 @@ Select which microphone or audio input device to use for voice recording:
 - Test different microphones to find which works best for your environment
 - Close to your mouth typically produces clearer recordings
 
-:::tip Works with more microphones - and captures cleaner audio
+:::tip Works with more microphones, and captures cleaner audio
 Knowii Voice AI now records at your microphone's natural quality and prepares the audio for transcription itself, instead of asking the device to do it. This means:
 
 - **More microphones just work**, including USB and Bluetooth mics that only support a single recording quality
 - **Cleaner recordings** that give the AI model better audio to work with
-- **Nothing gets cut off** - the very end of what you say is always captured, even when you stop recording quickly
+- **Nothing gets cut off**: the very end of what you say is always captured, even when you stop recording quickly
   :::
 
 :::note
@@ -64,13 +64,13 @@ Not sure if your microphone is working? Use the built-in test to check before yo
 
 1. Select your microphone in the **Recording Device** dropdown
 2. Click the **Test microphone** button
-3. Speak normally - the level bar moves as it picks up sound, and you'll see a **"Sound detected"** confirmation
+3. Speak normally. The level bar moves as it picks up sound, and you'll see a **"Sound detected"** confirmation
 4. Click **Stop test** when you're done
 
-If the bar stays flat while you talk, the selected microphone isn't capturing audio - try a different device, check it's plugged in, and make sure your system lets Knowii Voice AI use it.
+If the bar stays flat while you talk, the selected microphone isn't capturing audio. Try a different device, check it's plugged in, and make sure your system lets Knowii Voice AI use it.
 
 :::tip
-The test only listens for the level - it doesn't record or transcribe anything, and nothing is saved.
+The test only listens for the level. It doesn't record or transcribe anything, and nothing is saved.
 :::
 
 ### Output Device
@@ -163,12 +163,12 @@ Prefer your own start and stop sounds? You can add them in just a few clicks:
 
 1. Click the **Open Folder** button next to **Custom Sounds**. This opens your custom sounds folder in your file manager, creating it automatically if it doesn't exist yet.
 2. Copy your own `.wav` or `.mp3` files into that folder.
-3. Back in Knowii Voice AI, open the **Start Recording Sound** or **End Processing Sound** dropdown - your custom sounds appear in the list, ready to select.
+3. Back in Knowii Voice AI, open the **Start Recording Sound** or **End Processing Sound** dropdown. Your custom sounds appear in the list, ready to select.
 
 **Tips**:
 
 - Keep custom sounds short (a fraction of a second) so they don't overlap with your recording.
-- Your custom sounds stay on your computer - nothing is uploaded anywhere.
+- Your custom sounds stay on your computer, and nothing is uploaded anywhere.
 
 :::tip
 For a step-by-step walkthrough, see the [Customizing Sounds Tutorial](../tutorials/customizing-sounds).
@@ -220,7 +220,7 @@ Windows has a privacy setting that can stop desktop apps from using the micropho
 1. Press the **Windows key**, type **Microphone privacy settings**, and open it.
 2. Turn on **Microphone access**.
 3. Turn on **Let apps access your microphone**.
-4. Scroll down and turn on **Let desktop apps access your microphone** - this is the setting that matters most for Knowii Voice AI.
+4. Scroll down and turn on **Let desktop apps access your microphone**. This is the setting that matters most for Knowii Voice AI.
 5. Fully close and reopen Knowii Voice AI, then open **Settings > Audio > Devices** again.
 
 If it's still not detected, confirm Windows itself sees the microphone:
@@ -244,10 +244,10 @@ macOS requires your permission before an app can use the microphone.
 
 #### On any system
 
-1. Ensure the microphone is properly connected - for USB microphones, try a different port.
+1. Ensure the microphone is properly connected. For USB microphones, try a different port.
 2. Close other apps that might be holding the microphone (video calls, meeting apps, recording software), then reopen Knowii Voice AI.
 3. Disconnect and reconnect the microphone.
-4. Restart Knowii Voice AI - microphones connected while the app is running appear after a restart.
+4. Restart Knowii Voice AI. Microphones connected while the app is running appear after a restart.
 
 :::note
 Knowii Voice AI can only use a microphone that your operating system allows it to access. If none of the above helps, check that the same microphone works in another app to rule out a hardware issue.
@@ -260,11 +260,11 @@ If you press your shortcut and see a warning that recording couldn't start, Know
 1. Open **Settings > Audio > Devices** and select a **Recording Device**
 2. Make sure the microphone is connected and working in other apps
 3. If you just plugged in a microphone, restart Knowii Voice AI so it appears in the list
-4. Check that your system allows Knowii Voice AI to access the microphone - on Windows this is a common cause; see [Microphone Not Detected](#microphone-not-detected) above for the exact steps
+4. Check that your system allows Knowii Voice AI to access the microphone. On Windows this is a common cause; see [Microphone Not Detected](#microphone-not-detected) above for the exact steps
 
 ### Microphone Disconnected While Recording
 
-If your microphone drops out mid-recording - for example, you unplug a USB mic or switch a Bluetooth headset - Knowii Voice AI now recovers on its own instead of getting stuck. When the microphone becomes available again, you'll even see a **"Microphone reconnected"** confirmation. Just reconnect (or pick a working microphone in **Settings > Audio**) and record again.
+If your microphone drops out mid-recording, for example when you unplug a USB mic or switch a Bluetooth headset, Knowii Voice AI recovers on its own instead of getting stuck. When the microphone becomes available again, you'll even see a **"Microphone reconnected"** confirmation. Just reconnect (or pick a working microphone in **Settings > Audio**) and record again.
 
 ### Wrong Device Selected
 
@@ -290,10 +290,10 @@ If your microphone drops out mid-recording - for example, you unplug a USB mic o
 
 ## Related Documentation
 
-- [Customizing Sounds Tutorial](../tutorials/customizing-sounds) - Step-by-step guide to personalizing feedback sounds
-- [Basic Usage](./basic-usage) - Learn the fundamentals
-- [Advanced Settings](./advanced-settings) - Additional configuration options
-- [FAQ](../faq) - Common questions
+- [Customizing Sounds Tutorial](../tutorials/customizing-sounds): step-by-step guide to personalizing feedback sounds
+- [Basic Usage](./basic-usage): learn the fundamentals
+- [Advanced Settings](./advanced-settings): additional configuration options
+- [FAQ](../faq): common questions
 
 ## Need Help?
 

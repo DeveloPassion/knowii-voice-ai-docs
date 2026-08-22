@@ -14,7 +14,7 @@ keywords:
 
 # Release Notes
 
-Stay up to date with the latest features, improvements, and fixes in Knowii Voice AI.
+What shipped, when, and what it changes for you.
 
 ## Upcoming Release
 
@@ -23,9 +23,9 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 **Cleaner, More Accurate Transcriptions**
 
 - **Word Replacements**: For terms that are always transcribed the same wrong way, add an exact find-and-replace rule (Settings → Transcription). It matches whole words, ignores capitalization, and fixes those stubborn terms every time.
-- **Phonetic Replacements**: Dictating in one language but using names or acronyms from another? Fix terms that come out in the wrong alphabet - for example, map the transcribed sound "эн восемь эн" to "N8N".
+- **Phonetic Replacements**: Dictating in one language but using names or acronyms from another? Fix terms that come out in the wrong alphabet. For example, map the transcribed sound "эн восемь эн" to "N8N".
 - **Remove Filler Words** (optional): Automatically clean up hesitations like "uh", "um", and "hmm", and shorten stutters such as "doc doc doc" to "doc". Off by default; the words removed adapt to your transcription language, and you can supply your own list.
-- **Whisper Prompt** (optional): Give Whisper models a short hint about punctuation, capitalization, or vocabulary - for example, "Add proper punctuation and capitalization."
+- **Whisper Prompt** (optional): Give Whisper models a short hint about punctuation, capitalization, or vocabulary, for example "Add proper punctuation and capitalization".
 
 **Write Digit Sequences as Numbers**
 
@@ -37,7 +37,7 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 **Start and Stop Dictation From a Command**
 
-- `knowii-voice-ai --toggle-transcription` starts recording in the running app (run it again to stop and transcribe), and `knowii-voice-ai --cancel` throws away whatever is in progress. Wire them to a panel button, a window manager keybinding, or a script - see [Control a running app](./user-guide/cli#control-a-running-app) for Hyprland and Waybar examples. These commands never pull the window in front of what you are doing.
+- `knowii-voice-ai --toggle-transcription` starts recording in the running app (run it again to stop and transcribe), and `knowii-voice-ai --cancel` throws away whatever is in progress. Wire them to a panel button, a window manager keybinding, or a script. See [Control a running app](./user-guide/cli#control-a-running-app) for Hyprland and Waybar examples. These commands never pull the window in front of what you are doing.
 - Two new startup options: `--start-hidden` starts straight to the system tray for this launch, and `--no-tray` starts without a tray icon at all.
 
 ### Improvements
@@ -63,11 +63,11 @@ Stay up to date with the latest features, improvements, and fixes in Knowii Voic
 
 ### Reliability & Stability
 
-This release makes Knowii Voice AI dramatically more robust. It handles unexpected situations gracefully instead of crashing or freezing.
+This release is about not breaking. When something unexpected happens, the app recovers instead of crashing or freezing.
 
 - **Never gets permanently stuck**: If a transcription ever takes far too long, the app now recovers on its own and returns to a ready state, with a clear message, instead of freezing.
-- **Recovers if your microphone drops out**: Unplugging a USB mic or switching a Bluetooth headset mid-recording no longer breaks things - just reconnect or pick another microphone and carry on.
-- **Clearer error messages**: You now get a clear notification when text can't be pasted, a model fails to load, a transcription fails, or the microphone can't be accessed - so you always know what happened.
+- **Recovers if your microphone drops out**: Unplugging a USB mic or switching a Bluetooth headset mid-recording no longer breaks things. Reconnect or pick another microphone and carry on.
+- **Clearer error messages**: You now get a clear notification when text can't be pasted, a model fails to load, a transcription fails, or the microphone can't be accessed, so you always know what happened.
 - **Keeps running through hiccups**: The app degrades gracefully in edge cases (including when the system tray isn't available) rather than shutting down, and settings are automatically salvaged if the settings file ever gets corrupted.
 - **Broader hardware support**: Fixed a startup crash on some older processors.
 
@@ -142,31 +142,31 @@ This release makes Knowii Voice AI rock-solid on Linux, and brings quality-of-li
 - Updated the Windows packaging so installers continue to build correctly with the latest build tools
 - Ensures every release ships a complete set of Windows, macOS, and Linux downloads together
 
-This is a maintenance release on top of 0.6.0 - there are no changes to features or how you use the app.
+This is a maintenance release on top of 0.6.0. Nothing changed in the features or in how you use the app.
 
 ---
 
 ## Version 0.6.0 (June 17, 2026)
 
-This is a major release: Knowii Voice AI is now available on **macOS and Linux** in addition to Windows, with a host of new transcription models and quality-of-life improvements.
+This is a major release: Knowii Voice AI is now available on **macOS and Linux** in addition to Windows, with several new transcription models and quality-of-life improvements.
 
 ### New Features
 
 **Now Available on macOS and Linux**
 
-- **macOS**: Native builds for both Apple Silicon (M1 and newer) and Intel Macs, **signed and notarized by Apple** for a smooth, trusted install
-- **Linux**: Native packages in multiple formats - `.deb`, `AppImage`, and `.rpm` - with Wayland/Hyprland compatibility
-- Windows remains fully supported - the same private, on-device experience now on every major platform
+- **macOS**: Native builds for both Apple Silicon (M1 and newer) and Intel Macs, **signed and notarized by Apple**, so it installs without warnings
+- **Linux**: Native packages in three formats (`.deb`, `AppImage`, and `.rpm`), with Wayland/Hyprland compatibility
+- Windows remains fully supported, with the same private, on-device experience now on every major platform
 
 **More Transcription Models**
 
 - **Omnilingual**: Automatic language detection across 1,600+ languages, including rare and underrepresented ones
-- **Moonshine**: Ultra-fast transcription, ideal for lower-end machines and quick notes
+- **Moonshine**: the fastest option, for lower-end machines and quick notes
 - **Parakeet v2**: Updated NVIDIA Canary models with improved accuracy and timestamps
 
 **Command-Line Interface**
 
-- A standalone `transcribe` command lets you transcribe audio files and manage models from the terminal - no window required
+- A standalone `transcribe` command lets you transcribe audio files and manage models from the terminal. No window required
 - Handy for scripts, automation, and power users
 
 **Quick Folder Access**
@@ -205,7 +205,7 @@ This is a major release: Knowii Voice AI is now available on **macOS and Linux**
 
 **Unified Update Experience**
 
-- Update checks are now consistent across the entire app - whether you check from the status bar footer, the Settings → About page, or the system tray menu, you'll get the same reliable experience
+- Update checks are now consistent across the entire app. The status bar footer, the Settings → About page, and the system tray menu all behave the same way
 - All update entry points now show the same information and work the same way
 
 **Enhanced Troubleshooting**

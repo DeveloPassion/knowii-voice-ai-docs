@@ -15,7 +15,7 @@ keywords:
 
 # Support
 
-Need help with Knowii Voice AI? I'm here to assist you!
+Need help with Knowii Voice AI? Just ask.
 
 ## Before Reaching Out
 
@@ -35,7 +35,7 @@ For direct support, email me at:
 
 **[support@knowii.net](mailto:support@knowii.net)**
 
-I respond personally to all support requests. No ticket systems, no chatbots - just direct human support from me.
+I respond personally to all support requests. No ticket systems, no chatbots. Just me.
 
 ### Knowii Community
 
@@ -150,4 +150,4 @@ Look for files with the `.log` extension in the `logs` folder. When reporting an
 
 ---
 
-I'm committed to providing excellent support and helping you get the most out of Knowii Voice AI!
+Don't hesitate to write. I read every email myself, and I'd rather answer a small question than have you stuck.

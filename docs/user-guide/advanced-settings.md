@@ -14,7 +14,7 @@ keywords:
 
 # Advanced Settings
 
-This page covers the advanced configuration options available in Knowii Voice AI. These settings allow you to fine-tune the application's behavior, performance, and data management.
+Everything here is optional. You can run Knowii Voice AI for months without opening this page. Come back when you want the app to start with your session, when the overlay lands in the wrong place, when pasting misbehaves on Linux, or when you need the logs.
 
 ## Application Behavior
 
@@ -34,7 +34,7 @@ Control how Knowii Voice AI starts and runs:
 
 - Automatically start when you log in to your computer
 - App will be ready to use immediately when you need it
-- Combined with "Start Hidden", creates a seamless background experience
+- Combined with "Start Hidden", the app starts with your session and stays out of sight
 
 ## Display Options
 
@@ -75,7 +75,7 @@ Choose where the recording overlay appears on your screen:
 - **Bottom Left**: Status shown in the bottom-left corner
 - **Bottom Right**: Status shown in the bottom-right corner
 
-The overlay automatically respects screen margins and system UI elements (taskbars, menu bars, panels) to ensure it's always visible and doesn't overlap with other interface elements.
+The overlay keeps clear of taskbars, menu bars, and panels, so it never lands on top of something else.
 
 ## Transcription Options
 
@@ -111,7 +111,7 @@ Controls how transcribed text is inserted into applications:
 
 - **Direct** (default on Linux): Types the text straight into the focused field
     - Bypasses clipboard completely
-    - On Linux, uses your desktop's typing tool (`wtype`/`kwtype`/`xdotool`) for reliable results — see **Typing Tool** below
+    - On Linux, uses your desktop's typing tool (`wtype`/`kwtype`/`xdotool`) for reliable results. See **Typing Tool** below
     - Useful for troubleshooting clipboard-related issues
 
 **When to change:**
@@ -127,10 +127,10 @@ Controls how transcribed text is inserted into applications:
 
 Chooses which system tool Knowii Voice AI uses to type transcriptions and send paste shortcuts on Linux. This matters because typing text reliably differs between Wayland and X11.
 
-- **Auto** (default): Automatically picks the best tool available on your system — `wtype` (or `kwtype` on KDE) on Wayland, `xdotool` on X11.
+- **Auto** (default): Automatically picks the best tool available on your system: `wtype` (or `kwtype` on KDE) on Wayland, `xdotool` on X11.
 - **wtype / kwtype / dotool / ydotool / xdotool**: Force a specific tool.
 
-The dropdown **only lists the tools actually installed** on your computer. If your list shows just "Auto", install one of the tools (see the [Installation guide](./installation#linux-reliable-text-output)) — otherwise the app falls back to a built-in method that can be unreliable on Wayland (text may fail to appear).
+The dropdown **only lists the tools actually installed** on your computer. If your list shows just "Auto", install one of the tools (see the [Installation guide](./installation#linux-reliable-text-output)). Otherwise the app falls back to a built-in method that can be unreliable on Wayland (text may fail to appear).
 
 **When to change:**
 
@@ -146,7 +146,7 @@ Control what happens to your clipboard after transcription:
 - **Don't Modify Clipboard** (default): Preserves your current clipboard contents
     - Transcription is pasted but your clipboard remains unchanged
     - Useful if you have something important copied that you don't want to lose
-    - **Note**: this works for text. If your clipboard holds an image or files, it can't be put back after a clipboard-based paste — the transcription stays on the clipboard instead
+    - **Note**: this works for text. If your clipboard holds an image or files, it can't be put back after a clipboard-based paste, so the transcription stays on the clipboard instead
 
 - **Copy to Clipboard**: Leaves transcription in clipboard after pasting
     - Allows you to paste the same transcription multiple times
@@ -162,7 +162,7 @@ Control what happens to your clipboard after transcription:
 
 On Linux, Knowii Voice AI listens to your keyboard directly so your shortcut works in every app. While listening, it takes temporary exclusive control of the devices it recognises as keyboards, so your shortcut keys don't also land in whatever you're typing in.
 
-On rare hardware — usually gaming mice and fancy keyboards, which present themselves as a keyboard _and_ a mouse through the same connection — this can affect the wrong device.
+On rare hardware (usually gaming mice and fancy keyboards, which present themselves as a keyboard _and_ a mouse through the same connection) this can affect the wrong device.
 
 Turn this **on** if, while the app is running:
 
@@ -177,7 +177,7 @@ This setting takes effect the next time you start the app.
 :::
 
 :::tip
-Most people never need this. Devices that report pointer movement are already left alone automatically — see [My mouse or keyboard behaves strangely while the app is running](../faq#my-mouse-or-keyboard-behaves-strangely-while-the-app-is-running-linux) in the FAQ.
+Most people never need this. Devices that report pointer movement are already left alone automatically. See [My mouse or keyboard behaves strangely while the app is running](../faq#my-mouse-or-keyboard-behaves-strangely-while-the-app-is-running-linux) in the FAQ.
 :::
 
 ## History Management
@@ -230,7 +230,7 @@ _Requires History to be enabled_
 - Permanently deletes all transcriptions (including starred entries)
 - Deletes all associated files (text and audio)
 - Clears the database completely
-- Use with caution - consider backing up your data first
+- Use with caution, and consider backing up your data first
 
 ## Performance Settings
 
@@ -262,27 +262,27 @@ The AI model now stays ready throughout a recording. Even if you've chosen to un
 
 **Location**: Settings > Advanced > Application Logs
 
-View the most recent application activity directly inside the app - no need to find log files on your computer:
+View the most recent application activity directly inside the app, with no need to find log files on your computer:
 
 - **Refresh**: Loads the latest log lines
 - **Copy**: Copies the logs to your clipboard so you can paste them into an email or a bug report
 
-This is the fastest way to gather information when [reporting a problem](../support#copy-logs-from-inside-the-app-easiest). The logs never contain the words you dictated - they only describe what the app is doing.
+This is the fastest way to gather information when [reporting a problem](../support#copy-logs-from-inside-the-app-easiest). The logs never contain the words you dictated. They only describe what the app is doing.
 
 ## Tips
 
 - Start with default settings and adjust based on your needs
 - Monitor disk space if saving audio files
 - Use "Limit History" to prevent excessive disk usage
-- Combine "Start Hidden" and "Launch on Startup" for seamless background operation
+- Combine "Start Hidden" and "Launch on Startup" so the app is always ready and never in the way
 - Disable the overlay during screen recordings, presentations, or screen sharing
 - Use corner positions for the overlay if center positions interfere with your work
 
 ## Related Documentation
 
-- [Basic Usage](./basic-usage) - Learn the fundamentals
-- [Application Data](./application-data) - Where data is stored
-- [FAQ](../faq) - Common questions
+- [Basic Usage](./basic-usage): learn the fundamentals
+- [Application Data](./application-data): where data is stored
+- [FAQ](../faq): common questions
 
 ## Need Help?
 

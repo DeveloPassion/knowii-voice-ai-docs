@@ -15,11 +15,11 @@ keywords:
 
 # Application Data
 
-Knowii Voice AI stores all its data locally on your computer. This page explains where the data is stored and what you'll find there.
+Knowii Voice AI stores everything locally on your computer. Here is where each folder lives, what it holds, and what you can safely delete.
 
 ## Opening the Data Folder
 
-The easiest way to reach this folder - on any operating system - is from inside the app:
+The easiest way to reach this folder, on any operating system, is from inside the app:
 
 1. Open **Settings > About**.
 2. Next to **App Data Folder**, click **Open Folder**.
@@ -141,7 +141,7 @@ To completely reset Knowii Voice AI:
 
 1. **Close** the application
 2. **Delete** the entire `knowii-voice-ai` folder
-3. **Restart** the application - it will recreate the folder with default settings
+3. **Restart** the application. It recreates the folder with default settings
 
 **Warning**: This will delete all your settings, models, and history. Make a backup first if you want to keep anything.
 

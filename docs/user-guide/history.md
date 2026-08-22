@@ -14,11 +14,11 @@ keywords:
 
 # History
 
-This page explains how to view, search, and manage your transcription history in Knowii Voice AI. The History feature allows you to keep a record of all your past transcriptions for easy reference and reuse.
+Every transcription is saved locally. This is how you find, edit, replay, and clean up what's in there.
 
 ## Overview
 
-The History tab provides a comprehensive view of all your transcriptions organized by date, with powerful search and filtering capabilities. You can star important transcriptions, edit past entries, copy text, play back audio recordings, and more.
+The History tab lists every transcription by date. You can search it, filter to starred items only, edit past entries, copy text, and play back the audio.
 
 **Location**: Main window > History tab
 
@@ -156,13 +156,13 @@ Fix errors or update past transcriptions:
 
 Quickly copy text to your clipboard:
 
-**Method 1 - Copy button:**
+**Method 1, the copy button:**
 
 1. Click the copy icon on any entry
 2. Text is copied to clipboard immediately
 3. Paste anywhere using Ctrl+V (or Cmd+V on macOS)
 
-**Method 2 - Double-click:**
+**Method 2, double-click:**
 
 1. Double-click anywhere on the transcription text
 2. Text is copied to clipboard
@@ -336,10 +336,10 @@ When editing a transcription:
 
 ## Related Documentation
 
-- [Advanced Settings](./advanced-settings) - History management configuration options
-- [Application Data](./application-data) - Where history data is stored
-- [Basic Usage](./basic-usage) - Creating transcriptions
-- [FAQ](../faq) - Common questions
+- [Advanced Settings](./advanced-settings): history management configuration options
+- [Application Data](./application-data): where history data is stored
+- [Basic Usage](./basic-usage): creating transcriptions
+- [FAQ](../faq): common questions
 
 ## Need Help?
 

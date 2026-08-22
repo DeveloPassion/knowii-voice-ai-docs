@@ -60,6 +60,6 @@ Either way, the current segment finishes and the rest is skipped.
 
 ## Related Documentation
 
-- [History](./history) - where file transcriptions land
-- [Command-Line Interface](./cli) - batch transcription, subtitles, model management
-- [Transcription Settings](./transcription-settings) - models and languages
+- [History](./history): where file transcriptions land
+- [Command-Line Interface](./cli): batch transcription, subtitles, model management
+- [Transcription Settings](./transcription-settings): models and languages

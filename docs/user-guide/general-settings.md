@@ -14,7 +14,7 @@ keywords:
 
 # General Settings
 
-This page covers the general configuration options available in Knowii Voice AI. These core settings control how you interact with the application and trigger voice recordings.
+Your recording shortcut, Push To Talk, and the cancel key. These are the settings you'll actually touch.
 
 ## Recording Controls
 
@@ -43,15 +43,15 @@ Set a custom keyboard shortcut to start and stop voice recording:
 
 - Choose a shortcut that doesn't conflict with other applications
 - Use modifier keys (Ctrl, Shift, Alt/Option, Command) for better reliability
-- Test the shortcut to ensure it works system-wide
+- Test the shortcut in another app to check it works everywhere
 - Avoid shortcuts used by your operating system or frequently-used applications
 
 **Common Shortcut Examples**:
 
-- `Ctrl+Shift+Space` - Popular choice, easy to reach
-- `Ctrl+Alt+R` - Simple and memorable (R for Record)
-- `Command+Shift+Space` - macOS-friendly alternative
-- `Ctrl+Shift+V` - Alternative using V for Voice
+- `Ctrl+Shift+Space`: popular choice, easy to reach
+- `Ctrl+Alt+R`: simple and memorable (R for Record)
+- `Command+Shift+Space`: macOS-friendly alternative
+- `Ctrl+Shift+V`: alternative using V for Voice
 
 ### Cancel Shortcut
 
@@ -65,18 +65,18 @@ Use it when you misspeak, get interrupted, or start recording by accident.
 
 It works at any point in the process:
 
-- **While recording** - the recording is discarded.
-- **While transcribing** - the transcription is abandoned.
+- **While recording**: the recording is discarded.
+- **While transcribing**: the transcription is abandoned.
 
 You can change it like any other shortcut. Pressing it when nothing is running does nothing at all.
 
 **It works in both modes:**
 
 - **Toggle mode**: press Cancel any time while recording.
-- **Push To Talk mode**: press Cancel while still holding your recording shortcut, then let go. Releasing the key afterwards won't transcribe - the recording is already gone.
+- **Push To Talk mode**: press Cancel while still holding your recording shortcut, then let go. Releasing the key afterwards won't transcribe, because the recording is already gone.
 
 :::note
-Unlike your recording shortcut, the Cancel key is **not** taken over by Knowii Voice AI. Escape keeps working normally everywhere else - closing menus and dialogs, leaving text editors, and so on. That's why the default is safe to leave as it is.
+Unlike your recording shortcut, the Cancel key is **not** taken over by Knowii Voice AI. Escape keeps working normally everywhere else: closing menus and dialogs, leaving text editors, and so on. That's why the default is safe to leave as it is.
 :::
 
 :::tip
@@ -89,8 +89,8 @@ You can also cancel from the system tray menu, or with the Cancel button on the 
 
 Enable or disable Push To Talk mode:
 
-- **Disabled** (default): Toggle mode - press shortcut once to start, press again to stop
-- **Enabled**: Push To Talk mode - hold shortcut to record, release to stop
+- **Disabled** (default): Toggle mode. Press the shortcut once to start, press again to stop
+- **Enabled**: Push To Talk mode. Hold the shortcut to record, release to stop
 
 **Toggle Mode** (Push To Talk disabled):
 
@@ -209,7 +209,7 @@ If your shortcut conflicts with another application:
 ### Push To Talk Not Working Properly
 
 1. Ensure Push To Talk is enabled in Settings > General
-2. Hold the shortcut longer - don't release immediately
+2. Hold the shortcut longer, and don't release immediately
 3. Check if your keyboard supports multiple key combinations
 4. Try a simpler shortcut combination
 5. Verify no other application is intercepting the shortcut
@@ -232,10 +232,10 @@ If your shortcut conflicts with another application:
 
 ## Related Documentation
 
-- [Basic Usage](./basic-usage) - Learn the fundamentals
-- [Audio Settings](./audio-settings) - Configure audio devices and feedback
-- [Advanced Settings](./advanced-settings) - Additional configuration options
-- [FAQ](../faq) - Common questions
+- [Basic Usage](./basic-usage): learn the fundamentals
+- [Audio Settings](./audio-settings): configure audio devices and feedback
+- [Advanced Settings](./advanced-settings): additional configuration options
+- [FAQ](../faq): common questions
 
 ## Need Help?
 

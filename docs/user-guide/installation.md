@@ -28,7 +28,7 @@ keywords:
 - **GPU** (optional): Vulkan-compatible GPU for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
 
 :::tip Low-End Hardware?
-If you have limited RAM or an older computer, try the **Moonshine models**. They use under 1GB of memory and provide fast transcriptions with minimal resource usage. Perfect for laptops and older systems.
+If you have limited RAM or an older computer, try the **Moonshine models**. They use under 1GB of memory and still transcribe fast. Good pick for laptops and older machines.
 :::
 
 ### Windows
@@ -45,8 +45,8 @@ If you have limited RAM or an older computer, try the **Moonshine models**. They
 - A modern 64-bit distribution (Ubuntu 22.04+, Fedora, and similar)
 - Both Wayland (including Hyprland) and X11 are supported
 - The `.deb`/`.rpm` pull in everything needed automatically (including the tray library). Two extras depend on your setup:
-    - **GNOME users:** install the AppIndicator extension so the tray icon shows — see [no tray icon on GNOME](#linux-no-tray-icon-on-gnome).
-    - **GPU acceleration:** needs a Vulkan driver — see [GPU Acceleration](#gpu-acceleration-optional). (Optional; the app runs on the CPU otherwise.)
+    - **GNOME users:** install the AppIndicator extension so the tray icon shows. See [no tray icon on GNOME](#linux-no-tray-icon-on-gnome).
+    - **GPU acceleration:** needs a Vulkan driver. See [GPU Acceleration](#gpu-acceleration-optional). (Optional; the app runs on the CPU otherwise.)
 
 ## Download
 
@@ -55,7 +55,7 @@ Download the latest version of Knowii Voice AI from your [Gumroad Library](https
 Choose the download for your platform:
 
 - **Windows**: `.exe` or `.msi` installer
-- **macOS**: `.dmg` - pick the one for your Mac (`aarch64` for Apple Silicon, `x64` for Intel)
+- **macOS**: `.dmg`. Pick the one for your Mac (`aarch64` for Apple Silicon, `x64` for Intel)
 - **Linux**: `.deb` (Debian/Ubuntu), `.rpm` (Fedora/RHEL), or `.AppImage` (portable, runs on most distributions)
 
 ## Installation Steps
@@ -91,7 +91,7 @@ Choose the package that matches your distribution:
     sudo dnf install ./Knowii.Voice.AI-<version>-1.x86_64.rpm
     ```
 
-- **Any distribution** (`.AppImage`) - no installation needed, just make it executable and run it:
+- **Any distribution** (`.AppImage`): no installation needed, just make it executable and run it:
 
     ```bash
     chmod +x Knowii.Voice.AI_<version>_amd64.AppImage
@@ -102,24 +102,24 @@ After installing, launch Knowii Voice AI from your application menu (or run the 
 
 ### Linux: which package should I choose?
 
-**Prefer the native package for your distribution (`.deb` or `.rpm`) whenever one exists.** It configures everything automatically — including keyboard access and reliable text output on GNOME/Wayland — with no manual steps. Use the AppImage only when there's no native package for your distribution.
+**Prefer the native package for your distribution (`.deb` or `.rpm`) whenever one exists.** It configures everything automatically (keyboard access and reliable text output on GNOME/Wayland included), with no manual steps. Use the AppImage only when there's no native package for your distribution.
 
-| Your situation                                     | Best choice         | Why                                                                                         |
-| -------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
-| Debian, Ubuntu, Linux Mint, Pop!\_OS               | **`.deb`**          | Sets up keyboard access and text output automatically — nothing to configure                |
-| Fedora, RHEL, CentOS, openSUSE                     | **`.rpm`**          | Same automatic setup as the `.deb`                                                          |
-| Arch, NixOS, or any distro without a `.deb`/`.rpm` | **AppImage**        | Portable and runs anywhere — but needs a one-time manual setup on GNOME/Wayland (see below) |
-| You're on **GNOME (Wayland)** and want zero setup  | **`.deb` / `.rpm`** | These install and manage everything needed to type your transcriptions, with no prompts     |
+| Your situation                                     | Best choice         | Why                                                                                        |
+| -------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| Debian, Ubuntu, Linux Mint, Pop!\_OS               | **`.deb`**          | Sets up keyboard access and text output automatically. Nothing to configure                |
+| Fedora, RHEL, CentOS, openSUSE                     | **`.rpm`**          | Same automatic setup as the `.deb`                                                         |
+| Arch, NixOS, or any distro without a `.deb`/`.rpm` | **AppImage**        | Portable and runs anywhere, but needs a one-time manual setup on GNOME/Wayland (see below) |
+| You're on **GNOME (Wayland)** and want zero setup  | **`.deb` / `.rpm`** | These install and manage everything needed to type your transcriptions, with no prompts    |
 
 :::tip GNOME/Wayland users
-If you can install the `.deb` or `.rpm`, do — they make text output work seamlessly on GNOME with no permission prompts. The portable AppImage can't configure your system, so on GNOME it needs the one-time setup described under [reliable text output](#linux-reliable-text-output).
+If you can install the `.deb` or `.rpm`, do. They make text output work on GNOME with no permission prompts. The portable AppImage can't configure your system, so on GNOME it needs the one-time setup described under [reliable text output](#linux-reliable-text-output).
 :::
 
 ### Linux: enable the global shortcut (keyboard access)
 
-On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop** — GNOME, KDE, Hyprland, and X11 — but it needs read access to your input devices.
+On Linux, Knowii Voice AI detects its global shortcut by reading your keyboard directly. This works on **every desktop**: GNOME, KDE, Hyprland, and X11. But it needs read access to your input devices.
 
-- **`.deb` / `.rpm`**: nothing to do. The package configures this automatically during installation, and it takes effect immediately — **no logout or reboot required**. Just install and run.
+- **`.deb` / `.rpm`**: nothing to do. The package configures this automatically during installation, and it takes effect immediately. **No logout or reboot required.** Just install and run.
 - **AppImage**: a portable file can't configure your system, so do this **one-time** step manually:
     1. Add yourself to the `input` group:
 
@@ -141,18 +141,18 @@ This access simply lets the app watch for your shortcut key **locally on your ma
 
 To type transcriptions into your other apps, Knowii Voice AI uses the right method for your desktop automatically.
 
-#### On GNOME (Wayland) — built in
+#### On GNOME (Wayland): built in
 
 On GNOME, Knowii Voice AI types your transcriptions itself, directly and reliably:
 
-- It types out your text **matching your keyboard layout** — AZERTY, QWERTZ, Dvorak, and others all work correctly.
+- It types out your text **matching your keyboard layout**, so AZERTY, QWERTZ, Dvorak, and others all work correctly.
 - It works everywhere, **including terminals**.
 - There is **no "Allow Remote Interaction" (Remote Desktop) prompt** to click.
-- Nothing extra to install — **no `ydotool`, no background daemon**.
+- Nothing extra to install: **no `ydotool`, no background daemon**.
 
 The only thing it needs is permission to use your system's virtual keyboard (`/dev/uinput`):
 
-- **`.deb` / `.rpm`**: **automatic — nothing to do.** The package grants this access for you during installation. Just install and run.
+- **`.deb` / `.rpm`**: **automatic. Nothing to do.** The package grants this access for you during installation. Just install and run.
 - **AppImage**: a portable file can't configure your system, so run this **one-time** command to grant the access, then **log out and back in once**:
 
     ```bash
@@ -163,18 +163,18 @@ The only thing it needs is permission to use your system's virtual keyboard (`/d
     ```
 
 :::tip The easiest option on GNOME
-Installing the **`.deb` or `.rpm`** grants everything automatically — no commands to run. Choose it over the AppImage if your distribution supports it.
+Installing the **`.deb` or `.rpm`** grants everything automatically, with no commands to run. Choose it over the AppImage if your distribution supports it.
 :::
 
-#### On KDE, Hyprland/Sway, and X11 — install your desktop's tool
+#### On KDE, Hyprland/Sway, and X11: install your desktop's tool
 
-On these desktops, Knowii Voice AI uses your desktop's standard input tool. Install the one for **your desktop** with your package manager (`dnf`, `apt`, `pacman`, `zypper` — the package name is the same everywhere):
+On these desktops, Knowii Voice AI uses your desktop's standard input tool. Install the one for **your desktop** with your package manager (`dnf`, `apt`, `pacman`, `zypper`; the package name is the same everywhere):
 
-| Desktop                       | Install   | One-time setup              |
-| ----------------------------- | --------- | --------------------------- |
-| **X11** (any desktop)         | `xdotool` | None — works out of the box |
-| **KDE Plasma** (Wayland)      | `kwtype`  | None                        |
-| **Hyprland / Sway** (wlroots) | `wtype`   | None                        |
+| Desktop                       | Install   | One-time setup             |
+| ----------------------------- | --------- | -------------------------- |
+| **X11** (any desktop)         | `xdotool` | None, works out of the box |
+| **KDE Plasma** (Wayland)      | `kwtype`  | None                       |
+| **Hyprland / Sway** (wlroots) | `wtype`   | None                       |
 
 The app auto-detects installed, compatible tools (it won't offer tools that can't work on your desktop). You can also choose a specific one under **Settings → Advanced → Paste → Typing Tool**. If none is installed, Knowii Voice AI shows a warning (and a banner in General and Advanced settings) with the exact command for your system.
 
@@ -201,7 +201,7 @@ GPU acceleration on Linux needs a **Vulkan driver** (an ICD) for your GPU. The `
 - **Fedora / RHEL**: `sudo dnf install mesa-vulkan-drivers` (Intel/AMD). NVIDIA users get Vulkan from the NVIDIA driver package.
 - **Debian / Ubuntu**: `sudo apt install mesa-vulkan-drivers` (Intel/AMD), or your GPU vendor's driver.
 
-The driver only matters for **Whisper** models — Moonshine and Parakeet always run on the CPU. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
+The driver only matters for **Whisper** models. Moonshine and Parakeet always run on the CPU. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
 :::
 
 ## Troubleshooting
@@ -218,11 +218,11 @@ To proceed with installation:
 
 1. Click on **"More info"**
 
-![Windows SmartScreen - More info](/img/screenshots/install/2025-11-11-install-01.png)
+![Windows SmartScreen: More info](/img/screenshots/install/2025-11-11-install-01.png)
 
 2. Click on **"Run anyway"**
 
-![Windows SmartScreen - Run anyway](/img/screenshots/install/2025-11-11-install-02.png)
+![Windows SmartScreen: Run anyway](/img/screenshots/install/2025-11-11-install-02.png)
 
 The installer will then launch normally. This warning appears because the application doesn't have an expensive code signing certificate yet, not because it's unsafe.
 
@@ -249,32 +249,32 @@ Because the app is notarized by Apple, this normally won't happen. If you do see
 
 Installing with your package manager (`sudo dnf install ./*.rpm`, `sudo apt install ./*.deb`) pulls in everything automatically. The app relies on:
 
-- **WebKitGTK** (`libwebkit2gtk-4.1`) and **GTK 3** — present on any desktop.
-- **`libappindicator-gtk3`** (for the system-tray icon) — **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
-- **Vulkan loader** (`libvulkan`, from `vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) — the app links against it and **won't start without it**, so the `.deb`/`.rpm` declare it as a required dependency and always pull it in.
-- **Mesa Vulkan drivers** (`mesa-vulkan-drivers`) — a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper** models (see [GPU Acceleration](#gpu-acceleration-optional)); Moonshine/Parakeet run on the CPU and don't need it.
-- Audio (PipeWire / ALSA) — present on desktops.
+- **WebKitGTK** (`libwebkit2gtk-4.1`) and **GTK 3**: present on any desktop.
+- **`libappindicator-gtk3`** (for the system-tray icon): **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
+- **Vulkan loader** (`libvulkan`, from `vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu): the app links against it and **won't start without it**, so the `.deb`/`.rpm` declare it as a required dependency and always pull it in.
+- **Mesa Vulkan drivers** (`mesa-vulkan-drivers`): a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper** models (see [GPU Acceleration](#gpu-acceleration-optional)); Moonshine/Parakeet run on the CPU and don't need it.
+- Audio (PipeWire / ALSA): present on desktops.
 
-If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), the required dependencies aren't resolved for you — install the Vulkan loader (`vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) and `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
+If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), the required dependencies aren't resolved for you. Install the Vulkan loader (`vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) and `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
 
 ### Linux: no tray icon on GNOME
 
 Knowii Voice AI lives in your system tray (for Settings, Quit, and the **Start hidden** option). **Vanilla GNOME does not show tray icons** without an extension:
 
 1. Install the **AppIndicator and KStatusNotifierItem Support** GNOME extension (from [extensions.gnome.org](https://extensions.gnome.org/extension/615/appindicator-support/), or `sudo dnf install gnome-shell-extension-appindicator` on Fedora, then enable it in the **Extensions** app).
-2. Log out and back in (or restart GNOME Shell). The tray icon appears on its own - no need to restart Knowii Voice AI.
+2. Log out and back in (or restart GNOME Shell). The tray icon appears on its own, with no need to restart Knowii Voice AI.
 
 Already installed it and the icon still doesn't appear? GNOME can disable **all** extensions at once, and a GNOME upgrade can switch off ones it considers incompatible. See [System tray icon missing on GNOME](../faq#system-tray-icon-missing-on-gnome) in the FAQ for the checks to run.
 
 :::info
-You can't lose the window on GNOME. When there's no tray icon, Knowii Voice AI automatically **minimizes on close** instead of hiding, **ignores Start hidden**, and shows a **Quit** button in the bottom-right corner - so the window is always reachable from the **Activities** overview or **Alt+Tab**, and you can always exit. The app also keeps watching for the tray, so once you enable the extension the icon appears on its own without restarting. KDE, Hyprland, and X11 desktops generally show the tray icon without extra setup.
+You can't lose the window on GNOME. When there's no tray icon, Knowii Voice AI automatically **minimizes on close** instead of hiding, **ignores Start hidden**, and shows a **Quit** button in the bottom-right corner, so the window is always reachable from the **Activities** overview or **Alt+Tab**, and you can always exit. The app also keeps watching for the tray, so once you enable the extension the icon appears on its own without restarting. KDE, Hyprland, and X11 desktops generally show the tray icon without extra setup.
 :::
 
 ### Linux: my shortcut does nothing
 
 The app needs read access to your keyboard to detect its global shortcut. If pressing the shortcut does nothing:
 
-- **`.deb`/`.rpm`**: this is set up automatically — try fully quitting and reopening the app once after installing.
+- **`.deb`/`.rpm`**: this is set up automatically. Try fully quitting and reopening the app once after installing.
 - **AppImage**: complete the one-time [keyboard access](#linux-enable-the-global-shortcut-keyboard-access) step, or install the `.deb`/`.rpm` instead.
 
 ### Application doesn't start

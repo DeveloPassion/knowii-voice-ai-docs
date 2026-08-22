@@ -24,7 +24,7 @@ keywords:
 
 # Transcription Settings
 
-This page covers the transcription configuration options available in Knowii Voice AI. These settings allow you to choose the AI model, configure language preferences, and improve transcription accuracy with custom vocabulary.
+Which model, which language, and how to make the app get your vocabulary right. Start with the recommended model and change nothing else until something bothers you.
 
 ## Model Selection
 
@@ -42,14 +42,14 @@ Knowii Voice AI supports multiple transcription models with different characteri
 If digit sequences appear as words ("one one two two" instead of "1122"), enable **Write digit sequences as numbers** in Settings > Transcription, or use Parakeet V2 for English dictation.
 :::
 
-- **Parakeet V3** (Recommended): NVIDIA's state-of-the-art model
+- **Parakeet V3** (Recommended): NVIDIA's newest model
     - Fast and accurate
     - Supports 25 European languages
     - Automatic language detection
     - 785 MB download
     - Excellent balance of speed and accuracy
     - Latest version with improved performance
-    - May write numbers as words ("one one two two" instead of "1122") — if you often dictate numbers in English, use Parakeet V2 instead
+    - May write numbers as words ("one one two two" instead of "1122"). If you often dictate numbers in English, use Parakeet V2 instead
 
 - **Parakeet V2**: NVIDIA's efficient speech recognition model
     - Fast with good accuracy
@@ -86,13 +86,13 @@ Speak any of 1,600+ languages and the model figures out what you're saying autom
 
 **Why choose Omnilingual:**
 
-- Supports over 1,600 languages - more than any other model
+- Supports over 1,600 languages, more than any other model
 - Automatically detects what language you're speaking
 - Great for multilingual users who switch between languages
-- Perfect for less common languages not supported by other models
+- Covers less common languages that no other model supports
 - No need to manually select your language
 
-**Note**: Still experimental - accuracy may vary depending on language and audio quality.
+**Note**: Still experimental, so accuracy may vary depending on language and audio quality.
 
 #### Moonshine Models
 
@@ -150,7 +150,7 @@ Lightweight models designed for computers with limited resources (low memory or 
 - Very limited RAM (under 2GB free): Use Moonshine Tiny models
 - Limited RAM (2-4GB free): Use Moonshine Base or Whisper Tiny/Small models
 - Moderate RAM (4-8GB): Use Parakeet or Whisper Small/Medium models
-- Powerful system (8GB+): Large models provide best accuracy
+- Plenty of RAM (8GB+): Large models give the best accuracy
 - SSDs recommended for faster model loading
 
 ### Downloading Models
@@ -184,7 +184,7 @@ When using multi-language Whisper models, you can specify the language:
 - Improves accuracy if you always speak the same language
 - Reduces processing time slightly
 - Available languages depend on the selected model
-- Searchable dropdown with 99+ languages - just start typing the language name (for example, type "eng" to jump to English)
+- Searchable dropdown with 99+ languages: just start typing the language name (for example, type "eng" to jump to English)
 
 **Reset Button**: Click the reset icon to return to Auto Detect.
 
@@ -222,7 +222,7 @@ The available languages depend on your selected model:
 
 - Supports virtually every language in the world
 - Includes rare and less common languages not available in other models
-- Automatic language detection - no manual selection needed
+- Automatic language detection, with no manual selection needed
 
 **Parakeet V3 (25 European languages):**
 
@@ -264,7 +264,7 @@ Add specialized vocabulary to improve transcription accuracy:
 Click the X button on any word tag to remove it from your custom vocabulary.
 
 :::tip Custom Words vs. Word Replacements
-Custom Words are a _hint_ to the AI model - they help it lean toward the right spelling, but they don't guarantee it. If a term is **always** transcribed the same wrong way, use [Word Replacements](#word-replacements) instead for an exact, guaranteed fix.
+Custom Words are a _hint_ to the AI model. They help it lean toward the right spelling, but they don't guarantee it. If a term is **always** transcribed the same wrong way, use [Word Replacements](#word-replacements) instead for an exact, guaranteed fix.
 :::
 
 ### Best Practices
@@ -310,8 +310,8 @@ You can leave the **With this** field empty to simply delete an unwanted word fr
 
 ### Word Replacements vs. Custom Words
 
-- **Custom Words** are a gentle nudge - they help the AI model _prefer_ a spelling, but don't guarantee it
-- **Word Replacements** are an exact rule - if you know a term always comes out wrong, this fixes it every time
+- **Custom Words** are a gentle nudge. They help the AI model _prefer_ a spelling, but don't guarantee it
+- **Word Replacements** are an exact rule. If you know a term always comes out wrong, this fixes it every time
 
 **Good examples:**
 
@@ -328,7 +328,7 @@ If you dictate in one language but use names or acronyms from another, the AI mo
 ### How It Works
 
 - Enter the sound as it gets transcribed (**Transcribed sound**) and the correct spelling (**Correct spelling**)
-- The correction is applied early - before Custom Words - so it reaches names and acronyms that normal correction can't
+- The correction is applied early, before Custom Words, so it reaches names and acronyms that normal correction can't
 - Ideal for terms that appear in a different alphabet than the rest of your text
 
 ### When to Use It
@@ -389,9 +389,9 @@ Some AI models write spoken digits as words: saying "1122" can come out as "one 
 
 - Only runs of **3 or more digits in a row** are converted, so normal sentences like "I have one thing" or "give me two minutes" are never changed
 - Numbers are never merged across sentence boundaries
-- Off by default — enable it if you often dictate account numbers, phone numbers, or codes
+- Off by default. Enable it if you often dictate account numbers, phone numbers, or codes
 
-**Tip**: For English dictation, Parakeet V2 also writes numbers as digits natively — see [Model Selection](#model-selection).
+**Tip**: For English dictation, Parakeet V2 also writes numbers as digits natively. See [Model Selection](#model-selection).
 
 ## Common Scenarios
 
@@ -486,18 +486,18 @@ This section shows all AI models that can be downloaded:
 
 ### Transcription Accuracy Issues
 
-1. **Try a larger model** - More accurate but slower
-2. **Add custom words** - For frequently misheard terms
-3. **Specify language** - Instead of Auto Detect
-4. **Improve audio quality** - Better microphone, reduce background noise
-5. **Speak clearly** - Moderate pace, clear pronunciation
+1. **Try a larger model**: more accurate but slower
+2. **Add custom words**: for frequently misheard terms
+3. **Specify language**: instead of Auto Detect
+4. **Improve audio quality**: better microphone, less background noise
+5. **Speak clearly**: moderate pace, clear pronunciation
 
 ### Wrong Language Detected
 
-1. **Manually select language** - Instead of Auto Detect
-2. **Use language-specific model** - English-only for English
-3. **Speak more before stopping** - Model needs enough audio to detect
-4. **Check model supports your language** - See supported languages list
+1. **Manually select language**: instead of Auto Detect
+2. **Use language-specific model**: English-only for English
+3. **Speak more before stopping**: the model needs enough audio to detect
+4. **Check model supports your language**: see the supported languages list
 
 ### Model Won't Download
 
@@ -509,10 +509,10 @@ This section shows all AI models that can be downloaded:
 
 ### Model Loading Slow
 
-1. **First load is slower** - Model needs to load into memory
-2. **Adjust unload timeout** - See [Advanced Settings](./advanced-settings)
-3. **Use smaller model** - Faster loading time
-4. **Upgrade to SSD** - Much faster model loading
+1. **First load is slower**: the model needs to load into memory
+2. **Adjust unload timeout**: see [Advanced Settings](./advanced-settings)
+3. **Use a smaller model**: faster loading time
+4. **Upgrade to SSD**: much faster model loading
 
 ### Custom Words Not Working
 
@@ -537,11 +537,11 @@ This section shows all AI models that can be downloaded:
 
 ## Related Documentation
 
-- [Installation](./installation) - Installing and downloading models
-- [Basic Usage](./basic-usage) - Using transcription features
-- [Advanced Settings](./advanced-settings) - Model unload timeout and performance
-- [Application Data](./application-data) - Where models are stored
-- [FAQ](../faq) - Common questions about models and accuracy
+- [Installation](./installation): installing and downloading models
+- [Basic Usage](./basic-usage): using transcription features
+- [Advanced Settings](./advanced-settings): model unload timeout and performance
+- [Application Data](./application-data): where models are stored
+- [FAQ](../faq): common questions about models and accuracy
 
 ## Need Help?
 

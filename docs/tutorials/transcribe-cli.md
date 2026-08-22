@@ -19,7 +19,7 @@ keywords:
 
 The Knowii Voice AI desktop app is built around your microphone: you speak, it types. But a lot of the audio worth reading was never spoken into your mic. Meeting recordings. Interviews. Podcast episodes. That conference talk you saved two years ago and never rewatched.
 
-`transcribe` is the tool for those. It is a command-line program that ships with Knowii Voice AI, runs entirely on your machine, and turns media files into subtitles or plain text.
+`transcribe` is the tool for those. It's a command-line program that ships with Knowii Voice AI, runs entirely on your machine, and turns media files into subtitles or plain text.
 
 In this tutorial, you will:
 
@@ -46,7 +46,7 @@ Nothing here leaves your computer. No upload, no account, no per-minute billing.
 transcribe --help
 ```
 
-You should see the list of subcommands. If instead you get "command not found", your shell does not know where to look yet. Two ways to fix that:
+You should see the list of subcommands. If instead you get "command not found", your shell doesn't know where to look yet. Two ways to fix that:
 
 **Call it by its full path:**
 
@@ -89,10 +89,10 @@ For subtitles, use Whisper. It produces timestamped segments, which is exactly w
 transcribe models download whisper-large-v3
 ```
 
-That model is the accuracy champion, and it is also the biggest. On a slower machine, `whisper-medium` or even `whisper-small` will do fine and finish sooner. Start with what your disk and patience allow. You can always download another one later.
+That model is the most accurate, and the biggest. On a slower machine, `whisper-medium` or even `whisper-small` will do fine and finish sooner. Start with what your disk and patience allow. You can always download another one later.
 
 :::tip[The app and the CLI share models]
-Models you download here appear in the desktop app, and models you downloaded in the app work here. There is one folder, one catalog, no duplication.
+Models you download here appear in the desktop app, and models you downloaded in the app work here. There's one folder, one catalog, no duplication.
 :::
 
 ## Step 3: Subtitle your first video
@@ -103,15 +103,15 @@ Point `transcribe` at a file and name the model:
 transcribe file talk.mp4 --model whisper-large-v3
 ```
 
-Wait for it to finish, then look next to `talk.mp4`. There is now a `talk.srt`.
+Wait for it to finish, then look next to `talk.mp4`. There's now a `talk.srt`.
 
 Open the video in VLC, mpv, or any player that reads subtitles, and the text appears in sync with the audio. Upload the pair to YouTube and the captions come along.
 
-Notice what you did not have to do: no format conversion, no `ffmpeg`, no extracting the audio track first. `transcribe` reads mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, directly.
+Notice what you didn't have to do: no format conversion, no `ffmpeg`, no extracting the audio track first. `transcribe` reads mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, directly.
 
 ## Step 4: Get plain text instead
 
-Subtitles are great for video. For notes, you want prose without the timestamps. That is the `--format` flag:
+Subtitles are great for video. For notes, you want prose without the timestamps. That's the `--format` flag:
 
 ```bash
 transcribe file interview.m4a --model whisper-large-v3 --format txt
@@ -145,7 +145,7 @@ transcribe file *.mp4 --model whisper-large-v3 --format vtt --output ./subs/
 
 Every `.mp4` in the current folder gets transcribed, and the results land in `./subs/`. Start it, go make coffee, come back to a folder full of subtitles.
 
-That is the moment the tool stops being a novelty. Fifty meeting recordings you never had time to review become fifty searchable text files while you are doing something else.
+Fifty meeting recordings you never had time to review become fifty searchable text files while you're doing something else.
 
 ## Step 6: Work in another language
 
@@ -176,7 +176,7 @@ Recordings full of product names, acronyms, or technical terms transcribe better
 transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Kubernetes, Grafana, Prometheus, OTEL"
 ```
 
-The prompt biases the model's vocabulary. It is the cheapest accuracy win available.
+The prompt biases the model's vocabulary. Nothing else costs so little for so much accuracy.
 :::
 
 ## Step 7: Make it faster
@@ -204,9 +204,9 @@ Start simple. Transcribe one file, see the output, then automate the part you fo
 
 ## Next Steps
 
-- [CLI reference](../user-guide/cli) - every flag, every subcommand
-- [Transcription Settings](../user-guide/transcription-settings) - how models and engines behave in the app
-- [Getting Started Tutorial](./getting-started) - the desktop dictation basics
-- [FAQ](../faq) - common questions
+- [CLI reference](../user-guide/cli): every flag, every subcommand
+- [Transcription Settings](../user-guide/transcription-settings): how models and engines behave in the app
+- [Getting Started Tutorial](./getting-started): the desktop dictation basics
+- [FAQ](../faq): common questions
 
 Questions? Email support@knowii.net or join the [Knowii Community](https://www.knowii.net).

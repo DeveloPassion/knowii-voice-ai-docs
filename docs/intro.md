@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: Home
 slug: /
-title: Knowii Voice AI - Privacy-First Voice-to-Text Transcription
+title: Knowii Voice AI - your voice never leaves your computer
 description: Privacy-first voice-to-text transcription that runs entirely on your computer. Fast, accurate, and offline speech recognition powered by local AI models.
 keywords:
     - voice to text
@@ -27,11 +27,11 @@ keywords:
 
 ## Why Knowii Voice AI?
 
-- **Privacy First**: All processing happens locally by default. No cloud required. Your data stays on your device. No internet needed after the initial AI model download.
+- **Privacy First**: All processing happens locally by default. No cloud required. Your data stays on your device. No internet needed after the initial AI model download. Zero tracking, zero telemetry.
 - **You Actually Own It**: Pay once, own it forever. Every update, every new feature included. No subscription. No usage caps. No "premium tier."
-- **Works Everywhere**: Transcribe into every single application - emails, documents, chat, notes, browsers, IDEs. If you can type there, you can speak there.
+- **Works Everywhere**: Transcribe into every single application: emails, documents, chat, notes, browsers, IDEs. If you can type there, you can speak there.
 - **Simple to Use**: Press and hold a shortcut key to record, release to transcribe and paste. That's it!
-- **Fast & Accurate**: Powered by state-of-the-art AI models (Whisper, Parakeet, Moonshine) with Vulkan GPU acceleration support.
+- **Fast & Accurate**: Uses the best local speech models available today (Whisper, Parakeet, Moonshine), with Vulkan GPU acceleration.
 - **Multiple AI Models**: Choose between small and fast models or larger and more accurate ones. Switch anytime based on your needs.
 - **Searchable History**: Every transcription is saved and searchable. Your external memory. Find anything you said weeks ago in seconds.
 - **Multi-Language Support**: Many languages supported. Speak in one language and get transcriptions in another.
@@ -50,33 +50,24 @@ That's it! You're ready to go. For more details, check out the [Basic Usage](./u
 
 ## Key Features
 
-### Voice-to-Text Made Simple
-
-Press and hold a keyboard shortcut to record your voice. Release to automatically transcribe and paste at your cursor position. Works in any application - emails, documents, chat, notes, browsers, IDEs, and more.
-
-### Privacy Preserving
-
-Everything happens on your computer by default. No internet required after initial model download. Your voice never leaves your device. All history stored locally. Zero tracking, zero telemetry.
-
 ### Runs Quietly in Background
 
-Lives in your system tray (near the clock). No window cluttering your screen. Always ready when you need it. Right-click the tray icon to access settings and features.
+Lives in your system tray (near the clock). No window cluttering your screen. Always ready when you need it. Right-click the tray icon to access settings and features. It scales from a 13" laptop to an ultrawide, and stays out of your way on both.
 
-### Smart Audio Processing
+### Audio and Corrections
 
 - Automatically uses your default microphone
-- Crystal-clear transcription results with GPU acceleration for faster transcription (Vulkan support)
+- GPU acceleration (Vulkan) for noticeably faster transcription
 - Customize recording feedback sounds: choose separate sounds for start and end, or use your own (WAV/MP3 files)
-- Basic Word Replacement: Post-processing text corrections
-- Multi-Language Support: Transcribe in multiple languages
+- Word Replacement: post-processing text corrections for terms the model keeps getting wrong
 
-### Multiple AI Models
+### Model Management
 
 - Easily download and manage multiple transcription models
 - Switch between models or deactivate to free memory
 - Your selected model loads automatically when the app starts
 
-### Comprehensive History & Review
+### Everything You Said, Searchable
 
 - View all past transcriptions organized by date with collapsible groups
 - Edit any past transcription directly in the history
@@ -94,15 +85,6 @@ Lives in your system tray (near the clock). No window cluttering your screen. Al
 - Download your first AI model in just a few clicks
 - Configure your preferences and you're ready to go
 - No account or registration required
-
-### Smart Design
-
-- Clean, modern interface
-- Designed to stay out of your way
-- Automatically adapts to your screen size
-- Works perfectly on any display from laptop to ultrawide
-- Customizable recording sounds
-- Customizable shortcuts
 
 ## What's Next?
 

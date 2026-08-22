@@ -26,13 +26,13 @@ The simplest way to use Knowii Voice AI:
 3. **Release** the shortcut when done speaking
 4. The text is **automatically transcribed and pasted** at your cursor position
 
-That's it! Works in any application - emails, documents, chat, browsers, IDEs, and more.
+That's it! Works in any application: emails, documents, chat, browsers, IDEs, and more.
 
 ## Main Window & System Tray
 
 When you launch Knowii Voice AI, the main window appears by default (showing settings and features). The app also places an icon in your system tray (near the clock).
 
-**Important**: You can close the main window at any time - the app continues running in the background and remains fully functional.
+**Important**: You can close the main window at any time. The app keeps running in the background and stays fully functional.
 
 The main window's icon changes based on the application state:
 
@@ -61,7 +61,7 @@ The system tray icon also changes based on the application state.
 | `Ctrl+Space` | Press and hold to record, release to transcribe and paste |
 | `Escape`     | Cancel and discard the current recording or transcription |
 
-Pressing `Escape` throws the recording away - nothing is transcribed, pasted, or saved. It keeps working normally in your other apps, and does nothing when there's no recording in progress. See [Cancel Shortcut](./general-settings#cancel-shortcut).
+Pressing `Escape` throws the recording away. Nothing is transcribed, pasted, or saved. It keeps working normally in your other apps, and does nothing when there's no recording in progress. See [Cancel Shortcut](./general-settings#cancel-shortcut).
 
 ### Customizing Shortcuts
 
@@ -177,9 +177,9 @@ The AI model automatically adds basic punctuation. For better results:
 
 Whether numbers come out as digits ("1122") or words ("one one two two") is decided by the AI model, and some models handle it better than others:
 
-- **Enable "Write digit sequences as numbers"** in **Settings > Transcription** to automatically convert runs of 3+ spoken digits into numbers — normal sentences are never changed
-- **Use Parakeet V2** if you dictate in English and often say account numbers, phone numbers, prices, or dates — it writes them as digits far more consistently than Parakeet V3
-- **Speak numbers fluently**, in a steady rhythm without long pauses between digits — isolated, slowly spoken digits are more likely to be spelled out as words
+- **Enable "Write digit sequences as numbers"** in **Settings > Transcription** to automatically convert runs of 3+ spoken digits into numbers. Normal sentences are never changed
+- **Use Parakeet V2** if you dictate in English and often say account numbers, phone numbers, prices, or dates. It writes them as digits far more consistently than Parakeet V3
+- **Speak numbers fluently**, in a steady rhythm without long pauses between digits. Isolated, slowly spoken digits are more likely to be spelled out as words
 - **Group numbers naturally** where you can (say "eleven twenty-two" rather than "one one two two")
 
 ### Language

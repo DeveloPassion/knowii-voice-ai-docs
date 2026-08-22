@@ -17,8 +17,6 @@ keywords:
 Debug settings are intended for troubleshooting and advanced configuration. **Only change these settings if you're experiencing specific issues or if I've asked you to adjust them for support purposes.** Incorrect settings can cause transcription failures, pasting issues, or unexpected behavior.
 :::
 
-Debug settings provide low-level configuration options for troubleshooting issues and fine-tuning the application's behavior.
-
 ## Accessing Debug Settings
 
 The Debug tab is hidden by default. To show or hide it:
@@ -35,6 +33,7 @@ You can toggle debug mode on/off at any time using the keyboard shortcut. The se
 
 :::info[Looking for Other Settings?]
 The Debug tab focuses exclusively on low-level debugging and troubleshooting options.
+:::
 
 ### Word Correction Threshold
 
@@ -134,9 +133,9 @@ Each debug setting has a **reset button** (circular arrow icon) next to it that 
 
 ## Related Documentation
 
-- [Basic Usage](./basic-usage) - General application usage
-- [Advanced Settings](./advanced-settings) - Other configuration options
-- [Support](../support) - Get help if you're experiencing issues
+- [Basic Usage](./basic-usage): general application usage
+- [Advanced Settings](./advanced-settings): other configuration options
+- [Support](../support): get help if you're experiencing issues
 
 ## Need Help?
 
