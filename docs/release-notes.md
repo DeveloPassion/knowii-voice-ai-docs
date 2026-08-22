@@ -18,6 +18,14 @@ What shipped, when, and what it changes for you.
 
 ## Upcoming Release
 
+### New Features
+
+**Instant Transcription (Experimental)**
+
+- Turn on **Settings > Advanced > Transcription > Instant transcription** and Knowii Voice AI transcribes your speech at natural pauses while you are still talking. When you stop, only the last few words remain to process — your text appears almost instantly, even after minutes of dictation.
+- Nothing changes in how the text arrives: one paste, at the end, like always. Your saved recordings are untouched.
+- Off by default. The classic whole-recording mode stays exactly as it was.
+
 ### Improvements
 
 **Confirm With Enter, Cancel With Escape**

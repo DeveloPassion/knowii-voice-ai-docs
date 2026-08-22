@@ -90,6 +90,18 @@ The overlay keeps clear of taskbars, menu bars, and panels, so it never lands on
 
 **Note**: Translation requires more processing time than standard transcription.
 
+### Instant Transcription (Experimental)
+
+**Location**: Settings > Advanced > Transcription
+
+- Off by default. When on, Knowii Voice AI transcribes your speech at natural pauses **while you are still talking**, instead of waiting until you stop.
+- When you stop, only the last few words still need processing, so your text appears almost instantly — even after a long dictation.
+- Nothing is pasted early: the text still arrives in one piece, exactly like before. The recording saved to your history is also unchanged.
+- Works with every model.
+- Trade-off: the audio is cut at pauses, so the model occasionally loses a bit of context across a pause. If you notice odd wording around pauses, turn it off — the default whole-recording mode is unchanged.
+
+**Tip**: this shines on long dictations. A two-minute thought that used to take several seconds to transcribe is ready the moment you release the key.
+
 ## Paste Options
 
 ### Paste Method
