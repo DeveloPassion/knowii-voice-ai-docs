@@ -16,7 +16,7 @@ keywords:
 
 What shipped, when, and what it changes for you.
 
-## Upcoming Release
+## Version 0.8.0 (August 22, 2026)
 
 ### New Features
 
