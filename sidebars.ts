@@ -42,7 +42,11 @@ const sidebars = {
         {
             type: 'category',
             label: 'Tutorials',
-            items: ['tutorials/getting-started', 'tutorials/customizing-sounds']
+            items: [
+                'tutorials/getting-started',
+                'tutorials/customizing-sounds',
+                'tutorials/transcribe-cli'
+            ]
         }
     ]
 }
