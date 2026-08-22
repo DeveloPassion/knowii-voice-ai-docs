@@ -213,7 +213,7 @@ Remove individual transcriptions:
 
 1. Click the delete icon (trash can)
 2. Confirmation dialog appears
-3. Click "Delete" to confirm or "Cancel" to abort
+3. Click "Delete" to confirm or "Cancel" to abort. The keyboard works too: press Enter to confirm, Escape to cancel
 4. Entry is permanently removed from database
 5. Associated files (text and audio) are also deleted
 
@@ -232,7 +232,7 @@ Remove all unstarred transcriptions at once:
 1. Click "Clear Unstarred" button
 2. Confirmation dialog appears
 3. Review the warning message
-4. Click "Clear All" to confirm or "Cancel" to abort
+4. Click "Clear All" to confirm or "Cancel" to abort (Enter confirms, Escape cancels)
 5. All unstarred entries are permanently deleted
 6. Starred entries are preserved
 
