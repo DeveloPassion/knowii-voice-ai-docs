@@ -25,6 +25,7 @@ const sidebars = {
                 'user-guide/installation',
                 'user-guide/updating',
                 'user-guide/basic-usage',
+                'user-guide/file-transcription',
                 'user-guide/general-settings',
                 'user-guide/transcription-settings',
                 'user-guide/history',
