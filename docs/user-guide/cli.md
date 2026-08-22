@@ -1,265 +1,92 @@
 ---
 sidebar_position: 7.5
 title: Command-Line Interface (CLI)
-description: Use the Knowii Voice AI command-line interface to transcribe files to subtitles, manage transcription models, configure log levels, and troubleshoot.
+description: Transcribe audio and video files to subtitles or text from your terminal with the transcribe CLI, manage transcription models, and control the Knowii Voice AI desktop app from scripts and keybindings.
 keywords:
-    - command line
-    - CLI
     - transcribe
+    - CLI
+    - command line
     - subtitles
     - srt
+    - vtt
+    - batch transcription
+    - transcribe video
     - models
     - download model
-    - log levels
-    - debugging
-    - troubleshooting
     - terminal
+    - automation
+    - scripting
     - waybar
     - hyprland
     - keybind
-    - start hidden
-    - no tray
+    - log levels
 ---
 
 # Command-Line Interface (CLI)
 
-Knowii Voice AI ships **two** command-line tools:
+Knowii Voice AI gives you two command-line tools, and they do very different jobs:
 
-- The **`knowii-voice-ai`** executable itself — the desktop app. Its flags let you control a running app from a script, a panel button or a desktop keybinding, and change how the app starts up.
-- A standalone **`transcribe`** binary that runs fully headless to:
-    - **Transcribe local audio/video files** to subtitles or text, offline — see [Transcribe files](#transcribe-files).
-    - **Manage transcription models** (list, download, remove) from the terminal — see [Manage models](#manage-models).
+- **`transcribe`** is the real CLI. It runs fully headless, turns audio and video files into subtitles or text, and manages your transcription models. No window, no clicking, no waiting.
+- **`knowii-voice-ai`** is the desktop app itself. Its flags let you drive a running app from a script or a keybinding, and change how it starts up.
 
-:::info[Works alongside the running app]
-The `transcribe` binary never launches or interferes with a running Knowii Voice AI window — it does its work and exits. It is safe to use while the desktop app is open. Models downloaded with `transcribe models download` appear in the app, and vice-versa.
+Most people came here for the first one, so that is where we start.
+
+:::tip[New to the CLI?]
+The [Transcribe CLI Tutorial](../tutorials/transcribe-cli) walks you through your first file, start to finish, in about ten minutes. This page is the reference you come back to afterwards.
 :::
 
-## Accessing the CLI
+## The `transcribe` CLI
 
-### Windows
+The desktop app is built for dictation: you speak, it types. But plenty of audio never passes through your microphone. Meeting recordings. Interviews. Podcasts. A three-year-old video whose content lives nowhere but in the video itself.
 
-1. **Open Command Prompt** or **PowerShell**
-2. **Navigate to** the application directory (where `knowii-voice-ai.exe` is installed)
-3. **Run** the executable with CLI arguments:
+`transcribe` is for all of that. Point it at files, get text back.
 
-```cmd
-knowii-voice-ai.exe --log-level debug
-```
+It decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more), so there is no `ffmpeg` to install. It runs the same transcription engines as the desktop app, on your machine, offline. And because it is a normal command-line program, it composes with everything else you already use: shell loops, cron jobs, Makefiles, scripts.
 
-**Typical installation path:**
-
-```cmd
-cd "%USERPROFILE%\AppData\Local\Programs\knowii-voice-ai"
-knowii-voice-ai.exe --help
-```
-
-### macOS
-
-1. **Open Terminal** (Applications > Utilities > Terminal)
-2. **Navigate to** the application bundle
-3. **Run** the executable with CLI arguments:
-
-```bash
-/Applications/Knowii\ Voice\ AI.app/Contents/MacOS/knowii-voice-ai --log-level debug
-```
-
-Or create an alias for convenience:
-
-```bash
-alias knowii-voice-ai="/Applications/Knowii\ Voice\ AI.app/Contents/MacOS/knowii-voice-ai"
-knowii-voice-ai --help
-```
-
-### Linux
-
-1. **Open your terminal**
-2. **Navigate to** the installation directory or use the full path
-3. **Run** the executable with CLI arguments:
-
-```bash
-knowii-voice-ai --log-level debug
-```
-
-Or if installed system-wide:
-
-```bash
-/usr/local/bin/knowii-voice-ai --help
-```
-
-## Available Commands
-
-### Show Help
-
-Display all available CLI options:
-
-```bash
-knowii-voice-ai --help
-```
-
-**Output:**
-
-```
-AI-powered voice transcription application
-
-Usage: knowii-voice-ai [OPTIONS]
-
-Options:
-      --log-level <LEVEL>     Set the log level (trace, debug, info, warn, error, off) [default: info]
-      --toggle-transcription  Start or stop a transcription in the running instance
-      --cancel                Abort the running instance's current recording or transcription
-      --start-hidden          Start with the main window hidden (tray only)
-      --no-tray               Start without creating a system tray icon
-  -h, --help                  Print help
-```
-
-File transcription and model management live in the separate **`transcribe`** binary (documented below), not in the desktop executable.
-
-### Control a running app
-
-Knowii Voice AI only ever runs once. When you launch it again while it is already open, the new command hands its instructions to the app that is already running and exits immediately — which is what makes these two flags work:
-
-| Flag                     | What it does                                                                                                                        |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `--toggle-transcription` | Starts recording. Run it again to stop recording, transcribe, and paste — just like the shortcut.                                   |
-| `--cancel`               | Throws away whatever is in progress — the recording or the transcription — and returns to idle. Does nothing if nothing is running. |
-
-This gives you a second way to trigger Knowii Voice AI, alongside your keyboard shortcut. It is handy for:
-
-- A **panel or status-bar button** (Waybar, Polybar, a dock, a stream deck)
-- A **desktop keybinding** set in your window manager instead of in the app
-- A **script** that dictates as part of a longer sequence
-
-```bash
-# Start recording (or stop it and transcribe, if already recording)
-knowii-voice-ai --toggle-transcription
-
-# Discard the current recording or transcription
-knowii-voice-ai --cancel
-```
-
-**Example — Hyprland keybindings** (`~/.config/hypr/hyprland.conf`):
-
-```ini
-bind = SUPER, D, exec, knowii-voice-ai --toggle-transcription
-bind = SUPER SHIFT, D, exec, knowii-voice-ai --cancel
-```
-
-**Example — a Waybar button** (`~/.config/waybar/config`):
-
-```json
-"custom/dictate": {
-    "format": "🎙",
-    "tooltip": "Dictate with Knowii Voice AI",
-    "on-click": "knowii-voice-ai --toggle-transcription",
-    "on-click-right": "knowii-voice-ai --cancel"
-}
-```
-
-:::note[These commands never steal your window]
-Running the app with `--toggle-transcription` or `--cancel` will not pop the Knowii Voice AI window in front of what you are doing — otherwise every press of your panel button would interrupt you. Launching it with no flags at all still brings the window forward, as before.
+:::info[It works alongside the running app]
+`transcribe` never launches or interferes with a running Knowii Voice AI window. It does its work and exits, so it is safe to use while the desktop app is open. Models downloaded with `transcribe models download` show up in the app, and models downloaded in the app are available to the CLI.
 :::
 
-:::tip[Press once to start, once to stop]
-`--toggle-transcription` always works as a toggle, even if you have **Push-to-talk** enabled in the settings. A command has no key to hold down, so there is nothing to release — press once to start, press again to stop. Your keyboard shortcut keeps behaving exactly as you configured it.
-:::
+### Where to find it
 
-If Knowii Voice AI is **not** running yet, these flags simply start the app normally, without recording. Recording during startup would only capture the few seconds the app needs to load its transcription model, so your first words would be lost — start the app, then trigger it again.
+`transcribe` is installed with Knowii Voice AI, in the same folder as the main executable:
 
-### Change how the app starts
+| Platform | Location                                                      |
+| -------- | ------------------------------------------------------------- |
+| Windows  | `%LOCALAPPDATA%\Programs\knowii-voice-ai\transcribe.exe`      |
+| macOS    | `/Applications/Knowii Voice AI.app/Contents/MacOS/transcribe` |
+| Linux    | Next to the `knowii-voice-ai` binary from your package        |
 
-These flags apply to the launch itself. They have no effect if the app is already running (you will see a note about it in the logs).
-
-| Flag             | What it does                                                                                                                     |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `--start-hidden` | Starts with the main window hidden, straight to the system tray. Same as the **Start hidden** setting, but only for this launch. |
-| `--no-tray`      | Starts without a system tray icon, for desktops where you would rather not have one.                                             |
+Check that it works:
 
 ```bash
-# Start quietly in the tray, e.g. from a session autostart script
-knowii-voice-ai --start-hidden
-
-# Start with no tray icon at all
-knowii-voice-ai --no-tray
+transcribe --help
 ```
 
-:::info[With `--no-tray`, closing the window minimizes it]
-Without a tray icon there would be no way to bring the window back, so closing it minimizes the window instead of hiding it — you can always find it again in your task switcher. For the same reason, combining `--no-tray` with a hidden start is not possible: the window is shown, so the app never becomes unreachable.
-:::
-
-### Configure Log Level
-
-The `--log-level` option controls how much information is written to the application logs.
-
-**Syntax:**
+If your shell cannot find the command, that folder is not on your `PATH`. Either call it by its full path, or add the folder to your `PATH` so you can type `transcribe` from anywhere. On macOS, an alias does the job too:
 
 ```bash
-knowii-voice-ai --log-level <LEVEL>
+alias transcribe="/Applications/Knowii\ Voice\ AI.app/Contents/MacOS/transcribe"
 ```
 
-**Available log levels** (from most verbose to least):
+### Your first transcription
 
-| Level   | Description                                              | When to Use                                  |
-| ------- | -------------------------------------------------------- | -------------------------------------------- |
-| `trace` | Extremely detailed logs including internal state changes | Deep debugging, development                  |
-| `debug` | Detailed diagnostic information                          | Troubleshooting issues, creating bug reports |
-| `info`  | General informational messages (default)                 | Normal operation                             |
-| `warn`  | Warning messages about potential issues                  | Monitoring for problems                      |
-| `error` | Error messages only                                      | Production, minimal logging                  |
-| `off`   | No logging                                               | Not recommended                              |
-
-**Examples:**
+Two commands. Download a model, then use it:
 
 ```bash
-# Run with debug logging (recommended for troubleshooting)
-knowii-voice-ai --log-level debug
-
-# Run with trace logging (very detailed)
-knowii-voice-ai --log-level trace
-
-# Run with minimal logging (errors only)
-knowii-voice-ai --log-level error
-
-# Run with default logging (info)
-knowii-voice-ai
+transcribe models download whisper-large-v3
+transcribe file talk.mp4 --model whisper-large-v3
 ```
 
-## The `transcribe` binary
+That writes `talk.srt` next to `talk.mp4`. Open the video in any player and your subtitles are there.
 
-`transcribe` is a self-contained CLI that decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more — no `ffmpeg` required) and runs the same transcription engines as the desktop app.
+Already downloaded a model inside the app? Skip the first command. The CLI and the app share the same models.
 
-It has these subcommands:
-
-```
-transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]   # transcribe to subtitles/text
-transcribe models list|download|remove                        # manage models
-transcribe completions <shell>                                # shell completions
-transcribe --help                                             # full help
-```
-
-:::info[Building it]
-`transcribe` is built from the project's `src-tauri` directory. The full build (which includes the Whisper engine) is `cargo build --release --bin transcribe`. A smaller, Tauri-free server build that omits Whisper is `cargo build --release --bin transcribe --no-default-features`. Building requires the Rust toolchain and the libopus development headers (`libopus-dev` on Debian/Ubuntu, `opus` via Homebrew on macOS).
-:::
-
-### Engines
-
-`transcribe` supports multiple engines via `--engine`:
-
-| Engine        | Notes                                                              |
-| ------------- | ------------------------------------------------------------------ |
-| `whisper`     | Timestamped segments — best for subtitles. **Desktop build only.** |
-| `parakeet`    | Fast ONNX engine; supports `--int8` quantized inference.           |
-| `moonshine`   | Ultra-fast ONNX engine; English + several other languages.         |
-| `omnilingual` | Massive language coverage (1,600+); supports `--int8`.             |
-
-When `--model` is a known model **id** (e.g. `whisper-large-v3`), the engine is detected automatically. When it is a raw path, pass `--engine` (defaults to `whisper` in the desktop build).
-
-## Transcribe Files
+### Transcribe files
 
 ```bash
 transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 ```
-
-**Options:**
 
 | Option                    | Description                                                              | Default            |
 | ------------------------- | ------------------------------------------------------------------------ | ------------------ |
@@ -275,12 +102,12 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 | `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)              | off                |
 | `--models-dir <DIR>`      | Where to look up models by id                                            | app data directory |
 
-When `--model` is an **id**, it is resolved against your downloaded models (the same ones the app uses). Download one first with [`transcribe models download`](#manage-models), or pass an explicit path.
+When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, pass `--engine` as well so the CLI knows what it is loading.
 
 **Examples:**
 
 ```bash
-# Subtitle a video — writes "talk.srt" next to it
+# Subtitle a video - writes "talk.srt" next to it
 transcribe file talk.mp4 --model whisper-large-v3
 
 # Several files at once, into a folder, as WebVTT
@@ -289,30 +116,54 @@ transcribe file *.mp4 --model whisper-medium --format vtt --output ./subs/
 # Force English and print plain text to the terminal
 transcribe file interview.m4a --model whisper-large-v3 --language en --format txt --output -
 
+# Translate a French recording into English subtitles
+transcribe file entretien.mp3 --model whisper-large-v3 --translate
+
+# Feed a jargon-heavy recording some vocabulary up front
+transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Kubernetes, Grafana, Prometheus, OTEL"
+
 # Pipe audio in from stdin
 cat note.ogg | transcribe file - --model whisper-medium --format txt
 
-# Fast ONNX engine with quantization, from a model directory
+# Fast ONNX engine with quantization
 transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
-:::tip[Quoting paths]
+:::tip[Quote your paths]
 File names often contain spaces. Always quote them: `transcribe file "My Recording.mp4" --model whisper-large-v3`.
 :::
 
-## Manage Models
+### Output formats
 
-`transcribe models` lists, downloads, and removes transcription models from the terminal, using the same catalog and on-disk location as the app, so changes are shared in both directions.
+| Format | What you get                             | Use it for                                    |
+| ------ | ---------------------------------------- | --------------------------------------------- |
+| `srt`  | Numbered subtitle blocks with timestamps | Video players, YouTube, editing software      |
+| `vtt`  | WebVTT subtitles                         | Web video, HTML5 players                      |
+| `txt`  | Plain text, no timestamps                | Notes, search, feeding text into another tool |
+| `json` | Structured segments with timings         | Scripts and further processing                |
 
-### List models
+### Engines
+
+`transcribe` supports multiple engines via `--engine`:
+
+| Engine        | Notes                                                    |
+| ------------- | -------------------------------------------------------- |
+| `whisper`     | Timestamped segments. The best choice for subtitles.     |
+| `parakeet`    | Fast ONNX engine; supports `--int8` quantized inference. |
+| `moonshine`   | Ultra-fast ONNX engine; English plus several languages.  |
+| `omnilingual` | Massive language coverage (1,600+); supports `--int8`.   |
+
+When `--model` is a known model id (e.g. `whisper-large-v3`), the engine is detected automatically, so you rarely need this flag.
+
+### Manage models
+
+`transcribe models` lists, downloads, and removes transcription models from the terminal, using the same catalog and the same folder as the app. Changes are shared in both directions.
+
+**List what is available:**
 
 ```bash
 transcribe models list
 ```
-
-Add `--downloaded` to show only installed models, or `--json` for machine-readable output. Use `--models-dir <DIR>` to inspect a non-default location.
-
-**Output:**
 
 ```
 Models directory: /home/you/.local/share/knowii-voice-ai/models
@@ -323,31 +174,29 @@ whisper-large-v3           Whisper      2952M    ✓  Whisper - Large V3
 ...
 ```
 
-The `DL` column shows `✓` for models that are downloaded.
+The `DL` column shows `✓` for models you already have. Add `--downloaded` to list only those, `--json` for machine-readable output, or `--models-dir <DIR>` to inspect another location.
 
-### Download a model
+**Download a model:**
 
 ```bash
 transcribe models download whisper-large-v3
 ```
 
-The download streams to disk with a progress indicator and is written atomically, so it is safe to run while the app is open. If the model is already present, the command is a no-op.
+The download streams to disk with a progress indicator and is written atomically, so it is safe to run while the app is open. If the model is already there, nothing happens.
 
-### Remove a model
+**Remove a model:**
 
 ```bash
 transcribe models remove whisper-large-v3
 ```
 
-This deletes the model's files from the models directory.
-
 :::info[Model ids]
-Use the `ID` column from `transcribe models list`. Whisper ids also accept a short form — `large-v3` resolves to `whisper-large-v3`.
+Use the `ID` column from `transcribe models list`. Whisper ids also accept a short form: `large-v3` resolves to `whisper-large-v3`.
 :::
 
-## Shell completions
+### Shell completions
 
-Generate completions for your shell:
+Tab completion for subcommands, flags, and model ids:
 
 ```bash
 transcribe completions bash
@@ -355,147 +204,125 @@ transcribe completions zsh > ~/.zsh/completions/_transcribe
 transcribe completions fish > ~/.config/fish/completions/transcribe.fish
 ```
 
-## Common Use Cases
+---
 
-### Troubleshooting Issues
+## Controlling the desktop app
 
-When experiencing problems with Knowii Voice AI:
+The `knowii-voice-ai` executable takes flags of its own. These have nothing to do with file transcription. They exist so you can drive the app from somewhere other than its keyboard shortcut, and change how it starts.
 
-1. **Close the application** if it's already running
-2. **Open your terminal/command prompt**
-3. **Start the application with debug logging:**
+```
+AI-powered voice transcription application
+
+Usage: knowii-voice-ai [OPTIONS]
+
+Options:
+      --log-level <LEVEL>     Set the log level (trace, debug, info, warn, error, off) [default: info]
+      --toggle-transcription  Start or stop a transcription in the running instance
+      --cancel                Abort the running instance's current recording or transcription
+      --start-hidden          Start with the main window hidden (tray only)
+      --no-tray               Start without creating a system tray icon
+  -h, --help                  Print help
+```
+
+### Control a running app
+
+Knowii Voice AI only ever runs once. Launch it again while it is already open and the new command hands its instructions to the running app, then exits. That is what makes these two flags work:
+
+| Flag                     | What it does                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------ |
+| `--toggle-transcription` | Starts recording. Run it again to stop recording, transcribe, and paste, just like the shortcut. |
+| `--cancel`               | Throws away whatever is in progress and returns to idle. Does nothing if nothing is running.     |
+
+This gives you a second way to trigger dictation, alongside your keyboard shortcut. It is handy for a panel or status-bar button (Waybar, Polybar, a dock, a stream deck), a desktop keybinding set in your window manager, or a script that dictates as part of a longer sequence.
+
+```bash
+# Start recording (or stop it and transcribe, if already recording)
+knowii-voice-ai --toggle-transcription
+
+# Discard the current recording or transcription
+knowii-voice-ai --cancel
+```
+
+**Hyprland keybindings** (`~/.config/hypr/hyprland.conf`):
+
+```ini
+bind = SUPER, D, exec, knowii-voice-ai --toggle-transcription
+bind = SUPER SHIFT, D, exec, knowii-voice-ai --cancel
+```
+
+**A Waybar button** (`~/.config/waybar/config`):
+
+```json
+"custom/dictate": {
+    "format": "🎙",
+    "tooltip": "Dictate with Knowii Voice AI",
+    "on-click": "knowii-voice-ai --toggle-transcription",
+    "on-click-right": "knowii-voice-ai --cancel"
+}
+```
+
+:::note[These commands never steal your window]
+Running the app with `--toggle-transcription` or `--cancel` will not pop the Knowii Voice AI window in front of what you are doing. Otherwise every press of your panel button would interrupt you. Launching it with no flags at all still brings the window forward, as before.
+:::
+
+:::tip[Press once to start, once to stop]
+`--toggle-transcription` always works as a toggle, even with **Push-to-talk** enabled in the settings. A command has no key to hold down, so there is nothing to release. Your keyboard shortcut keeps behaving exactly as you configured it.
+:::
+
+If Knowii Voice AI is **not** running yet, these flags simply start the app normally, without recording. Recording during startup would only capture the few seconds the app needs to load its model, so your first words would be lost. Start the app, then trigger it again.
+
+### Change how the app starts
+
+These flags apply to the launch itself. They have no effect if the app is already running (you will see a note about it in the logs).
+
+| Flag             | What it does                                                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------- |
+| `--start-hidden` | Starts with the main window hidden, straight to the tray. Same as **Start hidden**, but only for this launch. |
+| `--no-tray`      | Starts without a system tray icon, for desktops where you would rather not have one.                          |
+
+```bash
+# Start quietly in the tray, e.g. from a session autostart script
+knowii-voice-ai --start-hidden
+
+# Start with no tray icon at all
+knowii-voice-ai --no-tray
+```
+
+:::info[With `--no-tray`, closing the window minimizes it]
+Without a tray icon there would be no way to bring the window back, so closing it minimizes the window instead of hiding it. You can always find it again in your task switcher. For the same reason, combining `--no-tray` with a hidden start is not possible: the window is shown, so the app never becomes unreachable.
+:::
+
+### Logging
+
+`--log-level` controls how much detail the app writes to its logs. Use it when something misbehaves and you want to see why.
 
 ```bash
 knowii-voice-ai --log-level debug
 ```
 
-4. **Reproduce the issue** while the application is running
-5. **Check the logs** in the [application data directory](./application-data)
-6. **Share the logs** when reporting issues (see below)
+| Level   | What it gives you                                        | When to use it                      |
+| ------- | -------------------------------------------------------- | ----------------------------------- |
+| `trace` | Internal state dumps, every audio buffer, full timing    | Deep debugging. Creates huge files. |
+| `debug` | Detailed diagnostics, state transitions, shortcut events | Troubleshooting and bug reports     |
+| `info`  | Startup, model loading, recording, transcription         | Normal operation (default)          |
+| `warn`  | Warnings only                                            | Quiet monitoring                    |
+| `error` | Errors only                                              | Minimal logging                     |
+| `off`   | Nothing                                                  | Not recommended                     |
 
-### Creating Bug Reports
+When reporting a problem, start the app with `--log-level debug`, reproduce the issue, then attach the log files. You can also read the most recent logs without leaving the app, under **Settings → Advanced**.
 
-For the most helpful bug reports:
-
-1. **Run with debug or trace logging:**
-
-```bash
-knowii-voice-ai --log-level debug
-```
-
-2. **Reproduce the issue**
-3. **Collect the log files** from:
-    - Windows: `C:\Users\<username>\AppData\Roaming\knowii-voice-ai\logs\`
-    - macOS: `~/Library/Application Support/knowii-voice-ai/logs/`
-    - Linux: `~/.local/share/knowii-voice-ai/logs/`
-
-4. **Include the following files** in your bug report:
-    - `knowii-voice-ai.log` - Main application log
-    - `knowii-voice-ai-bootstrap.log` - Startup log
-    - `knowii-voice-ai-crash.log` - If the app crashed
-
-### Monitoring Application Behavior
-
-For ongoing monitoring or development:
-
-```bash
-# Run with info level and pipe to a file
-knowii-voice-ai --log-level info 2>&1 | tee knowii-debug.log
-
-# Or use trace for maximum detail
-knowii-voice-ai --log-level trace 2>&1 | tee knowii-trace.log
-```
-
-## Understanding Log Levels
-
-### Default (Info)
-
-**What you see:**
-
-- Application startup/shutdown
-- Model loading events
-- Recording start/stop
-- Transcription completion
-- Major state changes
-
-**Use for:**
-
-- Normal operation
-- General awareness of application activity
-
-### Debug
-
-**What you see (includes Info plus):**
-
-- Detailed function calls
-- State transitions
-- Configuration changes
-- Audio processing details
-- Shortcut registration/triggering
-
-**Use for:**
-
-- Investigating unexpected behavior
-- Understanding why something isn't working
-- Creating detailed bug reports
-- Support requests
-
-### Trace
-
-**What you see (includes Debug plus):**
-
-- Internal state dumps
-- Every audio buffer processed
-- Detailed timing information
-- Low-level system interactions
-- Complete execution flow
-
-**Use for:**
-
-- Deep technical debugging
-- Performance analysis
-- Development troubleshooting
-- **Warning:** Creates very large log files
-
-### Warn/Error
-
-**What you see:**
-
-- Only warnings and errors
-- No normal operation logs
-
-**Use for:**
-
-- Production environments
-- Minimal log file size
-- Monitoring for problems only
-
-## Tips and Best Practices
-
-:::tip[Quick Troubleshooting]
-Always start with `--log-level debug` when investigating issues. It provides enough detail without overwhelming you with trace-level logs.
-:::
-
-:::caution[Log File Size]
-Trace logging creates very large log files. Use it only when needed and clean up old logs regularly from the [application data directory](./application-data#log-files).
-:::
-
-:::info[Default Behavior]
-Without the `--log-level` flag, the application runs with `info` level logging, which is appropriate for everyday use.
-:::
+Where the log files live, and which ones to send, is covered in [Application Data](./application-data#log-files) and on the [Support page](../support#how-to-find-log-files).
 
 ## Related Documentation
 
-- [Debug Settings](./debug-settings) - In-app debugging options
-- [Application Data](./application-data) - Where logs are stored
-- [Support](../support) - Get help with issues
+- [Transcribe CLI Tutorial](../tutorials/transcribe-cli) - your first file, step by step
+- [Transcription Settings](./transcription-settings) - models and engines in the app
+- [Debug Settings](./debug-settings) - in-app debugging options
+- [Application Data](./application-data) - where models, history, and logs are stored
+- [Support](../support) - get help with issues
 
 ## Need Help?
-
-If CLI options aren't resolving your issue:
 
 - Check the [FAQ](../faq) for common problems
 - Email support@knowii.net with your log files
 - Visit the [Knowii Community](https://www.knowii.net) for community support
-
-When contacting support, **always include logs captured with `--log-level debug`** to help diagnose issues faster.
