@@ -482,7 +482,32 @@ Not currently. API access is being considered for future releases. See the [Road
 
 ### Is there a CLI?
 
-There is a basic one but it's not documented yet and its features are limited. Improvements are planned for future releases. See the [Roadmap](./roadmap).
+Yes. Knowii Voice AI ships with **`transcribe`**, a standalone command-line tool that runs fully headless. It transcribes audio and video files to subtitles (`srt`, `vtt`) or text, batch-processes entire folders, and manages your transcription models from the terminal. It uses the same engines and the same models as the desktop app, offline, on your machine.
+
+```bash
+transcribe file talk.mp4 --model whisper-large-v3
+```
+
+That writes `talk.srt` next to the video.
+
+- New to it? Start with the [Transcribe CLI Tutorial](./tutorials/transcribe-cli).
+- Looking for a specific flag? See the [CLI reference](./user-guide/cli).
+
+The `knowii-voice-ai` executable also takes flags of its own, so you can start or cancel a recording from a script, a panel button, or a window manager keybinding. Those are documented under [Controlling the desktop app](./user-guide/cli#controlling-the-desktop-app).
+
+### Can I transcribe audio and video files I already have?
+
+Yes, with the `transcribe` CLI. Meeting recordings, interviews, podcasts, old videos: point it at the files and it writes subtitles or plain text next to them. It reads mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, with no `ffmpeg` needed.
+
+```bash
+# One video
+transcribe file talk.mp4 --model whisper-large-v3
+
+# A whole folder, as text
+transcribe file *.mp4 --model whisper-large-v3 --format txt --output ./transcripts/
+```
+
+See the [Transcribe CLI Tutorial](./tutorials/transcribe-cli) to get going. Drag-and-drop file transcription inside the app window is on the [Roadmap](./roadmap).
 
 ### What is the relationship to Handy.computer?
 
