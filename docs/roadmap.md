@@ -43,8 +43,6 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **History UI/UX Improvements** (#155, #170, #119, #98)
 - **Better trim silences** (#110)
 - **Minimize to tray setting** (#36)
-- **Cancel recording hotkey** (#39)
-- **Better word replacements** (#57, #172)
 - **Additional Transcription Models**: Support more transcription models (local and remote) (#90, #144, #173, #181, #11, #21, #5)
 - **Transcription improvements** (#146, #123, #125, #126, #129)
 - **Improve audio recordings quality** (#166, #142, #99)
