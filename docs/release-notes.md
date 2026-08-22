@@ -20,6 +20,19 @@ What shipped, when, and what it changes for you.
 
 ### New Features
 
+**Transcribe Your Files, Right in the App**
+
+- Drop audio or video files onto the Knowii Voice AI window and they are transcribed into your [history](./user-guide/history): meeting recordings, interviews, podcasts, videos. No `ffmpeg`, no conversion, nothing uploaded anywhere.
+- Prefer the tray? **Transcribe File...** opens a file picker and works even while the main window is hidden.
+- Drop several files at once and they are processed as a queue, with a progress card showing which file is running and what comes next. The card's ✕ skips the current file; **Cancel all**, the tray, or your cancel shortcut stop the whole job.
+- Long recordings are cut at pauses in the speech, never in the middle of a word, and a transcribed hour of audio stays tidy in your history thanks to a Show more toggle.
+- File transcriptions are never pasted into other apps and never show the recording overlay. They land in history, period. See [File Transcription](./user-guide/file-transcription).
+
+**The `transcribe` CLI Now Ships With the App**
+
+- Every installer now includes the standalone [`transcribe` command](./user-guide/cli): subtitles (`srt`, `vtt`), plain text, JSON, batch folders, model management, all offline. On deb and RPM installs it lands at `/usr/bin/transcribe`, ready to use.
+- New to it? The [Transcribe CLI Tutorial](./tutorials/transcribe-cli) takes you from zero to your first subtitle file.
+
 **Cleaner, More Accurate Transcriptions**
 
 - **Word Replacements**: For terms that are always transcribed the same wrong way, add an exact find-and-replace rule (Settings → Transcription). It matches whole words, ignores capitalization, and fixes those stubborn terms every time.
@@ -70,6 +83,7 @@ This release is about not breaking. When something unexpected happens, the app r
 - **Clearer error messages**: You now get a clear notification when text can't be pasted, a model fails to load, a transcription fails, or the microphone can't be accessed, so you always know what happened.
 - **Keeps running through hiccups**: The app degrades gracefully in edge cases (including when the system tray isn't available) rather than shutting down, and settings are automatically salvaged if the settings file ever gets corrupted.
 - **Broader hardware support**: Fixed a startup crash on some older processors.
+- **Verified model downloads**: every model file is checked against a known checksum after download, interrupted downloads restart cleanly instead of corrupting the file, and truncated downloads are detected and retried from a mirror.
 
 ### Bug Fixes
 
