@@ -37,17 +37,25 @@ Dropping an unsupported file shows a warning and leaves the rest of the drop unt
 
 ## Progress and results
 
-While a file is being processed, a progress card appears in the corner of the window, and the tray icon switches to its transcribing state. Long files are processed in segments, cut at pauses in the speech so words are never split in half, and the progress bar advances segment by segment.
+While a file is being processed, a progress card appears in the corner of the window, and the tray icon switches to its transcribing state.
+
+![A file being transcribed: the progress card sits in the bottom-left corner of the window](/img/screenshots/file-transcription-progress.png) Long files are processed in segments, cut at pauses in the speech so words are never split in half, and the progress bar advances segment by segment.
 
 When a file finishes, a notification confirms it was saved to history. If a file fails (no speech detected, unreadable file), you get a notification with the reason, and the remaining files continue.
 
-To stop a running job, use **Cancel** in the tray menu or your cancel shortcut. The current segment finishes, the rest is skipped.
+Changed your mind? You have two levers:
+
+- The **✕ on the progress card** cancels the current file only. With several files queued, the rest of the queue continues.
+- **Cancel all** (on the card, when more files are waiting), the tray menu's **Cancel**, or your cancel shortcut end the whole job.
+
+Either way, the current segment finishes and the rest is skipped.
 
 ## A few things to know
 
 - **One job at a time.** Dictation and file transcription share the transcription engine, so they take turns: you cannot start a dictation while files are being transcribed, and vice versa. The app tells you when that happens.
 - **Long recordings stay readable.** In history, long transcriptions are collapsed to a few lines with a **Show more** toggle.
 - **Only the text is stored.** Your media file stays where it is; history keeps the transcription, not a copy of the audio.
+- **History disabled?** The transcription is copied to your clipboard instead, since file transcriptions are never pasted.
 - **Batch from the terminal.** For whole folders, scripting, or subtitle output (`srt`, `vtt`), use the [`transcribe` CLI](./cli). The in-app flow is for the quick "just transcribe this" moments.
 
 ## Related Documentation
