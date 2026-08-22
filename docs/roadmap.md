@@ -52,11 +52,10 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **CUDA Support**: GPU acceleration for NVIDIA GPUs using CUDA for even faster transcription (#174)
 - **In-App feedback and error reporting** (#105, #106)
 - **API**: Integrate Knowii Voice AI with other applications and systems programmatically (#135, #31, #143). Scripting and automation are already possible today through the [`transcribe` CLI](./user-guide/cli), which shipped in 0.6.0 (#47, #131)
-- **File Transcription in the app**: Drag and drop audio files (meeting recordings, interviews, podcasts) into the window to transcribe them (#133). Transcribing files already works today from the terminal with the [`transcribe` CLI](./user-guide/cli) - this item is about bringing it into the app's UI
 - **Usage Statistics**: Get statistics about your usage
 - **Allow selecting a different folder for models** (#40)
 - **Allow selecting a different folder for the history** (#115, #116, #117, #118)
-- **Easily add and use custom sound files** (#153)
+- **Easily add and use custom sound files**
 
 ## Long-Term Vision
 
