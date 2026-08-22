@@ -513,6 +513,12 @@ transcribe file *.mp4 --model whisper-large-v3 --format txt --output ./transcrip
 
 Both read mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, with no `ffmpeg` needed. See the [Transcribe CLI Tutorial](./tutorials/transcribe-cli) to get going with the CLI.
 
+### I installed with the MSI. What happens with updates?
+
+Starting with 0.8.0, Windows releases ship as the setup.exe installer only. The MSI is on hold because of an upstream packaging bug ([tauri#14681](https://github.com/tauri-apps/tauri/issues/14681)) that conflicts with bundling the `transcribe` CLI, and the CLI won that trade.
+
+If you originally installed with the MSI, your next update installs through setup.exe. Everything keeps working; the one cosmetic leftover is the old MSI entry under Windows Apps. Uninstall that old entry once and you are done. The MSI will return when the upstream bug is fixed.
+
 ### What is the relationship to Handy.computer?
 
 Knowii Voice AI is a fork of [Handy](https://github.com/cjpais/Handy). Handy is licensed under the MIT license, which explicitly allows anyone to use, modify, and redistribute the code. That's exactly what I've done here.
