@@ -49,11 +49,23 @@ It decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and 
 
 `transcribe` is installed with Knowii Voice AI, in the same folder as the main executable:
 
-| Platform | Location                                                      |
-| -------- | ------------------------------------------------------------- |
-| Windows  | `%LOCALAPPDATA%\Programs\knowii-voice-ai\transcribe.exe`      |
-| macOS    | `/Applications/Knowii Voice AI.app/Contents/MacOS/transcribe` |
-| Linux    | Next to the `knowii-voice-ai` binary from your package        |
+| Platform          | Location                                                      |
+| ----------------- | ------------------------------------------------------------- |
+| Windows           | `%LOCALAPPDATA%\Programs\knowii-voice-ai\transcribe.exe`      |
+| macOS             | `/Applications/Knowii Voice AI.app/Contents/MacOS/transcribe` |
+| Linux (deb / RPM) | `/usr/bin/transcribe`, already on your `PATH`                 |
+| Linux (AppImage)  | Bundled inside the AppImage (see below)                       |
+
+:::note[Using the AppImage?]
+The AppImage packs everything, `transcribe` included, into a single file, so the CLI is not on your `PATH`. Extract it once and link it wherever you like:
+
+```bash
+./Knowii-Voice-AI.AppImage --appimage-extract usr/bin/transcribe
+sudo install squashfs-root/usr/bin/transcribe /usr/local/bin/transcribe
+```
+
+Prefer the deb or RPM package if you plan to use the CLI a lot.
+:::
 
 Check that it works:
 
