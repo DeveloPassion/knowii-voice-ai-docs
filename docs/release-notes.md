@@ -24,6 +24,11 @@ What shipped, when, and what it changes for you.
 
 - Confirmation dialogs (deleting a history entry, clearing unstarred entries) now respond to the keyboard: Enter confirms, Escape cancels. No more reaching for the mouse to answer a yes/no question.
 
+**A Quieter, Sharper Recording Indicator**
+
+- The recording indicator no longer keeps your computer busy after it disappears: once it fades out, it stops all background drawing work. Less CPU, less battery, nothing to notice — which is the point.
+- On Windows, the indicator could show up cropped after unplugging a monitor, switching displays, or changing the display scale. It now redraws correctly wherever it lands.
+
 **Your Dictation Survives a Model Hiccup**
 
 - Knowii Voice AI loads the transcription model in the background while you speak, so transcription starts the moment you stop. Until now, if that background load failed, your dictation was lost with an error. The app now retries the load before transcribing: you might wait a few extra seconds, but your words come through.
