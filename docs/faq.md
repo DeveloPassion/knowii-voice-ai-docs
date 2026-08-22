@@ -497,7 +497,11 @@ The `knowii-voice-ai` executable also takes flags of its own, so you can start o
 
 ### Can I transcribe audio and video files I already have?
 
-Yes, with the `transcribe` CLI. Meeting recordings, interviews, podcasts, old videos: point it at the files and it writes subtitles or plain text next to them. It reads mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, with no `ffmpeg` needed.
+Yes, two ways.
+
+**In the app**: drag and drop files onto the Knowii Voice AI window, or pick them via **Transcribe File...** in the tray menu. The transcriptions are saved to your history. See [File Transcription](./user-guide/file-transcription).
+
+**From the terminal**: the `transcribe` CLI writes subtitles or plain text next to your files, and handles whole folders in one command.
 
 ```bash
 # One video
@@ -507,7 +511,7 @@ transcribe file talk.mp4 --model whisper-large-v3
 transcribe file *.mp4 --model whisper-large-v3 --format txt --output ./transcripts/
 ```
 
-See the [Transcribe CLI Tutorial](./tutorials/transcribe-cli) to get going. Drag-and-drop file transcription inside the app window is on the [Roadmap](./roadmap).
+Both read mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and more, with no `ffmpeg` needed. See the [Transcribe CLI Tutorial](./tutorials/transcribe-cli) to get going with the CLI.
 
 ### What is the relationship to Handy.computer?
 
