@@ -46,7 +46,10 @@ const sidebars = {
             items: [
                 'tutorials/getting-started',
                 'tutorials/customizing-sounds',
-                'tutorials/transcribe-cli'
+                'tutorials/transcribe-cli',
+                'tutorials/fix-your-vocabulary',
+                'tutorials/record-system-sound',
+                'tutorials/dictate-from-a-button'
             ]
         }
     ]
