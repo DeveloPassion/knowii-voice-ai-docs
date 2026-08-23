@@ -16,7 +16,7 @@ keywords:
 
 What shipped, when, and what it changes for you.
 
-## Upcoming Release
+## Version 0.9.0 (August 23, 2026)
 
 ### New Features
 
@@ -44,6 +44,10 @@ What shipped, when, and what it changes for you.
 **Your Dictation Survives a Model Hiccup**
 
 - Knowii Voice AI loads the transcription model in the background while you speak, so transcription starts the moment you stop. Until now, if that background load failed, your dictation was lost with an error. The app now retries the load before transcribing: you might wait a few extra seconds, but your words come through.
+
+**Windows Crash on Startup After 0.8.0 — Fixed**
+
+- Version 0.8.0 could crash on startup on Windows 10 and 11. The bundled transcription engine had been built for very recent processors only, so it failed instantly on anything older. It is now built for a portable baseline and runs on every supported CPU. If 0.8.0 crashed for you, update to 0.9.0.
 
 ## Version 0.8.0 (August 22, 2026)
 
