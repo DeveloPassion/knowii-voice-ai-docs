@@ -16,6 +16,20 @@ keywords:
 
 What shipped, when, and what it changes for you.
 
+## Upcoming Release
+
+### Fixes
+
+**Dictation Pastes Again on Recent Hyprland (Omarchy 4)**
+
+- On Hyprland 0.56 and later, which is what Omarchy 4 ships, transcriptions stopped arriving in your applications. The words were recognised correctly, they simply never landed anywhere, and they were gone from the clipboard too, so there was nothing left to paste by hand. The recording indicator also appeared in the wrong place.
+- Hyprland 0.56 changed the way other programs talk to it, and Knowii Voice AI was still speaking the old language. Every window instruction it sent was quietly ignored, which left the recording indicator holding your keyboard focus. The paste went to the indicator instead of to you.
+- Both are fixed, and older Hyprland versions keep working exactly as before. If you switched the recording indicator off to work around this, you can turn it back on.
+
+**Cancel Now Discards What You Said**
+
+- Pressing your cancel shortcut once transcription had already started stopped the recording, but the text still showed up in your application a moment later. Cancel now means discard: nothing is pasted, and nothing is written to your history.
+
 ## Version 0.9.0 (August 23, 2026)
 
 ### New Features
