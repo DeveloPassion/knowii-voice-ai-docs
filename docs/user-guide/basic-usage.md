@@ -49,6 +49,7 @@ The system tray icon provides quick access to the app:
     - **Copy Last Transcript**: put your most recent transcription back on the clipboard — the quick recovery when a paste didn't land where you expected, or you clicked into the wrong window before pasting
     - **Switch Model**: pick any downloaded model from the submenu — the active one is checked, and selecting another switches to it without opening the main window
     - **Unload Model**: free the memory the model occupies. The model stays selected and loads again automatically the next time you dictate
+    - **Language**: change the transcription language without opening the main window. The submenu only appears for models where picking a language makes sense — models that auto-detect the language (like Parakeet) don't show it
     - The main window (Settings)
     - Check for updates
     - Cancel current operation (while recording or transcribing)
