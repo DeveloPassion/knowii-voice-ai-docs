@@ -98,19 +98,19 @@ Already downloaded a model inside the app? Skip the first command. The CLI and t
 transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 ```
 
-| Option                    | Description                                                              | Default            |
-| ------------------------- | ------------------------------------------------------------------------ | ------------------ |
-| `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.    | _(required)_       |
-| `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory | _(required)_       |
-| `--engine`                | Engine for raw paths: `whisper`, `parakeet`, `moonshine`, `omnilingual`  | auto / `whisper`   |
-| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (whisper)            | `auto`             |
-| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, or `json`                            | `srt`              |
-| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                | next to each input |
-| `--translate`             | Translate to English (whisper multilingual models only)                  | off                |
-| `--initial-prompt <TEXT>` | Bias vocabulary/style (whisper only)                                     | _(none)_           |
-| `--int8`                  | Use Int8 quantized inference where supported (parakeet/omnilingual)      | off                |
-| `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)              | off                |
-| `--models-dir <DIR>`      | Where to look up models by id                                            | app data directory |
+| Option                    | Description                                                                   | Default            |
+| ------------------------- | ----------------------------------------------------------------------------- | ------------------ |
+| `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.         | _(required)_       |
+| `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory      | _(required)_       |
+| `--engine`                | Model family for raw paths: `whisper`, `parakeet`, `moonshine`, `omnilingual` | auto / `whisper`   |
+| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (Whisper models)          | `auto`             |
+| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, or `json`                                 | `srt`              |
+| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                     | next to each input |
+| `--translate`             | Translate to English (multilingual Whisper models only)                       | off                |
+| `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                   | _(none)_           |
+| `--int8`                  | Trade a little accuracy for more speed and lower memory, where supported      | off                |
+| `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)                   | off                |
+| `--models-dir <DIR>`      | Where to look up models by id                                                 | app data directory |
 
 When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, pass `--engine` as well so the CLI knows what it is loading.
 
@@ -135,7 +135,7 @@ transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Kubernete
 # Pipe audio in from stdin
 cat note.ogg | transcribe file - --model whisper-medium --format txt
 
-# Fast ONNX engine with quantization
+# A faster model, in its lower-memory mode
 transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
@@ -152,18 +152,18 @@ File names often contain spaces. Always quote them: `transcribe file "My Recordi
 | `txt`  | Plain text, no timestamps                | Notes, search, feeding text into another tool |
 | `json` | Structured segments with timings         | Scripts and further processing                |
 
-### Engines
+### Model families
 
-`transcribe` supports multiple engines via `--engine`:
+Models come in four families. Pass one to `--engine` only when you point `--model` at a raw path:
 
-| Engine        | Notes                                                    |
-| ------------- | -------------------------------------------------------- |
-| `whisper`     | Timestamped segments. The best choice for subtitles.     |
-| `parakeet`    | Fast ONNX engine; supports `--int8` quantized inference. |
-| `moonshine`   | Ultra-fast ONNX engine; English plus several languages.  |
-| `omnilingual` | Massive language coverage (1,600+); supports `--int8`.   |
+| Family        | What it gives you                                                           |
+| ------------- | --------------------------------------------------------------------------- |
+| `whisper`     | Timestamped segments and the widest language support. Best for subtitles.   |
+| `parakeet`    | Much faster than Whisper. Supports `--int8` for more speed and less memory. |
+| `moonshine`   | Fastest of all on short clips. English plus several other languages.        |
+| `omnilingual` | Widest language coverage (1,600+). Supports `--int8`.                       |
 
-When `--model` is a known model id (e.g. `whisper-large-v3`), the engine is detected automatically, so you rarely need this flag.
+When `--model` is a known model id (e.g. `whisper-large-v3`), the family is detected automatically, so you rarely need this flag.
 
 ### Manage models
 

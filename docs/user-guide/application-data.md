@@ -74,8 +74,7 @@ The application data folder contains:
 - **models/**: Folder containing downloaded AI transcription models
 - Models are organized in a hierarchical structure: `models/family/variant/`
     - Example: `models/whisper/small/` or `models/parakeet/tdt-0.6b-v3/`
-- Whisper models are single `.bin` files
-- Parakeet models consist of multiple ONNX files (encoder, decoder, etc.)
+- Some models are a single file, others are a folder of several files. Either way, delete the whole model folder to remove one.
 - Models can be several hundred MB to several GB depending on which ones you've downloaded
 - You can safely delete model folders you no longer use to free up space (you can re-download them later if needed). Just don't do it while the application is running, or do it through the settings (Settings > Transcription)
 

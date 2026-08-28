@@ -181,13 +181,13 @@ The prompt biases the model's vocabulary. Nothing else costs so little for so mu
 
 ## Step 7: Make it faster
 
-Whisper is accurate and not especially quick. When you care more about speed, switch engines:
+Whisper is accurate and not especially quick. When you care more about speed, switch models:
 
 ```bash
 transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
-Parakeet is a much faster ONNX engine, and `--int8` runs it quantized, faster still. Moonshine is faster again for short English clips.
+Parakeet is much faster than Whisper, and `--int8` trades a little accuracy for more speed and lower memory. Moonshine is faster again for short English clips.
 
 The trade-off is real: Whisper gives you the best timestamps and the best accuracy on hard audio, which is why it stays the default for subtitles. Use Parakeet or Moonshine when you want a rough transcript of a long recording and you want it now.
 
@@ -205,7 +205,7 @@ Start simple. Transcribe one file, see the output, then automate the part you fo
 ## Next Steps
 
 - [CLI reference](../user-guide/cli): every flag, every subcommand
-- [Transcription Settings](../user-guide/transcription-settings): how models and engines behave in the app
+- [Transcription Settings](../user-guide/transcription-settings): how models behave in the app
 - [Getting Started Tutorial](./getting-started): the desktop dictation basics
 - [FAQ](../faq): common questions
 
