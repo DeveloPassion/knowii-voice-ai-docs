@@ -28,6 +28,15 @@ Control how Knowii Voice AI starts and runs:
 - Useful if you want the app running silently in the background
 - The app will be fully functional and ready to use via the system tray icon
 
+### Show Tray Icon
+
+**Location**: Settings > Advanced
+
+- Show or hide the icon in your system tray (near the clock). On by default
+- Turning it off removes the icon immediately — no restart needed — and turning it back on restores it
+- With the tray icon hidden, the app protects you from losing the window: closing it **minimizes** instead of hiding it, "Start Hidden" is ignored at the next launch (the window always appears), and you can quit from the button at the bottom of the main window
+- Useful for minimal setups — for example a status bar that triggers dictation through the [CLI](./cli#control-a-running-app) instead of the tray
+
 ### Launch on Startup
 
 **Location**: Settings > Advanced

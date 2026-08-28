@@ -37,6 +37,10 @@ What shipped, when, and what it changes for you.
 
 - A new opt-in **Auto-Submit After Paste** setting in **Settings > Advanced > Paste** presses the submit key for you right after your transcription lands — dictate a message to a chat app or AI assistant and it sends itself. Choose **Enter** or **Ctrl+Enter** (Cmd+Enter on macOS) to match how your app sends messages. Off by default, so nothing changes unless you turn it on.
 
+**Hide the Tray Icon Entirely**
+
+- A new **Show Tray Icon** toggle in **Settings > Advanced** lets you run without a system tray icon — for minimal setups where a panel button or the CLI drives dictation. The app keeps you safe while the icon is hidden: closing the window minimizes it instead of hiding it, "Start Hidden" is ignored so the window always appears at launch, and you can quit from the button in the main window. The change applies instantly, in both directions, without a restart.
+
 **Copy Your Last Transcript From the Tray**
 
 - A new **Copy Last Transcript** entry in the tray menu puts your most recent transcription back on the clipboard in one click. It is the quick recovery when a paste didn't land where you expected — the focus moved, the target app refused the paste — and your words seemed gone: they are in your history, and now one tray click away.
