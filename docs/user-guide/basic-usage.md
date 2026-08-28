@@ -45,12 +45,19 @@ The main window's icon changes based on the application state:
 The system tray icon provides quick access to the app:
 
 - **Right-click** the icon for quick access to:
+    - Transcribe a file
+    - **Switch Model**: pick any downloaded model from the submenu — the active one is checked, and selecting another switches to it without opening the main window
+    - **Unload Model**: free the memory the model occupies. The model stays selected and loads again automatically the next time you dictate
     - The main window (Settings)
     - Check for updates
-    - Cancel current operation
+    - Cancel current operation (while recording or transcribing)
     - Quit application
 
 The system tray icon also changes based on the application state.
+
+:::tip
+Switching models from the tray is handy when you alternate between a fast model for quick notes and a more accurate one for long dictations. If a switch fails (for example, a corrupted download), the app keeps your previous model active so dictation keeps working.
+:::
 
 ## Keyboard Shortcuts
 

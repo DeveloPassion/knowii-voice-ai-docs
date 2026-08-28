@@ -37,6 +37,11 @@ What shipped, when, and what it changes for you.
 
 - A new opt-in **Auto-Submit After Paste** setting in **Settings > Advanced > Paste** presses the submit key for you right after your transcription lands — dictate a message to a chat app or AI assistant and it sends itself. Choose **Enter** or **Ctrl+Enter** (Cmd+Enter on macOS) to match how your app sends messages. Off by default, so nothing changes unless you turn it on.
 
+**Switch or Unload Models From the Tray**
+
+- The tray menu now has a **Switch Model** submenu listing every model you have downloaded, with the active one checked — switch models in two clicks, without opening the main window. Handy when you alternate between a fast model for quick notes and a more accurate one for long dictations.
+- A new **Unload Model** entry sits right below it: it frees the memory the model occupies while keeping it selected, so it loads again automatically the next time you dictate. If a switch fails, the app keeps your previous model active so dictation keeps working.
+
 **Light, Dark, and System Appearance**
 
 - A new **Appearance** selector in **Settings > Advanced > Display** lets you pick **Dark** (the classic look, still the default), **Light**, or **System** — which follows your operating system's theme and switches automatically when it does. The app window and the recording overlay both follow your choice.
