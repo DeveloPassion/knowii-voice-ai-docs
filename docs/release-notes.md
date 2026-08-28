@@ -85,6 +85,7 @@ What shipped, when, and what it changes for you.
 
 **Small Polish**
 
+- Dropdown menus grew up: they now open upward or downward depending on the room around them, sit flush against their control, follow the page when you scroll, and are fully keyboard-driven — arrow keys move through the options, Enter picks one, Escape closes.
 - Playing a recording in History now pauses whichever other recording was playing — no more two voices talking over each other.
 - Adding a word that is already in your Custom Words list now tells you so, instead of silently doing nothing.
 - On macOS, the app now keeps the native overlay scrollbars instead of forcing its own.
