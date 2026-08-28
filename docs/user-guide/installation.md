@@ -283,6 +283,8 @@ The app needs read access to your keyboard to detect its global shortcut. If pre
 2. Verify the application has permission to run
 3. Check system logs for error messages
 
+On Linux, a blank window or a crash right after launch is usually a graphics-driver issue with a known workaround — see the [Linux Troubleshooting](./troubleshooting-linux) page.
+
 ## Updating
 
 To update Knowii Voice AI to a newer version, see the [Updating Guide](./updating) for instructions on both automatic and manual updates.

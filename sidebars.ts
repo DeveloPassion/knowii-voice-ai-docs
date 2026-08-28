@@ -24,6 +24,7 @@ const sidebars = {
             items: [
                 'user-guide/installation',
                 'user-guide/updating',
+                'user-guide/verify-downloads',
                 'user-guide/basic-usage',
                 'user-guide/file-transcription',
                 'user-guide/general-settings',
@@ -32,6 +33,7 @@ const sidebars = {
                 'user-guide/audio-settings',
                 'user-guide/advanced-settings',
                 'user-guide/debug-settings',
+                'user-guide/troubleshooting-linux',
                 'user-guide/cli',
                 'user-guide/application-data'
             ]
