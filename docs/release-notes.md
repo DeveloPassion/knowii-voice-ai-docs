@@ -18,6 +18,13 @@ What shipped, when, and what it changes for you.
 
 ## Upcoming Release
 
+### New Features
+
+**Parakeet V3 (GPU) — Much Faster Transcription on Machines With a Graphics Card**
+
+- A new entry in the model list, **Parakeet V3 (GPU)**, delivers the same accuracy as Parakeet V3 while using your graphics card when one is available — in our tests, dictations came back up to 3× faster, and the model itself loads in a fraction of the time. No graphics card? It quietly runs on your processor instead, at the usual speed.
+- It arrives as a separate download in **Settings > Models**, so your current model keeps working untouched — download it, activate it, and compare.
+
 ### Fixes
 
 **Dictation Pastes Again on Recent Hyprland (Omarchy 4)**

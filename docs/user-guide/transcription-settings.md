@@ -42,6 +42,13 @@ Knowii Voice AI supports multiple transcription models with different characteri
 If digit sequences appear as words ("one one two two" instead of "1122"), enable **Write digit sequences as numbers** in Settings > Transcription, or use Parakeet V2 for English dictation.
 :::
 
+- **Parakeet V3 (GPU)**: the fastest choice on machines with a graphics card
+    - Same accuracy and languages as Parakeet V3
+    - Uses your graphics card when one is available — up to 3× faster transcription, and the model loads in a fraction of the time
+    - Falls back to your processor automatically when no graphics card is available
+    - 740 MB download
+    - May write numbers as words, like Parakeet V3 below
+
 - **Parakeet V3** (Recommended): the default choice for most people
     - Fast and accurate
     - Supports 25 European languages
@@ -147,6 +154,7 @@ Lightweight models designed for computers with limited resources (low memory or 
 
 **Hardware considerations:**
 
+- Machine with a graphics card: **Parakeet V3 (GPU)** is the fastest option
 - Very limited RAM (under 2GB free): Use Moonshine Tiny models
 - Limited RAM (2-4GB free): Use Moonshine Base or Whisper Tiny/Small models
 - Moderate RAM (4-8GB): Use Parakeet or Whisper Small/Medium models
