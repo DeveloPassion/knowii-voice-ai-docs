@@ -37,6 +37,11 @@ What shipped, when, and what it changes for you.
 
 - A new opt-in **Auto-Submit After Paste** setting in **Settings > Advanced > Paste** presses the submit key for you right after your transcription lands — dictate a message to a chat app or AI assistant and it sends itself. Choose **Enter** or **Ctrl+Enter** (Cmd+Enter on macOS) to match how your app sends messages. Off by default, so nothing changes unless you turn it on.
 
+**Auto-Delete Old Recordings**
+
+- A new **Keep Recordings** setting in **Settings > Advanced > History** automatically deletes audio recordings older than a window you choose — 1 day, 1 week, 1 month, or 3 months. Recordings are by far the largest files the app produces, so this keeps disk usage (and your voice archive) under control without giving up the transcriptions: only the audio goes, the text stays, and **starred entries are never touched**. The default is Forever — nothing changes unless you opt in.
+- An **Open Recordings Folder** button next to it jumps straight to where your recordings live, custom audio folder included.
+
 **Your Recording Survives a Failed Transcription — and You Can Re-transcribe It**
 
 - The recording is now saved to History **before** transcription starts, not after. If transcription fails — an engine error, a crash — your words are no longer lost: the entry appears in History with its audio and a "No transcription yet" note.

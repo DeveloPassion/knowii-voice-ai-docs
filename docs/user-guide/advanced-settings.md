@@ -277,6 +277,23 @@ _Requires History to be enabled_
 - Files stored alongside transcriptions: `2025-01-15-14_30_45 - Audio.wav`
 - Warning: Audio files can consume significant disk space
 
+### Keep Recordings
+
+_Requires History and "Save Audio to Disk" to be enabled_
+
+- Automatically deletes audio recordings older than the chosen window: **Forever** (the default — nothing is ever deleted), 1 day, 1 week, 1 month, or 3 months
+- Only the audio files are removed — the transcription text and the history entry stay
+- **Starred entries are never touched**: star a transcription to keep its recording no matter what
+- A privacy and disk-space win: recordings are by far the largest files the app produces
+- Cleanup runs at startup, after each transcription, and immediately when you pick a shorter window
+
+### Open Recordings Folder
+
+_Requires History and "Save Audio to Disk" to be enabled_
+
+- Opens the folder where your audio recordings are stored in your file manager
+- Respects a custom audio folder if you configured one; otherwise opens the default history folder
+
 ### Limit History
 
 _Requires History to be enabled_
