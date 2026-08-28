@@ -46,6 +46,18 @@ Control how Knowii Voice AI starts and runs:
 
 ## Display Options
 
+### Appearance
+
+**Location**: Settings > Advanced > Display
+
+Choose how Knowii Voice AI looks:
+
+- **Dark** (default): the classic look the app has always had
+- **Light**: a bright variant of the interface
+- **System**: follows your operating system's theme, switching automatically when it changes
+
+The choice applies immediately to the app window and the recording overlay.
+
 ### Overlay Enabled
 
 **Location**: Settings > Advanced > Display
