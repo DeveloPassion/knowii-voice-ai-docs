@@ -18,6 +18,8 @@ jobs:
     release:
         name: Create Tag and Release
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -53,3 +55,17 @@ jobs:
                   draft: false
                   prerelease: false
                   generate_release_notes: true
+
+    # Chained explicitly: the tag pushed above uses GITHUB_TOKEN, and GitHub
+    # refuses to trigger workflows from such events (recursion protection), so
+    # deploy.yml's `push: tags` trigger never fires for an automated release.
+    # Calling it here makes the deploy a visible job of this run - a failure is
+    # loud instead of a site that silently never updates.
+    deploy:
+        name: Deploy to GitHub Pages
+        needs: release
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+        uses: ./.github/workflows/deploy.yml
