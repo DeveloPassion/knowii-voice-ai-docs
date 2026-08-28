@@ -97,6 +97,7 @@ What shipped, when, and what it changes for you.
 **Cancel Now Discards What You Said**
 
 - Pressing your cancel shortcut once transcription had already started stopped the recording, but the text still showed up in your application a moment later. Cancel now means discard: nothing is pasted, and nothing is written to your history.
+- Also closed: two rare timing windows where pressing cancel at almost the same instant a recording ended could still let the text slip through. Cancel now wins that race, every time.
 
 ## Version 0.9.0 (August 23, 2026)
 
