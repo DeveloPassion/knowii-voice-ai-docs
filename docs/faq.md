@@ -226,6 +226,8 @@ To improve speed:
 
 Yes! If you have a Vulkan-compatible GPU (most modern NVIDIA, AMD, and Intel GPUs), Knowii Voice AI automatically detects and uses it for significantly faster transcription. CUDA support for NVIDIA GPUs is planned for a future release.
 
+If your GPU or its drivers misbehave (crashes, garbled text, transcriptions that never finish), you can force Whisper to run on your processor instead: turn off **Use GPU for Whisper** in **Settings > Advanced > Performance**. See [Performance Settings](./user-guide/advanced-settings#use-gpu-for-whisper).
+
 ### Why does it use so much memory?
 
 AI models require significant memory to run. To reduce memory usage:

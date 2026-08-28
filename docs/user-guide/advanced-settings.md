@@ -270,6 +270,18 @@ When a model is unloaded, the next transcription will have a delay while the mod
 The AI model now stays ready throughout a recording. Even if you've chosen to unload the model quickly, it won't be unloaded in the middle of a recording, so your transcription is never interrupted while you're speaking.
 :::
 
+### Use GPU for Whisper
+
+**Location**: Settings > Advanced > Performance
+
+When you use a Whisper model, Knowii Voice AI normally runs it on your graphics card for faster transcription. If your graphics card or its drivers cause trouble — crashes, garbled text, or transcriptions that never finish — turn this off to run Whisper on your processor instead. Transcription becomes slower but very reliable.
+
+The change applies the next time the model loads. To apply it right away, switch to another model and back, or restart the application.
+
+:::tip
+Leave this on unless you are experiencing problems. On machines without a compatible graphics card, Knowii Voice AI already falls back to the processor automatically.
+:::
+
 ## Application Logs
 
 **Location**: Settings > Advanced > Application Logs
