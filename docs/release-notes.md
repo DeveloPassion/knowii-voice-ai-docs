@@ -73,6 +73,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Searching Your History No Longer Fights You**
+
+- Typing in the History search box used to lose focus after a few letters while the whole page flashed a loading state — the list reloaded on every keystroke and took the search field down with it. The search box now keeps focus and the list updates smoothly in place once you pause typing.
+
 **Dictation Pastes Again on Recent Hyprland (Omarchy 4)**
 
 - On Hyprland 0.56 and later, which is what Omarchy 4 ships, transcriptions stopped arriving in your applications. The words were recognised correctly, they simply never landed anywhere, and they were gone from the clipboard too, so there was nothing left to paste by hand. The recording indicator also appeared in the wrong place.
