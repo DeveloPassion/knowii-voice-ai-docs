@@ -205,6 +205,28 @@ Listen to original recordings (if audio saving is enabled):
 - Reference exact wording or tone from recordings
 - Delete audio files to free up disk space while keeping transcriptions
 
+### Re-transcribing a Recording
+
+Run transcription again on an entry's saved recording — with whichever model is active right now:
+
+**When it helps:**
+
+- The first transcription came out incomplete or inaccurate — activate a more accurate model, then re-transcribe
+- A transcription failed. Your recording is not lost: it appears in History as an entry that says "No transcription yet", ready to be processed again
+
+**To re-transcribe:**
+
+1. Locate an entry that still has its audio player (the recording must have been saved)
+2. Click the re-transcribe button (circular arrows) in the entry's toolbar
+3. Progress appears in the floating panel, like a file transcription
+4. When it finishes, the entry's text is replaced with the new transcription
+
+**Notes:**
+
+- The new text replaces the previous one for that entry (the recording itself is untouched)
+- Re-transcription waits its turn: it won't run while you are dictating or while a file transcription is in progress
+- The button only appears on entries that still have their recording
+
 ### Deleting Entries
 
 Remove individual transcriptions:

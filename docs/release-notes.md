@@ -37,6 +37,11 @@ What shipped, when, and what it changes for you.
 
 - A new opt-in **Auto-Submit After Paste** setting in **Settings > Advanced > Paste** presses the submit key for you right after your transcription lands — dictate a message to a chat app or AI assistant and it sends itself. Choose **Enter** or **Ctrl+Enter** (Cmd+Enter on macOS) to match how your app sends messages. Off by default, so nothing changes unless you turn it on.
 
+**Your Recording Survives a Failed Transcription — and You Can Re-transcribe It**
+
+- The recording is now saved to History **before** transcription starts, not after. If transcription fails — an engine error, a crash — your words are no longer lost: the entry appears in History with its audio and a "No transcription yet" note.
+- A new **re-transcribe** button (circular arrows) on every History entry that still has its recording runs transcription again with your active model. Use it to recover a failed transcription, or to redo an inaccurate one with a better model. Progress shows in the floating panel, and the entry's text updates in place when it finishes.
+
 **Change the Transcription Language From the Tray**
 
 - A new **Language** submenu in the tray menu lets you switch the transcription language in two clicks — handy when you dictate in several languages during the day. It lists exactly the languages your active model supports, with the current one checked, and stays out of the way for models that auto-detect the language (like Parakeet). The Settings window follows along automatically.
