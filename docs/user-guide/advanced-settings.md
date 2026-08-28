@@ -184,6 +184,14 @@ Control what happens to your clipboard after transcription:
     - Allows you to paste the same transcription multiple times
     - Useful for repeated pasting or when you want to keep the text in clipboard
 
+### Trailing Space After Paste
+
+**Location**: Settings > Advanced > Paste
+
+**Default**: Off
+
+Append a space after each pasted transcription. Turn this on if you dictate in several takes and your snippets end up glued together — each new dictation then lands one space after the previous one.
+
 ### Auto-Submit After Paste
 
 **Location**: Settings > Advanced > Paste
