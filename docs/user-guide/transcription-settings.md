@@ -42,7 +42,7 @@ Knowii Voice AI supports multiple transcription models with different characteri
 If digit sequences appear as words ("one one two two" instead of "1122"), enable **Write digit sequences as numbers** in Settings > Transcription, or use Parakeet V2 for English dictation.
 :::
 
-- **Parakeet V3** (Recommended): NVIDIA's newest model
+- **Parakeet V3** (Recommended): the default choice for most people
     - Fast and accurate
     - Supports 25 European languages
     - Automatic language detection
@@ -51,7 +51,7 @@ If digit sequences appear as words ("one one two two" instead of "1122"), enable
     - Latest version with improved performance
     - May write numbers as words ("one one two two" instead of "1122"). If you often dictate numbers in English, use Parakeet V2 instead
 
-- **Parakeet V2**: NVIDIA's efficient speech recognition model
+- **Parakeet V2**: the English-only alternative when you dictate numbers
     - Fast with good accuracy
     - English only
     - 697 MB download

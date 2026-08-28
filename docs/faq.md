@@ -68,7 +68,7 @@ Knowii Voice AI supports multiple AI transcription models:
 
 #### Parakeet Models
 
-- **Parakeet V3** (Recommended): NVIDIA's newest model. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
+- **Parakeet V3** (Recommended): the default choice for most people. Fast and accurate. Supports 25 European languages with automatic language detection. 785 MB download.
 
 #### Omnilingual Models
 
