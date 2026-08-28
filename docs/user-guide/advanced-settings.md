@@ -36,6 +36,14 @@ Control how Knowii Voice AI starts and runs:
 - App will be ready to use immediately when you need it
 - Combined with "Start Hidden", the app starts with your session and stays out of sight
 
+### Check for Updates Automatically
+
+**Location**: Settings > Advanced
+
+- When on (the default), the app looks for a new version once at startup
+- Turn it off and the app makes no automatic network requests at all — checking for updates is its only recurring one
+- You can always check manually from the system tray menu, the status bar, or **Settings > About**, and [update by hand](./updating#manually) whenever you like
+
 ## Display Options
 
 ### Overlay Enabled

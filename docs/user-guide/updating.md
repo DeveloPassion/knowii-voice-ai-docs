@@ -21,6 +21,8 @@ Knowii Voice AI updates itself. Here's how that works, and how to do it by hand 
 1. The app will automatically check for updates on startup. You will see "Checking" in the status bar and in the About screen
 2. You can also force checking for updates by clicking on "Check for updates" in the status bar, in the About screen or using the system tray menu
 
+Prefer to stay in full control? Turn off **Check for Updates Automatically** in **Settings > Advanced** and the app makes no automatic network requests at all — manual checks keep working. See [Advanced Settings](./advanced-settings#check-for-updates-automatically).
+
 ## Download and Install Updates
 
 ### Through the app
@@ -127,7 +129,7 @@ Note: Downgrading is not recommended and may cause compatibility issues.
 
 To stay up to date with new releases:
 
-- **Enable automatic update checks** in Settings → About
+- **Keep automatic update checks on** in Settings → Advanced (they are on by default)
 - **Watch** the [GitHub repository](https://github.com/DeveloPassion/knowii-voice-ai-docs)
 - **Visit** the [website](https://voice-ai.knowii.net) for announcements
 - **Join** the [Knowii Community](https://www.knowii.net)

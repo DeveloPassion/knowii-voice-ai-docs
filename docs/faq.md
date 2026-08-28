@@ -202,6 +202,8 @@ Yes! In the History tab, you can:
 
 No. Knowii Voice AI does not collect any telemetry, analytics, or usage data. See the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
 
+The app only ever talks to the network for two things: checking for updates (once at startup — you can turn this off in **Settings > Advanced > Check for Updates Automatically**, and then the app makes no automatic requests at all) and downloading AI models when you ask it to.
+
 ### Is my audio recorded?
 
 Audio is temporarily recorded during transcription and optionally saved in your history for playback. You can delete audio files at any time while keeping the transcription text.

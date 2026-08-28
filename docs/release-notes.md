@@ -29,6 +29,10 @@ What shipped, when, and what it changes for you.
 
 - A new **Use GPU for Whisper** toggle in **Settings > Advanced > Performance** lets you force Whisper transcription onto your processor. It is the escape hatch for machines where the graphics card or its drivers cause crashes or garbled results — slower, but rock solid. It stays on by default, and applies the next time the model loads.
 
+**Turn Off Automatic Update Checks**
+
+- A new **Check for Updates Automatically** toggle in **Settings > Advanced** puts you in full control of the app's only recurring network request. Turn it off and Knowii Voice AI contacts nothing on its own — checking for updates then only happens when you ask, from the tray menu or **Settings > About**. On by default, so you keep getting new versions unless you decide otherwise.
+
 ### Fixes
 
 **Dictation Pastes Again on Recent Hyprland (Omarchy 4)**
