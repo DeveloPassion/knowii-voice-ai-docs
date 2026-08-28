@@ -78,6 +78,12 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Small Polish**
+
+- Playing a recording in History now pauses whichever other recording was playing — no more two voices talking over each other.
+- Adding a word that is already in your Custom Words list now tells you so, instead of silently doing nothing.
+- On macOS, the app now keeps the native overlay scrollbars instead of forcing its own.
+
 **Searching Your History No Longer Fights You**
 
 - Typing in the History search box used to lose focus after a few letters while the whole page flashed a loading state — the list reloaded on every keystroke and took the search field down with it. The search box now keeps focus and the list updates smoothly in place once you pause typing.
