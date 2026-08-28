@@ -184,6 +184,23 @@ Control what happens to your clipboard after transcription:
     - Allows you to paste the same transcription multiple times
     - Useful for repeated pasting or when you want to keep the text in clipboard
 
+### Auto-Submit After Paste
+
+**Location**: Settings > Advanced > Paste
+
+**Default**: Off
+
+Press the submit key automatically right after your transcription is pasted — dictate a message and it sends itself. Made for chat apps and AI assistants: speak, release the shortcut, and the message goes out with no keyboard touch.
+
+When enabled, a **Submit Key** dropdown appears:
+
+- **Enter** (default): Submits in most chat apps
+- **Ctrl+Enter** (Cmd+Enter on macOS): For apps where plain Enter adds a new line instead of sending
+
+:::caution
+With this on, every dictation is sent immediately — there is no moment to review or edit the text first. Keep it off for dictating into documents or emails.
+:::
+
 ## Input Devices (Linux only)
 
 **Location**: Settings > Advanced
