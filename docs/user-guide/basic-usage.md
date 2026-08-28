@@ -46,6 +46,7 @@ The system tray icon provides quick access to the app:
 
 - **Right-click** the icon for quick access to:
     - Transcribe a file
+    - **Copy Last Transcript**: put your most recent transcription back on the clipboard — the quick recovery when a paste didn't land where you expected, or you clicked into the wrong window before pasting
     - **Switch Model**: pick any downloaded model from the submenu — the active one is checked, and selecting another switches to it without opening the main window
     - **Unload Model**: free the memory the model occupies. The model stays selected and loads again automatically the next time you dictate
     - The main window (Settings)

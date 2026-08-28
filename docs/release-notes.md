@@ -37,6 +37,10 @@ What shipped, when, and what it changes for you.
 
 - A new opt-in **Auto-Submit After Paste** setting in **Settings > Advanced > Paste** presses the submit key for you right after your transcription lands — dictate a message to a chat app or AI assistant and it sends itself. Choose **Enter** or **Ctrl+Enter** (Cmd+Enter on macOS) to match how your app sends messages. Off by default, so nothing changes unless you turn it on.
 
+**Copy Your Last Transcript From the Tray**
+
+- A new **Copy Last Transcript** entry in the tray menu puts your most recent transcription back on the clipboard in one click. It is the quick recovery when a paste didn't land where you expected — the focus moved, the target app refused the paste — and your words seemed gone: they are in your history, and now one tray click away.
+
 **Switch or Unload Models From the Tray**
 
 - The tray menu now has a **Switch Model** submenu listing every model you have downloaded, with the active one checked — switch models in two clicks, without opening the main window. Handy when you alternate between a fast model for quick notes and a more accurate one for long dictations.
