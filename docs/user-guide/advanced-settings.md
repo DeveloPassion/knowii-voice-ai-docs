@@ -131,6 +131,28 @@ The overlay keeps clear of taskbars, menu bars, and panels, so it never lands on
 
 **Tip**: this shines on long dictations. A two-minute thought that used to take several seconds to transcribe is ready the moment you release the key.
 
+### Transcription Hook (Advanced)
+
+**Location**: Settings > Advanced > Transcription
+
+- Off by default. When on, every transcription is handed to a small program **you** write before it is pasted — your program receives the text and whatever it prints back is what gets pasted (and saved to History).
+- This is a power-user feature in the spirit of git hooks. A few things people use it for:
+    - Clean up the text your way: strip trailing periods, lowercase the first letter, expand personal shorthand
+    - Pipe the text through a local AI (like Ollama) to rewrite, translate, or summarize it
+    - Send the text somewhere else — open a link with it, call a webhook, append it to a file
+- **Setting it up**: turn the toggle on, click **Open Hooks Folder**, and create a script named `transcription` in that folder (on Windows: `transcription.bat`, `transcription.cmd`, or `transcription.exe`). On Linux and macOS, make it executable (`chmod +x transcription`). The script reads the text from standard input and prints the replacement text to standard output.
+- **Your words are safe**: if the script is missing, crashes, or takes longer than 30 seconds, the original transcription is pasted unchanged and a notification tells you what went wrong.
+- If your script prints nothing (and exits successfully), nothing is pasted and nothing is saved — useful when the script delivers the text somewhere itself.
+
+Example script (Linux/macOS) that removes a trailing period:
+
+```bash
+#!/bin/sh
+sed 's/\.$//'
+```
+
+**Privacy note**: the hook runs entirely on your computer. Knowii Voice AI never sends your text anywhere — but your own script can, so only use scripts you trust.
+
 ## Paste Options
 
 ### Paste Method

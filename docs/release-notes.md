@@ -72,6 +72,11 @@ What shipped, when, and what it changes for you.
 
 - A new **Appearance** selector in **Settings > Advanced > Display** lets you pick **Dark** (the classic look, still the default), **Light**, or **System** — which follows your operating system's theme and switches automatically when it does. The app window and the recording overlay both follow your choice.
 
+**Transcription Hook — Pipe Your Text Through Your Own Script**
+
+- A new opt-in **Transcription Hook** in **Settings > Advanced > Transcription** hands every transcription to a script you write before it is pasted: your script receives the text and whatever it prints back is what gets pasted. Clean up the wording your way, pipe it through a local AI, or forward it to another app — it is an extension point in the spirit of git hooks, and it all stays on your computer.
+- Failure-proof by design: if your script is missing, crashes, or hangs, the original text is pasted unchanged and a notification tells you why. See the [Advanced Settings guide](./user-guide/advanced-settings.md#transcription-hook-advanced) to get started.
+
 **Turn Off Automatic Update Checks**
 
 - A new **Check for Updates Automatically** toggle in **Settings > Advanced** puts you in full control of the app's only recurring network request. Turn it off and Knowii Voice AI contacts nothing on its own — checking for updates then only happens when you ask, from the tray menu or **Settings > About**. On by default, so you keep getting new versions unless you decide otherwise.
