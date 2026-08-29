@@ -18,7 +18,9 @@ Every Knowii Voice AI release is cryptographically signed.
 
 **In everyday use you don't have to do anything.** When the app updates itself, it checks that signature automatically and refuses any download that doesn't match. That protection is always on and can't be switched off.
 
-This page is for the extra-careful moment when you install **manually** and want to confirm for yourself that the file really came from us. You'll need the installer **and** a matching `.sig` signature file — if your download didn't include one, skip to [If you don't have a `.sig` file](#if-you-dont-have-a-sig-file).
+This page is for the extra-careful moment when you install **manually** and want to confirm for yourself that the file really came from us.
+
+Every installer ships with its signature, so you have everything you need: download the installer **and** its matching `.sig` file from the same place — your [Gumroad Library](https://gumroad.com/library) or the [Knowii Community](https://www.knowii.net) website, whichever you bought through.
 
 ## The public key
 
@@ -32,9 +34,9 @@ RWSxpIDA1rb2czTBbfwlmm2Vw4QyjmZYBQ77KgZS/HcmnCU2SBLJEF8y
 
 ## What is signed
 
-A signature file is a small file sitting next to the installer, with the same name plus `.sig`. Signatures are produced for the Linux `.deb`, `.rpm`, and `.AppImage`, the Windows `-setup.exe`, and the macOS `.app.tar.gz` update archives.
+A signature file is a small file sitting next to the installer, with the same name plus `.sig`. You'll find one for the Linux `.deb`, `.rpm`, and `.AppImage`, and for the Windows `-setup.exe`.
 
-The macOS `.dmg` has no `.sig` file: it is signed and notarized through Apple instead, and macOS verifies that automatically when you open it.
+The macOS `.dmg` has no `.sig` file, and doesn't need one: it is signed and notarized through Apple instead, which macOS verifies automatically the first time you open it.
 
 ## How to verify
 
@@ -78,14 +80,9 @@ Signature and comment signature verified
 
 That's your proof: the file is byte-for-byte the one we built and signed.
 
-## If you don't have a `.sig` file
+## On macOS
 
-Signature files aren't part of every download channel. If your installer came without one, you still have two solid guarantees:
-
-- **Updates are always verified.** Every update the app downloads for itself is signature-checked before it is installed, using the key above.
-- **On macOS and Windows the installer carries its own platform signature.** The macOS `.dmg` is signed and notarized by Apple, and the Windows installer is code-signed — your operating system checks both automatically when you open the file.
-
-To be certain of a manual download, get your installer from where you bought it: your [Gumroad Library](https://gumroad.com/library) or the [Knowii Community](https://www.knowii.net) website, as described in the [Installation Guide](./installation#download).
+The `.dmg` is verified for you. It is signed and notarized by Apple, so macOS checks it the first time you open it and refuses anything that has been altered — there is nothing to run by hand.
 
 ## If verification fails
 
