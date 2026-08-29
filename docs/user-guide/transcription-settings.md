@@ -30,7 +30,7 @@ Which model, which language, and how to make the app get your vocabulary right. 
 
 **Location**: Settings > Transcription
 
-Choose which AI model to use for speech recognition:
+Choose which AI model to use for speech recognition. The model picker is searchable: start typing a model name to jump straight to it, use the arrow keys to move through the list, Enter to pick, Escape to close.
 
 ### Available Models
 
@@ -270,6 +270,8 @@ Add specialized vocabulary to improve transcription accuracy:
 ### Removing Custom Words
 
 Click the X button on any word tag to remove it from your custom vocabulary.
+
+If you add a word that's already in the list, the app tells you instead of adding it twice.
 
 :::tip Custom Words vs. Word Replacements
 Custom Words are a _hint_ to the AI model. They help it lean toward the right spelling, but they don't guarantee it. If a term is **always** transcribed the same wrong way, use [Word Replacements](#word-replacements) instead for an exact, guaranteed fix.

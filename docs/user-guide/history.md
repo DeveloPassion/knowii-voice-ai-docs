@@ -192,6 +192,8 @@ Listen to original recordings (if audio saving is enabled):
 4. Adjust volume with the volume control
 5. Click pause to stop playback
 
+Only one recording plays at a time: starting another entry pauses the one that was playing, so you never end up with two recordings talking over each other.
+
 **To delete audio:**
 
 1. Click the delete button on the audio player
