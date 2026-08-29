@@ -54,6 +54,8 @@ All updates downloaded through the built-in updater are:
 
 If signature verification fails, the update will be rejected and you'll be notified. This protects you from malicious updates.
 
+Installing manually instead? You can check a download's signature yourself — see [Verifying Your Download](./verify-downloads).
+
 ## What Happens to My Data?
 
 When you update Knowii Voice AI:

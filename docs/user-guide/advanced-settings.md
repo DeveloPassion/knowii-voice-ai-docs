@@ -141,7 +141,7 @@ The overlay keeps clear of taskbars, menu bars, and panels, so it never lands on
     - Pipe the text through a local AI (like Ollama) to rewrite, translate, or summarize it
     - Send the text somewhere else — open a link with it, call a webhook, append it to a file
 - **Setting it up**: turn the toggle on, click **Open Hooks Folder**, and create a script named `transcription` in that folder (on Windows: `transcription.bat`, `transcription.cmd`, or `transcription.exe`). On Linux and macOS, make it executable (`chmod +x transcription`). The script reads the text from standard input and prints the replacement text to standard output.
-- **Your words are safe**: if the script is missing, crashes, or takes longer than 30 seconds, the original transcription is pasted unchanged and a notification tells you what went wrong.
+- **Your words are safe**: if the script is missing, crashes, or takes longer than 30 seconds, the original transcription is pasted unchanged. If the app window is open you'll see an error explaining what went wrong; otherwise the reason is recorded in **Settings > Advanced > Application Logs**.
 - If your script prints nothing (and exits successfully), nothing is pasted and nothing is saved — useful when the script delivers the text somewhere itself.
 
 Example script (Linux/macOS) that removes a trailing period:

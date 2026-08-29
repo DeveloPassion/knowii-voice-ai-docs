@@ -1,4 +1,5 @@
 ---
+sidebar_position: 9.5
 title: Verifying Your Download
 description: Check the cryptographic signature of a Knowii Voice AI installer before running it. Every release is signed, and you can verify authenticity yourself with the public key.
 keywords:
@@ -13,7 +14,11 @@ keywords:
 
 # Verifying Your Download
 
-Every Knowii Voice AI release is cryptographically signed. When the app updates itself, it verifies that signature automatically and refuses anything that doesn't match — you never have to think about it. This page is for the extra-careful moment when you download an installer **manually** (from the [releases page](https://github.com/DeveloPassion/knowii-voice-ai/releases)) and want proof that the file really came from us and wasn't tampered with along the way.
+Every Knowii Voice AI release is cryptographically signed.
+
+**In everyday use you don't have to do anything.** When the app updates itself, it checks that signature automatically and refuses any download that doesn't match. That protection is always on and can't be switched off.
+
+This page is for the extra-careful moment when you install **manually** and want to confirm for yourself that the file really came from us. You'll need the installer **and** a matching `.sig` signature file — if your download didn't include one, skip to [If you don't have a `.sig` file](#if-you-dont-have-a-sig-file).
 
 ## The public key
 
@@ -27,7 +32,7 @@ RWSxpIDA1rb2czTBbfwlmm2Vw4QyjmZYBQ77KgZS/HcmnCU2SBLJEF8y
 
 ## What is signed
 
-Next to each installer on the releases page sits a small `.sig` file with the same name — for the Linux `.deb`, `.rpm`, and `.AppImage`, the Windows `-setup.exe`, and the macOS `.app.tar.gz` update archives.
+A signature file is a small file sitting next to the installer, with the same name plus `.sig`. Signatures are produced for the Linux `.deb`, `.rpm`, and `.AppImage`, the Windows `-setup.exe`, and the macOS `.app.tar.gz` update archives.
 
 The macOS `.dmg` has no `.sig` file: it is signed and notarized through Apple instead, and macOS verifies that automatically when you open it.
 
@@ -35,7 +40,7 @@ The macOS `.dmg` has no `.sig` file: it is signed and notarized through Apple in
 
 You need the free `minisign` tool:
 
-- **Linux**: `sudo apt install minisign` (Debian/Ubuntu), `sudo dnf install minisign` (Fedora), `sudo pacman -S minisign` (Arch)
+- **Linux**: `sudo apt install minisign` (Debian 12+ / Ubuntu 24.04+), `sudo dnf install minisign` (Fedora), `sudo pacman -S minisign` (Arch). On older Debian/Ubuntu releases the package isn't available — grab the binary from the [minisign releases](https://github.com/jedisct1/minisign/releases) instead.
 - **macOS**: `brew install minisign`
 - **Windows**: `scoop install minisign` or download it from the [minisign releases](https://github.com/jedisct1/minisign/releases)
 
@@ -44,7 +49,8 @@ Download the installer **and** its `.sig` file into the same folder, then:
 **Linux / macOS:**
 
 ```bash
-# The .sig file is base64-wrapped; unwrap it first
+# The .sig file is base64-wrapped; unwrap it first.
+# (On macOS, use -D instead of -d if your system rejects -d.)
 base64 -d "Knowii.Voice.AI_0.9.0_amd64.deb.sig" > installer.minisig
 
 # Verify the installer against the public key
@@ -57,7 +63,7 @@ minisign -Vm "Knowii.Voice.AI_0.9.0_amd64.deb" -x installer.minisig \
 ```powershell
 # Unwrap the base64 .sig file
 $sig = Get-Content "Knowii.Voice.AI_0.9.0_x64-setup.exe.sig" -Raw
-[IO.File]::WriteAllBytes("installer.minisig", [Convert]::FromBase64String($sig))
+[IO.File]::WriteAllBytes("$PWD\installer.minisig", [Convert]::FromBase64String($sig))
 
 # Verify the installer against the public key
 minisign -Vm "Knowii.Voice.AI_0.9.0_x64-setup.exe" -x installer.minisig `
@@ -72,6 +78,15 @@ Signature and comment signature verified
 
 That's your proof: the file is byte-for-byte the one we built and signed.
 
+## If you don't have a `.sig` file
+
+Signature files aren't part of every download channel. If your installer came without one, you still have two solid guarantees:
+
+- **Updates are always verified.** Every update the app downloads for itself is signature-checked before it is installed, using the key above.
+- **On macOS and Windows the installer carries its own platform signature.** The macOS `.dmg` is signed and notarized by Apple, and the Windows installer is code-signed — your operating system checks both automatically when you open the file.
+
+To be certain of a manual download, get your installer from where you bought it: your [Gumroad Library](https://gumroad.com/library) or the [Knowii Community](https://www.knowii.net) website, as described in the [Installation Guide](./installation#download).
+
 ## If verification fails
 
-Don't run the installer. A failed check usually means an incomplete download — download the installer and its `.sig` again and retry. If it still fails, [let us know](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues) and mention where you downloaded the file from: the only official sources are the [GitHub releases page](https://github.com/DeveloPassion/knowii-voice-ai/releases) and the app's built-in updater.
+Don't run the installer. A failed check usually means an incomplete download — download the installer and its `.sig` again and retry. If it still fails, [let us know](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues) and mention where you downloaded the file from.

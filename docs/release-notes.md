@@ -75,7 +75,7 @@ What shipped, when, and what it changes for you.
 **Transcription Hook — Pipe Your Text Through Your Own Script**
 
 - A new opt-in **Transcription Hook** in **Settings > Advanced > Transcription** hands every transcription to a script you write before it is pasted: your script receives the text and whatever it prints back is what gets pasted. Clean up the wording your way, pipe it through a local AI, or forward it to another app — it is an extension point in the spirit of git hooks, and it all stays on your computer.
-- Failure-proof by design: if your script is missing, crashes, or hangs, the original text is pasted unchanged and a notification tells you why. See the [Advanced Settings guide](./user-guide/advanced-settings.md#transcription-hook-advanced) to get started.
+- Failure-proof by design: if your script is missing, crashes, or hangs, the original text is pasted unchanged and the reason is recorded in the app's logs. See the [Advanced Settings guide](./user-guide/advanced-settings.md#transcription-hook-advanced) to get started.
 
 **Turn Off Automatic Update Checks**
 

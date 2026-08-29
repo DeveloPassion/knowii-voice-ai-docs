@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7.2
 title: Linux Troubleshooting
 description: Fix a blank window, graphics glitches, or startup crashes when running Knowii Voice AI on Linux. Workarounds for NVIDIA drivers, virtual machines, and WebKit rendering issues.
 keywords:
@@ -67,6 +68,6 @@ You can combine both variables. These only affect how the interface is drawn —
 When something misbehaves, the app's own logs usually say why:
 
 - Launch the app from a terminal (`knowii-voice-ai`) and read what it prints.
-- Check the log files in `~/.local/share/knowii-voice-ai/logs/` — or view them in-app under **Settings > Debug** (see [Debug Settings](./debug-settings)).
+- Check the log files in `~/.local/share/knowii-voice-ai/logs/` — or read them in the app under **Settings > Advanced > Application Logs**, where **Refresh** reloads them and **Copy** puts them on your clipboard for a bug report.
 
 If you're stuck, [open an issue](https://github.com/DeveloPassion/knowii-voice-ai-docs/issues) and include the log lines around the failure, your distribution, desktop environment (GNOME, KDE, Hyprland, ...), and graphics card.
