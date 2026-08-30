@@ -155,6 +155,12 @@ sed 's/\.$//'
 
 ## AI Post-Processing
 
+:::info Coming in the next release
+
+AI post-processing is not in version 0.9.0. It is described here ahead of the release it ships in — check **Settings > About** for your version.
+
+:::
+
 **Location**: Settings > Advanced > AI Post-Processing
 
 - Off by default. When on, every transcription is handed to an AI model that fixes punctuation, capitalization and obvious mistakes before it is pasted — turning "so um this is a a test" into "This is a test."

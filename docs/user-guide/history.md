@@ -231,6 +231,12 @@ Run transcription again on an entry's saved recording — with whichever model i
 
 ### Seeing the Original Behind an AI Cleanup
 
+:::info Coming in the next release
+
+AI post-processing is not in version 0.9.0. It is described here ahead of the release it ships in — check **Settings > About** for your version.
+
+:::
+
 If you use [AI post-processing](./ai-post-processing.md), entries the cleanup pass rewrote keep **both** versions of the text:
 
 1. The entry shows the cleaned text, as it was pasted

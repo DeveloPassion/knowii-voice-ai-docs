@@ -16,6 +16,12 @@ keywords:
 
 # AI Post-Processing
 
+:::info Coming in the next release
+
+AI post-processing is not in version 0.9.0. It is described here ahead of the release it ships in — check **Settings > About** for your version.
+
+:::
+
 Speech-to-text writes down what you said. It does not write it down the way you would have typed it: punctuation is approximate, sentences do not start with a capital letter, and the "um"s and repeated words are all there.
 
 **AI post-processing** hands each transcription to an AI model that fixes exactly that, before the text is pasted. You dictate:
