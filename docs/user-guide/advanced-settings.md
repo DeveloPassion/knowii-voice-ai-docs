@@ -167,6 +167,7 @@ AI post-processing is not in version 0.9.0. It is described here ahead of the re
 - **Ollama** is the default provider: it runs on your own computer, needs no account, and sends nothing anywhere. OpenAI, OpenRouter, the Claude API, and the `claude` / `codex` command-line tools are also supported, as is any OpenAI-compatible server you point it at.
 - A provider that sends text off your computer is blocked behind an explicit confirmation, asked **per provider** and revocable at any time. Your audio recordings are never sent, by any provider.
 - **Your words are never lost**: if the service is unreachable, too slow, or returns something odd, your original transcription is pasted unchanged and a notification tells you why.
+- **Give up after** controls how long a cleanup may take before your original text is pasted instead (one minute by default).
 - A **Test** button runs a fixed sample sentence — never your own text — so you can check a setup, and see how long it takes, without dictating.
 
 See the [AI Post-Processing guide](./ai-post-processing.md) for setup, API keys, model choice, and troubleshooting.

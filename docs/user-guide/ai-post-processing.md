@@ -153,7 +153,7 @@ The cleanup happens after you stop talking and before the text is pasted, so it 
 | A small model in Ollama, no graphics card         | Several seconds |
 | A reasoning model in Ollama, no graphics card     | Minutes — avoid |
 
-The app waits up to a minute before giving up and pasting your original text. A model loading for the first time can use most of that on its own, so the very first dictation after starting Ollama is the slowest one you will see.
+**Give up after** sets how long to wait before pasting your original text instead — one minute by default. A model loading for the first time can use most of that on its own, so the very first dictation after starting Ollama is the slowest one you will see; raise it if you run a large local model, lower it if you would rather never wait.
 
 ## Troubleshooting
 
