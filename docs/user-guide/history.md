@@ -229,6 +229,16 @@ Run transcription again on an entry's saved recording — with whichever model i
 - Re-transcription waits its turn: it won't run while you are dictating or while a file transcription is in progress
 - The button only appears on entries that still have their recording
 
+### Seeing the Original Behind an AI Cleanup
+
+If you use [AI post-processing](./ai-post-processing.md), entries the cleanup pass rewrote keep **both** versions of the text:
+
+1. The entry shows the cleaned text, as it was pasted
+2. Underneath it, a **Cleaned up by AI — show the original** link reveals exactly what the transcription engine heard
+3. Double-click the revealed text to copy the original
+
+This is the recovery path when a cleanup changed something it should not have — the AI's version is never the only surviving copy of what you said. Entries the pass never touched show no link at all.
+
 ### Deleting Entries
 
 Remove individual transcriptions:

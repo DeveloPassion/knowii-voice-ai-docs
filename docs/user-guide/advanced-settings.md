@@ -153,6 +153,18 @@ sed 's/\.$//'
 
 **Privacy note**: the hook runs entirely on your computer. Knowii Voice AI never sends your text anywhere — but your own script can, so only use scripts you trust.
 
+## AI Post-Processing
+
+**Location**: Settings > Advanced > AI Post-Processing
+
+- Off by default. When on, every transcription is handed to an AI model that fixes punctuation, capitalization and obvious mistakes before it is pasted — turning "so um this is a a test" into "This is a test."
+- **Ollama** is the default provider: it runs on your own computer, needs no account, and sends nothing anywhere. OpenAI, OpenRouter, the Claude API, and the `claude` / `codex` command-line tools are also supported, as is any OpenAI-compatible server you point it at.
+- A provider that sends text off your computer is blocked behind an explicit confirmation, asked **per provider** and revocable at any time. Your audio recordings are never sent, by any provider.
+- **Your words are never lost**: if the service is unreachable, too slow, or returns something odd, your original transcription is pasted unchanged and a notification tells you why.
+- A **Test** button runs a fixed sample sentence — never your own text — so you can check a setup, and see how long it takes, without dictating.
+
+See the [AI Post-Processing guide](./ai-post-processing.md) for setup, API keys, model choice, and troubleshooting.
+
 ## Paste Options
 
 ### Paste Method

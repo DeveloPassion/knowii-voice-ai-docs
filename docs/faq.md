@@ -25,6 +25,8 @@ Knowii Voice AI is a privacy-first voice-to-text transcription application that 
 
 Yes! All audio processing and transcription happens locally on your computer by default. No internet connection is required, and your voice data is never sent to any cloud service.
 
+The one place that can change is [AI post-processing](./user-guide/ai-post-processing.md), an opt-in feature that cleans up your transcriptions. It is off by default, its default provider also runs on your own computer, and choosing one that does not asks you first — naming the service — before anything is sent. Even then, only the **text** is sent: your audio recordings never leave your computer under any setting.
+
 ### How much does it cost?
 
 Knowii Voice AI is currently free during the early access period. Future pricing will be announced later.
@@ -202,7 +204,9 @@ Yes! In the History tab, you can:
 
 No. Knowii Voice AI does not collect any telemetry, analytics, or usage data. See the [Privacy Policy](https://voice-ai.knowii.net/#/privacy-policy) for more details.
 
-The app only ever talks to the network for two things: checking for updates (once at startup — you can turn this off in **Settings > Advanced > Check for Updates Automatically**, and then the app makes no automatic requests at all) and downloading AI models when you ask it to.
+Out of the box, the app only ever talks to the network for two things: checking for updates (once at startup — you can turn this off in **Settings > Advanced > Check for Updates Automatically**, and then the app makes no automatic requests at all) and downloading AI models when you ask it to.
+
+There is one way to add a third, and only by choosing it deliberately: turning on [AI post-processing](./user-guide/ai-post-processing.md) with a provider that is not on your own computer, which asks for your confirmation before it sends anything.
 
 ### Is my audio recorded?
 

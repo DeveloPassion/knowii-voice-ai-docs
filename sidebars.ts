@@ -32,6 +32,7 @@ const sidebars = {
                 'user-guide/history',
                 'user-guide/audio-settings',
                 'user-guide/advanced-settings',
+                'user-guide/ai-post-processing',
                 'user-guide/debug-settings',
                 'user-guide/troubleshooting-linux',
                 'user-guide/cli',

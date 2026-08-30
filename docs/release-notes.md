@@ -20,6 +20,15 @@ What shipped, when, and what it changes for you.
 
 ### New Features
 
+**Clean Up Your Dictations With AI — Locally, or Not At All**
+
+- A new opt-in **AI Post-Processing** section in **Settings > Advanced** hands each transcription to an AI model that fixes punctuation, capitalization and obvious mistakes before it is pasted. "so um this is a a test of the cleanup pass" becomes "This is a test of the cleanup pass."
+- **It runs on your computer by default.** The default provider is [Ollama](https://ollama.com) — free, no account, nothing leaves the machine. If you would rather use a service, OpenAI, OpenRouter and the Claude API are supported, along with any OpenAI-compatible server you point it at; and if you already use the `claude` or `codex` command-line tools, it can hand the text to those and spend the subscription you already have, with no API key at all.
+- **Nothing leaves your computer without a specific yes.** Choosing a provider that sends text online does not enable the feature — it asks first, naming the service, and the answer is recorded for that one provider: switch providers, or change the server address, and you are asked again. **Stop sending** withdraws it at any time. Your audio recordings are never sent anywhere.
+- **Your words are never lost.** If anything goes wrong — the service is down, the key expired, the model is slow, the answer comes back mangled or tries to answer you instead of cleaning up — your original transcription is pasted unchanged and a notification says why. A safety check on the result catches a model that summarized or ran away with your text before it can reach the page.
+- **History keeps both versions.** A rewritten entry shows the cleaned text with a **show the original** link underneath: the AI's version is never the only surviving copy of what you said.
+- API keys are read from your environment, never written to the app's settings or logs. A **Test** button runs a fixed sample sentence — never your own text — so you can check a setup and see how fast it is before turning it on. See the [AI Post-Processing guide](./user-guide/ai-post-processing.md) to get started.
+
 **Parakeet V3 (GPU) — Much Faster Transcription on Machines With a Graphics Card**
 
 - A new entry in the model list, **Parakeet V3 (GPU)**, delivers the same accuracy as Parakeet V3 while using your graphics card when one is available — in our tests, dictations came back up to 3× faster, and the model itself loads in a fraction of the time. No graphics card? It quietly runs on your processor instead, at the usual speed.
