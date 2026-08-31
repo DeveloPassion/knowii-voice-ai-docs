@@ -34,6 +34,8 @@ When you launch Knowii Voice AI, the main window appears by default (showing set
 
 **Important**: You can close the main window at any time. The app keeps running in the background and stays fully functional.
 
+Minimizing the window keeps it in your taskbar or dock as usual. If you would rather it disappear into the tray when minimized, turn on [Minimize to Tray](./advanced-settings#minimize-to-tray).
+
 The main window's icon changes based on the application state:
 
 - **Idle**: Normal icon

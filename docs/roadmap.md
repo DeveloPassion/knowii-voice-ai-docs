@@ -49,7 +49,6 @@ This page outlines the current and planned features for Knowii Voice AI.
 - **Portable Version**: Uncompress. Run. Transcribe. Everything stored in one folder (#147)
 - **History UI/UX Improvements** (#155, #170, #119, #98)
 - **Better trim silences** (#110)
-- **Minimize to tray setting** (#36)
 - **Additional Transcription Models**: Support more transcription models (local and remote) (#144, #181, #21, #5)
 - **Transcription improvements** (#146, #123, #125, #129)
 - **Improve audio recordings quality** (#166, #142)

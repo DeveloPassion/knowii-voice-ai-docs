@@ -64,6 +64,10 @@ What shipped, when, and what it changes for you.
 
 - Hovering the tray icon on Windows and macOS now shows what the app is doing — "Knowii Voice AI", "Recording", or "Transcribing" — instead of nothing.
 
+**Minimize to the Tray**
+
+- A new **Minimize to Tray** toggle in **Settings > Advanced** makes the minimize button tuck the window into the system tray instead of the taskbar or dock — the app stays out of your window switcher until you call it back from the tray icon. Off by default, and automatically ignored when there is no tray icon to bring the window back from.
+
 **Hide the Tray Icon Entirely**
 
 - A new **Show Tray Icon** toggle in **Settings > Advanced** lets you run without a system tray icon — for minimal setups where a panel button or the CLI drives dictation. The app keeps you safe while the icon is hidden: closing the window minimizes it instead of hiding it, "Start Hidden" is ignored so the window always appears at launch, and you can quit from the button in the main window. The change applies instantly, in both directions, without a restart.

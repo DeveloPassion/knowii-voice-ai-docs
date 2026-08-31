@@ -37,6 +37,15 @@ Control how Knowii Voice AI starts and runs:
 - With the tray icon hidden, the app protects you from losing the window: closing it **minimizes** instead of hiding it, "Start Hidden" is ignored at the next launch (the window always appears), and you can quit from the button at the bottom of the main window
 - Useful for minimal setups — for example a status bar that triggers dictation through the [CLI](./cli#control-a-running-app) instead of the tray
 
+### Minimize to Tray
+
+**Location**: Settings > Advanced
+
+- Off by default. When on, minimizing the window tucks it away into the system tray instead of leaving it in your taskbar or dock
+- Bring it back the usual way: click the tray icon, or right-click it and choose **Settings...**
+- Closing the window already sends the app to the tray — this setting is for people who want the minimize button to do the same
+- It only applies when there is a tray icon to bring the window back from, so it does nothing while **Show Tray Icon** is off, when the app was started with `--no-tray`, or on a GNOME session without a tray extension. In those cases minimizing behaves normally
+
 ### Launch on Startup
 
 **Location**: Settings > Advanced
