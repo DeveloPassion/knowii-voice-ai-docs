@@ -96,6 +96,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**No More Crash When Something Captures the App's Output**
+
+- Starting Knowii Voice AI from a script, a launcher, or a shell pipeline that reads its console output could abort the app moments after launch, the instant that reader closed. Console logging now shrugs off a closed output stream instead of taking the app down with it.
+
 **Small Polish**
 
 - Dropdown menus grew up: they now open upward or downward depending on the room around them, sit flush against their control, follow the page when you scroll, and are fully keyboard-driven — arrow keys move through the options, Enter picks one, Escape closes.
