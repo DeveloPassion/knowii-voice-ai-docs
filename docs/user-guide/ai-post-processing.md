@@ -116,7 +116,19 @@ If you already use the `claude` or `codex` command-line tools, Knowii Voice AI c
 
 The trade-offs: the tool starts up fresh for each dictation, so expect a few seconds rather than one; and the model is whichever one the tool uses by default.
 
-When you select one of these, the app checks that the tool is installed and tells you right there if it is not — rather than letting you discover it on your next dictation. It cannot check that you are **signed in**, so if the tool is installed but logged out, you will see a "not logged in" notification the first time you dictate.
+When you select one of these, the app looks for the tool right away and tells you what it found — rather than letting you discover the problem on your next dictation. It cannot check that you are **signed in**, so if the tool is installed but logged out, you will see a "not logged in" notification the first time you dictate.
+
+#### Finding the tool
+
+A desktop application inherits your desktop session's `PATH`, not your shell's. A `claude` or `codex` installed through bun, npm, pnpm, volta, mise or Homebrew therefore works perfectly in your terminal while being invisible to the app.
+
+So the app searches `PATH` first, then the directories those installers actually use (`~/.bun/bin`, `~/.local/bin`, the pnpm store, volta, the npm global folder, `~/.claude/local`, Homebrew, and the Windows and macOS equivalents). Whatever it resolves, it shows you **the full path of the file it would run**, right under the provider — because "not found" and "found the wrong one" need different fixes, and only the path tells them apart. A copy found outside `PATH` is labelled **(found outside your PATH)**.
+
+#### Pointing at it yourself
+
+If the search comes up empty — or finds a different copy than the one you want — use **Locate it myself…** to pick the file directly. The path you choose is used exactly as given and is never quietly replaced by something on `PATH`: a wrong pick fails visibly instead of silently running a different binary than the one shown on screen. It is labelled **(you chose this)**.
+
+**Detect automatically** clears your pick and returns to the search above.
 
 ## Sending text online: the confirmation step
 
