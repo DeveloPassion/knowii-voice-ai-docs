@@ -30,7 +30,7 @@ Speech-to-text writes down what you said. It does not write it down the way you 
 
 and what lands in your document is:
 
-> This is a test of the cleanup pass.
+> So this is a test of the cleanup pass.
 
 It is **off by default**, and it is opt-in twice over: once to turn it on, and again — separately, for each provider — before anything is allowed to leave your computer.
 
