@@ -256,6 +256,17 @@ Control what happens to your clipboard after transcription:
     - Allows you to paste the same transcription multiple times
     - Useful for repeated pasting or when you want to keep the text in clipboard
 
+### Paste Delay
+
+Shown for the clipboard-based paste methods only. It is the pause between putting your transcription on the clipboard and pressing the paste shortcut — the time the application you are dictating into gets to regain focus after the shortcut and the recording indicator.
+
+- **Default**: 80 ms, which is what the app always used before this became a setting
+- **Range**: 10 ms to 200 ms, as presets
+- **Raise it** if an application sometimes pastes nothing, or pastes the _previous_ clipboard content, right after you dictate — the classic sign of a paste that arrived before the app was listening. Electron-based apps and remote desktops are the usual candidates.
+- **Lower it** if pasting feels sluggish in apps that are always ready
+
+The app restores whatever was on your clipboard before the dictation once the paste has landed. That restore waits at least 400 ms, and longer when you raise the paste delay, so a slow application can never end up pasting your old clipboard instead of the transcription.
+
 ### Trailing Space After Paste
 
 **Location**: Settings > Advanced > Paste
