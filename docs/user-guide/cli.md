@@ -104,7 +104,7 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 | `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory      | _(required)_       |
 | `--engine`                | Model family for raw paths: `whisper`, `parakeet`, `moonshine`, `omnilingual` | auto / `whisper`   |
 | `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (Whisper models)          | `auto`             |
-| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, or `json`                                 | `srt`              |
+| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, `json`, or `md`                           | `srt`              |
 | `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                     | next to each input |
 | `--translate`             | Translate to English (multilingual Whisper models only)                       | off                |
 | `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                   | _(none)_           |
@@ -146,12 +146,13 @@ File names often contain spaces. Always quote them: `transcribe file "My Recordi
 
 ### Output formats
 
-| Format | What you get                             | Use it for                                    |
-| ------ | ---------------------------------------- | --------------------------------------------- |
-| `srt`  | Numbered subtitle blocks with timestamps | Video players, YouTube, editing software      |
-| `vtt`  | WebVTT subtitles                         | Web video, HTML5 players                      |
-| `txt`  | Plain text, no timestamps                | Notes, search, feeding text into another tool |
-| `json` | Structured segments with timings         | Scripts and further processing                |
+| Format | What you get                                                                       | Use it for                                                                                   |
+| ------ | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `srt`  | Numbered subtitle blocks with timestamps                                           | Video players, YouTube, editing software                                                     |
+| `vtt`  | WebVTT subtitles                                                                   | Web video, HTML5 players                                                                     |
+| `txt`  | Plain text, no timestamps                                                          | Notes, search, feeding text into another tool                                                |
+| `json` | Structured segments with timings                                                   | Scripts and further processing                                                               |
+| `md`   | A Markdown note: `# <file name>`, then the transcript as paragraphs, no timestamps | Obsidian and other note apps — a new paragraph wherever the speaker paused for 1.5 s or more |
 
 #### Word-level timings and the JSON contract
 
