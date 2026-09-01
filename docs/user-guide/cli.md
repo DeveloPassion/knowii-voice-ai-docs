@@ -110,6 +110,7 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 | `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                   | _(none)_           |
 | `--int8`                  | Trade a little accuracy for more speed and lower memory, where supported      | off                |
 | `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)                   | off                |
+| `--timestamp-granularity` | Timing detail: `auto`, `token`, `word`, or `segment` (see below)              | `auto`             |
 | `--models-dir <DIR>`      | Where to look up models by id                                                 | app data directory |
 
 When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, pass `--engine` as well so the CLI knows what it is loading.
@@ -151,6 +152,41 @@ File names often contain spaces. Always quote them: `transcribe file "My Recordi
 | `vtt`  | WebVTT subtitles                         | Web video, HTML5 players                      |
 | `txt`  | Plain text, no timestamps                | Notes, search, feeding text into another tool |
 | `json` | Structured segments with timings         | Scripts and further processing                |
+
+#### Word-level timings and the JSON contract
+
+`--timestamp-granularity` decides how fine the timings are. `auto` (the default) keeps each model family's usual behaviour, so scripts written before this option existed keep working unchanged. `word` gives one entry per word — and with `-f json` it also fills the `words` list — while `segment` gives sentence-sized blocks. The **parakeet** and **transcribe-cpp** engines honour all of them; the other engines keep their native segments and print a note.
+
+```bash
+transcribe file talk.mp4 -m parakeet-tdt-0.6b-v3 -f json --timestamp-granularity word -o -
+```
+
+The JSON is versioned so a tool built on it can check what it is reading:
+
+```json
+{
+    "contract_version": 2,
+    "text": "And so, my fellow Americans, ask not…",
+    "segments": [
+        {
+            "start": 0.24,
+            "end": 10.88,
+            "start_ms": 240,
+            "end_ms": 10880,
+            "text": "And so, my fellow Americans, ask not…"
+        }
+    ],
+    "words": [
+        { "index": 0, "start_ms": 240, "end_ms": 560, "segment": 0, "text": "And" },
+        { "index": 1, "start_ms": 560, "end_ms": 1040, "segment": 0, "text": "so," }
+    ]
+}
+```
+
+- `contract_version` is `2`. It changes whenever the shape changes in a way that could break a consumer.
+- Times are in whole milliseconds (`start_ms` / `end_ms`); the older float `start` / `end` seconds on segments stay for compatibility.
+- Each word has a stable `index` within the transcript and the `segment` it belongs to.
+- `words` is `null` — not an empty list — when you did not ask for `word` granularity or the engine cannot align words. Null means "not available"; an empty list would mean "no words were spoken".
 
 ### Model families
 
