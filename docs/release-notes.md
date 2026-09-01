@@ -100,6 +100,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**No Error Toast for a Dictation You Cancelled**
+
+- Cancel while the AI cleanup pass or your hook script is still running and fails, and you used to get an error notification about work you had just discarded. Failures of those two stages are now reported only if the dictation is still wanted.
+
 **No More Pastes Landing on the Recording Indicator (Hyprland)**
 
 - On Hyprland, a fast transcription could be pasted before the app had finished handing keyboard focus back from the recording indicator to your window — so the text went to the indicator and nowhere else, the same symptom as the Omarchy 4 bug fixed earlier, this time caused by timing. The paste now waits for that hand-back. The indicator also no longer risks being handed focus back to itself when the "transcribing" state appears.
