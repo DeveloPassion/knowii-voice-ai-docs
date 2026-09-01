@@ -82,7 +82,7 @@ The choice applies immediately to the app window and the recording overlay.
 
 Enable or disable the visual overlay that provides feedback during recording and transcription:
 
-- **Enabled** (default): Shows the overlay during recording and transcription
+- **Enabled** (default): Shows the overlay during recording and transcription — and, when [AI post-processing](./ai-post-processing.md) is on, while the cleanup pass runs (**🤖 Post-processing using AI**)
 - **Disabled**: Hides the overlay completely
     - Useful during screen recordings, presentations, or screen sharing
     - No visual indication will appear during transcription

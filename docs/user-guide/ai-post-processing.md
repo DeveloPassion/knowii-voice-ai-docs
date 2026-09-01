@@ -175,6 +175,8 @@ The cleanup happens after you stop talking and before the text is pasted, so it 
 
 **Give up after** sets how long to wait before pasting your original text instead — one minute by default. A model loading for the first time can use most of that on its own, so the very first dictation after starting Ollama is the slowest one you will see; raise it if you run a large local model, lower it if you would rather never wait.
 
+While the pass runs, the overlay switches from "Transcribing…" to **🤖 Post-processing using AI**, so a longer wait is never a silent one. The state only appears when a cleanup pass is actually running — with the feature off, it never shows.
+
 ## Troubleshooting
 
 Every message below appears as a notification, and every one of them means the same thing for your text: **it was pasted unchanged**.
