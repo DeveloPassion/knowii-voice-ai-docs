@@ -202,17 +202,28 @@ Controls how transcribed text is inserted into applications:
     - Alternative to Ctrl+V for applications that don't respond well to it
     - Temporarily modifies clipboard (see Clipboard Handling below for behavior options)
 
+- **Clipboard (Ctrl+Shift+V)** (Windows/Linux only): Simulates Ctrl+Shift+V keystrokes to paste
+    - The paste shortcut of most terminal emulators (GNOME Terminal, Konsole, Alacritty, Windows Terminal, …), where plain Ctrl+V is taken
+    - Layout-independent like Ctrl+V, so it is never overridden by the app on desktops where direct typing is unsafe
+    - Temporarily modifies clipboard (see Clipboard Handling below for behavior options)
+
 - **Direct** (default on Linux): Types the text straight into the focused field
     - Bypasses clipboard completely
     - On Linux, uses your desktop's typing tool (`wtype`/`kwtype`/`xdotool`) for reliable results. See **Typing Tool** below
     - Useful for troubleshooting clipboard-related issues
+
+- **Clipboard only (no paste)**: Copies the transcription and stops there
+    - Nothing is typed or pasted anywhere; the text waits on the clipboard and in [History](./history.md) until you paste it yourself
+    - Available on every desktop, including those where the app otherwise manages the paste method (GNOME/Wayland) — it is the one choice that is never overridden
+    - Auto-submit does nothing in this mode, since nothing was pasted
 
 **When to change:**
 
 - If transcriptions aren't being pasted correctly
 - If clipboard conflicts occur with other applications
 - For troubleshooting pasting issues in specific applications
-- If using terminal applications on Linux/Windows (try Shift+Insert method)
+- If using terminal applications on Linux/Windows (try the Shift+Insert or Ctrl+Shift+V method)
+- If you would rather decide where each dictation goes (Clipboard only)
 
 ### Typing Tool (Linux only)
 
