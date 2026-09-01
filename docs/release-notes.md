@@ -100,6 +100,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**No More Pastes Landing on the Recording Indicator (Hyprland)**
+
+- On Hyprland, a fast transcription could be pasted before the app had finished handing keyboard focus back from the recording indicator to your window — so the text went to the indicator and nowhere else, the same symptom as the Omarchy 4 bug fixed earlier, this time caused by timing. The paste now waits for that hand-back. The indicator also no longer risks being handed focus back to itself when the "transcribing" state appears.
+
 **Cancelling Cannot Let Two Dictations Overlap Any More**
 
 - Cancel a dictation, start and stop another one right away, and — once the cancelled one finally wound down — a third recording could start while the second was still being transcribed. The shortcut is now locked by the dictation that owns it, and a stale one finishing late no longer unlocks it.
