@@ -100,6 +100,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Dropdown Menus Show the Whole Name**
+
+- A dropdown's menu used to be exactly as wide as the control, so in the settings grid two long model names could be cut to the same prefix and look identical. The menu now widens to fit its longest entry, within the window.
+
 **No Error Toast for a Dictation You Cancelled**
 
 - Cancel while the AI cleanup pass or your hook script is still running and fails, and you used to get an error notification about work you had just discarded. Failures of those two stages are now reported only if the dictation is still wanted.
