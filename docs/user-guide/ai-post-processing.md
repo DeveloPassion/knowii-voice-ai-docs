@@ -116,7 +116,11 @@ If you already use the `claude` or `codex` command-line tools, Knowii Voice AI c
 
 The trade-offs: the tool starts up fresh for each dictation, so expect a few seconds rather than one; and the model is whichever one the tool uses by default.
 
-When you select one of these, the app looks for the tool right away and tells you what it found — rather than letting you discover the problem on your next dictation. It cannot check that you are **signed in**, so if the tool is installed but logged out, you will see a "not logged in" notification the first time you dictate.
+When you select one of these, the app looks for the tool right away and tells you what it found — rather than letting you discover the problem on your next dictation. It also asks the tool whether you are **signed in**. If the tool is missing or logged out, the cleanup switch refuses to turn on and tells you what to do (`claude auth login` or `codex login` in a terminal). Once you have signed in, flip the switch again — it checks afresh every time.
+
+:::note
+The sign-in check is only as good as what the tool reports. If you route Codex through another service in its own configuration file, `codex` reports "not logged in" even though it works — the app recognizes this and lets you turn the feature on. A login that expires _after_ you enabled the feature still shows up as a "not logged in" notification on the next dictation.
+:::
 
 #### Finding the tool
 
