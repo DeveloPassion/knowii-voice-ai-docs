@@ -99,6 +99,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Shift+Insert Paste Actually Sticks**
+
+- Choosing **Clipboard (Shift+Insert)** as the paste method on Windows or Linux could quietly revert to Ctrl+V: the setting was accepted by one part of the app and refused by another, so which one you got depended on which path saved it last. It is now honoured everywhere — which matters, because Shift+Insert is the method to try when Ctrl+V pasting does not work in a terminal.
+
 **No More Crash When Something Captures the App's Output**
 
 - Starting Knowii Voice AI from a script, a launcher, or a shell pipeline that reads its console output could abort the app moments after launch, the instant that reader closed. Console logging now shrugs off a closed output stream instead of taking the app down with it.
