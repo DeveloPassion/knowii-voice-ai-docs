@@ -100,6 +100,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Hook Scripts Are Checked Before They Run**
+
+- On Linux and macOS the transcription hook now refuses a script — or a `hooks` folder — that another user could have written (wrong owner, or group/world-writable), and tells you what to fix. The script also starts in the `hooks` folder and runs with your own environment instead of the app bundle's private library paths, which fixes tools that worked in a terminal but not from the hook.
+
 **Dropdown Menus Show the Whole Name**
 
 - A dropdown's menu used to be exactly as wide as the control, so in the settings grid two long model names could be cut to the same prefix and look identical. The menu now widens to fit its longest entry, within the window.

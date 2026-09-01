@@ -162,6 +162,8 @@ sed 's/\.$//'
 
 **Privacy note**: the hook runs entirely on your computer. Knowii Voice AI never sends your text anywhere — but your own script can, so only use scripts you trust.
 
+**What the script may look like (Linux and macOS)**: because the app runs it with every dictation, the script and the `hooks` folder must belong to you (or to root) and must not be writable by other users. A script that fails this check is refused, your text is pasted unchanged, and the error tells you what to change — usually `chmod go-w` on the file or the folder. The script starts in the `hooks` folder, so relative paths in it resolve there, and it gets your normal environment rather than the app bundle's private library paths — so `python`, `curl` or `jq` behave exactly as they do in your terminal. The path of the script in use is written to the log once.
+
 ## AI Post-Processing
 
 :::info Coming in the next release
