@@ -106,6 +106,10 @@ These are fast (typically around a second) and cost a fraction of a cent per dic
 
 The `KNOWII_`-prefixed name is checked first, so you can give Knowii Voice AI its own key without disturbing the one your other tools use.
 
+:::note Claude API keys created by signing in to the Console
+Some Anthropic keys are tied to your Console identity rather than to a workspace. Anthropic refuses those on every request until the request also names the workspace, with the message _"anthropic-workspace-id is required when authenticating with an identity-linked API key"_. If **Test Connection** shows that message, set `ANTHROPIC_WORKSPACE_ID` (or `KNOWII_ANTHROPIC_WORKSPACE_ID`) to your workspace id — it starts with `wrkspc_` and is listed under **Settings > Workspaces** in the Console. It is an identifier, not a secret.
+:::
+
 :::note
 The app only sees environment variables that existed when it started. If you set the variable in your shell profile and launch the app from a desktop menu or a shortcut, it may not inherit it — restart the app from a terminal, or set the variable system-wide (on Windows: System Properties > Environment Variables; on macOS and Linux: your login environment, not just `.bashrc`/`.zshrc`).
 :::
