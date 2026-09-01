@@ -100,6 +100,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Cancelling Cannot Let Two Dictations Overlap Any More**
+
+- Cancel a dictation, start and stop another one right away, and — once the cancelled one finally wound down — a third recording could start while the second was still being transcribed. The shortcut is now locked by the dictation that owns it, and a stale one finishing late no longer unlocks it.
+
 **Shift+Insert Paste Actually Sticks**
 
 - Choosing **Clipboard (Shift+Insert)** as the paste method on Windows or Linux could quietly revert to Ctrl+V: the setting was accepted by one part of the app and refused by another, so which one you got depended on which path saved it last. It is now honoured everywhere — which matters, because Shift+Insert is the method to try when Ctrl+V pasting does not work in a terminal.
