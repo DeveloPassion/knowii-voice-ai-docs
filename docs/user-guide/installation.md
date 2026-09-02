@@ -253,7 +253,7 @@ Installing with your package manager (`sudo dnf install ./*.rpm`, `sudo apt inst
 - **`libappindicator-gtk3`** (for the system-tray icon): **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
 - **Vulkan loader** (`libvulkan`, from `vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu): the app links against it and **won't start without it**, so the `.deb`/`.rpm` declare it as a required dependency and always pull it in.
 - **Mesa Vulkan drivers** (`mesa-vulkan-drivers`): a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper** models (see [GPU Acceleration](#gpu-acceleration-optional)); Moonshine and Parakeet don't use GPU acceleration and don't need it.
-- Audio (PipeWire / ALSA): present on desktops.
+- **ALSA** (`libasound2` / `alsa-lib`), **Opus** (`libopus0` / `opus`), **OpenSSL 3** (`libssl3` / `openssl-libs`), **libxkbcommon** and **D-Bus** client libraries: the app links against all of these directly, so the packages declare them and your package manager pulls them in. On a desktop they are already there.
 
 If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), the required dependencies aren't resolved for you. Install the Vulkan loader (`vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) and `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.
 
