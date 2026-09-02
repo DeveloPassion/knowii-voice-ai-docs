@@ -208,6 +208,8 @@ GPU acceleration on Linux needs a **Vulkan driver** (an ICD) for your GPU. The `
 GPU acceleration speeds up **Whisper**, **Moonshine** and **Parakeet V3 (GPU)** — the original Parakeet and Omnilingual entries always run on the processor. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
 :::
 
+**No graphics card?** On Windows and Linux the app ships one build of its transcription engine per processor generation and picks the one that matches your processor when it starts, so processor-only transcription runs at the speed your machine allows. There is nothing to configure; the log mentions which build was picked (`loaded CPU backend from … libggml-cpu-<name>`) if you are curious.
+
 ## Troubleshooting
 
 ### Windows: Installer is blocked
