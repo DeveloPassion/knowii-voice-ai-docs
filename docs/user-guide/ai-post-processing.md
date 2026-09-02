@@ -54,6 +54,8 @@ The cleanup pass runs late in the pipeline, and its position is deliberate:
 4. Your own [transcription hook](./advanced-settings.md#transcription-hook-advanced) runs, if you have one — your script always gets the last word
 5. The text is pasted and saved to [History](./history.md)
 
+One thing it does not combine with: [**Live dictation**](./advanced-settings.md#live-dictation). Live dictation pastes your words chunk by chunk while you are still talking, and the cleanup pass needs the finished text — cleaning fragments would be worse than not cleaning at all, and rewriting text that is already on screen is impossible. Turning Live dictation on switches the cleanup pass off, and its switch stays greyed out (with the reason) until Live dictation is off again.
+
 ## Turning it on
 
 **Location**: Settings > Advanced > AI Post-Processing
