@@ -68,6 +68,14 @@ At recording time the app tries the selected microphone first, then each fallbac
 
 Devices are matched by name, so a fallback stays on the list while unplugged and simply becomes eligible again when it returns.
 
+### Input Channel
+
+Shown only when the selected recording device delivers more than one channel — typically an audio interface (a Focusrite Scarlett, a mixer, a multi-input USB box), where every physical input arrives as one channel of a single device. By default the app blends all of them into your recording, so a guitar plugged into input 2 ends up under your voice on input 1.
+
+Under **Input Channel**, pick the channel your microphone is plugged into (**Channel 1**, **Channel 2**, …) and only that one is recorded. **All channels (mixed)** is the default and the behaviour the app always had.
+
+The choice applies to the next recording (immediately when the microphone is set to always-on). If the device later opens with fewer channels than the one you picked, the app falls back to mixing for that recording rather than recording silence.
+
 ### Test Your Microphone
 
 **Location**: Settings > Audio > Devices
