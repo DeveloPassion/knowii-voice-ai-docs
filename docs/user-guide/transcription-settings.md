@@ -67,22 +67,26 @@ If digit sequences appear as words ("one one two two" instead of "1122"), enable
 
 #### Whisper Models (Multi-Language)
 
-Support 99 languages including English, Spanish, French, German, Chinese, Japanese, and many more:
+Support 99 languages including English, Spanish, French, German, Chinese, Japanese, and many more. Since the next release the Whisper models use your graphics card when you have one (and your processor otherwise), and they are about half the download they used to be:
 
-- **Tiny**: Very fast, basic accuracy (78 MB, ~0.5GB RAM)
-- **Small**: Fast and quite accurate (488 MB, ~2GB RAM)
-- **Medium**: Accurate but slower (1520 MB, ~5GB RAM)
-- **Large V3 Turbo**: Accurate but slow (1620 MB, ~6GB RAM)
-- **Large V3**: Highest accuracy but slowest (3100 MB, ~10GB RAM)
+- **Tiny**: Very fast, basic accuracy (46 MB, ~0.5GB RAM)
+- **Small**: Fast and quite accurate (270 MB, ~2GB RAM)
+- **Medium**: Accurate but slower (832 MB, ~5GB RAM)
+- **Large V3 Turbo**: Accurate but slow (886 MB, ~6GB RAM)
+- **Large V3**: Highest accuracy but slowest (1670 MB, ~10GB RAM)
 
 #### Whisper Models (English-Only)
 
 Optimized specifically for English transcription:
 
-- **Tiny (English only)**: Very fast (78 MB, ~0.5GB RAM)
-- **Base (English only)**: Fast (148 MB, ~1GB RAM)
-- **Small (English only)**: Fast and accurate (488 MB, ~2GB RAM)
-- **Medium (English only)**: Accurate (1520 MB, ~5GB RAM)
+- **Tiny (English only)**: Very fast (46 MB, ~0.5GB RAM)
+- **Base (English only)**: Fast (85 MB, ~1GB RAM)
+- **Small (English only)**: Fast and accurate (270 MB, ~2GB RAM)
+- **Medium (English only)**: Accurate (832 MB, ~5GB RAM)
+
+:::note Whisper models are downloaded again after updating
+The next release switches the Whisper models to a new file format (the same one Parakeet V3 (GPU) uses). A Whisper model you downloaded before shows as **not downloaded** after the update; download it again from this page — the old file is removed automatically so it does not take up space. Your model choice, language and prompt settings are kept.
+:::
 
 #### Omnilingual Models
 
@@ -180,14 +184,9 @@ If you have a model file the app does not offer — a fine-tuned Whisper, a quan
 2. Click **Open Custom Models Folder** and drop the file in
 3. Click **Rescan** (the list also refreshes on its own the next time it is opened)
 
-The file shows up in **Available Models** with a **Your file** badge and works like any other model: activate it, dictate, deactivate. Two formats are recognised, by extension:
+The file shows up in **Available Models** with a **Your file** badge and works like any other model: activate it, dictate, deactivate. One format is recognised: `.gguf` files, which the engine identifies by content (Whisper, Parakeet, Moonshine, …). Whisper GGUF files for every size are published at [huggingface.co/handy-computer](https://huggingface.co/handy-computer).
 
-| File    | Engine it runs on                                                                                |
-| ------- | ------------------------------------------------------------------------------------------------ |
-| `.gguf` | transcribe.cpp — the engine detects the model family (Whisper, Parakeet, …) from the file itself |
-| `.bin`  | Whisper (GGML) — the classic `ggml-*.bin` Whisper files                                          |
-
-Anything else in the folder is ignored, and so are sub-folders. A few things to know:
+Anything else in the folder is ignored — including the older `ggml-*.bin` Whisper files, which the next release no longer reads — and so are sub-folders. A few things to know:
 
 - The app **never downloads, verifies or deletes** these files. There is no Delete button for them — remove the file from the folder yourself and rescan.
 - The **Language** setting shows every language for a custom model, because the app cannot know which ones the file was trained on.

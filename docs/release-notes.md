@@ -43,6 +43,13 @@ What shipped, when, and what it changes for you.
 - **A missing or logged-out `claude` or `codex` is caught when you flip the switch, not on your next dictation.** The app asks the tool whether you are signed in and refuses to enable the cleanup pass until you are, naming the command to run. Previously it warned and enabled anyway, which meant every dictation pasted unchanged after a failure notification — and a logged-out Codex spent close to twenty seconds finding that out each time.
 - API keys are read from your environment, never written to the app's settings or logs. A **Test** button runs a fixed sample sentence — never your own text — so you can check a setup and see how fast it is before turning it on. See the [AI Post-Processing guide](./user-guide/ai-post-processing.md) to get started.
 
+**Whisper Moves to the GPU Engine**
+
+- Every Whisper model (Tiny through Large V3, and the English-only variants) now runs on the same engine as **Parakeet V3 (GPU)**: your graphics card when there is one, your processor otherwise. Language, translate-to-English, the Whisper prompt and custom words all work as before, and the **Use GPU for Whisper** switch still forces the processor.
+- The downloads are about half the size they were (Small: 270 MB instead of 488 MB; Large V3: 1.7 GB instead of 3.1 GB), with no measurable accuracy change.
+- **A Whisper model you downloaded before needs to be downloaded again** after updating: the old file is removed for you, the new one is a click away in Settings > Models, and your settings are untouched.
+- Your own `.bin` Whisper files in the custom models folder are no longer picked up; `.gguf` files are (see [Transcription settings](./user-guide/transcription-settings.md#using-your-own-model-files)).
+
 **Parakeet V3 (GPU) — Much Faster Transcription on Machines With a Graphics Card**
 
 - A new entry in the model list, **Parakeet V3 (GPU)**, delivers the same accuracy as Parakeet V3 while using your graphics card when one is available — in our tests, dictations came back up to 3× faster, and the model itself loads in a fraction of the time. No graphics card? It quietly runs on your processor instead, at the usual speed.
