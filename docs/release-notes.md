@@ -108,6 +108,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Windows: Shortcuts Survive Sleep and Win+L**
+
+- On Windows, the recording shortcut used to go dead after the computer slept or after you locked the session with Win+L, and only a restart of the app brought it back. The app now notices when Windows wakes up or your session is unlocked and re-registers its shortcuts a couple of seconds later, by itself.
+
 **Hook Scripts Are Checked Before They Run**
 
 - On Linux and macOS the transcription hook now refuses a script — or a `hooks` folder — that another user could have written (wrong owner, or group/world-writable), and tells you what to fix. The script also starts in the `hooks` folder and runs with your own environment instead of the app bundle's private library paths, which fixes tools that worked in a terminal but not from the hook.

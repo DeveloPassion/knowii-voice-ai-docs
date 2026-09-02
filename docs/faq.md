@@ -287,7 +287,8 @@ For the full step-by-step guide (including confirming your microphone in your sy
 1. **Check** that the shortcut isn't already used by another application
 2. Try a **different shortcut** in **Settings > General**
 3. **Restart** the application after changing shortcuts
-4. **On Linux**: the shortcut needs keyboard access. Add yourself to the `input` group with `sudo usermod -aG input $USER`, then **log out and back in**. See the [Installation guide](./user-guide/installation#linux-enable-the-global-shortcut-keyboard-access).
+4. **On Windows, after sleep or Win+L**: the app re-registers its shortcuts a couple of seconds after the computer wakes up or the session is unlocked. If the shortcut is still dead after that, restart the app and [report it](./support) — that is the case we want to hear about.
+5. **On Linux**: the shortcut needs keyboard access. Add yourself to the `input` group with `sudo usermod -aG input $USER`, then **log out and back in**. See the [Installation guide](./user-guide/installation#linux-enable-the-global-shortcut-keyboard-access).
 
 ### Dictated text doesn't appear (Linux)
 
