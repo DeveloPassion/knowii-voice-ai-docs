@@ -280,7 +280,7 @@ This almost always means your operating system is blocking apps from using the m
 
 For the full step-by-step guide (including confirming your microphone in your system's sound settings), see [Microphone Not Detected](./user-guide/audio-settings#microphone-not-detected).
 
-**Good to know**: When the microphone is blocked or missing, Knowii Voice AI now shows a notification with guidance on how to fix it, so you're not left guessing.
+**Good to know**: When the microphone is blocked or missing, Knowii Voice AI shows a notification with guidance on how to fix it, so you're not left guessing. On Windows and macOS it also checks the privacy setting itself: when access is off, a banner at the top of **Settings > General** names the switch to flip and its **Open privacy settings** button takes you straight to the right page — on Windows this happens at startup, before your first silent recording.
 
 ### Shortcut doesn't work
 

@@ -236,6 +236,18 @@ If you want to install Knowii Voice AI in the Program Files folder, you must run
 
 Alternatively, you can install to your user directory (recommended), which doesn't require administrator privileges.
 
+### Windows: the app closes right after starting (APPCRASH in `msvcp140.dll` / `vcruntime140.dll`)
+
+Older versions relied on the Microsoft Visual C++ runtime already being installed on your PC. A machine without it — or with a copy older than the one the app was built with — crashed before the first window appeared, with an "APPCRASH" pointing at `msvcp140.dll` or `vcruntime140.dll`.
+
+Starting with the next release, the installer ships those runtime files next to `knowii-voice-ai.exe`, so this can no longer happen. If you still see it on an older version, install the [Microsoft Visual C++ Redistributable (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe) and start the app again.
+
+### Windows: nothing is typed into a window that runs as administrator
+
+Windows does not let a normal program send keystrokes or a paste into a window owned by a program running **as administrator** (an elevated terminal, editor, installer…). The keystrokes are silently dropped by the system — the app cannot work around it.
+
+Knowii Voice AI detects this: when the window you are dictating into is elevated, the text is put on the clipboard instead and a notification tells you so. Paste it there yourself, or run Knowii Voice AI as administrator too (right-click its shortcut > **Run as administrator**) if you often dictate into elevated windows.
+
 ### macOS: "Knowii Voice AI can't be opened"
 
 Because the app is notarized by Apple, this normally won't happen. If you do see a Gatekeeper prompt (for example after downloading through certain browsers), right-click (or Control-click) the app in Applications and choose **Open**, then confirm. You only need to do this once.

@@ -44,6 +44,13 @@ What shipped, when, and what it changes for you.
 - **A missing or logged-out `claude` or `codex` is caught when you flip the switch, not on your next dictation.** The app asks the tool whether you are signed in and refuses to enable the cleanup pass until you are, naming the command to run. Previously it warned and enabled anyway, which meant every dictation pasted unchanged after a failure notification — and a logged-out Codex spent close to twenty seconds finding that out each time.
 - API keys are read from your environment, never written to the app's settings or logs. A **Test** button runs a fixed sample sentence — never your own text — so you can check a setup and see how fast it is before turning it on. See the [AI Post-Processing guide](./user-guide/ai-post-processing.md) to get started.
 
+**Windows: Four Fixes From the Field**
+
+- **The recording overlay stays on top.** On Windows the overlay could end up behind the app you were dictating into; it now re-asserts its place above every window each time it appears, without taking the focus away from where you are typing.
+- **Microphone access is checked before you dictate.** When a Windows privacy switch (**Microphone access** or **Let desktop apps access your microphone**) is off, the app tells you at startup — a notification and a banner on **Settings > General** that names the switch — and an **Open privacy settings** button takes you to the right page. Until now the first sign was a recording that captured nothing. The same banner and button exist on macOS.
+- **No more crash-on-start without the Visual C++ runtime.** The installer now ships the Microsoft runtime files next to the app, so a PC without the redistributable, or with an old one, starts the app instead of showing an APPCRASH.
+- **Dictating into a window that runs as administrator no longer goes nowhere.** Windows silently drops keystrokes sent to elevated windows. The app now notices, puts the text on the clipboard and tells you why, instead of typing into the void. See [Troubleshooting](./user-guide/installation.md#windows-nothing-is-typed-into-a-window-that-runs-as-administrator).
+
 **Whisper Moves to the GPU Engine**
 
 - Every Whisper model (Tiny through Large V3, and the English-only variants) now runs on the same engine as **Parakeet V3 (GPU)**: your graphics card when there is one, your processor otherwise. Language, translate-to-English, the Whisper prompt and custom words all work as before, and the **Use GPU for Whisper** switch still forces the processor.
