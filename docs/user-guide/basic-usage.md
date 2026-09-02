@@ -168,7 +168,7 @@ Models can be configured to:
 
 - **Load automatically** on app start
 - **Auto-unload** after a period of inactivity
-- **Never unload** for instant transcription (uses more memory)
+- **Never unload** so the model is always ready (uses more memory)
 
 Configure in **Settings > Advanced > Performance**.
 

@@ -29,6 +29,7 @@ What shipped, when, and what it changes for you.
 - **History keeps both versions.** A rewritten entry shows the cleaned text with a **show the original** link underneath: the AI's version is never the only surviving copy of what you said.
 - **The `claude` and `codex` tools are found even when they are not on the app's PATH.** A desktop app does not inherit your shell's `PATH`, so a tool installed through bun, npm, pnpm, volta, mise or Homebrew could be invisible to it. The app now also searches the folders those installers really use, and always shows the full path of the file it would run — so "not found" and "found the wrong one" stop looking the same. If it still cannot find yours, **Locate it myself…** lets you pick the file, and **Detect automatically** hands the job back.
 - **Fallback microphones.** Pick, in order, which microphones to use when your selected one is not there — a headset that is off, a USB mic that stayed at the office. The app tries them top to bottom, then the system default, and tells you once which one it is recording with. When the selected microphone is back, it takes over again by itself.
+- **"Instant transcription" is now "Transcribe while recording (faster stop)".** Same behaviour, honest name: it transcribes at pauses while you talk so that the wait after you stop is short — it never pasted anything early, and the old name suggested it did. Text appearing while you speak is a separate feature, **Live dictation**, planned after the engine migration (see the [roadmap](./roadmap.md)).
 - **The microphone picker says what "System default" means.** The entry now reads _System default — (device name)_, naming the microphone your OS currently routes to — so a Bluetooth headset that silently became the default (and records nothing when its mic is idle) is visible before you dictate into it. On Linux the sound server's alias entries (`pipewire`, `pulse`, `jack`) are gone from the list: they opened the same default, or failed outright.
 - **Pick the input channel on audio interfaces.** When your recording device has more than one input — a Scarlett, a mixer, a multi-input USB box — a new **Input Channel** setting under the device picker lets you record only the channel your microphone is on, instead of blending in whatever is plugged into the others. **All channels (mixed)** stays the default.
 - **Faster typing with dotool when its daemon runs.** With `dotoold` running, the app now sends keystrokes through `dotoolc` instead of starting a fresh `dotool` — and a fresh virtual keyboard — for every dictation, paste and auto-submit. No daemon, no change.
@@ -167,7 +168,7 @@ What shipped, when, and what it changes for you.
 
 ### New Features
 
-**Instant Transcription (Experimental)**
+**Instant Transcription (Experimental)** _(renamed "Transcribe while recording" in the next release)_
 
 - Turn on **Settings > Advanced > Transcription > Instant transcription** and Knowii Voice AI transcribes your speech at natural pauses while you are still talking. When you stop, only the last few words remain to process — your text appears almost instantly, even after minutes of dictation.
 - Nothing changes in how the text arrives: one paste, at the end, like always. Your saved recordings are untouched.

@@ -20,7 +20,8 @@ This page outlines the current and planned features for Knowii Voice AI.
 
 ### Recently Delivered ✅
 
-- **Instant Transcription (Experimental)**: Transcription runs at natural pauses while you are still talking, so your text lands almost immediately when you stop (shipped in 0.9.0) (#127)
+- **Transcribe While Recording**: Transcription runs at natural pauses while you are still talking, so your text lands almost immediately when you stop (shipped in 0.9.0 as "Instant Transcription") (#127)
+- **Live Dictation**: Text arrives in the target window _while you speak_, chunk by chunk, instead of in one piece when you stop. Planned after the engine migration so it can use true streaming. It will not combine with AI post-processing (the cleanup needs the whole text)
 - **Reliable Long Dictations**: Long recordings are split at pauses in the speech and stitched back together, so minutes-long dictations no longer come back garbled or empty (shipped in 0.9.0)
 - **Parallel Model Loading**: The transcription model loads in the background while you record, with a retry if that load fails (shipped in 0.9.0) (#126)
 - **File Transcription**: Drag & drop audio and video files, or pick them from the tray, and transcribe them into your history as a queue (shipped in 0.8.0) (#153)
