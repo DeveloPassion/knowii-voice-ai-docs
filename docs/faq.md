@@ -106,7 +106,7 @@ Lightweight models designed for computers with limited resources (low memory or 
 
 - **Moonshine Base (English)**: Better accuracy among Moonshine models. ~77 MB, under 1GB RAM
 - **Moonshine Tiny (English)**: Smallest English model. ~35 MB, under 1GB RAM
-- **Moonshine Tiny (Arabic/Chinese/Japanese/Korean/Ukrainian/Vietnamese)**: Single-language variants. ~35 MB each, under 1GB RAM
+- **Moonshine Base and Tiny (Arabic/Chinese/Japanese/Korean/Ukrainian/Vietnamese)**: Single-language variants. ~77 MB (Base) or ~35 MB (Tiny) each, under 1GB RAM
 
 **Notes**:
 

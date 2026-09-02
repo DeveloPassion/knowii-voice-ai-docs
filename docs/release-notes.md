@@ -52,7 +52,8 @@ What shipped, when, and what it changes for you.
 
 **Moonshine Moves to the GPU Engine Too**
 
-- The eight Moonshine models (Tiny, Base, and the Arabic, Chinese, Japanese, Korean, Ukrainian and Vietnamese variants) now run on the same engine as Whisper and Parakeet V3 (GPU) — graphics card when there is one, processor otherwise.
+- Every Moonshine model now runs on the same engine as Whisper and Parakeet V3 (GPU) — graphics card when there is one, processor otherwise.
+- **Six new models**: Moonshine Base now comes in Arabic, Chinese, Japanese, Korean, Ukrainian and Vietnamese, next to the Tiny variants — the more accurate size for those languages at 77 MB each.
 - Each model is now a single file a third of the size it was (Tiny: 35 MB instead of 107 MB; Base: 77 MB instead of 239 MB), with no accuracy change.
 - **A Moonshine model you downloaded before needs to be downloaded again** after updating: the old files are removed for you, the new one is a click away in Settings > Models, and your settings are untouched.
 
