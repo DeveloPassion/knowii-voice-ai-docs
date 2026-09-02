@@ -98,22 +98,22 @@ Already downloaded a model inside the app? Skip the first command. The CLI and t
 transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 ```
 
-| Option                    | Description                                                                   | Default            |
-| ------------------------- | ----------------------------------------------------------------------------- | ------------------ |
-| `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.         | _(required)_       |
-| `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory      | _(required)_       |
-| `--engine`                | Model family for raw paths: `whisper`, `parakeet`, `moonshine`, `omnilingual` | auto / `whisper`   |
-| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (Whisper models)          | `auto`             |
-| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, `json`, or `md`                           | `srt`              |
-| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                     | next to each input |
-| `--translate`             | Translate to English (multilingual Whisper models only)                       | off                |
-| `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                   | _(none)_           |
-| `--int8`                  | Trade a little accuracy for more speed and lower memory, where supported      | off                |
-| `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)                   | off                |
-| `--timestamp-granularity` | Timing detail: `auto`, `token`, `word`, or `segment` (see below)              | `auto`             |
-| `--models-dir <DIR>`      | Where to look up models by id                                                 | app data directory |
+| Option                    | Description                                                                 | Default            |
+| ------------------------- | --------------------------------------------------------------------------- | ------------------ |
+| `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.       | _(required)_       |
+| `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory    | _(required)_       |
+| `--engine`                | Engine for raw paths: `parakeet`, `omnilingual` (folders), `transcribe-cpp` | by file type       |
+| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (Whisper models)        | `auto`             |
+| `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, `json`, or `md`                         | `srt`              |
+| `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                   | next to each input |
+| `--translate`             | Translate to English (multilingual Whisper models only)                     | off                |
+| `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                 | _(none)_           |
+| `--int8`                  | Trade a little accuracy for more speed and lower memory, where supported    | off                |
+| `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)                 | off                |
+| `--timestamp-granularity` | Timing detail: `auto`, `token`, `word`, or `segment` (see below)            | `auto`             |
+| `--models-dir <DIR>`      | Where to look up models by id                                               | app data directory |
 
-When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, pass `--engine` as well so the CLI knows what it is loading.
+When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, a `.gguf` file (Whisper, Parakeet, Moonshine) is loaded on the `transcribe-cpp` engine automatically; a model **folder** defaults to `parakeet`, so pass `--engine omnilingual` for an Omnilingual folder.
 
 **Examples:**
 
@@ -191,14 +191,14 @@ The JSON is versioned so a tool built on it can check what it is reading:
 
 ### Model families
 
-Models come in four families. Pass one to `--engine` only when you point `--model` at a raw path:
+Models come in four families. Whisper and Moonshine are single `.gguf` files; Parakeet and Omnilingual are folders unless you use the GPU Parakeet `.gguf`. `--engine` only matters when you point `--model` at a raw folder:
 
-| Family        | What it gives you                                                           |
-| ------------- | --------------------------------------------------------------------------- |
-| `whisper`     | Timestamped segments and the widest language support. Best for subtitles.   |
-| `parakeet`    | Much faster than Whisper. Supports `--int8` for more speed and less memory. |
-| `moonshine`   | Fastest of all on short clips. English plus several other languages.        |
-| `omnilingual` | Widest language coverage (1,600+). Supports `--int8`.                       |
+| Family        | What it gives you                                                                           |
+| ------------- | ------------------------------------------------------------------------------------------- |
+| `whisper`     | Timestamped segments and the widest language support. Best for subtitles.                   |
+| `parakeet`    | Much faster than Whisper. Supports `--int8` for more speed and less memory.                 |
+| `moonshine`   | Fastest of all on short clips (under ~48 s per file). English plus several other languages. |
+| `omnilingual` | Widest language coverage (1,600+). Supports `--int8`.                                       |
 
 When `--model` is a known model id (e.g. `whisper-large-v3`), the family is detected automatically, so you rarely need this flag.
 

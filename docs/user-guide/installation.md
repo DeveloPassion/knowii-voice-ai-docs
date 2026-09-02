@@ -23,7 +23,7 @@ keywords:
 
 - **RAM**: 1GB minimum with Moonshine models, 4GB+ recommended for Whisper/Parakeet models
 - **Disk Space**: 100MB to 10GB depending on chosen AI model(s)
-    - Moonshine models: 100-250 MB (ideal for low-end hardware)
+    - Moonshine models: 35-80 MB (ideal for low-end hardware)
     - Whisper/Parakeet models: 500 MB to 10 GB
 - **GPU** (optional): Vulkan-compatible GPU for faster transcription (most modern NVIDIA, AMD, and Intel GPUs)
 
@@ -201,7 +201,7 @@ GPU acceleration on Linux needs a **Vulkan driver** (an ICD) for your GPU. The `
 - **Fedora / RHEL**: `sudo dnf install mesa-vulkan-drivers` (Intel/AMD). NVIDIA users get Vulkan from the NVIDIA driver package.
 - **Debian / Ubuntu**: `sudo apt install mesa-vulkan-drivers` (Intel/AMD), or your GPU vendor's driver.
 
-GPU acceleration speeds up **Whisper** models only — Moonshine and Parakeet don't use it. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
+GPU acceleration speeds up **Whisper**, **Moonshine** and **Parakeet V3 (GPU)** — the original Parakeet and Omnilingual entries always run on the processor. Without a Vulkan driver the app still works; it simply transcribes on the CPU.
 :::
 
 ## Troubleshooting
@@ -252,7 +252,7 @@ Installing with your package manager (`sudo dnf install ./*.rpm`, `sudo apt inst
 - **WebKitGTK** (`libwebkit2gtk-4.1`) and **GTK 3**: present on any desktop.
 - **`libappindicator-gtk3`** (for the system-tray icon): **not** preinstalled on stock Fedora Workstation; `dnf`/`apt` install it for you automatically.
 - **Vulkan loader** (`libvulkan`, from `vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu): the app links against it and **won't start without it**, so the `.deb`/`.rpm` declare it as a required dependency and always pull it in.
-- **Mesa Vulkan drivers** (`mesa-vulkan-drivers`): a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper** models (see [GPU Acceleration](#gpu-acceleration-optional)); Moonshine and Parakeet don't use GPU acceleration and don't need it.
+- **Mesa Vulkan drivers** (`mesa-vulkan-drivers`): a _recommended_ dependency, installed by default. Needed only for GPU-accelerated transcription with **Whisper**, **Moonshine** and **Parakeet V3 (GPU)** models (see [GPU Acceleration](#gpu-acceleration-optional)); the original Parakeet and Omnilingual entries run on the processor and don't need it.
 - **ALSA** (`libasound2` / `alsa-lib`), **Opus** (`libopus0` / `opus`), **OpenSSL 3** (`libssl3` / `openssl-libs`), **libxkbcommon** and **D-Bus** client libraries: the app links against all of these directly, so the packages declare them and your package manager pulls them in. On a desktop they are already there.
 
 If the package manager reports a missing dependency, install it and retry. If you install the `.rpm`/`.deb` **offline** (e.g. `sudo rpm -i` without a network), the required dependencies aren't resolved for you. Install the Vulkan loader (`vulkan-loader` on Fedora / `libvulkan1` on Debian/Ubuntu) and `libappindicator-gtk3` (Fedora) / `libayatana-appindicator3-1` (Debian/Ubuntu) first, or the app may fail to start.

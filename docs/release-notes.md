@@ -50,6 +50,12 @@ What shipped, when, and what it changes for you.
 - **A Whisper model you downloaded before needs to be downloaded again** after updating: the old file is removed for you, the new one is a click away in Settings > Models, and your settings are untouched.
 - Your own `.bin` Whisper files in the custom models folder are no longer picked up; `.gguf` files are (see [Transcription settings](./user-guide/transcription-settings.md#using-your-own-model-files)).
 
+**Moonshine Moves to the GPU Engine Too**
+
+- The eight Moonshine models (Tiny, Base, and the Arabic, Chinese, Japanese, Korean, Ukrainian and Vietnamese variants) now run on the same engine as Whisper and Parakeet V3 (GPU) — graphics card when there is one, processor otherwise.
+- Each model is now a single file a third of the size it was (Tiny: 35 MB instead of 107 MB; Base: 77 MB instead of 239 MB), with no accuracy change.
+- **A Moonshine model you downloaded before needs to be downloaded again** after updating: the old files are removed for you, the new one is a click away in Settings > Models, and your settings are untouched.
+
 **Parakeet V3 (GPU) — Much Faster Transcription on Machines With a Graphics Card**
 
 - A new entry in the model list, **Parakeet V3 (GPU)**, delivers the same accuracy as Parakeet V3 while using your graphics card when one is available — in our tests, dictations came back up to 3× faster, and the model itself loads in a fraction of the time. No graphics card? It quietly runs on your processor instead, at the usual speed.

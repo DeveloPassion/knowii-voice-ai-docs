@@ -109,14 +109,16 @@ Speak any of 1,600+ languages and the model figures out what you're saying autom
 
 Lightweight models designed for computers with limited resources (low memory or CPU). Learn more about Moonshine: [Research paper](https://arxiv.org/abs/2509.02523) | [Introduction blog post](https://petewarden.com/2024/10/21/introducing-moonshine-the-new-state-of-the-art-for-speech-to-text/) | [GitHub](https://github.com/usefulsensors/moonshine) | [Hugging Face](https://huggingface.co/UsefulSensors/moonshine)
 
-- **Moonshine Base (English)**: Better accuracy, ~239 MB total
-- **Moonshine Tiny (English)**: Fastest, smallest footprint, ~107 MB total
-- **Moonshine Tiny (Arabic)**: Arabic transcription, ~143 MB total
-- **Moonshine Tiny (Chinese)**: Chinese transcription, ~143 MB total
-- **Moonshine Tiny (Japanese)**: Japanese transcription, ~143 MB total
-- **Moonshine Tiny (Korean)**: Korean transcription, ~143 MB total
-- **Moonshine Tiny (Ukrainian)**: Ukrainian transcription, ~143 MB total
-- **Moonshine Tiny (Vietnamese)**: Vietnamese transcription, ~143 MB total
+- **Moonshine Base (English)**: Better accuracy, ~77 MB
+- **Moonshine Tiny (English)**: Fastest, smallest footprint, ~35 MB
+- **Moonshine Tiny (Arabic)**: Arabic transcription, ~35 MB
+- **Moonshine Tiny (Chinese)**: Chinese transcription, ~35 MB
+- **Moonshine Tiny (Japanese)**: Japanese transcription, ~35 MB
+- **Moonshine Tiny (Korean)**: Korean transcription, ~35 MB
+- **Moonshine Tiny (Ukrainian)**: Ukrainian transcription, ~35 MB
+- **Moonshine Tiny (Vietnamese)**: Vietnamese transcription, ~35 MB
+
+Moonshine models run on the same engine as Whisper and Parakeet V3 (GPU): your graphics card when there is one, your processor otherwise. **A Moonshine model downloaded before the switch needs to be downloaded again** — the old files are removed for you at startup, and the new download is a single file a third of the size.
 
 **Moonshine characteristics:**
 
