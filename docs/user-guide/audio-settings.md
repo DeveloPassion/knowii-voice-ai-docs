@@ -56,6 +56,18 @@ Knowii Voice AI now records at your microphone's natural quality and prepares th
 If no working microphone is available when you start recording, Knowii Voice AI shows a warning so you know to connect or select one. See [Troubleshooting](#couldnt-start-recording-warning) below.
 :::
 
+### Fallback Microphones
+
+Shown once you have picked a specific recording device (not **Default**). A headset that is switched off, a USB microphone left at the office, a Bluetooth device still waking up — when the selected microphone is not there, the app used to fall back to the system default silently. Now you decide what it falls back to:
+
+1. Under **Fallback Microphones**, pick a device from **Add a fallback microphone…** (only connected devices are offered)
+2. Order the list with the arrows — it is tried top to bottom
+3. Remove an entry with ✕
+
+At recording time the app tries the selected microphone first, then each fallback in order, and only then the system default. The first one that is actually present is used, and a notification tells you which — once, when it changes, not on every dictation. When the selected microphone is back, it takes over again without any action on your part.
+
+Devices are matched by name, so a fallback stays on the list while unplugged and simply becomes eligible again when it returns.
+
 ### Test Your Microphone
 
 **Location**: Settings > Audio > Devices
