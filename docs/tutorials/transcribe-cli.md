@@ -187,7 +187,7 @@ Whisper is accurate and not especially quick. When you care more about speed, sw
 transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
-Parakeet is much faster than Whisper, and `--int8` trades a little accuracy for more speed and lower memory. Moonshine is faster again, but only for short clips: the CLI sends the whole file in one go and Moonshine stops at about 48 seconds.
+Parakeet is much faster than Whisper, and `--int8` trades a little accuracy for more speed and lower memory. Moonshine is faster again; it works on short stretches of audio, so the CLI splits a longer file at pauses and stitches the pieces back together for you.
 
 The trade-off is real: Whisper gives you the best timestamps and the best accuracy on hard audio, which is why it stays the default for subtitles. Use Parakeet when you want a rough transcript of a long recording and you want it now.
 

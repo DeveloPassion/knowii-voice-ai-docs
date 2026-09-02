@@ -115,6 +115,8 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 
 When `--model` is an **id**, it is resolved against your downloaded models. When it is a raw path, a `.gguf` file (Whisper, Parakeet, Moonshine) is loaded on the `transcribe-cpp` engine automatically; a model **folder** defaults to `parakeet`, so pass `--engine omnilingual` for an Omnilingual folder.
 
+**Long files.** Whisper reads a file of any length in one pass. The other families (Parakeet, Moonshine, Omnilingual) work on short stretches of audio, so the CLI splits longer files for them the way the app does: in pieces of about 30 seconds, cut at pauses in the speech so words are never split in half, then stitched back together. Timestamps in every output format stay on the file's own timeline, so a subtitle file or a JSON transcript reads the same whether the file was split or not. Files shorter than a piece are transcribed in one go, as before.
+
 **Examples:**
 
 ```bash
@@ -188,17 +190,18 @@ The JSON is versioned so a tool built on it can check what it is reading:
 - Times are in whole milliseconds (`start_ms` / `end_ms`); the older float `start` / `end` seconds on segments stay for compatibility.
 - Each word has a stable `index` within the transcript and the `segment` it belongs to.
 - `words` is `null` — not an empty list — when you did not ask for `word` granularity or the engine cannot align words. Null means "not available"; an empty list would mean "no words were spoken".
+- Long files transcribed in pieces (see **Long files** above) come back as one transcript: segment and word times are already shifted to the file's timeline and each word's `segment` points into the merged list, so nothing has to be re-aligned on your side.
 
 ### Model families
 
 Models come in four families. Whisper and Moonshine are single `.gguf` files; Parakeet and Omnilingual are folders unless you use the GPU Parakeet `.gguf`. `--engine` only matters when you point `--model` at a raw folder:
 
-| Family        | What it gives you                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------- |
-| `whisper`     | Timestamped segments and the widest language support. Best for subtitles.                   |
-| `parakeet`    | Much faster than Whisper. Supports `--int8` for more speed and less memory.                 |
-| `moonshine`   | Fastest of all on short clips (under ~48 s per file). English plus several other languages. |
-| `omnilingual` | Widest language coverage (1,600+). Supports `--int8`.                                       |
+| Family        | What it gives you                                                                       |
+| ------------- | --------------------------------------------------------------------------------------- |
+| `whisper`     | Timestamped segments and the widest language support. Best for subtitles.               |
+| `parakeet`    | Much faster than Whisper. Supports `--int8` for more speed and less memory.             |
+| `moonshine`   | Fastest of all. English plus several other languages. Longer files are split at pauses. |
+| `omnilingual` | Widest language coverage (1,600+). Supports `--int8`.                                   |
 
 When `--model` is a known model id (e.g. `whisper-large-v3`), the family is detected automatically, so you rarely need this flag.
 
