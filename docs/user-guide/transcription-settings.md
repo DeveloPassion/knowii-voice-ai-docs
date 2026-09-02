@@ -172,6 +172,27 @@ Models are downloaded from the Settings > Transcription page:
 
 **Note**: You can download multiple models and switch between them at any time.
 
+### Using Your Own Model Files
+
+If you have a model file the app does not offer — a fine-tuned Whisper, a quantization you prefer, a model you converted yourself — you can use it without waiting for it to appear in the list:
+
+1. Turn on **Use My Own Model Files** under the model list
+2. Click **Open Custom Models Folder** and drop the file in
+3. Click **Rescan** (the list also refreshes on its own the next time it is opened)
+
+The file shows up in **Available Models** with a **Your file** badge and works like any other model: activate it, dictate, deactivate. Two formats are recognised, by extension:
+
+| File    | Engine it runs on                                                                                |
+| ------- | ------------------------------------------------------------------------------------------------ |
+| `.gguf` | transcribe.cpp — the engine detects the model family (Whisper, Parakeet, …) from the file itself |
+| `.bin`  | Whisper (GGML) — the classic `ggml-*.bin` Whisper files                                          |
+
+Anything else in the folder is ignored, and so are sub-folders. A few things to know:
+
+- The app **never downloads, verifies or deletes** these files. There is no Delete button for them — remove the file from the folder yourself and rescan.
+- The **Language** setting shows every language for a custom model, because the app cannot know which ones the file was trained on.
+- The switch is off by default so a stray file cannot quietly become a pickable model.
+
 ## Language
 
 **Location**: Settings > Transcription
