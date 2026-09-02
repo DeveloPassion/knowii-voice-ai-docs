@@ -282,6 +282,10 @@ For the full step-by-step guide (including confirming your microphone in your sy
 
 **Good to know**: When the microphone is blocked or missing, Knowii Voice AI shows a notification with guidance on how to fix it, so you're not left guessing. On Windows and macOS it also checks the privacy setting itself: when access is off, a banner at the top of **Settings > General** names the switch to flip and its **Open privacy settings** button takes you straight to the right page — on Windows this happens at startup, before your first silent recording.
 
+### My dictation is copied to the clipboard instead of being pasted (macOS)
+
+macOS only lets apps with **Accessibility** access type into other apps. Until Knowii Voice AI has it, each dictation goes to the clipboard and a notification says so. Go to **Settings > General**, click **Grant access** on the banner and turn on **Knowii Voice AI** in the list — the banner clears by itself once the switch is on. If the app is already listed but still blocked (typically after an update), turn it off and on again in **System Settings > Privacy & Security > Accessibility**. Details in [Installation → Troubleshooting](./user-guide/installation#macos-dictations-are-copied-to-the-clipboard-instead-of-pasted).
+
 ### Shortcut doesn't work
 
 1. **Check** that the shortcut isn't already used by another application

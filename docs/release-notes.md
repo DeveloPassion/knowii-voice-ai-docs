@@ -52,6 +52,10 @@ What shipped, when, and what it changes for you.
 - **No more crash-on-start without the Visual C++ runtime.** The installer now ships the Microsoft runtime files next to the app, so a PC without the redistributable, or with an old one, starts the app instead of showing an APPCRASH.
 - **Dictating into a window that runs as administrator no longer goes nowhere.** Windows silently drops keystrokes sent to elevated windows. The app now notices, puts the text on the clipboard and tells you why, instead of typing into the void. See [Troubleshooting](./user-guide/installation.md#windows-nothing-is-typed-into-a-window-that-runs-as-administrator).
 
+**macOS: Accessibility Is Asked For Up Front**
+
+- **The Accessibility permission is requested from the app, not in the middle of a paste.** macOS only lets apps with Accessibility access type into other apps. Before, the system prompt for it appeared the first time a dictation was pasted — over the app you were dictating into — and that first transcript was lost. Now the app tells you at startup when the permission is missing (a notification and a banner on **Settings > General** with a **Grant access** button), every dictation is copied to the clipboard until it is granted, and the banner disappears the moment you flip the switch, no restart needed. The same banner comes back if the permission is lost after an update. See [Installation → macOS](./user-guide/installation#macos).
+
 **Whisper Moves to the GPU Engine**
 
 - Every Whisper model (Tiny through Large V3, and the English-only variants) now runs on the same engine as **Parakeet V3 (GPU)**: your graphics card when there is one, your processor otherwise. Language, translate-to-English, the Whisper prompt and custom words all work as before, and the **Use GPU for Whisper** switch still forces the processor.

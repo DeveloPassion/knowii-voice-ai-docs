@@ -75,6 +75,10 @@ Choose the download for your platform:
 
 Knowii Voice AI is **signed and notarized by Apple**, so it opens without security warnings.
 
+4. **Grant two permissions** the first time you use it:
+    - **Microphone** — macOS asks when you start your first recording. Click **Allow**.
+    - **Accessibility** — needed to paste your dictations into other apps. If it is missing, the app tells you at startup and shows a banner on **Settings > General**: click **Grant access**, then turn on **Knowii Voice AI** in the list macOS opens. Until it is granted, each dictation is copied to the clipboard instead of being pasted, so nothing is lost. The banner disappears by itself once the switch is on — no restart needed.
+
 ### Linux
 
 Choose the package that matches your distribution:
@@ -247,6 +251,12 @@ Starting with the next release, the installer ships those runtime files next to 
 Windows does not let a normal program send keystrokes or a paste into a window owned by a program running **as administrator** (an elevated terminal, editor, installer…). The keystrokes are silently dropped by the system — the app cannot work around it.
 
 Knowii Voice AI detects this: when the window you are dictating into is elevated, the text is put on the clipboard instead and a notification tells you so. Paste it there yourself, or run Knowii Voice AI as administrator too (right-click its shortcut > **Run as administrator**) if you often dictate into elevated windows.
+
+### macOS: dictations are copied to the clipboard instead of pasted
+
+macOS only lets apps with **Accessibility** access type into other apps. When Knowii Voice AI does not have it, every dictation is put on the clipboard and a notification tells you why. Open **Settings > General**, click **Grant access** on the banner and turn on **Knowii Voice AI** in the list. The banner and the clipboard fallback go away as soon as the switch is on.
+
+If the app is already in the list but is still blocked — typically right after an update, because macOS ties the permission to the exact app version — turn its switch **off and on again** in **System Settings > Privacy & Security > Accessibility** (or remove the entry with the **−** button and click **Grant access** again). The banner's **Open privacy settings** button takes you straight to that page.
 
 ### macOS: "Knowii Voice AI can't be opened"
 
