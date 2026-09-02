@@ -31,7 +31,8 @@ Pick the microphone you record with, and the device your feedback sounds play th
 Select which microphone or audio input device to use for voice recording:
 
 - Choose from all available microphones on your system
-- Default setting uses your system's default recording device
+- **System default** follows whatever your operating system currently uses as its microphone — and names it, e.g. _System default — Bose NC 700_, so you can see when a headset has quietly taken over
+- On Linux, the sound server's own entries (`pipewire`, `pulse`, `jack`) are not listed: they open the same system default, or nothing at all
 - Common options include:
     - Built-in laptop microphones
     - External USB microphones
@@ -58,7 +59,7 @@ If no working microphone is available when you start recording, Knowii Voice AI 
 
 ### Fallback Microphones
 
-Shown once you have picked a specific recording device (not **Default**). A headset that is switched off, a USB microphone left at the office, a Bluetooth device still waking up — when the selected microphone is not there, the app used to fall back to the system default silently. Now you decide what it falls back to:
+Shown once you have picked a specific recording device (not **System default**). A headset that is switched off, a USB microphone left at the office, a Bluetooth device still waking up — when the selected microphone is not there, the app used to fall back to the system default silently. Now you decide what it falls back to:
 
 1. Under **Fallback Microphones**, pick a device from **Add a fallback microphone…** (only connected devices are offered)
 2. Order the list with the arrows — it is tried top to bottom
