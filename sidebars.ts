@@ -53,7 +53,8 @@ const sidebars = {
                 'tutorials/transcribe-cli',
                 'tutorials/fix-your-vocabulary',
                 'tutorials/record-system-sound',
-                'tutorials/dictate-from-a-button'
+                'tutorials/dictate-from-a-button',
+                'tutorials/capture-ideas-into-your-daily-note'
             ]
         }
     ]
