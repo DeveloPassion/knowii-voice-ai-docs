@@ -9,6 +9,8 @@ keywords:
     - voice notes
     - capture
     - templates
+    - Obsidian Starter Kit
+    - note types
 ---
 
 # Obsidian (Beta)
@@ -78,6 +80,27 @@ If today's daily note does not exist yet and no template is set, the capture is 
 - **Paragraph**: your transcript as it is.
 - **Timestamped line**: one line starting with the time, for a running log in your daily note: `- 14:05 Call the bank about the loan.` Add a **Marker** such as `#idea` to get `- 14:05 #idea Call the bank about the loan.`
 
+## Obsidian Starter Kit vaults
+
+If your vault uses the [Obsidian Starter Kit](https://www.store.dsebastien.net/product/obsidian-starter-kit), its plugin already knows where every kind of note lives, how it is named, which properties and tags it carries, and which sections its template has. Knowii Voice AI can use all of that, so you pick "a meeting note" or "today's daily note" instead of typing folders and file names.
+
+Turn on **Use this vault's note types** under the vault picker. The switch only shows up in a Starter Kit vault. To read the note types, Knowii Voice AI runs the small tool the Starter Kit plugin keeps inside your vault. That is why it is off until you turn it on, for each vault separately, and why it refuses to run the tool if another user on the computer could have changed it (the message tells you the one command that fixes it).
+
+Each card then asks where the capture goes:
+
+- **A Starter Kit note type** (new note per capture): choose the **Note type** and a **Title** (`{{title}}` by default). The note type decides the folder, the name ending (for example ` (Voice)`), the properties and the tags. **Under the section** lists the headings of the type's template; captures go right after the properties if you pick none. When the note type names a section for captures, it is selected for you.
+- **A Starter Kit periodic note** (append): **The day's daily note**, or the week's, month's, quarter's or year's note, found by the Starter Kit for the day you speak, plus the section to add to (`📝 Notes`, for example).
+
+Saving as a note type needs the Starter Kit **1.24.0** or later; periodic notes work with any version.
+
+:::tip A note type for your captures
+
+Want your captures in their own place? Under the note type list, **Create a note type for captures** asks the Starter Kit to add one (a name and a folder, "Voice Capture" and `Voice captures` by default). It comes with a small template that has a **Transcript** section, and captures go there. Obsidian has to be open for this, with the Starter Kit's MCP server on (it is by default); Knowii Voice AI talks to it on this computer only.
+
+:::
+
+The Starter Kit's own templates use Templater, which Knowii Voice AI cannot run when it writes the file itself. So a new note gets the properties and tags of its type, then your capture; and a daily note that does not exist yet is not created (see the caution above).
+
 ## Placeholders
 
 Use these in any field above, and in templates and properties too. They are filled in at the moment you capture, and kept: a capture you retry tomorrow still goes to today's note.
@@ -125,7 +148,6 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 ## What the beta does not do yet
 
 - **Only direct file writes.** Writing through the Local REST API or obsidian-cli-rest plugins (which can run Templater) is shown as "coming soon".
-- **No note types yet.** Obsidian Starter Kit vaults will get note types and sections to pick from.
 - **Two destinations.** One new-note card and one append card. Named presets with their own shortcuts come later.
 
 ## Troubleshooting
@@ -135,6 +157,12 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 **"… does not exist yet; open it in Obsidian once …"** See the caution about daily notes above.
 
 **"… has a sync conflict copy …"** Resolve the conflict in Obsidian (or delete the conflict copy), then **Retry**.
+
+**"… the Starter Kit's osk-cli is writable by other users …"** The tool in your vault's Starter Kit folder can be changed by someone else on this computer, so it is not run. Run the `chmod go-w` command from the message on the file it names, then turn the switch on again.
+
+**"… note-type destinations need Obsidian Starter Kit 1.24.0 or later …"** Update the Starter Kit plugin in Obsidian (**Settings > Community plugins**).
+
+**"Obsidian is not reachable …"** when creating a note type: open the vault in Obsidian, and check that the MCP server is on in the Starter Kit's settings.
 
 **"Obsidian capture is not ready."** The capture shortcut was pressed before a vault and a destination were set up.
 

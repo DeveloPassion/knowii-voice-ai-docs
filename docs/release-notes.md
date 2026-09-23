@@ -27,6 +27,7 @@ What shipped, when, and what it changes for you.
 - **Your vault's way of doing things.** Placeholders for the date (in your own format, with the folders it implies), the time, a title and what you said; your own templates or properties; a timestamped-line layout for a running log (`- 14:05 #idea …`). A new note is never overwritten, and appends only ever add lines, under the heading you name.
 - **Nothing is lost.** Every capture is also in History. When the vault is not reachable, today's note does not exist yet, or a sync tool left a conflict copy, the capture waits there with the reason, and **Retry** sends it to the same note, for the same day. Any History entry can also be sent after the fact with **Send to Obsidian**.
 - **Optional AI titles** from the provider you set up for AI post-processing; otherwise the first words you said. From the tray or a script: **Capture to Obsidian** in the tray menu, `knowii-voice-ai --toggle-capture` on the command line.
+- **Obsidian Starter Kit vaults** can use their note types: pick "a meeting note" or "today's daily note" and the section it goes under, instead of typing folders and file names. Opt-in for each vault; you can also create a note type just for your captures. Needs the Starter Kit 1.24.0 for note types.
 
 **Clean Up Your Dictations With AI — Locally, or Not At All**
 
