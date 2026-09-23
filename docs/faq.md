@@ -130,6 +130,10 @@ Yes! Go to **Settings > General** and click on the shortcut to change it to your
 
 Yes! Knowii Voice AI pastes transcribed text into any application that accepts text input: browsers, email clients, word processors, IDEs, chat applications, and more.
 
+### Can it write into my Obsidian vault?
+
+Yes, starting with the next release (as a beta). Set up your vault in **Settings > Integrations**, give the capture its own shortcut, and what you say is saved as a new note or added to today's daily note, instead of being typed. It works with Obsidian closed and needs no plugin, and every capture is also kept in History. See [Obsidian](./user-guide/obsidian.md).
+
 ### How accurate is the transcription?
 
 Accuracy depends on:

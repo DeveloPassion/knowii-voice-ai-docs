@@ -20,6 +20,14 @@ What shipped, when, and what it changes for you.
 
 ### New Features
 
+**Speak Into Your Obsidian Vault (Beta)**
+
+- **A capture shortcut that saves instead of types.** Set it in the new **Settings > Integrations** tab, speak, and your words land in your Obsidian vault: as a new note, or as a line in today's daily note. It works with Obsidian closed and needs no plugin. See [Obsidian](./user-guide/obsidian.md).
+- **Set up in two clicks.** Pick your vault from the list Obsidian already keeps; the app reads your daily note settings (core Daily Notes or Periodic Notes) and fills in both destinations. A preview on each shows the exact note a capture would go to, and what it would look like, before anything is written.
+- **Your vault's way of doing things.** Placeholders for the date (in your own format, with the folders it implies), the time, a title and what you said; your own templates or properties; a timestamped-line layout for a running log (`- 14:05 #idea …`). A new note is never overwritten, and appends only ever add lines, under the heading you name.
+- **Nothing is lost.** Every capture is also in History. When the vault is not reachable, today's note does not exist yet, or a sync tool left a conflict copy, the capture waits there with the reason, and **Retry** sends it to the same note, for the same day. Any History entry can also be sent after the fact with **Send to Obsidian**.
+- **Optional AI titles** from the provider you set up for AI post-processing; otherwise the first words you said. From the tray or a script: **Capture to Obsidian** in the tray menu, `knowii-voice-ai --toggle-capture` on the command line.
+
 **Clean Up Your Dictations With AI — Locally, or Not At All**
 
 - A new opt-in **AI Post-Processing** section in **Settings > Advanced** hands each transcription to an AI model that fixes punctuation, capitalization and obvious mistakes before it is pasted. "so um this is a a test of the cleanup pass" becomes "So this is a test of the cleanup pass."

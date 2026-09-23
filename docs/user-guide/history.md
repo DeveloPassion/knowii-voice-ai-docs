@@ -245,6 +245,21 @@ If you use [AI post-processing](./ai-post-processing.md), entries the cleanup pa
 
 This is the recovery path when a cleanup changed something it should not have — the AI's version is never the only surviving copy of what you said. Entries the pass never touched show no link at all.
 
+### Sending an Entry to Obsidian
+
+:::info Coming in the next release
+
+Sending to Obsidian is not in version 0.9.0. It ships as a beta in the next release; check **Settings > About** for your version.
+
+:::
+
+Once a vault is set up in **Settings > Integrations** (see [Obsidian](./obsidian.md)), each entry has a **Send to Obsidian** button (📝). It files the entry in your vault with the destination you use for captures, at the time you originally said it, so a dictation from last Tuesday lands in last Tuesday's daily note.
+
+Captures and sent entries show where they went:
+
+- **In Obsidian**: hover it to see the note.
+- **Not in Obsidian**: hover it to see why (the vault was not reachable, today's note did not exist yet…), and click **Retry** to send it again to the same place, for the same day.
+
 ### Deleting Entries
 
 Remove individual transcriptions:
