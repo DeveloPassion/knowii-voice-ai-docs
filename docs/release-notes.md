@@ -151,6 +151,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Whisper and Other GGUF Models in the AppImage**
+
+- The AppImage loads Whisper and other GGUF models with the same optimized CPU code as the deb and RPM.
+
 **Windows: Shortcuts Survive Sleep and Win+L**
 
 - On Windows, the recording shortcut used to go dead after the computer slept or after you locked the session with Win+L, and only a restart of the app brought it back. The app now notices when Windows wakes up or your session is unlocked and re-registers its shortcuts a couple of seconds later, by itself.
