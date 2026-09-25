@@ -86,6 +86,10 @@ While you are in **Settings → Transcription**:
 - **Remove Filler Words** cleans up "uh", "um", and stutters. Off by default; the filler list adapts to your transcription language, and you can supply your own.
 - **Write Digit Sequences as Numbers** turns "one one two two" into "1122". Great for dictating codes and phone numbers; sequences shorter than three digits are left alone.
 
+## Bonus: reuse your vocabulary outside the app
+
+The dictionary you just built is not locked inside dictation. `transcribe file … --use-app-dictionary` gives a recording the same vocabulary hint (Whisper models), and `transcribe dictionary --json` lets other tools, such as Knowii Video AI, read your custom words and replacements. Both only read your settings. See [Your app dictionary](../user-guide/cli#your-app-dictionary).
+
 ## Next Steps
 
 - [Transcription Settings](../user-guide/transcription-settings): the full reference for everything used here

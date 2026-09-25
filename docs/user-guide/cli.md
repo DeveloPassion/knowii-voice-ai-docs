@@ -20,6 +20,8 @@ keywords:
     - hyprland
     - keybind
     - log levels
+    - dictionary
+    - custom words
 ---
 
 # Command-Line Interface (CLI)
@@ -108,6 +110,8 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 | `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                   | next to each input |
 | `--translate`             | Translate to English (multilingual Whisper models only)                     | off                |
 | `--initial-prompt <TEXT>` | Bias vocabulary/style (Whisper models only)                                 | _(none)_           |
+| `--use-app-dictionary`    | Also use your app dictionary, as dictation does (see below)                 | off                |
+| `--settings <PATH>`       | With `--use-app-dictionary`: read another settings file                     | the app's own      |
 | `--int8`                  | Trade a little accuracy for more speed and lower memory, where supported    | off                |
 | `--no-preprocess`         | Skip preprocessing (peak-normalize; silence-trim for `txt`)                 | off                |
 | `--timestamp-granularity` | Timing detail: `auto`, `token`, `word`, or `segment` (see below)            | `auto`             |
@@ -134,6 +138,9 @@ transcribe file entretien.mp3 --model whisper-large-v3 --translate
 
 # Feed a jargon-heavy recording some vocabulary up front
 transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Kubernetes, Grafana, Prometheus, OTEL"
+
+# Use the custom words and initial prompt you set up in the app
+transcribe file standup.m4a --model whisper-large-v3 --use-app-dictionary
 
 # Pipe audio in from stdin
 cat note.ogg | transcribe file - --model whisper-medium --format txt
@@ -191,6 +198,52 @@ The JSON is versioned so a tool built on it can check what it is reading:
 - Each word has a stable `index` within the transcript and the `segment` it belongs to.
 - `words` is `null` — not an empty list — when you did not ask for `word` granularity or the engine cannot align words. Null means "not available"; an empty list would mean "no words were spoken".
 - Long files transcribed in pieces (see **Long files** above) come back as one transcript: segment and word times are already shifted to the file's timeline and each word's `segment` points into the merged list, so nothing has to be re-aligned on your side.
+
+### Your app dictionary
+
+The words you taught the app in **Settings > Transcription** (custom words, word replacements, phonetic replacements, the correction threshold and your initial prompt) are your dictionary. The CLI can read it, and it only ever reads it: it never changes your settings file, even when that file looks damaged. The running app stays in charge of it.
+
+**Use it in a file transcription.** Add `--use-app-dictionary` and the model gets the same hint dictation gives it: your initial prompt, then your custom words. If you also pass `--initial-prompt`, your text comes first and the dictionary follows, separated by a space.
+
+```bash
+transcribe file standup.m4a --model whisper-large-v3 --use-app-dictionary
+transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Weekly standup." --use-app-dictionary
+```
+
+- Only Whisper models take this hint, just as in the app. With another model the option is accepted, and the CLI prints a note that the dictionary was not used.
+- The dictionary does not rewrite the output. Word replacements and fuzzy corrections are not applied to the subtitles, text or JSON, so every word and its timing stay exactly as the model heard them. A tool that wants those fixes applies them itself, word by word, from `transcribe dictionary --json`.
+
+**See it, or hand it to another tool:**
+
+```bash
+transcribe dictionary          # a readable listing
+transcribe dictionary --json   # for scripts and other apps
+```
+
+```json
+{
+    "contract_version": 1,
+    "custom_words": ["Knowii", "Obsidian"],
+    "word_replacements": [{ "from": "no we", "to": "Knowii" }],
+    "phonetic_replacements": [{ "from": "эн восемь эн", "to": "N8N" }],
+    "threshold": 0.18,
+    "initial_prompt": "Technical dictation."
+}
+```
+
+- `contract_version` is `1`. It changes whenever the shape changes in a way that could break a consumer.
+- Entries keep the order they have in the app; values are exactly as saved.
+- `threshold` is the custom-word correction threshold (the app's default is `0.18`).
+
+**Which settings file.** By default, the app's own, in its data folder: `~/.local/share/knowii-voice-ai/settings.json` on Linux, `%APPDATA%\knowii-voice-ai\settings.json` on Windows, `~/Library/Application Support/knowii-voice-ai/settings.json` on macOS. Pass `--settings <PATH>` to read another one, such as a copy.
+
+**Exit codes.**
+
+| Code | Meaning                                                                                                                                                                                                                               |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0`  | The dictionary was read. Also when there is no settings file yet: the dictionary is simply empty.                                                                                                                                     |
+| `3`  | The settings file is there but could not be read (unreadable, or not valid JSON). The dictionary is treated as empty and a warning names the file and the problem. With `file`, the transcription still runs, without the dictionary. |
+| `1`  | Any other error, as for every `transcribe` command.                                                                                                                                                                                   |
 
 ### Model families
 

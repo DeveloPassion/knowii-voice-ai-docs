@@ -371,6 +371,10 @@ If you dictate in one language but use names or acronyms from another, the AI mo
 
 **Tip**: For same-language corrections, use [Word Replacements](#word-replacements) instead. Reach for Phonetic Replacements when the misheard text appears in a different script.
 
+:::info[Your dictionary works outside the app too]
+Custom Words, Word Replacements, Phonetic Replacements and the Whisper Prompt together are your dictionary. Other tools can now read it, starting with Knowii Video AI, and the `transcribe` command-line tool can use it when it transcribes a file. They only read it: nothing outside the app changes your settings. See [Your app dictionary](./cli.md#your-app-dictionary).
+:::
+
 ## Whisper Prompt
 
 **Location**: Settings > Transcription

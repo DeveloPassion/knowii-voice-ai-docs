@@ -65,6 +65,7 @@ The application data folder contains:
 - **settings.json**: Your application settings and preferences including:
     - Recording settings (microphone, shortcuts, push-to-talk mode)
     - Transcription settings (language, active model, word replacements)
+    - Your dictionary (custom words, word and phonetic replacements, Whisper prompt), which the `transcribe` CLI and other tools can read but never change ([Your app dictionary](./cli.md#your-app-dictionary))
     - Audio feedback settings (sound themes, volume)
     - History settings (save options for transcriptions and audio)
     - Advanced settings (performance, overlay position, etc.)
