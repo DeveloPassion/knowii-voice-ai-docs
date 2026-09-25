@@ -177,6 +177,8 @@ transcribe file standup.m4a --model whisper-large-v3 --initial-prompt "Kubernete
 ```
 
 The prompt biases the model's vocabulary. Nothing else costs so little for so much accuracy.
+
+Already taught the app your words? Add `--use-app-dictionary` and the CLI uses the custom words and initial prompt from **Settings > Transcription**, exactly as dictation does. See [Your app dictionary](../user-guide/cli#your-app-dictionary).
 :::
 
 ## Step 7: Make it faster
