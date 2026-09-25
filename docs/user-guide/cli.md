@@ -68,8 +68,6 @@ The AppImage packs everything, `transcribe` included, into a single file, so the
 
 Everything after `transcribe` goes to the CLI unchanged, and so do piped input, output, the exit code and Ctrl+C. It is exactly the `transcribe` described on this page, and safe to run while the app is open.
 
-Until a packaging fix lands, the transcribe.cpp (GGUF) models, Whisper and the others, fail from the AppImage. Meanwhile, use Parakeet (`parakeet-tdt-0.6b-v3`, ONNX), or the deb or RPM package.
-
 To type plain `transcribe` from anywhere, save this small script as `~/.local/bin/transcribe` (or any folder on your `PATH`), with the real path of your AppImage, and make it executable with `chmod +x ~/.local/bin/transcribe`:
 
 ```bash

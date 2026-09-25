@@ -151,6 +151,10 @@ What shipped, when, and what it changes for you.
 
 ### Fixes
 
+**Whisper and Other GGUF Models Work in the AppImage**
+
+- Fixed: Whisper and other GGUF models in the AppImage. In test builds of this release, the Linux AppImage could not load Whisper, Moonshine or the Parakeet GGUF model, neither for dictation nor in the `transcribe` CLI, because it did not find its own speed-optimized processing files. They load again, as fast as from the deb and RPM packages, which were never affected. Version 0.9.0 is not affected either.
+
 **Windows: Shortcuts Survive Sleep and Win+L**
 
 - On Windows, the recording shortcut used to go dead after the computer slept or after you locked the session with Win+L, and only a restart of the app brought it back. The app now notices when Windows wakes up or your session is unlocked and re-registers its shortcuts a couple of seconds later, by itself.
