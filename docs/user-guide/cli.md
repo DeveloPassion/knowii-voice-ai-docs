@@ -56,17 +56,30 @@ It decodes media in-process (mp4, mkv, mov, m4a, mp3, wav, ogg, opus, flac, and 
 | Windows           | `%LOCALAPPDATA%\Programs\knowii-voice-ai\transcribe.exe`      |
 | macOS             | `/Applications/Knowii Voice AI.app/Contents/MacOS/transcribe` |
 | Linux (deb / RPM) | `/usr/bin/transcribe`, already on your `PATH`                 |
-| Linux (AppImage)  | Bundled inside the AppImage (see below)                       |
+| Linux (AppImage)  | Run it through the AppImage (see below)                       |
 
 :::note[Using the AppImage?]
-The AppImage packs everything, `transcribe` included, into a single file, so the CLI is not on your `PATH`. Extract it once and link it wherever you like:
+The AppImage packs everything, `transcribe` included, into a single file, so the CLI is not on your `PATH`. Put `transcribe` right after the AppImage and you get the CLI, with no window:
 
 ```bash
-./Knowii-Voice-AI.AppImage --appimage-extract usr/bin/transcribe
-sudo install squashfs-root/usr/bin/transcribe /usr/local/bin/transcribe
+./Knowii-Voice-AI.AppImage transcribe --version
+./Knowii-Voice-AI.AppImage transcribe file talk.mp4 --model whisper-large-v3
 ```
 
-Prefer the deb or RPM package if you plan to use the CLI a lot.
+Everything after `transcribe` goes to the CLI unchanged, and so do piped input, output, the exit code and Ctrl+C. It is exactly the `transcribe` described on this page, and safe to run while the app is open.
+
+To type plain `transcribe` from anywhere, save this small script as `~/.local/bin/transcribe` (or any folder on your `PATH`), with the real path of your AppImage, and make it executable with `chmod +x ~/.local/bin/transcribe`:
+
+```bash
+#!/bin/sh
+exec "$HOME/Applications/Knowii-Voice-AI.AppImage" transcribe "$@"
+```
+
+Other tools, Knowii Video AI included, can then call `transcribe` like any other program. Do not copy the `transcribe` file out of the AppImage: it needs the libraries packed next to it, and fails to start on its own.
+:::
+
+:::info[Windows]
+On Windows, call `transcribe.exe` directly (see the table above). Starting the app with `transcribe` first is not supported there.
 :::
 
 Check that it works:
@@ -337,6 +350,8 @@ Options:
       --no-tray               Start without creating a system tray icon
   -h, --help                  Print help
 ```
+
+One more: `knowii-voice-ai transcribe …` runs the [`transcribe` CLI](#the-transcribe-cli) instead of the app, with everything after `transcribe` passed on unchanged. It is how the AppImage gives you the CLI (see [Where to find it](#where-to-find-it)). It is not in the list above because it is not a flag of the app: it never opens a window or talks to a running app. Linux and macOS only.
 
 ### Control a running app
 

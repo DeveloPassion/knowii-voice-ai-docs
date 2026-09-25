@@ -55,12 +55,15 @@ You should see the list of subcommands. If instead you get "command not found", 
 | Windows  | `"%LOCALAPPDATA%\Programs\knowii-voice-ai\transcribe.exe" --help`      |
 | macOS    | `"/Applications/Knowii Voice AI.app/Contents/MacOS/transcribe" --help` |
 | Linux    | The folder holding the `knowii-voice-ai` binary from your package      |
+| AppImage | `./Knowii-Voice-AI.AppImage transcribe --help`                         |
 
 **Or make it permanent** by adding that folder to your `PATH`. On macOS, an alias in your `~/.zshrc` is quicker:
 
 ```bash
 alias transcribe="/Applications/Knowii\ Voice\ AI.app/Contents/MacOS/transcribe"
 ```
+
+On the AppImage, a two-line script makes plain `transcribe` work: see [Using the AppImage](../user-guide/cli.md#where-to-find-it).
 
 The rest of this tutorial assumes plain `transcribe` works.
 
