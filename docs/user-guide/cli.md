@@ -237,13 +237,15 @@ transcribe dictionary --json   # for scripts and other apps
 
 **Which settings file.** By default, the app's own, in its data folder: `~/.local/share/knowii-voice-ai/settings.json` on Linux, `%APPDATA%\knowii-voice-ai\settings.json` on Windows, `~/Library/Application Support/knowii-voice-ai/settings.json` on macOS. Pass `--settings <PATH>` to read another one, such as a copy.
 
+**When one setting is damaged.** If a single dictionary setting cannot be read (say, a word replacement with no replacement text), the CLI does what the app does: it uses the default for that one setting, keeps all the others, and prints a note naming it. That is not an error: the exit code stays `0`.
+
 **Exit codes.**
 
-| Code | Meaning                                                                                                                                                                                                                               |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `0`  | The dictionary was read. Also when there is no settings file yet: the dictionary is simply empty.                                                                                                                                     |
-| `3`  | The settings file is there but could not be read (unreadable, or not valid JSON). The dictionary is treated as empty and a warning names the file and the problem. With `file`, the transcription still runs, without the dictionary. |
-| `1`  | Any other error, as for every `transcribe` command.                                                                                                                                                                                   |
+| Code | Meaning                                                                                                                                                                                                                                                                                                                                   |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0`  | The dictionary was read, even if a single setting was reset to its default (see above). Also when there is no settings file yet: the dictionary is simply empty.                                                                                                                                                                          |
+| `3`  | The settings file could not be used at all: it cannot be read, is not valid JSON, does not have the expected shape, is a broken link or not a regular file, or is larger than 64 MiB. The dictionary is treated as empty and a warning names the file and the problem. With `file`, the transcription still runs, without the dictionary. |
+| `1`  | Any other error, as for every `transcribe` command.                                                                                                                                                                                                                                                                                       |
 
 ### Model families
 
