@@ -199,7 +199,7 @@ The JSON is versioned so a tool built on it can check what it is reading:
 ```
 
 - `contract_version` is `3`. It changes whenever the shape changes in a way that could break a consumer.
-- `language` is the language the transcript was made in: the one you asked for with `--language` when the model used it, otherwise the one the model detected, or `null` when the model does not report one: Parakeet and Moonshine with `--language auto`, and the Parakeet folder models and Omnilingual always. With `--translate`, it is the language that was spoken, not English.
+- `language` is the language the transcript was made in: the one you asked for with `--language` when the model used it, otherwise the one the model detected, or `null` when the model does not report one: Parakeet and Moonshine with `--language auto`, and the Parakeet folder models and Omnilingual always. With `--translate`, it is the language that was spoken, not English. When a long file is split into pieces and they report different languages, the language with the most text overall wins, and a tie goes to the earliest piece.
 - **Coming from version 2?** Version 3 only adds `language`; every other field is exactly as before. A tool that reads version 2 only needs to accept `3` as well.
 - Times are in whole milliseconds (`start_ms` / `end_ms`); the older float `start` / `end` seconds on segments stay for compatibility.
 - Each word has a stable `index` within the transcript and the `segment` it belongs to.
