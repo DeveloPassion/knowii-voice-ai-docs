@@ -105,7 +105,7 @@ transcribe file <FILE>... --model <NAME_OR_PATH> [OPTIONS]
 | `<FILE>...`               | One or more audio/video files. Use `-` to read one stream from stdin.       | _(required)_       |
 | `-m`, `--model`           | A model id (e.g. `whisper-large-v3`) or a path to a model file/directory    | _(required)_       |
 | `--engine`                | Engine for raw paths: `parakeet`, `omnilingual` (folders), `transcribe-cpp` | by file type       |
-| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (Whisper models)        | `auto`             |
+| `-l`, `--language`        | Language code (e.g. `en`, `fr`) or `auto` to detect (see below)             | `auto`             |
 | `-f`, `--format`          | Output format: `srt`, `vtt`, `txt`, `json`, or `md`                         | `srt`              |
 | `-o`, `--output`          | Output directory, a single output file, or `-` for stdout                   | next to each input |
 | `--translate`             | Translate to English (multilingual Whisper models only)                     | off                |
@@ -149,6 +149,10 @@ cat note.ogg | transcribe file - --model whisper-medium --format txt
 transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 ```
 
+**Choosing the language.** `--language fr` is used as is by the models that can be told a language (Whisper, for the languages it knows). A model that does not know that language, or cannot be told one at all, says so on the terminal (for example "this model doesn't support 'fr'; the language was detected automatically instead") and carries on. The transcript is still written; with `-f json`, its `language` field says which language was actually used.
+
+**Reading from stdin.** With `-`, the audio is copied to a temporary file of its own, so several `transcribe file -` runs can work side by side. The copy is deleted when the run ends: when it succeeds, when it fails, and when you stop it with Ctrl+C or it is asked to stop (exit code `130` for Ctrl+C, `143` for a termination request).
+
 :::tip[Quote your paths]
 File names often contain spaces. Always quote them: `transcribe file "My Recording.mp4" --model whisper-large-v3`.
 :::
@@ -175,7 +179,8 @@ The JSON is versioned so a tool built on it can check what it is reading:
 
 ```json
 {
-    "contract_version": 2,
+    "contract_version": 3,
+    "language": "en",
     "text": "And so, my fellow Americans, ask not…",
     "segments": [
         {
@@ -193,10 +198,13 @@ The JSON is versioned so a tool built on it can check what it is reading:
 }
 ```
 
-- `contract_version` is `2`. It changes whenever the shape changes in a way that could break a consumer.
+- `contract_version` is `3`. It changes whenever the shape changes in a way that could break a consumer.
+- `language` is the language the transcript was made in: the one you asked for with `--language` when the model used it, otherwise the one the model detected, or `null` when the model does not report one: Parakeet and Moonshine with `--language auto`, and the Parakeet folder models and Omnilingual always. With `--translate`, it is the language that was spoken, not English. When a long file is split into pieces and they report different languages, the language with the most text overall wins, and a tie goes to the earliest piece.
+- **Coming from version 2?** Version 3 only adds `language`; every other field is exactly as before. A tool that reads version 2 only needs to accept `3` as well.
 - Times are in whole milliseconds (`start_ms` / `end_ms`); the older float `start` / `end` seconds on segments stay for compatibility.
 - Each word has a stable `index` within the transcript and the `segment` it belongs to.
-- `words` is `null` — not an empty list — when you did not ask for `word` granularity or the engine cannot align words. Null means "not available"; an empty list would mean "no words were spoken".
+- `words` is `null` — not an empty list — when you did not ask for `word` granularity or the model cannot time words. Null means "not available"; an empty list `[]` means the model could time words and nobody spoke (a silent file).
+- Pauses and silent stretches never cost you the word timings: a long file split into pieces keeps its `words` even when one piece was silent, and the `index` numbers run on without a gap.
 - Long files transcribed in pieces (see **Long files** above) come back as one transcript: segment and word times are already shifted to the file's timeline and each word's `segment` points into the merged list, so nothing has to be re-aligned on your side.
 
 ### Your app dictionary
