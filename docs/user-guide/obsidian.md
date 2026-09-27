@@ -11,6 +11,9 @@ keywords:
     - templates
     - Obsidian Starter Kit
     - note types
+    - Local REST API
+    - obsidian-cli-rest
+    - Templater
 ---
 
 # Obsidian (Beta)
@@ -23,7 +26,7 @@ The Obsidian integration is not in version 0.9.0. It is described here ahead of 
 
 An idea shows up while you are in the middle of something else. Press a shortcut, say it, press the shortcut again, and a few seconds later it is in your vault: as a new note in your inbox folder, or as a timestamped line in today's daily note. No window switching, no typing.
 
-That is what the Obsidian integration does. Knowii Voice AI writes the note itself, so it works with Obsidian closed and needs no plugin. Every capture is also saved to [History](./history.md), so nothing you say is lost, even when the vault is not reachable.
+That is what the Obsidian integration does. By default, Knowii Voice AI writes the note itself, so it works with Obsidian closed and needs no plugin. If you would rather have Obsidian write it (so your Templater templates run), two plugins can do that: see [How notes are written](#how-notes-are-written). Every capture is also saved to [History](./history.md), so nothing you say is lost, even when the vault is not reachable.
 
 ## Setting it up
 
@@ -51,6 +54,36 @@ While you speak, the overlay shows a 📝 instead of the microphone, so you know
 
 Want the text in your vault **and** where you are typing? Turn on **Also type the text**. The note is written first, then the text is typed as usual.
 
+## How notes are written
+
+Under **How notes are written**, pick one of three ways:
+
+- **Write files directly** (the default). Knowii Voice AI writes the file in your vault folder. Obsidian can be closed, and there is nothing to install. Templater code in a template cannot run this way.
+- **Local REST API plugin**. Obsidian writes the note, through the [Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api) community plugin (version 5 or newer).
+- **obsidian-cli-rest plugin**. Obsidian writes the note, through its own command line and the [REST and MCP server](https://github.com/dsebastien/obsidian-cli-rest) plugin.
+
+Why go through a plugin? Because then Obsidian itself creates your notes. Your Templater templates run (dates, prompts, scripts…), and when today's daily note does not exist yet, Obsidian creates it with its own command, exactly as when you open it by hand. The price: Obsidian has to be running. When it is not, the capture waits in [History](./history.md), and **Retry** sends it once Obsidian is back.
+
+### Setting up a plugin
+
+1. Install and turn on the plugin in Obsidian (**Settings > Community plugins**). For obsidian-cli-rest, also turn on Obsidian's command line (**Settings > General > Command line interface**).
+2. Copy the plugin's **API key** from its settings.
+3. Put the key in an environment variable, `KNOWII_OBSIDIAN_API_KEY` by default, then restart Knowii Voice AI. The key is never stored in Knowii Voice AI's settings, exactly like the keys of the [AI providers](./ai-post-processing.md#claude-api-openai-openrouter) (that page also explains how to set a variable the app can see). Prefer another name? Type it under **API key variable**.
+4. In **Settings > Integrations**, choose the plugin under **How notes are written**. Leave **Plugin address** empty if the plugin uses its default address: `https://127.0.0.1:27124` for Local REST API, `http://127.0.0.1:27124` for obsidian-cli-rest. Only an address on your own computer is accepted, so the key never leaves it.
+5. Click **Test connection**. For obsidian-cli-rest, the test also checks that Obsidian has this vault open.
+
+Both plugins listen on port 27124 by default. If you install both, change the port of one of them.
+
+**Open the note after a capture** shows each new capture in Obsidian once it is saved.
+
+### Good to know
+
+- **Today's missing daily note is created by Obsidian.** Knowii Voice AI finds the command your vault uses to open today's note (from Periodic Notes, Daily Notes or Journal Bases) and runs it, so your template runs, then adds the capture. The **Command that creates a missing note** field on the append card shows the command it found, and lets you set another one. Obsidian opens the note while it creates it. These commands only create **today's** note: a capture for an earlier day still waits until that note exists. The same goes for weekly or monthly notes set up with a path: only a Starter Kit periodic note, or a path with a day in its date, is created this way.
+- **Templater.** The template lists include Templater templates only when a plugin writes the notes. In Templater's settings, turn on **Trigger Templater on new file creation**; otherwise the notification says the Templater code was not run. What you say is never run as code: if a capture contains `<%`, an invisible character keeps Templater from reading it, whatever the template.
+- **A section's blank lines.** With Local REST API, the plugin places the blank lines around the text itself. When the section is still empty, the text goes right under the heading, with no blank line in between; a section it adds for you has no blank line before the next heading.
+- **obsidian-cli-rest is slower.** Every request starts Obsidian's command line, which takes a few seconds, so a capture takes a little longer to appear.
+- **obsidian-cli-rest and "dangerous" commands.** Adding text under a heading (anywhere but at the end of the note), or text containing a backslash (`\`), needs **Allow dangerous commands** in the plugin's settings. Knowii Voice AI then writes the change through Obsidian's script command, as one edit that only goes through if the note did not change since Knowii Voice AI read it. Without that setting, those captures are refused with that reason; adding at the end of a note still works.
+
 ## Where captures go
 
 ### A new note per capture
@@ -71,7 +104,7 @@ When the heading is not in the note, Knowii Voice AI adds it where your template
 
 :::caution A missing daily note is not created empty
 
-If today's daily note does not exist yet and no template is set, the capture is **not** delivered: an empty daily note would stop your vault's own template from filling it in later. Open today's note in Obsidian once (or choose a template), then use **Retry** in [History](./history.md). The capture waits there in the meantime.
+If today's daily note does not exist yet and no template is set, the capture is **not** delivered: an empty daily note would stop your vault's own template from filling it in later. Open today's note in Obsidian once (or choose a template), then use **Retry** in [History](./history.md). The capture waits there in the meantime. With a plugin, Obsidian creates today's note for you (see [Good to know](#good-to-know)).
 
 :::
 
@@ -99,7 +132,7 @@ Want your captures in their own place? Under the note type list, **Create a note
 
 :::
 
-The Starter Kit's own templates use Templater, which Knowii Voice AI cannot run when it writes the file itself. So a new note gets the properties and tags of its type, then your capture; and a daily note that does not exist yet is not created (see the caution above).
+The Starter Kit's own templates use Templater, which Knowii Voice AI cannot run when it writes the file itself. So a new note gets the properties and tags of its type, then your capture; and a daily note that does not exist yet is not created (see the caution above). With a plugin, Obsidian creates today's periodic note with the Starter Kit's own command, so its template runs.
 
 ## Placeholders
 
@@ -127,7 +160,7 @@ Turn on **AI titles** and your [AI provider](./ai-post-processing.md) writes a s
 ## Templates and properties
 
 - A template from your vault is used as it is. Its properties are copied line by line, never reformatted.
-- **Templater** code (`<% %>`) cannot run when Knowii Voice AI writes the file itself: it would appear in the note as it is. The preview warns you when a template has some. Use a plain template, or Knowii Voice AI's own placeholders.
+- **Templater** code (`<% %>`) cannot run when Knowii Voice AI writes the file itself: it would appear in the note as it is. That is why Templater templates are only offered when a plugin writes the notes (see [How notes are written](#how-notes-are-written)). Otherwise, use a plain template, or Knowii Voice AI's own placeholders.
 - With **Properties set here**, Knowii Voice AI writes the properties you list. It never writes `created` or `updated`: plugins such as Linter keep those up to date, and two tools writing the same property fight.
 
 ## Sending from History, and retrying
@@ -141,13 +174,12 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 ## Safety
 
 - **Never overwrites.** New notes get a new name; appends only add lines.
-- **Never a half-written note.** Each change is written to a temporary file next to the note, then swapped in at once.
+- **Never a half-written note.** Written directly, each change goes to a temporary file next to the note, then is swapped in at once. Through a plugin, a change in the middle of a note only goes through if the note did not change since it was read; otherwise nothing is written and you can retry.
 - **Sync-aware.** If Syncthing, Dropbox or Nextcloud left a conflict copy of the note, the capture waits until you have sorted it out. If the note changes while the capture is being written, nothing is written and you can retry.
 - **Stays in your vault.** A capture can never write outside the vault folder, or into `.obsidian`.
 
 ## What the beta does not do yet
 
-- **Only direct file writes.** Writing through the Local REST API or obsidian-cli-rest plugins (which can run Templater) is shown as "coming soon".
 - **Two destinations.** One new-note card and one append card. Named presets with their own shortcuts come later.
 
 ## Troubleshooting
@@ -163,6 +195,26 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 **"… note-type destinations need Obsidian Starter Kit 1.24.0 or later …"** Update the Starter Kit plugin in Obsidian (**Settings > Community plugins**).
 
 **"Obsidian is not reachable …"** when creating a note type: open the vault in Obsidian, and check that the MCP server is on in the Starter Kit's settings.
+
+**"… plugin did not answer …: is Obsidian running with the plugin on?"** Start Obsidian, check that the plugin is on and that **Plugin address** matches its settings, then **Retry** from History.
+
+**"no API key: set the environment variable …"** or **"… refused the API key …"** The key is missing, wrong, or the app did not see the variable. Copy the key from the plugin's settings again, set the variable, and restart Knowii Voice AI (see [Setting up a plugin](#setting-up-a-plugin)).
+
+**"… version … is too old …"** Update the Local REST API plugin to version 5 or newer in Obsidian.
+
+**"… cannot find the Obsidian command line …"** Turn on **Command line interface** in Obsidian's settings (**General**).
+
+**"… needs "Allow dangerous commands" …"** See [Good to know](#good-to-know): turn the setting on in the obsidian-cli-rest plugin, or add captures at the end of the note.
+
+**"Obsidian ran "…", but … did not appear."** The command created a different note than the one the destination points to. Check the destination's **Note** path, or set the right **Command that creates a missing note**.
+
+**"Obsidian's vault … is at …, not …"** Obsidian knows another vault by that name. Open the vault you chose in Obsidian, or pick the one Obsidian has open.
+
+**"… did not answer in time, so the note may or may not have been written …"** Obsidian was too slow to confirm. Look at the note first: if the capture is not there, use **Send to Obsidian** on the History entry.
+
+**"… mixes Windows and Unix line endings …"** Knowii Voice AI would have to rewrite the whole note to add your capture through a plugin, so it does not. Save the note with one kind of line ending (most editors can convert it), or write files directly.
+
+**"The template contains Templater code, which was not run."** Turn on **Trigger Templater on new file creation** in Templater's settings.
 
 **"Obsidian capture is not ready."** The capture shortcut was pressed before a vault and a destination were set up.
 
