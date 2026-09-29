@@ -103,6 +103,10 @@ What shipped, when, and what it changes for you.
 - **Search settings.** A search box above the settings tabs (**Ctrl+K**, or **Ctrl+F**; Cmd on macOS) finds a setting by its name or by the words people use for it ("microphone", "hotkey", "theme"), opens its tab and highlights it. See [Basic Usage](./user-guide/basic-usage.md#main-window--system-tray).
 - **History from the keyboard.** Move with the arrows (or j and k), then Space to play, C to copy, E to edit, S to star, D to delete, T to re-transcribe, A to run the AI again, O to send to Obsidian, / to search. See [Keyboard Shortcuts](./user-guide/history.md#keyboard-shortcuts).
 
+**Your Screenshot Survives a Dictation**
+
+- With **Don't Modify Clipboard**, an image on your clipboard is now put back after a clipboard-based paste, like text always was (#329). On Wayland with `wl-clipboard`, copied files come back too. Before, the transcription replaced them.
+
 **Trailing Space After Paste**
 
 - Another small opt-in in **Settings > Advanced > Paste**: append a space after each pasted transcription, so dictating in several takes no longer glues your sentences together.
