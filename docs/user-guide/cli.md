@@ -345,6 +345,7 @@ Options:
       --log-level <LEVEL>     Set the log level (trace, debug, info, warn, error, off) [default: info]
       --toggle-transcription  Start or stop a transcription in the running instance
       --toggle-capture        Start or stop an Obsidian capture in the running instance
+      --preset <KEY>          With --toggle-capture: the preset to capture with, by key (default: the active preset)
       --cancel                Abort the running instance's current recording or transcription
       --start-hidden          Start with the main window hidden (tray only)
       --no-tray               Start without creating a system tray icon
@@ -357,11 +358,11 @@ One more: `knowii-voice-ai transcribe …` runs the [`transcribe` CLI](#the-tran
 
 Knowii Voice AI only ever runs once. Launch it again while it is already open and the new command hands its instructions to the running app, then exits. That is what makes these flags work:
 
-| Flag                     | What it does                                                                                                                                                                                           |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--toggle-transcription` | Starts recording. Run it again to stop recording, transcribe, and paste, just like the shortcut.                                                                                                       |
-| `--toggle-capture`       | Starts an [Obsidian capture](./obsidian.md). Run it again to stop, transcribe, and save the note, like the capture shortcut. Works even when no capture shortcut is set. (Coming in the next release.) |
-| `--cancel`               | Throws away whatever is in progress and returns to idle. Does nothing if nothing is running.                                                                                                           |
+| Flag                     | What it does                                                                                                                                                                                                                                                                                                           |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--toggle-transcription` | Starts recording. Run it again to stop recording, transcribe, and paste, just like the shortcut.                                                                                                                                                                                                                       |
+| `--toggle-capture`       | Starts an [Obsidian capture](./obsidian.md). Run it again to stop, transcribe, and save the note, like the capture shortcut. Works even when no capture shortcut is set. Add `--preset <key>` to capture with a given [preset](./obsidian.md#presets): `--toggle-capture --preset task`. (Coming in the next release.) |
+| `--cancel`               | Throws away whatever is in progress and returns to idle. Does nothing if nothing is running.                                                                                                                                                                                                                           |
 
 This gives you a second way to trigger dictation, alongside your keyboard shortcut. It is handy for a panel or status-bar button (Waybar, Polybar, a dock, a stream deck), a desktop keybinding set in your window manager, or a script that dictates as part of a longer sequence.
 

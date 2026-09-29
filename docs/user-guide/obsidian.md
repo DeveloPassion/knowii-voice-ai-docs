@@ -14,6 +14,9 @@ keywords:
     - Local REST API
     - obsidian-cli-rest
     - Templater
+    - presets
+    - Stream Deck
+    - Meta Bind
 ---
 
 # Obsidian (Beta)
@@ -32,17 +35,17 @@ That is what the Obsidian integration does. By default, Knowii Voice AI writes t
 
 1. Open **Settings > Integrations**.
 2. Under **Vault**, choose your vault. The list shows the vaults Obsidian knows about on this computer; **Browse…** picks any other folder.
-3. Knowii Voice AI reads your vault's own settings and fills in two destinations for you:
-    - **Append to a note**: today's daily note, in the folder and with the date format your vault already uses (from the core Daily Notes plugin, or from Periodic Notes if you use it).
-    - **New note per capture**: a note in a `Voice notes` folder, named with the date and a title.
-4. Pick the one captures should go to with **Use for captures**. Each card shows a **preview**: the exact note a capture made right now would go to, and what it would look like afterwards. Nothing is written by the preview.
+3. Knowii Voice AI reads your vault's own settings and fills in two [presets](#presets) for you:
+    - **Daily note**: appends to today's daily note, in the folder and with the date format your vault already uses (from the core Daily Notes plugin, or from Periodic Notes if you use it).
+    - **New note**: a new note per capture in a `Voice notes` folder, named with the date and a title.
+4. Pick the one the capture shortcut uses with **Capture shortcut uses this**. Each card shows a **preview**: the exact note a capture made right now would go to, and what it would look like afterwards. Nothing is written by the preview.
 5. Set a **Capture shortcut**. It is not set by default, so installing the update does not take a key away from another app.
 
 That is all. Press the capture shortcut and speak.
 
 :::tip No shortcut needed
 
-The tray menu has a **Capture to Obsidian** item as soon as a vault is set up, and **Stop and Save to Obsidian** while a capture is recording. For a Stream Deck button, a keybinding in your window manager or a script, run `knowii-voice-ai --toggle-capture` (see the [CLI page](./cli.md)).
+The tray menu has a **Capture to Obsidian** item as soon as a vault is set up, and **Stop and Save to Obsidian** while a capture is recording. For a keybinding in your window manager or a script, run `knowii-voice-ai --toggle-capture` (see the [CLI page](./cli.md)). Stream Deck buttons and buttons in your notes can use a link: see [Start a capture from another app](#start-a-capture-from-another-app).
 
 :::
 
@@ -84,6 +87,17 @@ Both plugins listen on port 27124 by default. If you install both, change the po
 - **obsidian-cli-rest is slower.** Every request starts Obsidian's command line, which takes a few seconds, so a capture takes a little longer to appear.
 - **obsidian-cli-rest and "dangerous" commands.** Adding text under a heading (anywhere but at the end of the note), or text containing a backslash (`\`), needs **Allow dangerous commands** in the plugin's settings. Knowii Voice AI then writes the change through Obsidian's script command, as one edit that only goes through if the note did not change since Knowii Voice AI read it. Without that setting, those captures are refused with that reason; adding at the end of a note still works.
 
+## Presets
+
+A preset is one way of capturing: where the text goes, and how it is laid out. "Idea" makes a new note in your Ideas folder; "Task" adds a checkbox to today's note; "Journal line" adds a timestamped line under your Notes heading. Keep as many as you like.
+
+- **Add a preset** with the buttons under the list: **Idea**, **Journal line**, **Task**, **Meeting note** or **Quote**. Each one starts filled in (today's note is the one your vault already uses), and you change what you want.
+- **Name** is what you see; **Key** is how other apps and scripts ask for this preset (`idea`, `journal-line`). It is made from the name, and stays the same if you rename the preset later, so your buttons keep working. Lowercase letters, digits and dashes only.
+- **Capture shortcut uses this** picks the preset the capture shortcut, the tray menu and **Send to Obsidian** use.
+- **Shortcut for this preset** is optional: a key that records straight into this preset, whatever the capture shortcut uses. It is not set when you add a preset, and a key another shortcut already uses is refused.
+- **Also type the text** and **AI title** follow the general settings below the list, unless you set them **on** or **off** for this preset. For example, AI titles for your ideas, and no AI call for a one-line journal entry.
+- **Delete** removes the preset and its shortcut. Notes you already saved stay in your vault, and History keeps every capture. A preset cannot be deleted while it is recording.
+
 ## Where captures go
 
 ### A new note per capture
@@ -112,6 +126,48 @@ If today's daily note does not exist yet and no template is set, the capture is 
 
 - **Paragraph**: your transcript as it is.
 - **Timestamped line**: one line starting with the time, for a running log in your daily note: `- 14:05 Call the bank about the loan.` Add a **Marker** such as `#idea` to get `- 14:05 #idea Call the bank about the loan.`
+- **Task**: a checkbox, `- [ ] Call the bank about the loan.` A **Marker** goes after the checkbox: `#task`, or whatever your task plugin looks for.
+- **List item**: `- Call the bank about the loan.`
+- **Quote**: every line of what you said as a quote block, `> Call the bank about the loan.`
+
+A timestamped line, a task and a list item are one line each: if you paused long enough for the transcript to have several lines, they are joined into one.
+
+## Start a capture from another app
+
+Every preset has a link, shown on its card with a **Copy link** button:
+
+```
+knowii-voice-ai://capture?preset=idea
+```
+
+Open it once to start a capture with that preset; open it again to stop and save. Anything that can open a link can start a capture:
+
+- **Stream Deck**: a **Website** action with the link.
+- **A button in a note**, with [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin):
+
+    ````
+    ```meta-bind-button
+    label: Capture an idea
+    style: primary
+    actions:
+      - type: open
+        link: knowii-voice-ai://capture?preset=idea
+    ```
+    ````
+
+- **Launchers and scripts**: `xdg-open` on Linux, `open` on macOS, `start` on Windows. Put the link in quotes, because shells read `?` and `&` themselves: `xdg-open 'knowii-voice-ai://capture?preset=idea'`, or on Windows `start "" "knowii-voice-ai://capture?preset=idea"`. In a script, the command is simpler: `knowii-voice-ai --toggle-capture --preset idea` (see the [CLI page](./cli.md)).
+
+Two more forms: add `&action=start` or `&action=stop` for a button that only starts, or only stops (handy on a Stream Deck with two keys); and `knowii-voice-ai://cancel` throws away the capture in progress (only a capture: never a dictation, a file transcription or a download). `knowii-voice-ai://capture` without a preset uses the one the capture shortcut uses.
+
+The link works while Knowii Voice AI is running. When it is closed, opening a link only starts the app: open the link again once it is up.
+
+:::caution Links are off until you turn them on
+
+Any app or web page can open a link like this, and this one turns your microphone on. So Knowii Voice AI ignores them (and tells you so) until you turn on **Allow other apps to start captures**, under the presets. A link only names a preset: it cannot carry text, choose a note, or do anything else. A capture started or stopped by a link is saved to your vault but never typed, even with **Also type the text** on: the window in front could be the page that opened the link. The overlay shows every recording, however it started. The command line works either way: it needs someone already at your computer.
+
+:::
+
+While one preset is recording, a link or command for another preset is refused ("Finish the current recording first"), exactly like a shortcut. A preset's link stops its capture however it started, from its shortcut or from the capture shortcut. The tray's **Stop and Save to Obsidian** stops a capture whatever preset it uses.
 
 ## Obsidian Starter Kit vaults
 
@@ -165,7 +221,7 @@ Turn on **AI titles** and your [AI provider](./ai-post-processing.md) writes a s
 
 ## Sending from History, and retrying
 
-Every entry in [History](./history.md) has a **Send to Obsidian** button (📝) once a vault is set up. It files the entry with the destination you use for captures, at the time you originally said it: a dictation from last Tuesday lands in last Tuesday's daily note.
+Every entry in [History](./history.md) has a **Send to Obsidian** button (📝) once a vault is set up. It files the entry with the preset the capture shortcut uses, at the time you originally said it: a dictation from last Tuesday lands in last Tuesday's daily note.
 
 Entries that went to Obsidian show **In Obsidian** (hover it to see the note). Entries that did not show **Not in Obsidian** with the reason, and a **Retry** button that sends them again to the same place, for the same day.
 
@@ -180,7 +236,7 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 
 ## What the beta does not do yet
 
-- **Two destinations.** One new-note card and one append card. Named presets with their own shortcuts come later.
+- **The tray and Send to Obsidian use one preset**: the one the capture shortcut uses. Pick another preset with its own shortcut or its link.
 
 ## Troubleshooting
 
@@ -216,7 +272,17 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 
 **"The template contains Templater code, which was not run."** Turn on **Trigger Templater on new file creation** in Templater's settings.
 
-**"Obsidian capture is not ready."** The capture shortcut was pressed before a vault and a destination were set up.
+**"Obsidian capture is not ready."** The capture shortcut was pressed before a vault and a preset were set up.
+
+**"A link asked to start a capture, but links are off."** Turn on **Allow other apps to start captures** in **Settings > Integrations**, if you meant to use the link.
+
+**"No preset is called "…"."** The link or `--preset` names a key no preset has. The message lists the keys you have; each preset's card shows its own. Keys do not change when you rename a preset, but they do when you edit the **Key** field.
+
+**Opening the link does nothing, or opens your browser (AppImage).** The AppImage tells your desktop about the link when you turn **Allow other apps to start captures** on, and again at every start while it is on (the AppImage file changes with every update). If you moved the file, start it once. Keep the AppImage in a folder whose path has no spaces: on desktops such as Hyprland or Sway, `xdg-open` cannot start a program from a path with spaces, and opens the link in your browser instead. Turning the switch off removes Knowii Voice AI as the app for these links. Installed packages (`.deb`, `.rpm`, Windows, macOS) register the link when they are installed.
+
+**Opening the link starts Knowii Voice AI but no capture.** The app was closed: the link only starts it. Open the link again.
+
+**"… already uses this shortcut."** Each key combination can only start one thing. Pick another key, or remove it from the other shortcut first.
 
 **The note looks wrong.** Check the preview on the destination's card: it shows exactly what a capture would write.
 
