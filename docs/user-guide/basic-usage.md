@@ -36,6 +36,8 @@ When you launch Knowii Voice AI, the main window appears by default (showing set
 
 Minimizing the window keeps it in your taskbar or dock as usual. If you would rather it disappear into the tray when minimized, turn on [Minimize to Tray](./advanced-settings#minimize-to-tray).
 
+**Looking for a setting?** Type in the **Search settings…** box at the top of the tab list (or press **Ctrl+K**, or **Ctrl+F** outside History; Cmd on macOS), then pick a result with the arrows and **Enter**: the right tab opens and the setting is highlighted. A few settings only show up once something else is on (the AI fields, Obsidian before a vault is chosen): then the tab opens and a note says so. It knows the words people use, too: "microphone" finds **Recording Device**, "hotkey" finds **Shortcut**. _(Coming in the next release.)_
+
 The main window's icon changes based on the application state:
 
 - **Idle**: Normal icon

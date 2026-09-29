@@ -98,6 +98,11 @@ What shipped, when, and what it changes for you.
 
 - A new **Use GPU for Whisper** toggle in **Settings > Advanced > Performance** lets you force Whisper transcription onto your processor. It is the escape hatch for machines where the graphics card or its drivers cause crashes or garbled results — slower, but rock solid. It stays on by default, and applies the next time the model loads.
 
+**Find Any Setting, and Drive History From the Keyboard**
+
+- **Search settings.** A search box above the settings tabs (**Ctrl+K**, or **Ctrl+F**; Cmd on macOS) finds a setting by its name or by the words people use for it ("microphone", "hotkey", "theme"), opens its tab and highlights it. See [Basic Usage](./user-guide/basic-usage.md#main-window--system-tray).
+- **History from the keyboard.** Move with the arrows (or j and k), then Space to play, C to copy, E to edit, S to star, D to delete, T to re-transcribe, A to run the AI again, O to send to Obsidian, / to search. See [Keyboard Shortcuts](./user-guide/history.md#keyboard-shortcuts).
+
 **Trailing Space After Paste**
 
 - Another small opt-in in **Settings > Advanced > Paste**: append a space after each pasted transcription, so dictating in several takes no longer glues your sentences together.

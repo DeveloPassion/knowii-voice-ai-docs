@@ -345,6 +345,31 @@ Remove all unstarred transcriptions at once:
 
 ## Keyboard Shortcuts
 
+:::info Coming in the next release
+
+Keyboard control of the History list is not in version 0.9.0. It is described here ahead of the release it ships in; check **Settings > About** for your version.
+
+:::
+
+The whole History list works from the keyboard, no click needed first. The entry you are on gets a coloured outline.
+
+| Key                              | What it does                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------ |
+| **↓** / **↑** (or **j** / **k**) | Next / previous entry                                                                |
+| **Home** / **End**               | First / last entry                                                                   |
+| **Page Down** / **Page Up**      | Ten entries down / up                                                                |
+| **Space**                        | Play or pause the recording                                                          |
+| **C**                            | Copy the text                                                                        |
+| **E**                            | Edit the text                                                                        |
+| **S**                            | Star or unstar                                                                       |
+| **D**                            | Delete (asks first: **Enter** confirms, **Escape** cancels)                          |
+| **T**                            | Re-transcribe the recording                                                          |
+| **A**                            | Run the AI again (with two modes or more, a menu opens: **↑** / **↓** and **Enter**) |
+| **O**                            | Send to Obsidian                                                                     |
+| **/**                            | Jump to the search box                                                               |
+
+The keys only move through the days that are open: collapse a day to skip it. They do nothing while you type in a box or edit an entry, or while a dialog is open; press **Escape** in the search box to hand them back. Holding a key does not repeat it. **Ctrl+F** (Cmd+F on macOS) also jumps to the History search box; other keys with Ctrl, Alt or Cmd keep their usual meaning.
+
 When editing a transcription:
 
 - **Ctrl+Enter** (or Cmd+Enter on macOS): Save changes
