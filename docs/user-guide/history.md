@@ -240,8 +240,10 @@ AI post-processing is not in version 0.9.0. It is described here ahead of the re
 If you use [AI post-processing](./ai-post-processing.md), entries the cleanup pass rewrote keep **both** versions of the text:
 
 1. The entry shows the cleaned text, as it was pasted
-2. Underneath it, a **Cleaned up by AI — show the original** link reveals exactly what the transcription engine heard
+2. Underneath it, a **Rewritten by AI (Cleanup): show the original** link (naming the mode that rewrote it; **Show the original transcript** for older entries or text you edited since) reveals exactly what the transcription engine heard
 3. Double-click the revealed text to copy the original
+
+The ✨ button runs the AI again on what you originally said, with the mode you pick, and gives the entry the new text: see [Running the AI again](./ai-post-processing.md#running-the-ai-again-on-a-history-entry).
 
 This is the recovery path when a cleanup changed something it should not have — the AI's version is never the only surviving copy of what you said. Entries the pass never touched show no link at all.
 
