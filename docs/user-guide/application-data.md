@@ -69,6 +69,7 @@ The application data folder contains:
     - Audio feedback settings (sound themes, volume)
     - History settings (save options for transcriptions and audio)
     - Advanced settings (performance, overlay position, etc.)
+- **ai-keys.json** and **obsidian-keys.json**: the API keys you pasted, for your AI provider (**Settings > Advanced**) and your Obsidian plugin (**Settings > Integrations**), one per provider or plugin. Only there once you paste a key. Keys live in these files, never in `settings.json`, so sharing your settings never shares a key. Click **Clear** next to a key, or delete the file, to forget them.
 
 ### Downloaded Models
 

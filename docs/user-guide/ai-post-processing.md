@@ -98,7 +98,11 @@ An address on your own computer counts as local. **An address anywhere else coun
 
 ### Claude API, OpenAI, OpenRouter
 
-These are fast (typically around a second) and cost a fraction of a cent per dictation, but your transcript is sent to the provider. They need an API key, which you set as an **environment variable** — Knowii Voice AI never stores your key in its settings file, and never writes it to its logs.
+These are fast (typically around a second) and cost a fraction of a cent per dictation, but your transcript is sent to the provider. They need an API key: paste it under **API key**, right below the provider, and click **Save**. Each provider keeps its own key. **Clear** forgets it.
+
+Your key is kept in its own file next to the settings (`ai-keys.json`, see [Application data](./application-data.md)), never in the settings file itself, and never in the logs. The field never shows a saved key again: to change it, paste the new one.
+
+Already have the key in an environment variable for your other tools? Knowii Voice AI uses it when you have not pasted one, and says so under the field:
 
 | Provider   | Environment variable                                 |
 | ---------- | ---------------------------------------------------- |
@@ -106,14 +110,16 @@ These are fast (typically around a second) and cost a fraction of a cent per dic
 | OpenRouter | `KNOWII_OPENROUTER_API_KEY`, or `OPENROUTER_API_KEY` |
 | Claude API | `KNOWII_ANTHROPIC_API_KEY`, or `ANTHROPIC_API_KEY`   |
 
-The `KNOWII_`-prefixed name is checked first, so you can give Knowii Voice AI its own key without disturbing the one your other tools use.
+A pasted key always wins over a variable.
+
+An **Other server** can take a key too, if yours asks for one: paste it the same way.
 
 :::note Claude API keys created by signing in to the Console
 Some Anthropic keys are tied to your Console identity rather than to a workspace. Anthropic refuses those on every request until the request also names the workspace, with the message _"anthropic-workspace-id is required when authenticating with an identity-linked API key"_. If **Test Connection** shows that message, set `ANTHROPIC_WORKSPACE_ID` (or `KNOWII_ANTHROPIC_WORKSPACE_ID`) to your workspace id — it starts with `wrkspc_` and is listed under **Settings > Workspaces** in the Console. It is an identifier, not a secret.
 :::
 
 :::note
-The app only sees environment variables that existed when it started. If you set the variable in your shell profile and launch the app from a desktop menu or a shortcut, it may not inherit it — restart the app from a terminal, or set the variable system-wide (on Windows: System Properties > Environment Variables; on macOS and Linux: your login environment, not just `.bashrc`/`.zshrc`).
+If you rely on an environment variable instead of pasting the key: the app only sees variables that existed when it started, and an app launched from a desktop menu often does not see the ones in your shell profile. Pasting the key avoids all of that.
 :::
 
 ### Claude Code and Codex
@@ -215,7 +221,8 @@ Every message below appears as a notification, and every one of them means the s
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Could not reach the AI service                      | For Ollama: is it running? For a custom server: is the address right? Use **Test** to check.                                  |
 | The AI service took too long                        | The model is too slow for this machine. Pick a smaller, non-reasoning model, or a cloud provider.                             |
-| The AI service rejected your API key                | The key is missing, wrong, or the app did not inherit it — see the note about environment variables above.                    |
+| The AI service rejected your API key                | The key is wrong or expired. Paste it again under **API key** and click **Save**.                                             |
+| No API key for the AI service                       | Paste your key under **API key**, below the provider.                                                                         |
 | The AI service rejected the request                 | Usually the model name. Re-pick it from the list.                                                                             |
 | The AI service is rate limiting you                 | Too many requests for your plan. Wait, or switch providers.                                                                   |
 | The AI service returned nothing usable              | The model's answer failed the safety check — often a reasoning model writing its thinking into the answer. Try another model. |
@@ -233,4 +240,4 @@ Every message below appears as a notification, and every one of them means the s
 - **Local by default.** The default provider runs on your computer.
 - **Nothing leaves without a specific yes**, per provider, revocable at any time.
 - **Only text.** Your audio recordings are never sent anywhere.
-- **Keys stay out of the app.** API keys are read from your environment, never written to the settings file or the logs.
+- **Keys stay out of the settings.** A pasted API key lives in its own file (`ai-keys.json`), never in the settings file or the logs.

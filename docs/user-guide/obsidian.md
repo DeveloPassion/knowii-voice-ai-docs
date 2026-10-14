@@ -70,9 +70,9 @@ Why go through a plugin? Because then Obsidian itself creates your notes. Your T
 ### Setting up a plugin
 
 1. Install and turn on the plugin in Obsidian (**Settings > Community plugins**). For obsidian-cli-rest, also turn on Obsidian's command line (**Settings > General > Command line interface**).
-2. Copy the plugin's **API key** from its settings.
-3. Put the key in an environment variable, `KNOWII_OBSIDIAN_API_KEY` by default, then restart Knowii Voice AI. The key is never stored in Knowii Voice AI's settings, exactly like the keys of the [AI providers](./ai-post-processing.md#claude-api-openai-openrouter) (that page also explains how to set a variable the app can see). Prefer another name? Type it under **API key variable**.
-4. In **Settings > Integrations**, choose the plugin under **How notes are written**. Leave **Plugin address** empty if the plugin uses its default address: `https://127.0.0.1:27124` for Local REST API, `http://127.0.0.1:27124` for obsidian-cli-rest. Only an address on your own computer is accepted, so the key never leaves it.
+2. In **Settings > Integrations**, choose the plugin under **How notes are written**.
+3. That's usually all. Knowii Voice AI reads the plugin's **API key** and port from the plugin's own settings in your vault, and says so under **API key**. If it can't (some versions of obsidian-cli-rest keep the key in Obsidian's secret storage), copy the key from the plugin's settings and paste it under **API key**, then click **Save**. A pasted key wins over the one in the vault; **Clear** goes back to the vault's. Each plugin keeps its own key, and the key is never written to Knowii Voice AI's settings file.
+4. Leave **Plugin address** empty: the plugin's port is read from its settings, and its default address is used otherwise (`https://127.0.0.1:27124` for Local REST API, `http://127.0.0.1:27124` for obsidian-cli-rest). Only an address on your own computer is accepted, so the key never leaves it.
 5. Click **Test connection**. For obsidian-cli-rest, the test also checks that Obsidian has this vault open.
 
 Both plugins listen on port 27124 by default. If you install both, change the port of one of them.
@@ -254,7 +254,7 @@ If History is turned off, there is nothing to retry from: when a capture cannot 
 
 **"… plugin did not answer …: is Obsidian running with the plugin on?"** Start Obsidian, check that the plugin is on and that **Plugin address** matches its settings, then **Retry** from History.
 
-**"no API key: set the environment variable …"** or **"… refused the API key …"** The key is missing, wrong, or the app did not see the variable. Copy the key from the plugin's settings again, set the variable, and restart Knowii Voice AI (see [Setting up a plugin](#setting-up-a-plugin)).
+**"no API key: paste the … plugin's key …"** or **"… refused the API key …"** The key is missing or out of date (it changes when you regenerate it in the plugin). Copy the key from the plugin's settings, paste it under **API key** in **Settings > Integrations**, and click **Save** (see [Setting up a plugin](#setting-up-a-plugin)).
 
 **"… version … is too old …"** Update the Local REST API plugin to version 5 or newer in Obsidian.
 
