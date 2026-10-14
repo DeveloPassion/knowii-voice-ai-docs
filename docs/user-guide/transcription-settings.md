@@ -430,6 +430,49 @@ Some AI models write spoken digits as words: saying "1122" can come out as "one 
 
 **Tip**: For English dictation, Parakeet V2 also writes numbers as digits natively. See [Model Selection](#model-selection).
 
+## Dictation
+
+### Translate to English
+
+**Location**: Settings > Transcription > Dictation
+
+- Automatically translate speech from other languages to English
+- Only available with Whisper models (not supported by Parakeet)
+- Useful for multilingual workflows where you speak in one language but need English output
+- Examples: Speaking French but need English documentation, translating meeting notes, etc.
+
+**Note**: Translation requires more processing time than standard transcription.
+
+### Transcribe While Recording (faster stop)
+
+**Location**: Settings > Transcription > Dictation
+
+_Called "Instant transcription" until 0.9.0. Renamed because the old name promised text appearing while you speak — that is a different feature, [**Live dictation**](#live-dictation), just below._
+
+- Off by default. When on, Knowii Voice AI transcribes your speech at natural pauses **while you are still talking**, instead of waiting until you stop.
+- When you stop, only the last few words still need processing, so the wait after releasing the key is much shorter — even after a long dictation.
+- **Nothing appears while you talk**: the text still arrives in one piece, at the end, exactly like before. The recording saved to your history is also unchanged.
+- If AI post-processing is on, its cleanup pass still runs after the transcription — a few seconds with the command-line agents, about a second with a local or API model — so that is the wait you will notice, not the transcription.
+- Works with every model.
+- Trade-off: the audio is cut at pauses, so the model occasionally loses a bit of context across a pause. If you notice odd wording around pauses, turn it off — the default whole-recording mode is unchanged.
+
+**Tip**: this shines on long dictations. A two-minute thought that used to take several seconds to transcribe is ready the moment you release the key.
+
+### Live Dictation
+
+**Location**: Settings > Transcription > Dictation
+
+- Off by default. When on, your words appear in the target window **while you keep talking**: each chunk is pasted the moment it is transcribed, at the natural pauses in your speech — typically well under a second after you pause, every few seconds during a long dictation.
+- It builds on **Transcribe while recording**, which is shown as on and locked while Live dictation is on.
+- **Stopping still does the last bit**: the words after your final pause are transcribed and pasted, the whole text is saved to [History](./history.md) as one entry, and the [trailing space](./advanced-settings.md#trailing-space-after-paste), [clipboard copy](./advanced-settings.md#clipboard-handling) and [auto-submit](./advanced-settings.md#auto-submit-after-paste) options are applied **once**, at the end — not after every chunk.
+- **Cancel stops the stream, it does not erase it.** Pressing the cancel shortcut mid-sentence stops further chunks from arriving; what is already on screen stays, because the app cannot know what the other program did with the text. As with any cancelled dictation, nothing is saved to History.
+- **Turns AI post-processing off.** The cleanup pass needs the whole text, and Live dictation has already pasted it piece by piece — the two cannot both be on. Switching Live dictation on turns the cleanup pass off (with a notice), and its switch stays greyed out with the reason until you turn Live dictation off again. Your custom words, word replacements and [transcription hook](./advanced-settings.md#transcription-hook-advanced) still apply — to each chunk.
+- **Works with every model** and every paste method. With a clipboard-based method (Ctrl+V, Shift+Insert, Ctrl+Shift+V) the app saves and restores your clipboard around every chunk, as it does for a normal paste; the **Direct** method types the text and leaves the clipboard alone, so it is the smoothest choice. With **Clipboard only**, nothing is pasted while you talk — the whole transcript lands on the clipboard at the end, as usual.
+- Keep the target window focused while you dictate: each chunk goes to whatever window is active when it arrives, exactly like a normal paste. Switching windows mid-dictation sends the rest of your words there.
+- Same trade-off as Transcribe while recording: the audio is cut at pauses, so the model occasionally loses a little context across a pause.
+
+**Tip**: pair it with a headset and a long-form editor. Notes, drafts and messages fill in as you think aloud, and the wait at the end is the last few words only.
+
 ## Common Scenarios
 
 ### English-Only User

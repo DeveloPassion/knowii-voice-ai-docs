@@ -254,6 +254,8 @@ Windows does not let a normal program send keystrokes or a paste into a window o
 
 Knowii Voice AI detects this: when the window you are dictating into is elevated, the text is put on the clipboard instead and a notification tells you so. Paste it there yourself, or run Knowii Voice AI as administrator too (right-click its shortcut > **Run as administrator**) if you often dictate into elevated windows.
 
+With **Push To Talk**, Windows also hides the keyboard from normal programs while an elevated window is in front, so the app cannot see you let go of the shortcut. In that case the recording keeps going until you **press the shortcut again**, and a notification says so.
+
 ### macOS: dictations are copied to the clipboard instead of pasted
 
 macOS only lets apps with **Accessibility** access type into other apps. When Knowii Voice AI does not have it, every dictation is put on the clipboard and a notification tells you why. Open **Settings > General**, click **Grant access** on the banner and turn on **Knowii Voice AI** in the list. The banner and the clipboard fallback go away as soon as the switch is on.

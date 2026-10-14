@@ -54,11 +54,11 @@ The cleanup pass runs late in the pipeline, and its position is deliberate:
 4. Your own [transcription hook](./advanced-settings.md#transcription-hook-advanced) runs, if you have one — your script always gets the last word
 5. The text is pasted and saved to [History](./history.md)
 
-One thing it does not combine with: [**Live dictation**](./advanced-settings.md#live-dictation). Live dictation pastes your words chunk by chunk while you are still talking, and the cleanup pass needs the finished text — cleaning fragments would be worse than not cleaning at all, and rewriting text that is already on screen is impossible. Turning Live dictation on switches the cleanup pass off, and its switch stays greyed out (with the reason) until Live dictation is off again.
+One thing it does not combine with: [**Live dictation**](./transcription-settings.md#live-dictation). Live dictation pastes your words chunk by chunk while you are still talking, and the cleanup pass needs the finished text — cleaning fragments would be worse than not cleaning at all, and rewriting text that is already on screen is impossible. Turning Live dictation on switches the cleanup pass off, and its switch stays greyed out (with the reason) until Live dictation is off again.
 
 ## Turning it on
 
-**Location**: Settings > Advanced > AI Post-Processing
+**Location**: Settings > AI Post-Processing
 
 1. Choose a **provider** (see below). **Ollama** is the default: it runs on your own computer, needs no account, and sends nothing anywhere.
 2. Choose a **model**. The list is fetched from the provider, so it shows what you can actually use.
@@ -228,7 +228,7 @@ Every message below appears as a notification, and every one of them means the s
 | The AI service returned nothing usable              | The model's answer failed the safety check — often a reasoning model writing its thinking into the answer. Try another model. |
 | The AI CLI is not logged in                         | Sign in with the tool itself (`claude` or `codex`), then dictate again.                                                       |
 | Claude Code / Codex is not installed                | Install the tool, or choose a different provider.                                                                             |
-| Confirm sending your transcripts to this AI service | Answer the confirmation in Settings > Advanced > AI Post-Processing.                                                          |
+| Confirm sending your transcripts to this AI service | Answer the confirmation in Settings > AI Post-Processing.                                                                     |
 
 **No model in the list?** The app asks the provider for its models, so an empty list means it could not ask: Ollama is not running, the address is wrong, the API key is missing, or you have not answered the confirmation yet.
 
