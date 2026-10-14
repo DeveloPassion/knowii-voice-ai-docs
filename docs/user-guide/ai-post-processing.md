@@ -88,7 +88,7 @@ A badge next to the toggle always tells you which side of the line you are on: *
 3. In Knowii Voice AI, pick **Ollama**, then pick that model from the list
 4. Click **Test**
 
-**Pick a small model, and avoid "reasoning" or "thinking" models.** This matters more than it sounds. Cleaning up a transcript is a simple job, and a reasoning model will spend far longer thinking about it than doing it — on a computer without a graphics card, we measured a reasoning model still working on a single dictation after four minutes. A small, ordinary model does the same job in a second or two. The **Test** button tells you which one you have.
+**Pick a small model, and prefer an ordinary one to a "reasoning" or "thinking" model.** Cleaning up a transcript is a simple job. Knowii Voice AI asks Ollama to skip the thinking step, so a reasoning model such as Qwen3 answers right away instead of thinking until its answer is cut off, but an ordinary model of the same size is still the safer pick (an older Ollama may not support skipping the thinking). The **Test** button tells you how fast your model is.
 
 ### Other server
 

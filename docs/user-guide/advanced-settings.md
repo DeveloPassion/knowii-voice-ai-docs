@@ -270,8 +270,8 @@ Control what happens to your clipboard after transcription:
 - **Don't Modify Clipboard** (default): Preserves your current clipboard contents
     - Transcription is pasted but your clipboard remains unchanged
     - Useful if you have something important copied that you don't want to lose
-    - This works for text and images (a screenshot you just took survives a dictation). On Wayland with `wl-clipboard` installed, copied files are put back too. _(Images and files: coming in the next release; version 0.9.0 keeps text only.)_
-    - Only one form of what you copied comes back: an image is restored as an image, files as a file list, text as plain text. Extras some apps add (formatting, an app's private data) are not. When an app copies both text and an image (cells in a spreadsheet, for example), the text comes back
+    - This works for text and images (a screenshot you just took survives a dictation). On Windows, everything you copied comes back as it was: copied files, formatted text, an app's own data. On Wayland with `wl-clipboard` installed, copied files are put back too. _(Images, files and, on Windows, everything else: coming in the next release; version 0.9.0 keeps text only.)_
+    - On macOS and Linux, only one form of what you copied comes back: an image is restored as an image, files as a file list, text as plain text. Extras some apps add (formatting, an app's private data) are not. When an app copies both text and an image (cells in a spreadsheet, for example), the text comes back
     - Something that cannot be read at all (an unusual format, or an app that does not answer in time) is left alone, and the transcription stays on the clipboard instead
 
 - **Copy to Clipboard**: Leaves transcription in clipboard after pasting

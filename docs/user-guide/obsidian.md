@@ -112,7 +112,7 @@ A note is **never overwritten**. If the name is taken, the capture gets a number
 
 - **Note**: the note to add to. With `{{date}}` in it, it is a different note every day (your daily note).
 - **Under the heading**: the heading your capture goes under, written exactly as it appears in the note, emoji included (`## 🗒️ Notes`). The capture is added at the end of that section. Leave it empty to add at the end of the note.
-- **Template for a missing note**: what to create the note from when it does not exist yet.
+- **Template for a missing note**: what to create the note from when it does not exist yet. If you rename or delete that template, captures still go to the note when it exists; only a missing note cannot be created, and the capture waits in History until you fix the template or create the note.
 
 When the heading is not in the note, Knowii Voice AI adds it where your template puts it; without a template, at the end of the note (and the notification says so).
 

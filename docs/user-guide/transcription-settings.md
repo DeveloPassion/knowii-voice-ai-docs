@@ -46,6 +46,7 @@ If digit sequences appear as words ("one one two two" instead of "1122"), enable
     - Same accuracy and languages as Parakeet V3
     - Uses your graphics card when one is available — up to 3× faster transcription, and the model loads in a fraction of the time
     - Falls back to your processor automatically when no graphics card is available
+    - The very first dictation after installing or updating the app (or your graphics driver) can take several seconds longer: the graphics driver prepares the model's code once and keeps it. After that, a short dictation takes a fraction of a second
     - 740 MB download
     - May write numbers as words, like Parakeet V3 below
 

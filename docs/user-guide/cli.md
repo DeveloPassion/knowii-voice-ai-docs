@@ -164,7 +164,7 @@ transcribe file clip.mkv --model parakeet-tdt-0.6b-v3 --int8
 
 **Choosing the language.** `--language fr` is used as is by the models that can be told a language (Whisper, for the languages it knows). A model that does not know that language, or cannot be told one at all, says so on the terminal (for example "this model doesn't support 'fr'; the language was detected automatically instead") and carries on. The transcript is still written; with `-f json`, its `language` field says which language was actually used.
 
-**Reading from stdin.** With `-`, the audio is copied to a temporary file of its own, so several `transcribe file -` runs can work side by side. The copy is deleted when the run ends: when it succeeds, when it fails, and when you stop it with Ctrl+C or it is asked to stop (exit code `130` for Ctrl+C, `143` for a termination request).
+**Reading from stdin.** Audio piped in with `-` is written out to stdout unless you pass `--output` (there is no file to write it next to); into a folder, it is named `Transcript` with the format's extension. The audio is copied to a temporary file of its own, so several `transcribe file -` runs can work side by side. The copy is deleted when the run ends: when it succeeds, when it fails, and when you stop it with Ctrl+C or it is asked to stop (exit code `130` for Ctrl+C, `143` for a termination request).
 
 :::tip[Quote your paths]
 File names often contain spaces. Always quote them: `transcribe file "My Recording.mp4" --model whisper-large-v3`.
@@ -182,7 +182,7 @@ File names often contain spaces. Always quote them: `transcribe file "My Recordi
 
 #### Word-level timings and the JSON contract
 
-`--timestamp-granularity` decides how fine the timings are. `auto` (the default) keeps each model family's usual behaviour, so scripts written before this option existed keep working unchanged. `word` gives one entry per word — and with `-f json` it also fills the `words` list — while `segment` gives sentence-sized blocks. The **parakeet** and **transcribe-cpp** engines honour all of them; the other engines keep their native segments and print a note.
+`--timestamp-granularity` decides how fine the timings are. `auto` (the default) keeps each model family's usual behaviour, so scripts written before this option existed keep working unchanged; for `txt` and `md`, which have no timings, it means sentence-sized blocks (the ONNX Parakeet model would otherwise put each piece of a word on its own line). `word` gives one entry per word — and with `-f json` it also fills the `words` list — while `segment` gives sentence-sized blocks. The **parakeet** and **transcribe-cpp** engines honour all of them; the other engines keep their native segments and print a note.
 
 ```bash
 transcribe file talk.mp4 -m parakeet-tdt-0.6b-v3 -f json --timestamp-granularity word -o -

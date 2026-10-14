@@ -106,7 +106,7 @@ What shipped, when, and what it changes for you.
 
 **Your Screenshot Survives a Dictation**
 
-- With **Don't Modify Clipboard**, an image on your clipboard is now put back after a clipboard-based paste, like text always was (#329). On Wayland with `wl-clipboard`, copied files come back too. Before, the transcription replaced them.
+- With **Don't Modify Clipboard**, an image on your clipboard is now put back after a clipboard-based paste, like text always was (#329). On Windows, everything you copied comes back as it was: copied files, formatted text from a web page or a document, an app's own data. On Wayland with `wl-clipboard`, copied files come back too. Before, the transcription replaced them.
 
 **Trailing Space After Paste**
 

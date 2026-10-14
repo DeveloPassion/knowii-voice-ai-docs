@@ -368,7 +368,7 @@ The whole History list works from the keyboard, no click needed first. The entry
 | **O**                            | Send to Obsidian                                                                     |
 | **/**                            | Jump to the search box                                                               |
 
-The keys only move through the days that are open: collapse a day to skip it. They do nothing while you type in a box or edit an entry, or while a dialog is open; press **Escape** in the search box to hand them back. Holding a key does not repeat it. **Ctrl+F** (Cmd+F on macOS) also jumps to the History search box; other keys with Ctrl, Alt or Cmd keep their usual meaning.
+After a delete, the next entry is selected (the previous one at the end of the list), so you can keep going. The keys only move through the days that are open: collapse a day to skip it. They do nothing while you type in a box or edit an entry, or while a dialog is open; press **Escape** in the search box to hand them back. Holding a key does not repeat it. **Ctrl+F** (Cmd+F on macOS) also jumps to the History search box; other keys with Ctrl, Alt or Cmd keep their usual meaning.
 
 When editing a transcription:
 
