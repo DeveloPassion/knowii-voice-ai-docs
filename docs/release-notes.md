@@ -71,7 +71,7 @@ What shipped, when, and what it changes for you.
 - **Microphone access is checked before you dictate.** When a Windows privacy switch (**Microphone access** or **Let desktop apps access your microphone**) is off, the app tells you at startup — a notification and a banner on **Settings > General** that names the switch — and an **Open privacy settings** button takes you to the right page. Until now the first sign was a recording that captured nothing. The same banner and button exist on macOS.
 - **No more crash-on-start without the Visual C++ runtime.** The installer now ships the Microsoft runtime files next to the app, so a PC without the redistributable, or with an old one, starts the app instead of showing an APPCRASH.
 - **Escape works in your other apps again (Windows, macOS).** The app held the cancel key, Escape by default, for as long as it ran, so Escape did nothing anywhere else. It now holds it only while a dictation is running.
-- **Dictating into a window that runs as administrator no longer goes nowhere.** Windows silently drops keystrokes sent to elevated windows. The app now notices, puts the text on the clipboard and tells you why, instead of typing into the void. See [Troubleshooting](./user-guide/installation.md#windows-nothing-is-typed-into-a-window-that-runs-as-administrator). With Push To Talk, where Windows also hides the key release from the app, the recording stops on your next press instead.
+- **Dictating into a window that runs as administrator says it is not supported**, instead of recording and then pasting nowhere: Windows blocks a normal app from typing into an elevated window.
 
 **macOS: Accessibility Is Asked For Up Front**
 

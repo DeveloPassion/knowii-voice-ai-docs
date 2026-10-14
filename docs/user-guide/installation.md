@@ -248,13 +248,9 @@ Older versions relied on the Microsoft Visual C++ runtime already being installe
 
 Starting with the next release, the installer ships those runtime files next to `knowii-voice-ai.exe`, so this can no longer happen. If you still see it on an older version, install the [Microsoft Visual C++ Redistributable (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe) and start the app again.
 
-### Windows: nothing is typed into a window that runs as administrator
+### Windows: dictating into a window that runs as administrator is not supported
 
-Windows does not let a normal program send keystrokes or a paste into a window owned by a program running **as administrator** (an elevated terminal, editor, installer…). The keystrokes are silently dropped by the system — the app cannot work around it.
-
-Knowii Voice AI detects this: when the window you are dictating into is elevated, the text is put on the clipboard instead and a notification tells you so. Paste it there yourself, or run Knowii Voice AI as administrator too (right-click its shortcut > **Run as administrator**) if you often dictate into elevated windows.
-
-With **Push To Talk**, Windows also hides the keyboard from normal programs while an elevated window is in front, so the app cannot see you let go of the shortcut. In that case the recording keeps going until you **press the shortcut again**, and a notification says so.
+Windows does not let a normal program send keystrokes or a paste into a window owned by a program running **as administrator** (an elevated terminal, editor, installer…), and it hides the keyboard from it there. So when such a window is in front, the dictation shortcut starts nothing and a notification says it is not supported. Dictate into a normal window and copy the text over, or run Knowii Voice AI as administrator too (right-click its shortcut > **Run as administrator**).
 
 ### macOS: dictations are copied to the clipboard instead of pasted
 
