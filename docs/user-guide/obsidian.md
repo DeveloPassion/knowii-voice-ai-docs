@@ -133,6 +133,25 @@ If today's daily note does not exist yet and no template is set, the capture is 
 
 A timestamped line, a task and a list item are one line each: if you paused long enough for the transcript to have several lines, they are joined into one.
 
+## Say where it goes
+
+Turn on **Say where it goes** in **Settings > Integrations**, and end a capture with where it belongs:
+
+- "…, **add this to** Deep Work **under** Ideas." The text goes under the Ideas section of your Deep Work note.
+- "…, **put it in the** Finances **note**." The text goes at the end of that note.
+- "…, **add this as a task to** Website." A task line, `- [ ] …`, goes under the Tasks section of your Website project note (or at its end). It uses the marker of your Task preset, if you have one.
+- "…, **save this as an** idea." The capture goes to your Idea preset, as if you had used its shortcut.
+
+It works in French too: "…, ajoute ça à Deep Work sous Idées", "…, ajoute ça comme tâche au projet Website", "…, enregistre ça comme une idée".
+
+The words that say where it goes are left out of the note, but History keeps everything you said.
+
+**It only uses what exists.** Names are matched against your real notes, their sections and your presets, so "deep work", "Deep work" and "Deep Work (Project)" all find your Deep Work note, and a small slip of the transcription is forgiven. When no note matches, when several could be meant, or when no preset has that name, nothing is guessed: the capture goes to its preset as usual, every word included, and a notification says what was heard. A section that does not exist sends the text to the end of the note, and the notification says so too.
+
+**Any wording, with AI.** With **Understand any wording with AI** on, a capture that does not end with one of these phrases is shown to the AI provider you set up in the AI Post-Processing tab, which tells where it should go ("could you stick that in Deep Work?"). Every capture is then sent to that provider, and takes a little longer. The provider only names the note: your words are filed exactly as you said them, and the same rules apply (only real notes, nothing guessed).
+
+Saying where it goes works for captures (the capture shortcut, a preset shortcut, a link or `--toggle-capture`), not for dictation or **Send to Obsidian**. **Retry** sends a capture back to the note it was routed to.
+
 ## Start a capture from another app
 
 Every preset has a link, shown on its card with a **Copy link** button:
