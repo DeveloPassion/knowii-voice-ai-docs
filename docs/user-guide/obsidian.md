@@ -124,6 +124,10 @@ If today's daily note does not exist yet and no template is set, the capture is 
 
 :::
 
+### At the cursor
+
+**Add preset > At the cursor** makes a preset that puts the text where your cursor is, in the note you last used in Obsidian. Obsidian types it itself: your clipboard is not touched, one undo removes it, and it works even when Obsidian is not the window in front. It needs the obsidian-cli-rest plugin to write the notes. If no note is open, the capture waits in History until you open one and **Retry**.
+
 ### Text layout
 
 - **Paragraph**: your transcript as it is.
