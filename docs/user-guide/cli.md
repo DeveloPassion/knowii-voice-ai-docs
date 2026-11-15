@@ -302,6 +302,25 @@ whisper-large-v3           Whisper      2952M    ✓  Whisper - Large V3
 
 The `DL` column shows `✓` for models you already have. Add `--downloaded` to list only those, `--json` for machine-readable output, or `--models-dir <DIR>` to inspect another location.
 
+With `--json`, each model also has a `timestamps` field that tells you the finest timings it gives, before you download or run it:
+
+```json
+{
+    "id": "parakeet-tdt-0.6b-v3-gguf",
+    "name": "Parakeet V3 (GPU)",
+    "engine": "transcribe-cpp",
+    "size_mb": 740,
+    "downloaded": true,
+    "timestamps": "word"
+}
+```
+
+- `"word"`: a start and an end for each word, as in the `words` list of the [JSON contract](#word-level-timings-and-the-json-contract). The Parakeet models, both the folders and the GPU `.gguf`.
+- `"segment"`: timings for each segment (a stretch of speech), none for single words, so `words` is `null` in the JSON of `transcribe file`. The Whisper models.
+- `"none"`: the text only, with no timings of its own. The Moonshine and Omnilingual models. On a long file, `transcribe file` still writes one block per piece (see **Long files** above); those times are where the audio was cut.
+
+`null` means this version of `transcribe` cannot tell for that model; no model in today's list has it. A script that needs word timings (subtitles word by word, cutting a video on words) can pick its model from this list instead of keeping its own table of model names. The other fields and the plain table are unchanged, so existing scripts keep working.
+
 **Download a model:**
 
 ```bash
