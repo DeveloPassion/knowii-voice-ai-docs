@@ -144,7 +144,7 @@ Turn on **Say where it goes** in **Settings > Integrations**, and end a capture 
 
 - "…, **add this to** Deep Work **under** Ideas." The text goes under the Ideas section of your Deep Work note.
 - "…, **put it in the** Finances **note**." The text goes at the end of that note.
-- "…, **add this as a task to** Website." A task line, `- [ ] …`, goes under the Tasks section of your Website project note (or at its end). It uses the marker of your Task preset, if you have one.
+- "…, **add this as a task to** Website." A task line, `- [ ] …`, goes under the Tasks section of your Website project note (or at its end). It uses the marker of your Task preset, if you have one. If your vault keeps one note per task, it can be a note of its own instead (see below).
 - "…, **save this as an** idea." The capture goes to your Idea preset, as if you had used its shortcut.
 
 It works in French too: "…, ajoute ça à Deep Work sous Idées", "…, ajoute ça comme tâche au projet Website", "…, enregistre ça comme une idée".
@@ -152,6 +152,14 @@ It works in French too: "…, ajoute ça à Deep Work sous Idées", "…, ajoute
 The words that say where it goes are left out of the note, but History keeps everything you said.
 
 **It only uses what exists.** Names are matched against your real notes, their sections and your presets, so "deep work", "Deep work" and "Deep Work (Project)" all find your Deep Work note, and a small slip of the transcription is forgiven in longer names. Numbers must match: "Project 2" never goes to Project 1. When no note matches, when several could be meant, or when no preset has that name, nothing is guessed: the capture goes to its preset as usual, every word included, and a notification says what was heard. A section that does not exist sends the text to the end of the note, and the notification says so too.
+
+**A note for each task.** If your vault keeps one note per task, set **A spoken task becomes** to **A note of type "…"** and pick your task note type (`tasks`, for example). The default is **A line in the project note**. A task with no project ("…, add this as a task") still goes to your Task preset.
+
+- The note is named after the task, with the folder, name ending, properties and tags of its type.
+- Its project property links the project (`related_projects` in a Starter Kit vault), and a `title` property gets the task. The project note is not changed.
+- It needs **Use this vault's note types** (see [Obsidian Starter Kit vaults](#obsidian-starter-kit-vaults)) and the Starter Kit 1.24.0 or later. Until then, the picker is locked.
+- If the note types cannot be read, the task becomes a line, and a notification says so.
+- The note does not get the body of its Templater template, and a task plugin without the Starter Kit keeps the task line.
 
 **Any wording, with AI.** With **Understand any wording with AI** on, a capture that does not end with one of these phrases is shown to the AI provider you set up in the AI Post-Processing tab, which tells where it should go ("could you stick that in Deep Work?"). Every capture is then sent to that provider, and takes a little longer. The provider only names the note: your words are filed exactly as you said them, and the same rules apply (only real notes, nothing guessed).
 
